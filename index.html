@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="stylesheet" href="./styles.css">
-  <title>Win Win 1.5.1</title>
+  <title>Win Win 1.6</title>
 </head>
 <body>
   <div class="app-shell">
@@ -40,7 +40,7 @@
         <section class="update-status" id="updateStatus">
           <span class="status-dot"></span>
           <span id="updateText">Gewinnspiele werden geprüft …</span>
-          <small id="dataDiagnostics" class="data-diagnostics">App 1.5.1 · Daten werden geladen</small>
+          <small id="dataDiagnostics" class="data-diagnostics">App 1.6.0 · Daten werden geladen</small>
         </section>
         <section class="metric-grid" id="metrics"></section>
 
@@ -83,6 +83,13 @@
           </div>
           <div id="endingCarousel" class="card-row"></div>
         </section>
+      </section>
+
+
+      <section id="todayView" class="view">
+        <div class="view-title"><p class="section-kicker">DEINE PRIORITÄTEN</p><h2>Heute teilnehmen</h2></div>
+        <section id="todaySummary" class="today-summary"></section>
+        <div id="todayList" class="contest-list"></div>
       </section>
 
       <section id="discoverView" class="view">
@@ -131,8 +138,9 @@
     </main>
 
     <div id="toast" class="toast" role="status"></div>
-    <nav class="bottom-nav">
+    <nav class="bottom-nav five">
       <button class="nav-item active" data-view="homeView"><span class="nav-icon">⌂</span><span>Start</span></button>
+      <button class="nav-item" data-view="todayView"><span class="nav-icon">◎</span><span>Heute</span></button>
       <button class="nav-item" data-view="discoverView"><span class="nav-icon">⌕</span><span>Entdecken</span></button>
       <button class="nav-item" data-view="favoritesView"><span class="nav-icon">♡</span><span>Favoriten</span></button>
       <button class="nav-item" data-view="statsView"><span class="nav-icon">◫</span><span>Mein Jahr</span></button>

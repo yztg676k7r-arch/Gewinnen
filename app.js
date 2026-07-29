@@ -1,5 +1,5 @@
 
-const APP_VERSION='1.5.1';
+const APP_VERSION='1.6.0';
 const STORAGE_KEY='gewinnen-user-v1';
 const FALLBACK=[{"id": "dm-ob-starterset-2026", "title": "100 limitierte o.b. Startersets", "provider": "dm", "prize": "100 × limitiertes o.b. Starterset", "url": "https://www.dm.de/neu/gewinnspiele/ob-3493126", "category": "Beauty", "country": "Deutschland", "deadline": "13.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-adventskalender-2026", "title": "70 Adventskalender gewinnen", "provider": "dm", "prize": "70 Adventskalender verschiedener Marken", "url": "https://www.dm.de/neu/gewinnspiele/adventskalender-gewinnspiel-2948470", "category": "Beauty", "country": "Deutschland", "deadline": "16.08.2026", "winners": 70, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-seeberger-2026", "title": "VAUDE-Rucksack mit Snacks", "provider": "dm / Seeberger", "prize": "5 × VAUDE-Rucksack mit Seeberger-Snacks", "url": "https://www.dm.de/neu/gewinnspiele/seeberger-3487062", "category": "Freizeit", "country": "Deutschland", "deadline": "04.08.2026", "winners": 5, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Freizeit", "schnell"]}, {"id": "dm-borotalco-2026", "title": "Borotalco-Produktpakete", "provider": "dm / Borotalco", "prize": "Borotalco-Produktpakete", "url": "https://www.dm.de/neu/gewinnspiele/borotalco-3487104", "category": "Beauty", "country": "Deutschland", "deadline": "05.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "schnell"]}, {"id": "rossmann-neonail-2026", "title": "100 NEONAIL-Sommerpakete", "provider": "ROSSMANN", "prize": "100 × NEONAIL-Sommerpaket mit Kosmetiktasche", "url": "https://www.rossmann.de/de/service-und-hilfe/rossmann-app", "category": "Beauty", "country": "Deutschland", "deadline": "02.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenlose ROSSMANN-App und Registrierung", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Teilnahme im Aktionsbereich der ROSSMANN-App.", "providerTrust": 5, "effort": 2, "entryType": "app", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner"]}, {"id": "rossmann-centaur-juli-2026", "title": "Centaur-Rätsel Juli", "provider": "ROSSMANN", "prize": "Reise-, Wellness- und Freizeitgewinne", "url": "https://www.rossmann.de/cms/gewinnspiele/centaur-raetsel-202607.html", "category": "Reisen", "country": "Deutschland", "deadline": "09.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "ROSSMANN-App erforderlich", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 3, "entryType": "app", "multipleEntry": false, "highValuePrize": true, "tags": ["Reisen"]}, {"id": "qvc-insider-2026", "title": "10 QVC-INSIDER-Jahresabos", "provider": "QVC", "prize": "10 × Jahresabo des QVC-Kundenmagazins INSIDER", "url": "https://www.qvc.de/content/nichts-verpassen/gewinnspiel/teilnahmebedingungen.html", "category": "Wohnen", "country": "Deutschland & Österreich", "deadline": "10.08.2026", "winners": 10, "new": true, "daily": false, "international": true, "requirements": "Teilnahmebedingungen auf der QVC-Seite beachten", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Wohnen", "international"]}, {"id": "schoener-wohnen-2026", "title": "Aktuelle Monatsgewinnspiele", "provider": "SCHÖNER WOHNEN", "prize": "Design-, Wohn-, Technik- und Reisegewinne", "url": "https://www.schoener-wohnen.de/gewinnspiele/", "category": "Wohnen", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenlose Teilnahme über Bilderpuzzle und Formular", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite; die genaue Frist steht beim jeweiligen Gewinnspiel.", "providerTrust": 4, "effort": 3, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Wohnen"]}, {"id": "dm-produkttests-2026", "title": "Aktuelle dm-Produkttests", "provider": "dm Produkttester", "prize": "Produkte kostenlos testen und bewerten", "url": "https://www.dm.de/neu/produkttest", "category": "Produkttests", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite mit wechselnden Produkttests.", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Produkttests"]}];
 const $=(s,r=document)=>r.querySelector(s);
@@ -43,26 +43,46 @@ function esc(v=''){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt
 function toast(m){const n=$('#toast');n.textContent=m;n.classList.add('show');clearTimeout(window.t);window.t=setTimeout(()=>n.classList.remove('show'),1700)}
 
 function scoreContest(i){
- let score=35;
+ // Score 1.6: Erfolgschance + Zeitnutzen, nicht bloß Preiswert.
+ let score=30;
  const reasons=[];
  const winners=Number(i.winners)||0;
- if(winners>=100){score+=25;reasons.push(`${winners} Gewinner`)}
- else if(winners>=50){score+=20;reasons.push(`${winners} Gewinner`)}
- else if(winners>=10){score+=12;reasons.push(`${winners} Gewinne`)}
- else if(winners>0){score+=5}
- if((i.providerTrust||3)>=5){score+=14;reasons.push('sehr seriöser Anbieter')}
- else if((i.providerTrust||3)>=4){score+=10;reasons.push('seriöser Anbieter')}
- if((i.effort||3)===1){score+=13;reasons.push('in unter 1 Minute')}
- else if((i.effort||3)===2){score+=8;reasons.push('geringer Aufwand')}
- else if((i.effort||3)>=4){score-=6}
- if(i.daily||i.multipleEntry){score+=8;reasons.push('mehrfach teilnehmbar')}
+ const trust=Number(i.providerTrust)||3;
+ const effort=Number(i.effort)||3;
  const left=daysLeft(i);
- if(left>=7&&left<=30){score+=5}
- if(left<=2){score+=4;reasons.push('endet sehr bald')}
- if(i.international)score-=2;
- if(i.highValuePrize)score+=3;
+
+ if(winners>=100){score+=30;reasons.push(`${winners} Gewinner`)}
+ else if(winners>=50){score+=24;reasons.push(`${winners} Gewinner`)}
+ else if(winners>=20){score+=18;reasons.push(`${winners} Gewinne`)}
+ else if(winners>=10){score+=13;reasons.push(`${winners} Gewinne`)}
+ else if(winners>=3){score+=7;reasons.push(`${winners} Gewinne`)}
+ else if(winners===1){score+=2}
+ else {score-=3;reasons.push('Gewinnerzahl offen')}
+
+ if(trust>=5){score+=15;reasons.push('sehr seriöser Anbieter')}
+ else if(trust===4){score+=10;reasons.push('seriöser Anbieter')}
+ else if(trust<=2){score-=10}
+
+ if(effort===1){score+=15;reasons.push('in unter 1 Minute')}
+ else if(effort===2){score+=10;reasons.push('geringer Aufwand')}
+ else if(effort===3){score+=3}
+ else if(effort===4){score-=5}
+ else if(effort>=5){score-=10}
+
+ if(i.daily||i.multipleEntry){score+=10;reasons.push('mehrfach teilnehmbar')}
+ if(i.regional){score+=12;reasons.push('kleinerer regionaler Kreis')}
+ if(i.international){score-=5}
+ if(i.entryType==='social'){score-=3}
+ if(i.highValuePrize)score+=2;
+
+ if(left===0){score+=8;reasons.push('endet heute')}
+ else if(left<=2){score+=6;reasons.push('endet sehr bald')}
+ else if(left<=7){score+=3}
+ else if(left>60){score-=2}
+
  score=Math.max(0,Math.min(100,score));
- return {score,reasons:reasons.slice(0,3)};
+ const confidence=winners>0&&trust>=4?'hoch':winners>0||trust>=4?'mittel':'begrenzt';
+ return {score,reasons:[...new Set(reasons)].slice(0,3),scoreConfidence:confidence};
 }
 function scored(includeIgnored=false){return allActive().map(i=>({...i,...scoreContest(i)})).filter(i=>includeIgnored||!stateFor(i.id).ignored)}
 function recommended(i){return i.score>=72&&!stateFor(i.id).done}
@@ -75,7 +95,7 @@ function matches(i,f){
  if(f==='international')return i.international;if(f==='regional')return Boolean(i.regional);if(f==='endingSoon')return endingSoon(i);return i.category===f
 }
 function toggleFavorite(id){const s=stateFor(id);s.favorite=!s.favorite;saveUser();renderAll();toast(s.favorite?'Zu Favoriten hinzugefügt':'Aus Favoriten entfernt')}
-function toggleDone(id){const s=stateFor(id);s.done=!s.done;saveUser();renderAll();toast(s.done?'Als teilgenommen markiert':'Markierung entfernt')}
+function toggleDone(id){const s=stateFor(id);s.done=!s.done;if(s.done)sessionStorage.setItem('winwin-done-session',String(Number(sessionStorage.getItem('winwin-done-session')||0)+1));saveUser();renderAll();toast(s.done?'Als teilgenommen markiert':'Markierung entfernt')}
 function toggleIgnored(id){
  const s=stateFor(id);s.ignored=!s.ignored;
  if(s.ignored)s.favorite=false;
@@ -87,11 +107,31 @@ window.toggleFavorite=toggleFavorite;window.toggleDone=toggleDone;window.toggleI
 
 function label(score){return score>=88?'Unbedingt mitmachen':score>=75?'Sehr empfehlenswert':score>=62?'Gute Chance':'Solide Aktion'}
 function badges(i){const left=daysLeft(i);return `<div class="badges">${isNewSinceVisit(i)?'<span class="new-ribbon">NEU</span>':''}<span class="badge">${esc(i.category)}</span><span class="badge score">${i.score}/100</span>${i.score>=80?'<span class="badge score">Top-Chance</span>':''}${secret(i)?'<span class="badge secret">Geheimtipp</span>':''}${left<=3?`<span class="badge hot">Noch ${left} Tag${left===1?'':'e'}</span>`:''}${i.international?'<span class="badge intl">International</span>':''}${i.regional?`<span class="badge regional">📍 ${esc(i.region||'Regional')}</span>`:''}${endingSoon(i)?`<span class="badge ending">⏰ Endet bald</span>`:''}</div>`}
-function reasonBox(i){return `<div class="reason-box"><strong>Warum empfohlen?</strong><br>${i.reasons.length?i.reasons.map(x=>'✓ '+esc(x)).join(' · '):'Kostenlose, geprüfte Teilnahme'}</div>`}
+function reasonBox(i){return `<div class="reason-box"><strong>Warum empfohlen?</strong><br>${i.reasons.length?i.reasons.map(x=>'✓ '+esc(x)).join(' · '):'Kostenlose, geprüfte Teilnahme'}<small>Score-Sicherheit: ${esc(i.scoreConfidence||'begrenzt')}</small></div>`}
 function mini(i){const s=stateFor(i.id);return `<article class="mini-card"><div class="provider">${esc(i.provider)}</div><h3>${esc(i.title)}</h3>${badges(i)}<div class="prize">🎁 ${esc(i.prize)}</div>${reasonBox(i)}<div class="mini-actions"><a class="primary" href="${esc(i.url)}" target="_blank" rel="noopener" onclick="registerClick('${esc(i.id)}')">Teilnehmen</a><button class="secondary" onclick="toggleFavorite('${esc(i.id)}')">${s.favorite?'♥':'♡'}</button><button class="secondary ignore-mini" aria-label="Nicht interessant" onclick="toggleIgnored('${esc(i.id)}')">Nicht interessant</button></div></article>`}
 function full(i){const s=stateFor(i.id),left=daysLeft(i),wins=i.winners?`${i.winners} bekannte Gewinne`:'Gewinnerzahl nicht angegeben';return `<article class="contest-card ${s.ignored?'ignored-card':''}"><div class="card-top"><div><div class="provider">${esc(i.provider)}</div><h3>${esc(i.title)}</h3></div><button class="heart ${s.favorite?'active':''}" onclick="toggleFavorite('${esc(i.id)}')">${s.favorite?'♥':'♡'}</button></div>${badges(i)}${s.ignored?'<div class="ignored-note">Nicht interessant – nur in dieser Ansicht sichtbar.</div>':''}<div class="prize">🎁 ${esc(i.prize)}</div><div class="scoreline"><strong>${label(i.score)}</strong><div class="scorebar"><i style="width:${i.score}%"></i></div><strong>${i.score}</strong></div>${reasonBox(i)}<div class="details">Teilnahmeschluss: ${esc(i.deadline)} · ${left===0?'endet heute':`${left} Tag${left===1?'':'e'} übrig`}<br>${esc(wins)} · Aufwand: ${'●'.repeat(Math.min(5,i.effort||3))}${'○'.repeat(Math.max(0,5-(i.effort||3)))}<br>${esc(i.country)}${i.region?` · ${esc(i.region)}`:''} · geprüft: ${esc(i.verified||'–')}</div><div class="card-actions"><a href="${esc(i.url)}" target="_blank" rel="noopener" onclick="registerClick('${esc(i.id)}')">Teilnehmen ↗</a><button class="${s.done?'done':''}" onclick="toggleDone('${esc(i.id)}')">${s.done?'✓ Erledigt':'Teilgenommen'}</button><button class="ignore-button ${s.ignored?'active':''}" onclick="toggleIgnored('${esc(i.id)}')">${s.ignored?'Wieder anzeigen':'Nicht interessant'}</button></div></article>`}
 function empty(t){return `<div class="empty">${esc(t)}</div>`}
 
+function todayQueue(){
+ return scored()
+  .filter(i=>!stateFor(i.id).done)
+  .sort((a,b)=>{
+    const aUrg=daysLeft(a)<=2?12:daysLeft(a)<=7?5:0;
+    const bUrg=daysLeft(b)<=2?12:daysLeft(b)<=7?5:0;
+    return (b.score+bUrg)-(a.score+aUrg);
+  })
+  .slice(0,20);
+}
+function renderToday(){
+ const queue=todayQueue();
+ const completed=scored(true).filter(i=>stateFor(i.id).done).length;
+ const totalToday=queue.length;
+ const target=Math.min(10,totalToday);
+ const doneToday=Number(sessionStorage.getItem('winwin-done-session')||0);
+ const progress=target?Math.min(100,Math.round(doneToday/target*100)):0;
+ $('#todaySummary').innerHTML=`<div><span>Dein Tagesziel</span><strong>${Math.min(doneToday,target)} / ${target}</strong></div><div class="today-progress"><i style="width:${progress}%"></i></div><p>${totalToday?`${totalToday} priorisierte Gewinnspiele warten noch auf dich.`:'Für heute ist alles erledigt.'} Insgesamt hast du ${completed} Teilnahmen markiert.</p>`;
+ $('#todayList').innerHTML=queue.map(full).join('')||empty('Stark – deine heutige Prioritätenliste ist leer.');
+}
 function renderMetrics(){
  const a=scored(),done=a.filter(i=>stateFor(i.id).done).length;
  const m=[['🆕',a.filter(isNewSinceVisit).length,'neu seit Besuch','newVisit'],['🎯',a.filter(recommended).length,'heute lohnenswert','recommended'],['⭐',a.filter(i=>i.score>=80).length,'Top-Chancen','top'],['✓',done,'teilgenommen','statsView']];
@@ -126,7 +166,7 @@ function renderPersonal(){
  const stats=[['♡',fav.length,'Favoriten'],['⭐',avg,'Ø Score'],['⊘',ignored.length,'Nicht interessant'],['↗',Object.values(user.clicks||{}).reduce((a,b)=>a+b,0),'Teilnahme-Links geöffnet'],['🏆',all.filter(i=>stateFor(i.id).won).length,'Gewinne']];
  $('#statsGrid').innerHTML=stats.map(([ic,n,l])=>`<div class="stat-card"><span>${ic}</span><strong>${n}</strong><span>${l}</span></div>`).join('');
 }
-function renderAll(){renderMetrics();renderHome();renderDiscover();renderPersonal()}
+function renderAll(){renderMetrics();renderHome();renderToday();renderDiscover();renderPersonal()}
 function openView(id){$$('.view').forEach(v=>v.classList.toggle('active',v.id===id));$$('.nav-item').forEach(n=>n.classList.toggle('active',n.dataset.view===id));window.scrollTo({top:0,behavior:'smooth'})}
 function openDiscover(f){currentFilter=f;$$('.chip').forEach(c=>c.classList.toggle('active',c.dataset.filter===f));openView('discoverView');renderDiscover()}
 

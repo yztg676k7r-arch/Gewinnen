@@ -1,11 +1,9 @@
-# Win Win 1.5
+# Win Win 1.6
 
-Neu:
-- Button „Nicht interessant“ an jedem Gewinnspiel
-- dauerhaftes Ausblenden über den bestehenden lokalen Nutzerspeicher
-- eigener Filter zum Wiederanzeigen und Zurückholen
-- kompatible Migration bestehender 1.4-Statusdaten
-- App-Version und Offline-Cache 1.5.0
+Persönlicher Gewinnspiel-Assistent mit Gewinnchance-Score, Tagesprioritäten, Favoriten, Teilnahmen und dem Status „Nicht interessant“.
 
-Erwartete Diagnose:
-App 1.5.0 · Daten 1.4.0 · 21 geladen
+## Neu in 1.6
+- transparenter Score von 0 bis 100
+- eigener Bereich „Heute teilnehmen“
+- Tagesfortschritt und automatisch priorisierte offene Gewinnspiele
+- kompatibel mit den lokal gespeicherten Daten aus 1.4 und 1.5

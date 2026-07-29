@@ -1,0 +1,11 @@
+WIN WIN 1.6.0
+
+Neu:
+- überarbeiteter Gewinnchance-Score 0–100
+- berücksichtigt Gewinnerzahl, Seriosität, Aufwand, Regionalität, Mehrfachteilnahme und Frist
+- Anzeige der Score-Sicherheit
+- eigener Bereich „Heute teilnehmen“
+- bis zu 20 automatisch priorisierte offene Gewinnspiele
+- Tagesziel und Fortschrittsanzeige
+- erledigte Teilnahmen verschwinden unmittelbar aus der Tagesliste
+- Offline-Cache auf Version 1.6.0 aktualisiert
