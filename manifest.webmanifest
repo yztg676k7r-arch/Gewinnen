@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Win Win",
   "short_name": "Win Win",
-  "description": "Dein persönlicher Gewinnspiel-Assistent",
+  "description": "Win Win – aktuelle, geprüfte Gewinnspiele mit intelligentem Chancen-Score",
   "lang": "de-DE",
   "start_url": "./",
   "scope": "./",

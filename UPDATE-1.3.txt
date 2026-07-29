@@ -1,0 +1,12 @@
+WIN WIN 1.3 INSTALLIEREN
+
+1. Das kleine Update entpacken.
+2. Im GitHub-Repository Add file → Upload files wählen.
+3. Alle Dateien und den Ordner data hochladen.
+4. Vorhandene Dateien ersetzen.
+5. Commit changes bestätigen.
+6. Etwa zwei Minuten warten.
+7. Win Win vollständig schließen und erneut öffnen.
+
+Für spätere reine Gewinnspiel-Updates genügt meistens:
+data/contests.json ersetzen und committen.

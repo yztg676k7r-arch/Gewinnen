@@ -52,3 +52,5 @@ main{padding:0 16px}.view{display:none;animation:fade .18s ease}.view.active{dis
  font-size:10px;font-weight:900;letter-spacing:.04em;background:#dff1ff;color:#15678f
 }
 .hero-icon{object-fit:cover;background:linear-gradient(135deg,#d7f3ed,#d9edf7)}
+
+.badge.regional{background:#f3ead8;color:#7f5c20}

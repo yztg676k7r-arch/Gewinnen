@@ -1,14 +1,12 @@
-# Win Win 1.2
+# Win Win 1.3
 
 Neu:
-- vollständige Umbenennung in Win Win
-- Startseiten-Icon repariert
-- neue Rubrik „Neu für dich“
-- Erkennung neuer Gewinnspiele seit dem letzten Besuch
-- Datenprüfung bei jedem Start
-- erneute Prüfung alle 30 Minuten, solange die App geöffnet ist
-- sichtbarer Datenstand
-- abgelaufene Gewinnspiele werden weiterhin automatisch ausgeblendet
-- für spätere Aktualisierungen reicht grundsätzlich die Datei `data/contests.json`
+- 12 neue, am 29.07.2026 geprüfte Gewinnspiele
+- direkte Quellen der Veranstalter in der Datenbank
+- regionale Gewinnspiele mit Ortskennzeichnung
+- neue Filter: Regional, Garten, Technik und Tickets
+- Datenqualitäts-Informationen in contests.json
+- Version 1.3.0
 
-GitHub Pages kann selbst keine fremden Webseiten durchsuchen. Die App lädt aber automatisch die neueste im Repository vorhandene `contests.json`.
+Aktuell enthält die Datenbank insgesamt 21 Einträge.
+Abgelaufene Einträge werden von der App automatisch ausgeblendet.
