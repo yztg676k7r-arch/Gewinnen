@@ -1,16 +1,21 @@
 
-const APP_VERSION='1.7.0';
+const APP_VERSION='1.8.0';
 const STORAGE_KEY='gewinnen-user-v1';
+const CUSTOM_DATA_KEY='winwin-custom-contests-v1';
 const FALLBACK=[{"id": "dm-ob-starterset-2026", "title": "100 limitierte o.b. Startersets", "provider": "dm", "prize": "100 × limitiertes o.b. Starterset", "url": "https://www.dm.de/neu/gewinnspiele/ob-3493126", "category": "Beauty", "country": "Deutschland", "deadline": "13.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-adventskalender-2026", "title": "70 Adventskalender gewinnen", "provider": "dm", "prize": "70 Adventskalender verschiedener Marken", "url": "https://www.dm.de/neu/gewinnspiele/adventskalender-gewinnspiel-2948470", "category": "Beauty", "country": "Deutschland", "deadline": "16.08.2026", "winners": 70, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-seeberger-2026", "title": "VAUDE-Rucksack mit Snacks", "provider": "dm / Seeberger", "prize": "5 × VAUDE-Rucksack mit Seeberger-Snacks", "url": "https://www.dm.de/neu/gewinnspiele/seeberger-3487062", "category": "Freizeit", "country": "Deutschland", "deadline": "04.08.2026", "winners": 5, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Freizeit", "schnell"]}, {"id": "dm-borotalco-2026", "title": "Borotalco-Produktpakete", "provider": "dm / Borotalco", "prize": "Borotalco-Produktpakete", "url": "https://www.dm.de/neu/gewinnspiele/borotalco-3487104", "category": "Beauty", "country": "Deutschland", "deadline": "05.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "schnell"]}, {"id": "rossmann-neonail-2026", "title": "100 NEONAIL-Sommerpakete", "provider": "ROSSMANN", "prize": "100 × NEONAIL-Sommerpaket mit Kosmetiktasche", "url": "https://www.rossmann.de/de/service-und-hilfe/rossmann-app", "category": "Beauty", "country": "Deutschland", "deadline": "02.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenlose ROSSMANN-App und Registrierung", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Teilnahme im Aktionsbereich der ROSSMANN-App.", "providerTrust": 5, "effort": 2, "entryType": "app", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner"]}, {"id": "rossmann-centaur-juli-2026", "title": "Centaur-Rätsel Juli", "provider": "ROSSMANN", "prize": "Reise-, Wellness- und Freizeitgewinne", "url": "https://www.rossmann.de/cms/gewinnspiele/centaur-raetsel-202607.html", "category": "Reisen", "country": "Deutschland", "deadline": "09.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "ROSSMANN-App erforderlich", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 3, "entryType": "app", "multipleEntry": false, "highValuePrize": true, "tags": ["Reisen"]}, {"id": "qvc-insider-2026", "title": "10 QVC-INSIDER-Jahresabos", "provider": "QVC", "prize": "10 × Jahresabo des QVC-Kundenmagazins INSIDER", "url": "https://www.qvc.de/content/nichts-verpassen/gewinnspiel/teilnahmebedingungen.html", "category": "Wohnen", "country": "Deutschland & Österreich", "deadline": "10.08.2026", "winners": 10, "new": true, "daily": false, "international": true, "requirements": "Teilnahmebedingungen auf der QVC-Seite beachten", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Wohnen", "international"]}, {"id": "schoener-wohnen-2026", "title": "Aktuelle Monatsgewinnspiele", "provider": "SCHÖNER WOHNEN", "prize": "Design-, Wohn-, Technik- und Reisegewinne", "url": "https://www.schoener-wohnen.de/gewinnspiele/", "category": "Wohnen", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenlose Teilnahme über Bilderpuzzle und Formular", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite; die genaue Frist steht beim jeweiligen Gewinnspiel.", "providerTrust": 4, "effort": 3, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Wohnen"]}, {"id": "dm-produkttests-2026", "title": "Aktuelle dm-Produkttests", "provider": "dm Produkttester", "prize": "Produkte kostenlos testen und bewerten", "url": "https://www.dm.de/neu/produkttest", "category": "Produkttests", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite mit wechselnden Produkttests.", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Produkttests"]}];
 const $=(s,r=document)=>r.querySelector(s);
 const $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const safeJSON=(v,f)=>{try{return v?JSON.parse(v):f}catch{return f}};
 let contests=[...FALLBACK];
+let baseContests=[...FALLBACK];
+let customContests=safeJSON(localStorage.getItem(CUSTOM_DATA_KEY),[]);
+if(!Array.isArray(customContests))customContests=[];
 let user=safeJSON(localStorage.getItem(STORAGE_KEY),{items:{},lastVisit:null,clicks:{}});
 let currentFilter='all';
 const previousVisit=user.lastVisit ? new Date(user.lastVisit) : null;
 let latestDataUpdate=null;
 let usingFallback=false;
+let dataVersionGlobal='–';
 
 function saveUser(){localStorage.setItem(STORAGE_KEY,JSON.stringify(user))}
 function stateFor(id){
@@ -222,6 +227,76 @@ function endingSoon(i){
  return days>=0&&days<=3;
 }
 
+
+function normalizeUrl(value=''){
+ try{const u=new URL(value,location.href);u.hash='';['utm_source','utm_medium','utm_campaign','utm_term','utm_content','fbclid','gclid'].forEach(k=>u.searchParams.delete(k));return u.href.replace(/\/$/,'').toLowerCase()}catch{return String(value).trim().replace(/\/$/,'').toLowerCase()}
+}
+function makeContestId(i){
+ const raw=`${i.provider||'anbieter'}-${i.title||'gewinnspiel'}`.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+ return raw.slice(0,80)||`import-${Date.now()}`
+}
+function normalizeContest(raw){
+ const i={...raw};
+ i.id=String(i.id||makeContestId(i)).trim();i.title=String(i.title||'').trim();i.provider=String(i.provider||'').trim();i.url=String(i.url||'').trim();i.deadline=String(i.deadline||'').trim();
+ i.prize=String(i.prize||'Gewinn nicht näher bezeichnet').trim();i.category=String(i.category||'Sonstiges').trim();i.country=String(i.country||'Deutschland').trim();
+ i.winners=i.winners==null||i.winners===''?null:Math.max(0,Number(i.winners)||0);i.providerTrust=Math.max(1,Math.min(5,Number(i.providerTrust)||3));i.effort=Math.max(1,Math.min(5,Number(i.effort)||3));
+ ['new','daily','international','regional','purchaseRequired','receiptRequired','winnerKnown','multipleEntry','highValuePrize'].forEach(k=>i[k]=Boolean(i[k]));
+ if(!Array.isArray(i.tags))i.tags=i.tags?[String(i.tags)]:[i.category];
+ i.importedAt=new Date().toISOString();
+ return i
+}
+function mergeCatalog(base,extra){
+ const out=[];const byId=new Map(),byUrl=new Map();let added=0,updated=0,duplicates=0,invalid=0;
+ const put=(raw,isImport=false)=>{
+   const i=normalizeContest(raw);
+   if(!validContest(i)||!/^https?:\/\//i.test(i.url)){if(isImport)invalid++;return}
+   const urlKey=normalizeUrl(i.url);const pos=byId.get(i.id)??byUrl.get(urlKey);
+   if(pos!==undefined){
+     if(isImport){out[pos]={...out[pos],...i,id:out[pos].id||i.id};updated++;duplicates++}
+     else out[pos]={...out[pos],...i};
+     byId.set(out[pos].id,pos);byUrl.set(normalizeUrl(out[pos].url),pos);return
+   }
+   const n=out.length;out.push(i);byId.set(i.id,n);byUrl.set(urlKey,n);if(isImport)added++
+ };
+ base.forEach(x=>put(x,false));extra.forEach(x=>put(x,true));
+ return {contests:out,report:{added,updated,duplicates,invalid,total:out.length}}
+}
+function applyCustomData(report=null){
+ const merged=mergeCatalog(baseContests,customContests);contests=merged.contests;renderAll();renderDataCenter(report||merged.report);updateDiagnostics(dataVersionGlobal);return merged
+}
+function extractContestArray(payload){
+ if(Array.isArray(payload))return payload;
+ if(payload&&Array.isArray(payload.contests))return payload.contests;
+ throw new Error('Keine Gewinnspiel-Liste gefunden')
+}
+function importPayload(payload){
+ const incoming=extractContestArray(payload);const result=mergeCatalog(baseContests,customContests.concat(incoming));
+ // Store only imported records, deduplicated amongst themselves and against future base updates.
+ const customResult=mergeCatalog([],customContests.concat(incoming));customContests=customResult.contests;
+ localStorage.setItem(CUSTOM_DATA_KEY,JSON.stringify(customContests));
+ applyCustomData(result.report);toast(`${result.report.added} neu · ${result.report.updated} aktualisiert`)
+}
+function downloadJSON(filename,payload){
+ const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)
+}
+function renderDataCenter(report=null){
+ const el=$('#importSummary'),local=$('#localDataText');if(!el||!local)return;
+ const activeCount=allActive().length;
+ el.innerHTML=`<div class="data-stat"><strong>${contests.length}</strong><span>gesamt</span></div><div class="data-stat"><strong>${activeCount}</strong><span>aktiv</span></div><div class="data-stat"><strong>${customContests.length}</strong><span>lokal ergänzt</span></div>${report?`<div class="import-report"><strong>Letzter Import:</strong> ${report.added} neu, ${report.updated} aktualisiert, ${report.invalid} ungültig.</div>`:''}`;
+ local.textContent=customContests.length?`${customContests.length} lokal importierte Datensätze sind auf diesem Gerät gespeichert.`:'Noch keine lokalen Ergänzungen gespeichert.'
+}
+function setupDataCenter(){
+ const input=$('#importFile');if(!input)return;
+ $('#chooseImportBtn').onclick=()=>input.click();
+ input.onchange=async()=>{const f=input.files[0];if(!f)return;try{importPayload(JSON.parse(await f.text()))}catch(e){toast('Import fehlgeschlagen: '+e.message)}finally{input.value=''}};
+ $('#pasteImportBtn').onclick=()=>{try{importPayload(JSON.parse($('#jsonPaste').value))}catch(e){toast('Import fehlgeschlagen: '+e.message)}};
+ $('#clearPasteBtn').onclick=()=>{$('#jsonPaste').value=''};
+ $('#exportMergedBtn').onclick=()=>downloadJSON(`win-win-gesamtkatalog-${new Date().toISOString().slice(0,10)}.json`,{version:APP_VERSION,updated:new Date().toISOString(),contests});
+ $('#exportLocalBtn').onclick=()=>downloadJSON(`win-win-lokale-ergaenzungen-${new Date().toISOString().slice(0,10)}.json`,{version:APP_VERSION,updated:new Date().toISOString(),contests:customContests});
+ $('#clearLocalBtn').onclick=()=>{if(!customContests.length)return toast('Keine lokalen Ergänzungen vorhanden');if(confirm('Alle lokal importierten Gewinnspiele löschen?')){customContests=[];localStorage.removeItem(CUSTOM_DATA_KEY);applyCustomData({added:0,updated:0,invalid:0});toast('Lokale Ergänzungen gelöscht')}};
+ renderDataCenter()
+}
+
 function validContest(i){
  return i && typeof i.id==='string' && typeof i.title==='string' &&
         typeof i.provider==='string' && typeof i.url==='string' &&
@@ -259,14 +334,21 @@ async function loadData(silent=false){
    if(!p || !Array.isArray(p.contests))throw new Error('Ungültiges Datenformat');
    const clean=p.contests.filter(validContest);
    if(!clean.length)throw new Error('Keine gültigen Gewinnspiele gefunden');
-   contests=clean;
+   baseContests=clean;
+   const merged=mergeCatalog(baseContests,customContests);
+   contests=merged.contests;
    latestDataUpdate=p.updated||null;
    dataVersion=p.version||'unbekannt';
+   dataVersionGlobal=dataVersion;
    usingFallback=false;
  }catch(e){
    console.warn('Win Win: Daten konnten nicht geladen werden',e);
+   baseContests=[...FALLBACK];
+   const merged=mergeCatalog(baseContests,customContests);contests=merged.contests;
+   dataVersionGlobal=dataVersion;
  }
  renderAll();
+ renderDataCenter();
  status.classList.toggle('error',usingFallback);
  text.textContent=usingFallback
    ?'Notfalldaten aktiv – bitte erneut laden'
@@ -280,6 +362,7 @@ $$('[data-show]').forEach(b=>b.addEventListener('click',()=>openDiscover(b.datas
 $('#searchInput').addEventListener('input',renderDiscover);$('#sortSelect').addEventListener('change',renderDiscover);
 $('#refreshBtn').addEventListener('click',async()=>{await loadData();toast('Daten neu geladen')});
 document.addEventListener('click',e=>{const m=e.target.closest('[data-metric]');if(!m)return;m.dataset.metric==='statsView'?openView('statsView'):openDiscover(m.dataset.metric)});
+setupDataCenter();
 if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
 loadData().finally(()=>{
  setTimeout(()=>{user.lastVisit=new Date().toISOString();saveUser()},1200)

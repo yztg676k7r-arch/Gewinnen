@@ -7,3 +7,7 @@ Persönlicher Gewinnspiel-Assistent mit Gewinnchance-Score, Tagesprioritäten, F
 - eigener Bereich „Heute teilnehmen“
 - Tagesfortschritt und automatisch priorisierte offene Gewinnspiele
 - kompatibel mit den lokal gespeicherten Daten aus 1.4 und 1.5
+
+
+## Version 1.8
+Neue Datenzentrale für geprüfte JSON-Importe, Dublettenprüfung, lokale Ergänzungen und Katalogexport.

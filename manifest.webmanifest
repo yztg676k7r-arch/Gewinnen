@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Win Win",
   "short_name": "Win Win",
-  "description": "Win Win 1.7 – persönliches Dashboard und Teilnahme-Fortschritt",
+  "description": "Win Win 1.8 – Gewinnspiel-Import, Dublettenprüfung und Quellenverwaltung",
   "lang": "de-DE",
   "start_url": "./",
   "scope": "./",

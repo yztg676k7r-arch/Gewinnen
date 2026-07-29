@@ -1,0 +1,10 @@
+WIN WIN 1.8.0
+
+Neu:
+- Datenzentrale als eigener Navigationsbereich
+- Import von contests.json, Objekt mit contests oder reiner JSON-Liste
+- Dublettenprüfung über ID und normalisierten Direktlink
+- Bestehende Datensätze werden aktualisiert statt doppelt angelegt
+- Lokale Ergänzungen bleiben auf dem Gerät gespeichert
+- Export des Gesamtkatalogs und der lokalen Ergänzungen
+- Persönliche Favoriten, Teilnahmen und Ausblendungen bleiben erhalten
