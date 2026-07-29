@@ -1,0 +1,12 @@
+WIN WIN 1.7.0
+
+Neu:
+- Persönliches Dashboard
+- Teilnahmen heute und in den letzten 7 Tagen
+- Offene Top-Chancen, bald endende und täglich wiederholbare Gewinnspiele
+- Kategorie-Auswertung
+- Intelligente nächste Schritte
+- Zeitpunkt einer Teilnahme wird ab Version 1.7 gespeichert
+
+Hinweis:
+Ältere Teilnahmen bleiben erhalten. Ein Tages- oder Wochenzeitpunkt kann für bereits vor Version 1.7 markierte Teilnahmen nicht rückwirkend ermittelt werden.

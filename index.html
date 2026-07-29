@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="stylesheet" href="./styles.css">
-  <title>Win Win 1.6</title>
+  <title>Win Win 1.7</title>
 </head>
 <body>
   <div class="app-shell">
@@ -40,7 +40,7 @@
         <section class="update-status" id="updateStatus">
           <span class="status-dot"></span>
           <span id="updateText">Gewinnspiele werden geprüft …</span>
-          <small id="dataDiagnostics" class="data-diagnostics">App 1.6.0 · Daten werden geladen</small>
+          <small id="dataDiagnostics" class="data-diagnostics">App 1.7.0 · Daten werden geladen</small>
         </section>
         <section class="metric-grid" id="metrics"></section>
 
@@ -127,9 +127,14 @@
       </section>
 
       <section id="statsView" class="view">
-        <div class="view-title"><p class="section-kicker">MEIN GEWINNJAHR</p><h2>Deine Statistik</h2></div>
+        <div class="view-title"><p class="section-kicker">DEIN ÜBERBLICK</p><h2>Dashboard</h2></div>
         <section id="statsHero" class="stats-hero"></section>
         <div id="statsGrid" class="stats-grid"></div>
+        <section id="dashboardFocus" class="dashboard-focus"></section>
+        <section class="section">
+          <div class="section-head"><div><p class="section-kicker">WO DU AM AKTIVSTEN BIST</p><h2>Kategorien</h2></div></div>
+          <div id="categoryStats" class="category-stats"></div>
+        </section>
         <section class="section">
           <div class="section-head"><div><p class="section-kicker">DEIN FORTSCHRITT</p><h2>Teilgenommen</h2></div></div>
           <div id="doneList" class="contest-list"></div>
@@ -143,7 +148,7 @@
       <button class="nav-item" data-view="todayView"><span class="nav-icon">◎</span><span>Heute</span></button>
       <button class="nav-item" data-view="discoverView"><span class="nav-icon">⌕</span><span>Entdecken</span></button>
       <button class="nav-item" data-view="favoritesView"><span class="nav-icon">♡</span><span>Favoriten</span></button>
-      <button class="nav-item" data-view="statsView"><span class="nav-icon">◫</span><span>Mein Jahr</span></button>
+      <button class="nav-item" data-view="statsView"><span class="nav-icon">◫</span><span>Dashboard</span></button>
     </nav>
   </div>
   <script src="./app.js"></script>

@@ -1,5 +1,5 @@
 
-const APP_VERSION='1.6.0';
+const APP_VERSION='1.7.0';
 const STORAGE_KEY='gewinnen-user-v1';
 const FALLBACK=[{"id": "dm-ob-starterset-2026", "title": "100 limitierte o.b. Startersets", "provider": "dm", "prize": "100 × limitiertes o.b. Starterset", "url": "https://www.dm.de/neu/gewinnspiele/ob-3493126", "category": "Beauty", "country": "Deutschland", "deadline": "13.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-adventskalender-2026", "title": "70 Adventskalender gewinnen", "provider": "dm", "prize": "70 Adventskalender verschiedener Marken", "url": "https://www.dm.de/neu/gewinnspiele/adventskalender-gewinnspiel-2948470", "category": "Beauty", "country": "Deutschland", "deadline": "16.08.2026", "winners": 70, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-seeberger-2026", "title": "VAUDE-Rucksack mit Snacks", "provider": "dm / Seeberger", "prize": "5 × VAUDE-Rucksack mit Seeberger-Snacks", "url": "https://www.dm.de/neu/gewinnspiele/seeberger-3487062", "category": "Freizeit", "country": "Deutschland", "deadline": "04.08.2026", "winners": 5, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Freizeit", "schnell"]}, {"id": "dm-borotalco-2026", "title": "Borotalco-Produktpakete", "provider": "dm / Borotalco", "prize": "Borotalco-Produktpakete", "url": "https://www.dm.de/neu/gewinnspiele/borotalco-3487104", "category": "Beauty", "country": "Deutschland", "deadline": "05.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "schnell"]}, {"id": "rossmann-neonail-2026", "title": "100 NEONAIL-Sommerpakete", "provider": "ROSSMANN", "prize": "100 × NEONAIL-Sommerpaket mit Kosmetiktasche", "url": "https://www.rossmann.de/de/service-und-hilfe/rossmann-app", "category": "Beauty", "country": "Deutschland", "deadline": "02.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenlose ROSSMANN-App und Registrierung", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Teilnahme im Aktionsbereich der ROSSMANN-App.", "providerTrust": 5, "effort": 2, "entryType": "app", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner"]}, {"id": "rossmann-centaur-juli-2026", "title": "Centaur-Rätsel Juli", "provider": "ROSSMANN", "prize": "Reise-, Wellness- und Freizeitgewinne", "url": "https://www.rossmann.de/cms/gewinnspiele/centaur-raetsel-202607.html", "category": "Reisen", "country": "Deutschland", "deadline": "09.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "ROSSMANN-App erforderlich", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 3, "entryType": "app", "multipleEntry": false, "highValuePrize": true, "tags": ["Reisen"]}, {"id": "qvc-insider-2026", "title": "10 QVC-INSIDER-Jahresabos", "provider": "QVC", "prize": "10 × Jahresabo des QVC-Kundenmagazins INSIDER", "url": "https://www.qvc.de/content/nichts-verpassen/gewinnspiel/teilnahmebedingungen.html", "category": "Wohnen", "country": "Deutschland & Österreich", "deadline": "10.08.2026", "winners": 10, "new": true, "daily": false, "international": true, "requirements": "Teilnahmebedingungen auf der QVC-Seite beachten", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Wohnen", "international"]}, {"id": "schoener-wohnen-2026", "title": "Aktuelle Monatsgewinnspiele", "provider": "SCHÖNER WOHNEN", "prize": "Design-, Wohn-, Technik- und Reisegewinne", "url": "https://www.schoener-wohnen.de/gewinnspiele/", "category": "Wohnen", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenlose Teilnahme über Bilderpuzzle und Formular", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite; die genaue Frist steht beim jeweiligen Gewinnspiel.", "providerTrust": 4, "effort": 3, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Wohnen"]}, {"id": "dm-produkttests-2026", "title": "Aktuelle dm-Produkttests", "provider": "dm Produkttester", "prize": "Produkte kostenlos testen und bewerten", "url": "https://www.dm.de/neu/produkttest", "category": "Produkttests", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite mit wechselnden Produkttests.", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Produkttests"]}];
 const $=(s,r=document)=>r.querySelector(s);
@@ -92,10 +92,11 @@ function matches(i,f){
  if(stateFor(i.id).ignored)return false;
  if(f==='all')return true;if(f==='recommended')return recommended(i);if(f==='newVisit')return isNewSinceVisit(i);if(f==='new')return i.new;
  if(f==='top')return i.score>=80;if(f==='secret')return secret(i);if(f==='ending')return daysLeft(i)<=7;
+ if(f==='daily')return i.daily||i.multipleEntry;
  if(f==='international')return i.international;if(f==='regional')return Boolean(i.regional);if(f==='endingSoon')return endingSoon(i);return i.category===f
 }
 function toggleFavorite(id){const s=stateFor(id);s.favorite=!s.favorite;saveUser();renderAll();toast(s.favorite?'Zu Favoriten hinzugefügt':'Aus Favoriten entfernt')}
-function toggleDone(id){const s=stateFor(id);s.done=!s.done;if(s.done)sessionStorage.setItem('winwin-done-session',String(Number(sessionStorage.getItem('winwin-done-session')||0)+1));saveUser();renderAll();toast(s.done?'Als teilgenommen markiert':'Markierung entfernt')}
+function toggleDone(id){const s=stateFor(id);s.done=!s.done;if(s.done){s.doneAt=new Date().toISOString();sessionStorage.setItem('winwin-done-session',String(Number(sessionStorage.getItem('winwin-done-session')||0)+1))}else{s.doneAt=null}saveUser();renderAll();toast(s.done?'Als teilgenommen markiert':'Markierung entfernt')}
 function toggleIgnored(id){
  const s=stateFor(id);s.ignored=!s.ignored;
  if(s.ignored)s.favorite=false;
@@ -157,14 +158,40 @@ function discoverItems(){
  return l
 }
 function renderDiscover(){const l=discoverItems();$('#resultCount').textContent=`${l.length} Ergebnis${l.length===1?'':'se'}`;$('#contestList').innerHTML=l.map(full).join('')||empty('Keine passenden aktiven Gewinnspiele gefunden.')}
+function dayKey(value){
+ const d=value?new Date(value):new Date();
+ if(Number.isNaN(d.getTime()))return '';
+ return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`
+}
+function inLastDays(value,days){
+ if(!value)return false;
+ const d=new Date(value);if(Number.isNaN(d.getTime()))return false;
+ return Date.now()-d.getTime() < days*86400000 && d.getTime()<=Date.now()+60000
+}
 function renderPersonal(){
  const a=scored(),all=scored(true),fav=a.filter(i=>stateFor(i.id).favorite),done=all.filter(i=>stateFor(i.id).done),ignored=all.filter(i=>stateFor(i.id).ignored);
+ const today=dayKey();
+ const doneToday=done.filter(i=>dayKey(stateFor(i.id).doneAt)===today).length;
+ const doneWeek=done.filter(i=>inLastDays(stateFor(i.id).doneAt,7)).length;
+ const ending=a.filter(i=>!stateFor(i.id).done&&daysLeft(i)<=3).length;
+ const daily=a.filter(i=>!stateFor(i.id).done&&(i.daily||i.multipleEntry)).length;
+ const topOpen=a.filter(i=>!stateFor(i.id).done&&i.score>=80).length;
  $('#favoriteList').innerHTML=fav.map(full).join('')||empty('Deine Favoriten erscheinen hier.');
- $('#doneList').innerHTML=done.map(full).join('')||empty('Hier erscheinen deine markierten Teilnahmen.');
- const avg=done.length?Math.round(done.reduce((s,i)=>s+i.score,0)/done.length):0;
- $('#statsHero').innerHTML=`<strong>${done.length}</strong><p>Teilnahmen in deinem Gewinnjahr</p>`;
- const stats=[['♡',fav.length,'Favoriten'],['⭐',avg,'Ø Score'],['⊘',ignored.length,'Nicht interessant'],['↗',Object.values(user.clicks||{}).reduce((a,b)=>a+b,0),'Teilnahme-Links geöffnet'],['🏆',all.filter(i=>stateFor(i.id).won).length,'Gewinne']];
- $('#statsGrid').innerHTML=stats.map(([ic,n,l])=>`<div class="stat-card"><span>${ic}</span><strong>${n}</strong><span>${l}</span></div>`).join('');
+ $('#doneList').innerHTML=done.sort((x,y)=>String(stateFor(y.id).doneAt||'').localeCompare(String(stateFor(x.id).doneAt||''))).map(full).join('')||empty('Hier erscheinen deine markierten Teilnahmen.');
+ const avg=done.length?Math.round(done.reduce((sum,i)=>sum+i.score,0)/done.length):0;
+ $('#statsHero').innerHTML=`<strong>${done.length}</strong><p>Teilnahmen insgesamt · ${doneToday} heute · ${doneWeek} in den letzten 7 Tagen</p>`;
+ const stats=[['☀',doneToday,'Heute erledigt'],['7',doneWeek,'Letzte 7 Tage'],['⭐',topOpen,'Offene Top-Chancen'],['⏳',ending,'Enden in 3 Tagen'],['↻',daily,'Täglich möglich'],['♡',fav.length,'Favoriten'],['⊘',ignored.length,'Nicht interessant'],['Ø',avg,'Ø Teilnahme-Score']];
+ $('#statsGrid').innerHTML=stats.map(([ic,n,l])=>`<button class="stat-card dashboard-stat" data-dashboard="${l}"><span>${ic}</span><strong>${n}</strong><span>${l}</span></button>`).join('');
+ const focus=[];
+ if(ending)focus.push(`<button onclick="openDiscover('endingSoon')"><b>${ending}</b><span>Gewinnspiele enden sehr bald</span><em>Jetzt prüfen →</em></button>`);
+ if(topOpen)focus.push(`<button onclick="openDiscover('top')"><b>${topOpen}</b><span>Top-Chancen sind noch offen</span><em>Priorisieren →</em></button>`);
+ if(daily)focus.push(`<button onclick="openDiscover('daily')"><b>${daily}</b><span>Gewinnspiele erlauben Wiederholung</span><em>Täglich teilnehmen →</em></button>`);
+ $('#dashboardFocus').innerHTML=focus.length?`<p class="section-kicker">JETZT SINNVOLL</p><h2>Dein nächster Schritt</h2><div>${focus.join('')}</div>`:'';
+ const counts={};
+ done.forEach(i=>{const c=i.category||'Sonstiges';counts[c]=(counts[c]||0)+1});
+ const cats=Object.entries(counts).sort((x,y)=>y[1]-x[1]).slice(0,6);
+ const max=cats[0]?.[1]||1;
+ $('#categoryStats').innerHTML=cats.length?cats.map(([name,n])=>`<button onclick="openDiscover('${esc(name)}')"><span><b>${esc(name)}</b><em>${n} Teilnahme${n===1?'':'n'}</em></span><i><u style="width:${Math.round(n/max*100)}%"></u></i></button>`).join(''):empty('Sobald du Teilnahmen markierst, siehst du hier deine aktivsten Kategorien.');
 }
 function renderAll(){renderMetrics();renderHome();renderToday();renderDiscover();renderPersonal()}
 function openView(id){$$('.view').forEach(v=>v.classList.toggle('active',v.id===id));$$('.nav-item').forEach(n=>n.classList.toggle('active',n.dataset.view===id));window.scrollTo({top:0,behavior:'smooth'})}
