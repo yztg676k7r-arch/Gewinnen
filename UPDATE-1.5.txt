@@ -1,0 +1,9 @@
+Win Win 1.5.0
+
+Neu:
+- Status „Nicht interessant“ für jedes Gewinnspiel
+- Markierte Einträge werden aus Startseite, Empfehlungen, Suche und Favoriten ausgeblendet
+- Eigener Filter „Nicht interessant“ zum Wiederherstellen
+- Bestehende Nutzerdaten aus Version 1.4 bleiben kompatibel
+- Statistik zeigt die Zahl ausgeblendeter Gewinnspiele
+- Service-Worker-Cache auf Version 1.5.0 aktualisiert
