@@ -1,5 +1,5 @@
 
-const APP_VERSION='1.3.0';
+const APP_VERSION='1.3.1';
 const STORAGE_KEY='gewinnen-user-v1';
 const FALLBACK=[{"id": "dm-ob-starterset-2026", "title": "100 limitierte o.b. Startersets", "provider": "dm", "prize": "100 × limitiertes o.b. Starterset", "url": "https://www.dm.de/neu/gewinnspiele/ob-3493126", "category": "Beauty", "country": "Deutschland", "deadline": "13.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-adventskalender-2026", "title": "70 Adventskalender gewinnen", "provider": "dm", "prize": "70 Adventskalender verschiedener Marken", "url": "https://www.dm.de/neu/gewinnspiele/adventskalender-gewinnspiel-2948470", "category": "Beauty", "country": "Deutschland", "deadline": "16.08.2026", "winners": 70, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-seeberger-2026", "title": "VAUDE-Rucksack mit Snacks", "provider": "dm / Seeberger", "prize": "5 × VAUDE-Rucksack mit Seeberger-Snacks", "url": "https://www.dm.de/neu/gewinnspiele/seeberger-3487062", "category": "Freizeit", "country": "Deutschland", "deadline": "04.08.2026", "winners": 5, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Freizeit", "schnell"]}, {"id": "dm-borotalco-2026", "title": "Borotalco-Produktpakete", "provider": "dm / Borotalco", "prize": "Borotalco-Produktpakete", "url": "https://www.dm.de/neu/gewinnspiele/borotalco-3487104", "category": "Beauty", "country": "Deutschland", "deadline": "05.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "schnell"]}, {"id": "rossmann-neonail-2026", "title": "100 NEONAIL-Sommerpakete", "provider": "ROSSMANN", "prize": "100 × NEONAIL-Sommerpaket mit Kosmetiktasche", "url": "https://www.rossmann.de/de/service-und-hilfe/rossmann-app", "category": "Beauty", "country": "Deutschland", "deadline": "02.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenlose ROSSMANN-App und Registrierung", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Teilnahme im Aktionsbereich der ROSSMANN-App.", "providerTrust": 5, "effort": 2, "entryType": "app", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner"]}, {"id": "rossmann-centaur-juli-2026", "title": "Centaur-Rätsel Juli", "provider": "ROSSMANN", "prize": "Reise-, Wellness- und Freizeitgewinne", "url": "https://www.rossmann.de/cms/gewinnspiele/centaur-raetsel-202607.html", "category": "Reisen", "country": "Deutschland", "deadline": "09.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "ROSSMANN-App erforderlich", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 3, "entryType": "app", "multipleEntry": false, "highValuePrize": true, "tags": ["Reisen"]}, {"id": "qvc-insider-2026", "title": "10 QVC-INSIDER-Jahresabos", "provider": "QVC", "prize": "10 × Jahresabo des QVC-Kundenmagazins INSIDER", "url": "https://www.qvc.de/content/nichts-verpassen/gewinnspiel/teilnahmebedingungen.html", "category": "Wohnen", "country": "Deutschland & Österreich", "deadline": "10.08.2026", "winners": 10, "new": true, "daily": false, "international": true, "requirements": "Teilnahmebedingungen auf der QVC-Seite beachten", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Wohnen", "international"]}, {"id": "schoener-wohnen-2026", "title": "Aktuelle Monatsgewinnspiele", "provider": "SCHÖNER WOHNEN", "prize": "Design-, Wohn-, Technik- und Reisegewinne", "url": "https://www.schoener-wohnen.de/gewinnspiele/", "category": "Wohnen", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenlose Teilnahme über Bilderpuzzle und Formular", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite; die genaue Frist steht beim jeweiligen Gewinnspiel.", "providerTrust": 4, "effort": 3, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Wohnen"]}, {"id": "dm-produkttests-2026", "title": "Aktuelle dm-Produkttests", "provider": "dm Produkttester", "prize": "Produkte kostenlos testen und bewerten", "url": "https://www.dm.de/neu/produkttest", "category": "Produkttests", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite mit wechselnden Produkttests.", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Produkttests"]}];
 const $=(s,r=document)=>r.querySelector(s);
@@ -117,25 +117,57 @@ function renderPersonal(){
 function renderAll(){renderMetrics();renderHome();renderDiscover();renderPersonal()}
 function openView(id){$$('.view').forEach(v=>v.classList.toggle('active',v.id===id));$$('.nav-item').forEach(n=>n.classList.toggle('active',n.dataset.view===id));window.scrollTo({top:0,behavior:'smooth'})}
 function openDiscover(f){currentFilter=f;$$('.chip').forEach(c=>c.classList.toggle('active',c.dataset.filter===f));openView('discoverView');renderDiscover()}
+function validContest(i){
+ return i && typeof i.id==='string' && typeof i.title==='string' &&
+        typeof i.provider==='string' && typeof i.url==='string' &&
+        typeof i.deadline==='string';
+}
+function updateDiagnostics(dataVersion='–'){
+ const el=$('#dataDiagnostics');
+ if(!el)return;
+ const activeCount=allActive().length;
+ el.textContent=`App ${APP_VERSION} · Daten ${dataVersion} · ${contests.length} geladen · ${activeCount} aktiv`;
+ el.classList.toggle('fallback',usingFallback);
+}
 async function loadData(silent=false){
  usingFallback=true;
  const status=$('#updateStatus'),text=$('#updateText');
- if(!silent){status.classList.remove('error');text.textContent='Gewinnspiele werden geprüft …'}
+ if(!silent){
+   status.classList.remove('error');
+   text.textContent='Gewinnspiele werden geprüft …';
+ }
+ let dataVersion='Notfalldaten';
  try{
-   const r=await fetch(`./data/contests.json?v=${Date.now()}`,{cache:'no-store'});
-   if(r.ok){
-     const p=await r.json();
-     if(Array.isArray(p.contests)&&p.contests.length){
-       contests=p.contests;
-       latestDataUpdate=p.updated||null;
-       usingFallback=false;
-     }
+   // Keine wechselnde Query-Zeichenfolge: ältere Service Worker konnten
+   // JSON-Anfragen mit Cache-Buster fälschlich als HTML beantworten.
+   const r=await fetch('./data/contests.json',{
+     cache:'no-store',
+     headers:{'Accept':'application/json'}
+   });
+   if(!r.ok)throw new Error(`HTTP ${r.status}`);
+   const contentType=r.headers.get('content-type')||'';
+   const raw=await r.text();
+   if(contentType.includes('text/html')||raw.trim().startsWith('<')){
+     throw new Error('Statt JSON wurde HTML geliefert');
    }
- }catch(e){console.warn(e)}
+   const p=JSON.parse(raw);
+   if(!p || !Array.isArray(p.contests))throw new Error('Ungültiges Datenformat');
+   const clean=p.contests.filter(validContest);
+   if(!clean.length)throw new Error('Keine gültigen Gewinnspiele gefunden');
+   contests=clean;
+   latestDataUpdate=p.updated||null;
+   dataVersion=p.version||'unbekannt';
+   usingFallback=false;
+ }catch(e){
+   console.warn('Win Win: Daten konnten nicht geladen werden',e);
+ }
  renderAll();
  status.classList.toggle('error',usingFallback);
- text.textContent=usingFallback?'Offline: gespeicherte Daten werden angezeigt':formatUpdate(latestDataUpdate);
- if(!silent&&usingFallback)toast('Offline-Daten geladen');
+ text.textContent=usingFallback
+   ?'Notfalldaten aktiv – bitte erneut laden'
+   :`${formatUpdate(latestDataUpdate)} · ${contests.length} Einträge geladen`;
+ updateDiagnostics(dataVersion);
+ if(!silent&&usingFallback)toast('Notfalldaten geladen');
 }
 $$('.nav-item').forEach(b=>b.addEventListener('click',()=>openView(b.dataset.view)));
 $$('.chip').forEach(b=>b.addEventListener('click',()=>{currentFilter=b.dataset.filter;$$('.chip').forEach(c=>c.classList.toggle('active',c===b));renderDiscover()}));

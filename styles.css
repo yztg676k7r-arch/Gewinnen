@@ -54,3 +54,7 @@ main{padding:0 16px}.view{display:none;animation:fade .18s ease}.view.active{dis
 .hero-icon{object-fit:cover;background:linear-gradient(135deg,#d7f3ed,#d9edf7)}
 
 .badge.regional{background:#f3ead8;color:#7f5c20}
+
+.data-diagnostics{display:block;margin-top:4px;font-size:12px;font-weight:700;opacity:.72}
+.data-diagnostics.fallback{color:#a33}
+.update-status.error{border-color:#e0a0a0;background:#fff4f4}

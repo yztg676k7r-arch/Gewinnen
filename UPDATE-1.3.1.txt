@@ -1,0 +1,17 @@
+WIN WIN 1.3.1 – CACHE- UND DATENFIX
+
+1. Dieses ZIP entpacken.
+2. Im GitHub-Repository Add file → Upload files wählen.
+3. Alle Dateien sowie den Ordner data hochladen.
+4. Vorhandene Dateien ersetzen und Commit changes bestätigen.
+5. Etwa 2–3 Minuten warten.
+6. Win Win vollständig schließen.
+7. Die GitHub-Pages-Seite einmal direkt in Safari öffnen und neu laden.
+8. Danach Win Win wieder über das Home-Bildschirm-Icon starten.
+
+ERFOLGSKONTROLLE
+Unter dem Datenstand muss stehen:
+App 1.3.1 · Daten 1.3.1 · 21 geladen
+
+Die Zahl „aktiv“ kann kleiner sein, sobald Gewinnspiele abgelaufen sind.
+Steht dort „Notfalldaten“, einmal den runden Aktualisieren-Knopf drücken.

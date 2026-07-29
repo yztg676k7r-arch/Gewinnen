@@ -1,12 +1,12 @@
-# Win Win 1.3
+# Win Win 1.3.1
 
-Neu:
-- 12 neue, am 29.07.2026 geprüfte Gewinnspiele
-- direkte Quellen der Veranstalter in der Datenbank
-- regionale Gewinnspiele mit Ortskennzeichnung
-- neue Filter: Regional, Garten, Technik und Tickets
-- Datenqualitäts-Informationen in contests.json
-- Version 1.3.0
+Fehlerkorrektur für die Gewinnspiel-Datenbank:
 
-Aktuell enthält die Datenbank insgesamt 21 Einträge.
-Abgelaufene Einträge werden von der App automatisch ausgeblendet.
+- behebt die Anzeige der nur neun eingebauten Notfalldatensätze
+- verhindert, dass der Service Worker HTML statt JSON zurückgibt
+- validiert jeden Datensatz einzeln
+- zeigt App-Version, Datenversion sowie geladene und aktive Einträge sichtbar an
+- enthält weiterhin alle 21 Datensätze aus Version 1.3
+
+Erwartete Kontrollanzeige:
+`App 1.3.1 · Daten 1.3.1 · 21 geladen`
