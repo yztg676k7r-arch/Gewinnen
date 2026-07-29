@@ -1,0 +1,13 @@
+WIN WIN 1.4 INSTALLIEREN
+
+1. ZIP entpacken.
+2. Im GitHub-Repository Add file → Upload files öffnen.
+3. Alle Dateien und den Ordner data hochladen.
+4. Vorhandene Dateien ersetzen.
+5. Commit changes bestätigen.
+6. Zwei bis drei Minuten warten.
+7. Win Win vollständig schließen und neu öffnen.
+8. Einmal den runden Aktualisieren-Knopf drücken.
+
+Erfolgskontrolle:
+App 1.4.0 · Daten 1.4.0 · 21 geladen

@@ -1,12 +1,10 @@
-# Win Win 1.3.1
+# Win Win 1.4
 
-Fehlerkorrektur für die Gewinnspiel-Datenbank:
+Neu:
+- verständlicher Datenstand ohne irreführende Uhrzeit
+- Filter „Endet bald“
+- Kennzeichnung bei höchstens drei Tagen Restlaufzeit
+- App- und Datenversion 1.4.0
 
-- behebt die Anzeige der nur neun eingebauten Notfalldatensätze
-- verhindert, dass der Service Worker HTML statt JSON zurückgibt
-- validiert jeden Datensatz einzeln
-- zeigt App-Version, Datenversion sowie geladene und aktive Einträge sichtbar an
-- enthält weiterhin alle 21 Datensätze aus Version 1.3
-
-Erwartete Kontrollanzeige:
-`App 1.3.1 · Daten 1.3.1 · 21 geladen`
+Erwartete Diagnose:
+App 1.4.0 · Daten 1.4.0 · 21 geladen

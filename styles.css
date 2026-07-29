@@ -58,3 +58,7 @@ main{padding:0 16px}.view{display:none;animation:fade .18s ease}.view.active{dis
 .data-diagnostics{display:block;margin-top:4px;font-size:12px;font-weight:700;opacity:.72}
 .data-diagnostics.fallback{color:#a33}
 .update-status.error{border-color:#e0a0a0;background:#fff4f4}
+
+.badge.ending{background:#fff1d6;color:#8a5a00}
+.data-diagnostics{line-height:1.35}
+@media(max-width:520px){.data-diagnostics{font-size:11px}}
