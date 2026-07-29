@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Gewinnen",
   "short_name": "Gewinnen",
-  "description": "Dein persönlicher Gewinnspiel-Assistent",
+  "description": "Dein intelligenter Gewinnspiel-Assistent",
   "lang": "de-DE",
   "start_url": "./",
   "scope": "./",
@@ -11,8 +11,8 @@
     "standalone",
     "minimal-ui"
   ],
-  "background_color": "#f7f2eb",
-  "theme_color": "#f7f2eb",
+  "background_color": "#eef8f6",
+  "theme_color": "#eef8f6",
   "orientation": "portrait-primary",
   "icons": [
     {

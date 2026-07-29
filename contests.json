@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "updated": "2026-07-29T11:30:00+02:00",
   "contests": [
     {
@@ -12,7 +12,6 @@
       "country": "Deutschland",
       "deadline": "13.08.2026",
       "winners": 100,
-      "score": 91,
       "new": true,
       "daily": false,
       "international": false,
@@ -20,7 +19,17 @@
       "purchaseRequired": false,
       "receiptRequired": false,
       "winnerKnown": false,
-      "verified": "29.07.2026"
+      "verified": "29.07.2026",
+      "providerTrust": 5,
+      "effort": 1,
+      "entryType": "form",
+      "multipleEntry": false,
+      "highValuePrize": false,
+      "tags": [
+        "Beauty",
+        "viele Gewinner",
+        "schnell"
+      ]
     },
     {
       "id": "dm-adventskalender-2026",
@@ -32,7 +41,6 @@
       "country": "Deutschland",
       "deadline": "16.08.2026",
       "winners": 70,
-      "score": 88,
       "new": true,
       "daily": false,
       "international": false,
@@ -40,7 +48,17 @@
       "purchaseRequired": false,
       "receiptRequired": false,
       "winnerKnown": false,
-      "verified": "29.07.2026"
+      "verified": "29.07.2026",
+      "providerTrust": 5,
+      "effort": 1,
+      "entryType": "form",
+      "multipleEntry": false,
+      "highValuePrize": false,
+      "tags": [
+        "Beauty",
+        "viele Gewinner",
+        "schnell"
+      ]
     },
     {
       "id": "dm-seeberger-2026",
@@ -52,7 +70,6 @@
       "country": "Deutschland",
       "deadline": "04.08.2026",
       "winners": 5,
-      "score": 70,
       "new": true,
       "daily": false,
       "international": false,
@@ -60,7 +77,16 @@
       "purchaseRequired": false,
       "receiptRequired": false,
       "winnerKnown": false,
-      "verified": "29.07.2026"
+      "verified": "29.07.2026",
+      "providerTrust": 5,
+      "effort": 1,
+      "entryType": "form",
+      "multipleEntry": false,
+      "highValuePrize": true,
+      "tags": [
+        "Freizeit",
+        "schnell"
+      ]
     },
     {
       "id": "dm-borotalco-2026",
@@ -72,7 +98,6 @@
       "country": "Deutschland",
       "deadline": "05.08.2026",
       "winners": null,
-      "score": 66,
       "new": true,
       "daily": false,
       "international": false,
@@ -80,7 +105,16 @@
       "purchaseRequired": false,
       "receiptRequired": false,
       "winnerKnown": false,
-      "verified": "29.07.2026"
+      "verified": "29.07.2026",
+      "providerTrust": 5,
+      "effort": 1,
+      "entryType": "form",
+      "multipleEntry": false,
+      "highValuePrize": false,
+      "tags": [
+        "Beauty",
+        "schnell"
+      ]
     },
     {
       "id": "rossmann-neonail-2026",
@@ -92,7 +126,6 @@
       "country": "Deutschland",
       "deadline": "02.08.2026",
       "winners": 100,
-      "score": 90,
       "new": true,
       "daily": false,
       "international": false,
@@ -101,7 +134,16 @@
       "receiptRequired": false,
       "winnerKnown": false,
       "verified": "29.07.2026",
-      "note": "Teilnahme im Aktionsbereich der ROSSMANN-App."
+      "note": "Teilnahme im Aktionsbereich der ROSSMANN-App.",
+      "providerTrust": 5,
+      "effort": 2,
+      "entryType": "app",
+      "multipleEntry": false,
+      "highValuePrize": false,
+      "tags": [
+        "Beauty",
+        "viele Gewinner"
+      ]
     },
     {
       "id": "rossmann-centaur-juli-2026",
@@ -113,7 +155,6 @@
       "country": "Deutschland",
       "deadline": "09.08.2026",
       "winners": null,
-      "score": 65,
       "new": true,
       "daily": false,
       "international": false,
@@ -121,7 +162,15 @@
       "purchaseRequired": false,
       "receiptRequired": false,
       "winnerKnown": false,
-      "verified": "29.07.2026"
+      "verified": "29.07.2026",
+      "providerTrust": 5,
+      "effort": 3,
+      "entryType": "app",
+      "multipleEntry": false,
+      "highValuePrize": true,
+      "tags": [
+        "Reisen"
+      ]
     },
     {
       "id": "qvc-insider-2026",
@@ -133,7 +182,6 @@
       "country": "Deutschland & Österreich",
       "deadline": "10.08.2026",
       "winners": 10,
-      "score": 75,
       "new": true,
       "daily": false,
       "international": true,
@@ -141,7 +189,16 @@
       "purchaseRequired": false,
       "receiptRequired": false,
       "winnerKnown": false,
-      "verified": "29.07.2026"
+      "verified": "29.07.2026",
+      "providerTrust": 5,
+      "effort": 2,
+      "entryType": "form",
+      "multipleEntry": false,
+      "highValuePrize": false,
+      "tags": [
+        "Wohnen",
+        "international"
+      ]
     },
     {
       "id": "schoener-wohnen-2026",
@@ -153,7 +210,6 @@
       "country": "Deutschland",
       "deadline": "31.08.2026",
       "winners": null,
-      "score": 59,
       "new": true,
       "daily": false,
       "international": false,
@@ -162,7 +218,15 @@
       "receiptRequired": false,
       "winnerKnown": false,
       "verified": "29.07.2026",
-      "note": "Sammelseite; die genaue Frist steht beim jeweiligen Gewinnspiel."
+      "note": "Sammelseite; die genaue Frist steht beim jeweiligen Gewinnspiel.",
+      "providerTrust": 4,
+      "effort": 3,
+      "entryType": "form",
+      "multipleEntry": false,
+      "highValuePrize": true,
+      "tags": [
+        "Wohnen"
+      ]
     },
     {
       "id": "dm-produkttests-2026",
@@ -174,7 +238,6 @@
       "country": "Deutschland",
       "deadline": "31.08.2026",
       "winners": null,
-      "score": 72,
       "new": true,
       "daily": false,
       "international": false,
@@ -183,7 +246,15 @@
       "receiptRequired": false,
       "winnerKnown": false,
       "verified": "29.07.2026",
-      "note": "Sammelseite mit wechselnden Produkttests."
+      "note": "Sammelseite mit wechselnden Produkttests.",
+      "providerTrust": 5,
+      "effort": 2,
+      "entryType": "form",
+      "multipleEntry": false,
+      "highValuePrize": false,
+      "tags": [
+        "Produkttests"
+      ]
     }
   ]
 }

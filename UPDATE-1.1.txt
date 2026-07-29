@@ -1,0 +1,13 @@
+GEWINNEN 1.1 AUF DEM IPHONE INSTALLIEREN
+
+1. ZIP in der Dateien-App entpacken.
+2. GitHub-Repository „gewinnen“ öffnen.
+3. Add file → Upload files.
+4. Alle Dateien und Ordner aus dem Paket auswählen.
+5. Vorhandene Dateien ersetzen.
+6. Commit changes bestätigen.
+7. Etwa 2 Minuten warten.
+8. Gewinnen in Safari öffnen und die Seite neu laden.
+
+Ein Löschen der Home-Bildschirm-App ist für dieses Update normalerweise nicht nötig.
+Falls noch die alte Gestaltung erscheint, Safari komplett schließen und die Seite erneut öffnen.
