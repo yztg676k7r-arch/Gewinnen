@@ -1,0 +1,12 @@
+WIN WIN 2.2
+
+Neu:
+- kombinierbare Zusatzfilter im Bereich Entdecken
+- Filter nach Teilnahmeart, Aufwand, Gewinnerzahl und Teilnahmeschluss
+- Schalter für täglich mögliche Teilnahme, ohne App, ohne Social Media, bekannte Gewinnerzahl und noch nicht teilgenommen
+- Suchbegriffe werden kombiniert ausgewertet
+- aktive Filter werden gezählt und verständlich angezeigt
+- Filtereinstellungen bleiben lokal auf dem jeweiligen Gerät gespeichert
+- mobile Darstellung optimiert
+
+Alle persönlichen Daten bleiben lokal und kompatibel mit Version 2.1.

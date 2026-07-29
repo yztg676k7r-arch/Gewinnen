@@ -1,7 +1,8 @@
 
-const APP_VERSION='2.1.0';
+const APP_VERSION='2.2.1';
 const STORAGE_KEY='gewinnen-user-v1';
 const CUSTOM_DATA_KEY='winwin-custom-contests-v1';
+const FILTER_STORAGE_KEY='winwin-discover-filters-v1';
 const FALLBACK=[{"id": "dm-ob-starterset-2026", "title": "100 limitierte o.b. Startersets", "provider": "dm", "prize": "100 × limitiertes o.b. Starterset", "url": "https://www.dm.de/neu/gewinnspiele/ob-3493126", "category": "Beauty", "country": "Deutschland", "deadline": "13.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-adventskalender-2026", "title": "70 Adventskalender gewinnen", "provider": "dm", "prize": "70 Adventskalender verschiedener Marken", "url": "https://www.dm.de/neu/gewinnspiele/adventskalender-gewinnspiel-2948470", "category": "Beauty", "country": "Deutschland", "deadline": "16.08.2026", "winners": 70, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-seeberger-2026", "title": "VAUDE-Rucksack mit Snacks", "provider": "dm / Seeberger", "prize": "5 × VAUDE-Rucksack mit Seeberger-Snacks", "url": "https://www.dm.de/neu/gewinnspiele/seeberger-3487062", "category": "Freizeit", "country": "Deutschland", "deadline": "04.08.2026", "winners": 5, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Freizeit", "schnell"]}, {"id": "dm-borotalco-2026", "title": "Borotalco-Produktpakete", "provider": "dm / Borotalco", "prize": "Borotalco-Produktpakete", "url": "https://www.dm.de/neu/gewinnspiele/borotalco-3487104", "category": "Beauty", "country": "Deutschland", "deadline": "05.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "schnell"]}, {"id": "rossmann-neonail-2026", "title": "100 NEONAIL-Sommerpakete", "provider": "ROSSMANN", "prize": "100 × NEONAIL-Sommerpaket mit Kosmetiktasche", "url": "https://www.rossmann.de/de/service-und-hilfe/rossmann-app", "category": "Beauty", "country": "Deutschland", "deadline": "02.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenlose ROSSMANN-App und Registrierung", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Teilnahme im Aktionsbereich der ROSSMANN-App.", "providerTrust": 5, "effort": 2, "entryType": "app", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner"]}, {"id": "rossmann-centaur-juli-2026", "title": "Centaur-Rätsel Juli", "provider": "ROSSMANN", "prize": "Reise-, Wellness- und Freizeitgewinne", "url": "https://www.rossmann.de/cms/gewinnspiele/centaur-raetsel-202607.html", "category": "Reisen", "country": "Deutschland", "deadline": "09.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "ROSSMANN-App erforderlich", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 3, "entryType": "app", "multipleEntry": false, "highValuePrize": true, "tags": ["Reisen"]}, {"id": "qvc-insider-2026", "title": "10 QVC-INSIDER-Jahresabos", "provider": "QVC", "prize": "10 × Jahresabo des QVC-Kundenmagazins INSIDER", "url": "https://www.qvc.de/content/nichts-verpassen/gewinnspiel/teilnahmebedingungen.html", "category": "Wohnen", "country": "Deutschland & Österreich", "deadline": "10.08.2026", "winners": 10, "new": true, "daily": false, "international": true, "requirements": "Teilnahmebedingungen auf der QVC-Seite beachten", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Wohnen", "international"]}, {"id": "schoener-wohnen-2026", "title": "Aktuelle Monatsgewinnspiele", "provider": "SCHÖNER WOHNEN", "prize": "Design-, Wohn-, Technik- und Reisegewinne", "url": "https://www.schoener-wohnen.de/gewinnspiele/", "category": "Wohnen", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenlose Teilnahme über Bilderpuzzle und Formular", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite; die genaue Frist steht beim jeweiligen Gewinnspiel.", "providerTrust": 4, "effort": 3, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Wohnen"]}, {"id": "dm-produkttests-2026", "title": "Aktuelle dm-Produkttests", "provider": "dm Produkttester", "prize": "Produkte kostenlos testen und bewerten", "url": "https://www.dm.de/neu/produkttest", "category": "Produkttests", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite mit wechselnden Produkttests.", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Produkttests"]}];
 const $=(s,r=document)=>r.querySelector(s);
 const $$=(s,r=document)=>[...r.querySelectorAll(s)];
@@ -12,6 +13,7 @@ let customContests=safeJSON(localStorage.getItem(CUSTOM_DATA_KEY),[]);
 if(!Array.isArray(customContests))customContests=[];
 let user=safeJSON(localStorage.getItem(STORAGE_KEY),{items:{},lastVisit:null,clicks:{}});
 let currentFilter='all';
+let advancedFilters=safeJSON(localStorage.getItem(FILTER_STORAGE_KEY),{entryType:'',effort:'',winners:'',deadline:'',daily:false,noApp:false,noSocial:false,knownWinners:false,onlyOpen:true});
 const previousVisit=user.lastVisit ? new Date(user.lastVisit) : null;
 let latestDataUpdate=null;
 let usingFallback=false;
@@ -179,14 +181,36 @@ function renderHome(){
  $('#endingCarousel').innerHTML=a.filter(i=>daysLeft(i)<=7).sort((x,y)=>daysLeft(x)-daysLeft(y)).slice(0,6).map(mini).join('')||empty('In den nächsten sieben Tagen endet nichts.');
  $('#heroTitle').textContent=picks.length?`${picks.length} Gewinnspiele lohnen sich heute.`:'Die besten Chancen auf einen Blick.';
 }
+function normalizedSearchText(i){return [i.title,i.provider,i.prize,i.category,i.country,i.region,i.requirements,i.note,...(i.tags||[])].filter(Boolean).join(' ').toLocaleLowerCase('de-DE')}
+function passesAdvancedFilters(i){
+ const f=advancedFilters||{};
+ if(f.entryType&&String(i.entryType||'').toLowerCase()!==f.entryType)return false;
+ if(f.effort&&Number(i.effort||3)>Number(f.effort))return false;
+ if(f.winners&&Number(i.winners||0)<Number(f.winners))return false;
+ if(f.deadline&&daysLeft(i)>Number(f.deadline))return false;
+ if(f.daily&&!(i.daily||i.multipleEntry))return false;
+ if(f.noApp&&String(i.entryType||'').toLowerCase()==='app')return false;
+ if(f.noSocial&&String(i.entryType||'').toLowerCase()==='social')return false;
+ if(f.knownWinners&&!(Number(i.winners)>0))return false;
+ if(f.onlyOpen&&stateFor(i.id).done)return false;
+ return true
+}
 function discoverItems(){
- const q=($('#searchInput')?.value||'').trim().toLowerCase(),sort=$('#sortSelect')?.value||'score';
- let l=(currentFilter==='ignored'?scored(true):scored()).filter(i=>matches(i,currentFilter));
- if(q)l=l.filter(i=>JSON.stringify(i).toLowerCase().includes(q));
+ const q=($('#searchInput')?.value||'').trim().toLocaleLowerCase('de-DE'),sort=$('#sortSelect')?.value||'score';
+ let l=(currentFilter==='ignored'?scored(true):scored()).filter(i=>matches(i,currentFilter)).filter(passesAdvancedFilters);
+ if(q){const terms=q.split(/\s+/).filter(Boolean);l=l.filter(i=>{const hay=normalizedSearchText(i);return terms.every(term=>hay.includes(term))})}
  l.sort((a,b)=>sort==='deadline'?daysLeft(a)-daysLeft(b):sort==='winners'?(b.winners||0)-(a.winners||0):sort==='effort'?(a.effort||3)-(b.effort||3):sort==='provider'?a.provider.localeCompare(b.provider,'de'):b.score-a.score);
  return l
 }
-function renderDiscover(){const l=discoverItems();$('#resultCount').textContent=`${l.length} Ergebnis${l.length===1?'':'se'}`;$('#contestList').innerHTML=l.map(full).join('')||empty('Keine passenden aktiven Gewinnspiele gefunden.')}
+function activeFilterLabels(){const f=advancedFilters||{},labels=[];if(f.entryType)labels.push(`Teilnahme: ${f.entryType}`);if(f.effort)labels.push(`Aufwand ≤ ${f.effort}`);if(f.winners)labels.push(`ab ${f.winners} Gewinnern`);if(f.deadline)labels.push(`Frist ≤ ${f.deadline} Tage`);if(f.daily)labels.push('täglich möglich');if(f.noApp)labels.push('ohne App');if(f.noSocial)labels.push('ohne Social Media');if(f.knownWinners)labels.push('Gewinnerzahl bekannt');if(f.onlyOpen)labels.push('noch nicht teilgenommen');return labels}
+function syncFilterUI(){
+ const map={filterEntryType:'entryType',filterEffort:'effort',filterWinners:'winners',filterDeadline:'deadline',filterDaily:'daily',filterNoApp:'noApp',filterNoSocial:'noSocial',filterKnownWinners:'knownWinners',filterOnlyOpen:'onlyOpen'};
+ Object.entries(map).forEach(([id,key])=>{const el=$('#'+id);if(!el)return;el.type==='checkbox'?el.checked=Boolean(advancedFilters[key]):el.value=advancedFilters[key]||''});
+ const labels=activeFilterLabels(),count=labels.length;const badge=$('#activeFilterCount');if(badge){badge.textContent=String(count);badge.dataset.zero=String(count===0)}
+ const summary=$('#activeFilterSummary');if(summary)summary.textContent=count?`Aktiv: ${labels.join(' · ')}`:'Keine Zusatzfilter aktiv.';
+}
+function saveAdvancedFilters(){localStorage.setItem(FILTER_STORAGE_KEY,JSON.stringify(advancedFilters));syncFilterUI();renderDiscover()}
+function renderDiscover(){const l=discoverItems();const extra=activeFilterLabels().length;$('#resultCount').textContent=`${l.length} Ergebnis${l.length===1?'':'se'}${extra?` · ${extra} Filter`:''}`;$('#contestList').innerHTML=l.map(full).join('')||empty('Keine passenden aktiven Gewinnspiele gefunden. Passe Suche oder Filter an.')}
 function dayKey(value){
  const d=value?new Date(value):new Date();
  if(Number.isNaN(d.getTime()))return '';
@@ -409,6 +433,11 @@ $$('.nav-item').forEach(b=>b.addEventListener('click',()=>openView(b.dataset.vie
 $$('.chip').forEach(b=>b.addEventListener('click',()=>{currentFilter=b.dataset.filter;$$('.chip').forEach(c=>c.classList.toggle('active',c===b));renderDiscover()}));
 $$('[data-show]').forEach(b=>b.addEventListener('click',()=>openDiscover(b.dataset.show)));
 $('#searchInput').addEventListener('input',renderDiscover);$('#sortSelect').addEventListener('change',renderDiscover);
+$('#filterToggle').addEventListener('click',()=>{const panel=$('#advancedFilters');panel.hidden=!panel.hidden;$('#filterToggle').classList.toggle('active',!panel.hidden)});
+const filterBindings={filterEntryType:'entryType',filterEffort:'effort',filterWinners:'winners',filterDeadline:'deadline',filterDaily:'daily',filterNoApp:'noApp',filterNoSocial:'noSocial',filterKnownWinners:'knownWinners',filterOnlyOpen:'onlyOpen'};
+Object.entries(filterBindings).forEach(([id,key])=>$('#'+id)?.addEventListener('change',e=>{advancedFilters[key]=e.target.type==='checkbox'?e.target.checked:e.target.value;saveAdvancedFilters()}));
+$('#resetFilters').addEventListener('click',()=>{advancedFilters={entryType:'',effort:'',winners:'',deadline:'',daily:false,noApp:false,noSocial:false,knownWinners:false,onlyOpen:false};saveAdvancedFilters();toast('Zusatzfilter zurückgesetzt')});
+syncFilterUI();
 $('#refreshBtn').addEventListener('click',async()=>{await loadData();toast('Daten neu geladen')});
 document.addEventListener('click',e=>{const m=e.target.closest('[data-metric]');if(!m)return;m.dataset.metric==='statsView'?openView('statsView'):openDiscover(m.dataset.metric)});
 $('#saveWinBtn').onclick=saveWin;$('#removeWinBtn').onclick=removeWin;$('#cancelWinBtn').onclick=()=>$('#winDialog').close();

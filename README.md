@@ -1,3 +1,9 @@
+## Korrektur 2.2.1
+
+- sichtbare Versionsangaben korrigiert
+- Gewinnarchiv aus 2.1 und Filter aus 2.2 gemeinsam enthalten
+- Cache-Version erhöht
+
 # Win Win 1.7
 
 Persönlicher Gewinnspiel-Assistent mit Gewinnchance-Score, Tagesprioritäten, Favoriten, Teilnahmen und dem Status „Nicht interessant“.
