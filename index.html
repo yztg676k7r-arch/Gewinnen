@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#18324A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Gewinnen">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="styles.css">
+<title>Gewinnen</title>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <img src="icons/icon-180.png" alt="">
+    <div><h1>Gewinnen</h1><p>Nur kostenlos · keine Kaufpflicht</p></div>
+  </div>
+  <div class="searchrow">
+    <input id="search" placeholder="Gewinn, Anbieter oder Kategorie">
+    <select id="sort">
+      <option value="chance">Beste Chance</option>
+      <option value="deadline">Endet zuerst</option>
+      <option value="new">Neu zuerst</option>
+      <option value="provider">Anbieter A–Z</option>
+    </select>
+  </div>
+  <div class="tabs">
+    <button class="tab active" data-filter="all">Alle</button>
+    <button class="tab" data-filter="new">Neu</button>
+    <button class="tab" data-filter="daily">Täglich</button>
+    <button class="tab" data-filter="regional">Regional</button>
+    <button class="tab" data-filter="fav">Favoriten</button>
+    <button class="tab" data-filter="open">Offen</button>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <h2>Deine besten Chancen heute</h2>
+    <p>Die Daten werden beim Öffnen aktualisiert. Kaufpflichtige, abgelaufene Gewinnspiele und Aktionen mit feststehenden Gewinnern werden automatisch ausgeblendet.</p>
+    <div class="small">Letztes Datenupdate: <span id="updated">–</span></div><button id="archiveToggle" class="archive-toggle">Archiv anzeigen</button>
+  </section>
+  <div class="notice"><b>Hinweis:</b> Teilnahmebedingungen können sich ändern. Vor dem Absenden kurz prüfen, ob wirklich keine Kauf- oder Kostenpflicht besteht.</div>
+  <div class="stats" id="stats"></div>
+  <div id="cards"></div>
+</main>
+<nav>
+  <button onclick="document.querySelector('[data-filter=all]').click()">🏠<br>Start</button>
+  <button onclick="document.querySelector('[data-filter=daily]').click()">🔁<br>Täglich</button>
+  <button onclick="document.querySelector('[data-filter=fav]').click()">⭐<br>Favoriten</button>
+  <button id="refresh">↻<br>Aktualisieren</button>
+</nav>
+<script src="app.js"></script>
+</body>
+</html>

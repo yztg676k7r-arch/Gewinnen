@@ -1,0 +1,43 @@
+{
+  "updated": "2026-07-29T07:30:00+02:00",
+  "contests": [
+    {
+      "id": "welcome-demo-1",
+      "title": "Beispiel: Regionales Reisegewinnspiel",
+      "provider": "Beispielanbieter",
+      "prize": "Kurzurlaub für 2 Personen",
+      "url": "https://example.com",
+      "category": "Reisen",
+      "region": "Niedersachsen",
+      "deadline": "",
+      "frequency": "Einmalig",
+      "winners": "5",
+      "chance": 5,
+      "new": true,
+      "verified": "29.07.2026",
+      "purchaseRequired": false,
+      "note": "Beispieldatensatz – wird durch echte Einträge ersetzt.",
+      "winnerKnown": false,
+      "status": "Aktiv"
+    },
+    {
+      "id": "welcome-demo-2",
+      "title": "Beispiel: Tägliche Verlosung",
+      "provider": "Beispielanbieter",
+      "prize": "Gutschein",
+      "url": "https://example.com",
+      "category": "Gutscheine",
+      "region": "Deutschland",
+      "deadline": "",
+      "frequency": "Täglich",
+      "winners": "10",
+      "chance": 4,
+      "new": true,
+      "verified": "29.07.2026",
+      "purchaseRequired": false,
+      "note": "Beispieldatensatz – tägliche Teilnahme möglich.",
+      "winnerKnown": false,
+      "status": "Aktiv"
+    }
+  ]
+}
