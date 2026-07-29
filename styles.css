@@ -67,6 +67,6 @@ main{padding:0 16px}.view{display:none;animation:fade .18s ease}.view.active{dis
 .card-actions{flex-wrap:wrap}
 .card-actions .ignore-button{flex-basis:100%;background:#f4eeee;color:#7e4b4b}
 .card-actions .ignore-button.active{background:#e5f1ee;color:var(--green-dark)}
-.ignore-mini{color:#7e4b4b;font-size:20px;line-height:1}
+.ignore-mini{flex-basis:100%;color:#7e4b4b;font-size:13px;line-height:1.2;background:#f4eeee;font-weight:750}
 .ignored-card{opacity:.82;border-style:dashed}
 .ignored-note{margin:8px 0;padding:9px 11px;border-radius:13px;background:#f4eeee;color:#7e4b4b;font-size:12px;font-weight:750}

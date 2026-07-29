@@ -1,0 +1,6 @@
+WIN WIN 1.5.1
+
+Korrektur:
+- Auf der Startseite wird „Nicht interessant“ jetzt als klar beschrifteter Button angezeigt.
+- Cache-Version erhöht, damit installierte Web-Apps die Änderung zuverlässig laden.
+- In der Entdecken-Ansicht bleibt der Button ebenfalls sichtbar.
