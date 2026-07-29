@@ -8,20 +8,20 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Gewinnen">
+  <meta name="apple-mobile-web-app-title" content="Win Win">
   <link rel="apple-touch-icon" href="./apple-touch-icon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="stylesheet" href="./styles.css">
-  <title>Gewinnen</title>
+  <title>Win Win</title>
 </head>
 <body>
   <div class="app-shell">
     <header class="topbar">
       <div>
         <p class="kicker">DEIN GEWINNSPIEL-ASSISTENT</p>
-        <h1>Gewinnen</h1>
+        <h1>Win Win</h1>
       </div>
       <button id="refreshBtn" class="round-button" aria-label="Daten neu laden">↻</button>
     </header>
@@ -34,10 +34,22 @@
             <h2 id="heroTitle">Die besten Chancen auf einen Blick.</h2>
             <p class="welcome-copy" id="heroCopy">Automatisch bewertet und nach Nutzen sortiert.</p>
           </div>
-          <img src="./icons/icon-192.png" alt="" class="hero-icon">
+          <img src="./apple-touch-icon.png" alt="Win Win App-Icon" class="hero-icon">
         </section>
 
+        <section class="update-status" id="updateStatus">
+          <span class="status-dot"></span>
+          <span id="updateText">Gewinnspiele werden geprüft …</span>
+        </section>
         <section class="metric-grid" id="metrics"></section>
+
+        <section class="section" id="newSection">
+          <div class="section-head">
+            <div><p class="section-kicker">SEIT DEINEM LETZTEN BESUCH</p><h2>Neu für dich</h2></div>
+            <button class="text-button" data-show="newVisit">Alle</button>
+          </div>
+          <div id="newCarousel" class="card-row"></div>
+        </section>
 
         <section class="section">
           <div class="section-head">
@@ -78,7 +90,7 @@
         <div class="chip-row" id="chips">
           <button class="chip active" data-filter="all">Alle</button>
           <button class="chip" data-filter="recommended">Empfohlen</button>
-          <button class="chip" data-filter="new">Neu</button>
+          <button class="chip" data-filter="newVisit">Neu seit Besuch</button><button class="chip" data-filter="new">Als neu markiert</button>
           <button class="chip" data-filter="top">Top-Chancen</button>
           <button class="chip" data-filter="secret">Geheimtipps</button>
           <button class="chip" data-filter="ending">Endet bald</button>

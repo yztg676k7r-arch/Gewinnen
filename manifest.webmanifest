@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "Gewinnen",
-  "short_name": "Gewinnen",
-  "description": "Dein intelligenter Gewinnspiel-Assistent",
+  "name": "Win Win",
+  "short_name": "Win Win",
+  "description": "Dein persönlicher Gewinnspiel-Assistent",
   "lang": "de-DE",
   "start_url": "./",
   "scope": "./",

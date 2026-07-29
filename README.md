@@ -1,15 +1,14 @@
-# Gewinnen 1.1 – Smart
+# Win Win 1.2
 
 Neu:
-- automatisch berechneter Gewinn-Score
-- „Warum empfohlen?“
-- Bereich „Heute lohnt sich“
-- Top-Chancen und Geheimtipps
-- Aufwandsskala
-- persönliche Statistik „Mein Gewinnjahr“
-- Sortieren nach Score, Gewinnerzahl und Aufwand
-- blau-grüne Farbwelt
-- neues App-Icon integriert
+- vollständige Umbenennung in Win Win
+- Startseiten-Icon repariert
+- neue Rubrik „Neu für dich“
+- Erkennung neuer Gewinnspiele seit dem letzten Besuch
+- Datenprüfung bei jedem Start
+- erneute Prüfung alle 30 Minuten, solange die App geöffnet ist
+- sichtbarer Datenstand
+- abgelaufene Gewinnspiele werden weiterhin automatisch ausgeblendet
+- für spätere Aktualisierungen reicht grundsätzlich die Datei `data/contests.json`
 
-## Upload
-Alle Dateien und Ordner dieses Pakets in das bestehende GitHub-Repository hochladen und vorhandene Dateien ersetzen. Danach „Commit changes“ bestätigen.
+GitHub Pages kann selbst keine fremden Webseiten durchsuchen. Die App lädt aber automatisch die neueste im Repository vorhandene `contests.json`.

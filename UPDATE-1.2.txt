@@ -1,0 +1,14 @@
+WIN WIN 1.2 INSTALLIEREN
+
+Kleines Update:
+1. ZIP entpacken.
+2. Im GitHub-Repository Add file → Upload files wählen.
+3. Alle Dateien und den Ordner data hochladen.
+4. Vorhandene Dateien ersetzen.
+5. Commit changes bestätigen.
+6. Zwei Minuten warten.
+7. Win Win in Safari vollständig schließen und erneut öffnen.
+
+Falls die alte Version hartnäckig angezeigt wird:
+Safari öffnen → Seite aufrufen → Aktualisieren-Symbol länger gedrückt halten oder die Seite zweimal neu laden.
+Die App auf dem Home-Bildschirm muss normalerweise nicht gelöscht werden.

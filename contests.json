@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "updated": "2026-07-29T11:30:00+02:00",
   "contests": [
     {
@@ -29,7 +29,8 @@
         "Beauty",
         "viele Gewinner",
         "schnell"
-      ]
+      ],
+      "addedAt": "29.07.2026"
     },
     {
       "id": "dm-adventskalender-2026",
@@ -58,7 +59,8 @@
         "Beauty",
         "viele Gewinner",
         "schnell"
-      ]
+      ],
+      "addedAt": "29.07.2026"
     },
     {
       "id": "dm-seeberger-2026",
@@ -86,7 +88,8 @@
       "tags": [
         "Freizeit",
         "schnell"
-      ]
+      ],
+      "addedAt": "29.07.2026"
     },
     {
       "id": "dm-borotalco-2026",
@@ -114,7 +117,8 @@
       "tags": [
         "Beauty",
         "schnell"
-      ]
+      ],
+      "addedAt": "29.07.2026"
     },
     {
       "id": "rossmann-neonail-2026",
@@ -143,7 +147,8 @@
       "tags": [
         "Beauty",
         "viele Gewinner"
-      ]
+      ],
+      "addedAt": "29.07.2026"
     },
     {
       "id": "rossmann-centaur-juli-2026",
@@ -170,7 +175,8 @@
       "highValuePrize": true,
       "tags": [
         "Reisen"
-      ]
+      ],
+      "addedAt": "29.07.2026"
     },
     {
       "id": "qvc-insider-2026",
@@ -198,7 +204,8 @@
       "tags": [
         "Wohnen",
         "international"
-      ]
+      ],
+      "addedAt": "29.07.2026"
     },
     {
       "id": "schoener-wohnen-2026",
@@ -226,7 +233,8 @@
       "highValuePrize": true,
       "tags": [
         "Wohnen"
-      ]
+      ],
+      "addedAt": "29.07.2026"
     },
     {
       "id": "dm-produkttests-2026",
@@ -254,7 +262,9 @@
       "highValuePrize": false,
       "tags": [
         "Produkttests"
-      ]
+      ],
+      "addedAt": "29.07.2026"
     }
-  ]
+  ],
+  "appName": "Win Win"
 }
