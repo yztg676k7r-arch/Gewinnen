@@ -1,0 +1,16 @@
+GEWINNEN 1.0 – UPDATE AUF DEM IPHONE
+
+1. ZIP-Datei in der Dateien-App antippen und entpacken.
+2. Das GitHub-Repository „gewinnen“ in Safari öffnen.
+3. Add file → Upload files.
+4. ALLE Dateien und Ordner aus dem entpackten Paket auswählen.
+5. Commit changes bestätigen.
+6. Etwa zwei Minuten warten.
+7. Die bisherige Gewinnen-App vom Home-Bildschirm entfernen.
+8. Die GitHub-Pages-Adresse in Safari öffnen und neu laden.
+9. Teilen → Zum Home-Bildschirm → Hinzufügen.
+
+WICHTIG:
+Die Datei apple-touch-icon.png muss direkt neben index.html liegen.
+Die Datendatei ist jetzt befüllt. Zusätzlich sind dieselben Daten als sichere
+Fallback-Liste in app.js enthalten, damit nie wieder eine komplett leere App erscheint.
