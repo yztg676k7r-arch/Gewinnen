@@ -1,0 +1,17 @@
+GEWINNEN – ICON-UPDATE AUF GITHUB
+
+1. ZIP-Datei in der Dateien-App entpacken.
+2. Im GitHub-Repository die Datei apple-touch-icon.png ersetzen.
+3. Im Ordner icons diese Dateien ersetzen:
+   - icon-180.png
+   - icon-192.png
+   - icon-512.png
+4. Optional favicon-32.png im Hauptordner ersetzen.
+5. Commit changes bestätigen.
+6. Etwa zwei Minuten warten.
+7. Die alte Gewinnen-Verknüpfung vom iPhone-Home-Bildschirm löschen.
+8. Die App-Seite in Safari neu laden.
+9. Teilen → Zum Home-Bildschirm → Hinzufügen.
+
+WICHTIG:
+apple-touch-icon.png muss direkt im Hauptordner neben index.html liegen.
