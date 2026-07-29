@@ -1,0 +1,10 @@
+WIN WIN 2.0
+
+NEU
+- Navigation bleibt auf dem iPhone in einer Zeile.
+- Datenbereich zeigt alle enthaltenen Anbieter.
+- Datenqualität wird mit fünf Prüfkriterien ausgewertet.
+- Import, Favoriten, Teilnahmen und Nicht-interessant-Status bleiben kompatibel.
+
+NACH DEM HOCHLADEN
+App vollständig schließen und erneut öffnen. Bei alter Anzeige Safari-Websitedaten aktualisieren oder die installierte Web-App neu öffnen.

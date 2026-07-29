@@ -9,5 +9,12 @@ Persönlicher Gewinnspiel-Assistent mit Gewinnchance-Score, Tagesprioritäten, F
 - kompatibel mit den lokal gespeicherten Daten aus 1.4 und 1.5
 
 
-## Version 1.8
+## Version 2.0
 Neue Datenzentrale für geprüfte JSON-Importe, Dublettenprüfung, lokale Ergänzungen und Katalogexport.
+
+
+## Version 2.0
+- Mobile Navigation mit sechs Bereichen in einer Zeile
+- Quellenübersicht mit Anbieteranzahl und aktiven Einträgen
+- Datenqualitätsprüfung für Links, Gewinnerzahl, Vertrauen, Aufwand und Verifizierung
+- Kompatibel mit bestehenden Favoriten, Teilnahmen und lokalen Importen
