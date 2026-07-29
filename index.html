@@ -3,55 +3,55 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#18324A">
+<meta name="theme-color" content="#17324D">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Gewinnen">
-<link rel="apple-touch-icon" href="icons/icon-180.png">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="stylesheet" href="styles.css">
+<meta name="format-detection" content="telephone=no">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png?v=3">
+<link rel="icon" href="icons/icon-192.png?v=3">
+<link rel="manifest" href="manifest.webmanifest?v=3">
+<link rel="stylesheet" href="styles.css?v=3">
 <title>Gewinnen</title>
 </head>
 <body>
-<header>
-  <div class="brand">
-    <img src="icons/icon-180.png" alt="">
-    <div><h1>Gewinnen</h1><p>Nur kostenlos · keine Kaufpflicht</p></div>
-  </div>
-  <div class="searchrow">
-    <input id="search" placeholder="Gewinn, Anbieter oder Kategorie">
-    <select id="sort">
+<header class="topbar">
+  <div class="brand"><img src="icons/icon-180.png?v=3" alt=""><div><h1>Gewinnen</h1><p>Kostenlos · geprüft · ohne Kaufpflicht</p></div></div>
+  <button id="refresh" class="iconButton" aria-label="Aktualisieren">↻</button>
+</header>
+<main>
+  <section class="hero">
+    <p class="eyebrow">DEINE AUSWAHL</p>
+    <h2>Gute Chancen für heute</h2>
+    <p>Nur aktive Aktionen. Abgelaufene Einträge verschwinden automatisch.</p>
+    <div id="stats" class="stats"></div>
+  </section>
+  <section class="controls">
+    <input id="search" type="search" placeholder="Gewinnspiel suchen …" autocomplete="off">
+    <select id="sort" aria-label="Sortierung">
       <option value="chance">Beste Chance</option>
       <option value="deadline">Endet zuerst</option>
       <option value="new">Neu zuerst</option>
       <option value="provider">Anbieter A–Z</option>
     </select>
-  </div>
-  <div class="tabs">
+  </section>
+  <div class="tabs" role="tablist">
     <button class="tab active" data-filter="all">Alle</button>
     <button class="tab" data-filter="new">Neu</button>
-    <button class="tab" data-filter="daily">Täglich</button>
-    <button class="tab" data-filter="regional">Regional</button>
+    <button class="tab" data-filter="beauty">Beauty</button>
+    <button class="tab" data-filter="home">Wohnen</button>
+    <button class="tab" data-filter="international">International</button>
     <button class="tab" data-filter="fav">Favoriten</button>
-    <button class="tab" data-filter="open">Offen</button>
   </div>
-</header>
-<main>
-  <section class="hero">
-    <h2>Deine besten Chancen heute</h2>
-    <p>Die Daten werden beim Öffnen aktualisiert. Kaufpflichtige, abgelaufene Gewinnspiele und Aktionen mit feststehenden Gewinnern werden automatisch ausgeblendet.</p>
-    <div class="small">Letztes Datenupdate: <span id="updated">–</span></div><button id="archiveToggle" class="archive-toggle">Archiv anzeigen</button>
-  </section>
-  <div class="notice"><b>Hinweis:</b> Teilnahmebedingungen können sich ändern. Vor dem Absenden kurz prüfen, ob wirklich keine Kauf- oder Kostenpflicht besteht.</div>
-  <div class="stats" id="stats"></div>
-  <div id="cards"></div>
+  <div id="status" class="status">Daten werden geladen …</div>
+  <section id="cards" class="cards"></section>
+  <details class="archiveBox"><summary>Archiv und Hinweise</summary><p id="archiveInfo"></p><p>Vor der Teilnahme bitte die Bedingungen auf der Veranstalterseite kurz gegenprüfen.</p></details>
 </main>
-<nav>
-  <button onclick="document.querySelector('[data-filter=all]').click()">🏠<br>Start</button>
-  <button onclick="document.querySelector('[data-filter=daily]').click()">🔁<br>Täglich</button>
-  <button onclick="document.querySelector('[data-filter=fav]').click()">⭐<br>Favoriten</button>
-  <button id="refresh">↻<br>Aktualisieren</button>
+<nav class="bottomnav">
+  <button data-go="all">⌂<span>Start</span></button>
+  <button data-go="new">✦<span>Neu</span></button>
+  <button data-go="fav">★<span>Favoriten</span></button>
 </nav>
-<script src="app.js"></script>
+<script src="app.js?v=3"></script>
 </body>
 </html>
