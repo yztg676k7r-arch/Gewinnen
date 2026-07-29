@@ -1,0 +1,9 @@
+WIN WIN 2.1
+
+Neu:
+- Gewinnstatus direkt auf jeder Gewinnspielkarte
+- Persönliches Gewinnarchiv im Dashboard
+- Erfassung von Gewinn, Wert, Datum, Lieferstatus und Notiz
+- Anzahl und Gesamtwert der erfassten Gewinne
+- Alle Daten bleiben lokal pro Gerät (Variante A, ohne Profile)
+- Cache und App-Version auf 2.1.0 aktualisiert

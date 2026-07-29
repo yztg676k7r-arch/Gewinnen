@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Win Win",
   "short_name": "Win Win",
-  "description": "Win Win 2.0 – Gewinnspiel-Import, Dublettenprüfung und Quellenverwaltung",
+  "description": "Win Win 2.1 – persönliches Gewinnarchiv und lokale Erfolgsstatistik",
   "lang": "de-DE",
   "start_url": "./",
   "scope": "./",
