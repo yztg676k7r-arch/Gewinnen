@@ -46,3 +46,7 @@ Der Katalog enthält 28 Gewinnspiele und 183 Quellen. Neue Einträge wurden am 3
 
 ## Version 3.9
 Die Datenzentrale enthält eine lokale Prüf-Warteschlange. Fällige Quellen werden nach Priorität sortiert, direkt geöffnet und als Treffer oder leere Prüfung dokumentiert.
+
+
+## Version 4.1
+Die Treffer-Inbox sammelt mehrere gefundene Direktlinks, erkennt bekannte Quellen und übergibt einzelne Treffer an den Katalog-Manager. Alle Daten bleiben lokal.

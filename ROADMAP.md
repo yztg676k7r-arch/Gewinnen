@@ -54,3 +54,13 @@ Ein kostenloser, persönlicher Gewinnspiel-Assistent, der lokal arbeitet und tä
 ## Nächster Schritt – Version 3.9
 - weitere Katalogpakete mit Fokus auf viele Gewinner und regionale Chancen
 - vereinfachte Übernahme gefundener Gewinnspiele in den lokalen Katalog
+
+
+## Version 4.1 – umgesetzt
+- Treffer-Inbox für gefundene Direktlinks
+- automatische Quellenzuordnung und URL-Dublettenprüfung
+- strukturierte Übernahme in den lokalen Katalog
+
+## Nächster Schritt – Version 4.2
+- Katalogausbau mit zusätzlichen verifizierten Gewinnspielen
+- bessere Fristen- und Qualitätsprüfung beim Erfassen

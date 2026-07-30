@@ -165,3 +165,10 @@
 - Erster aktiver Katalogausbau mit 7 neu geprüften Gewinnspielen.
 - Katalog auf 28 Einträge erweitert.
 - Einheitliche Versionspflege in allen App- und Datendateien.
+
+
+## 4.1
+- Lokale Treffer-Inbox für mehrere gefundene Direktlinks
+- Quellen- und Kategorieerkennung sowie URL-Dublettenprüfung
+- Übernahme einzelner Inbox-Treffer in den Katalog-Manager
+- Inbox in persönlicher Komplettsicherung enthalten

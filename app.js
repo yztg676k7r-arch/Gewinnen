@@ -1,5 +1,5 @@
 
-const APP_VERSION='4.0';
+const APP_VERSION='4.1';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;
@@ -16,6 +16,7 @@ const FULL_BACKUP_VERSION=1;
 const SOURCE_DATA_KEY='winwin-custom-sources-v1';
 const SOURCE_BACKUP_KEY='winwin-sources-backup-v1';
 const SOURCE_QUEUE_KEY='winwin-source-queue-v1';
+const HIT_INBOX_KEY='winwin-hit-inbox-v1';
 let baseSources=[];
 let sources=[];
 let sourceDataVersion='–';
@@ -23,12 +24,15 @@ let sourceFilters={search:'',country:'',type:'',automation:'',review:'',sort:'pr
 let sourceRenderLimit=30;
 let pendingSourceImport=null;
 let sourceQueue=null;
+let hitInbox=[];
 
 const FALLBACK=[{"id": "dm-ob-starterset-2026", "title": "100 limitierte o.b. Startersets", "provider": "dm", "prize": "100 × limitiertes o.b. Starterset", "url": "https://www.dm.de/neu/gewinnspiele/ob-3493126", "category": "Beauty", "country": "Deutschland", "deadline": "13.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-adventskalender-2026", "title": "70 Adventskalender gewinnen", "provider": "dm", "prize": "70 Adventskalender verschiedener Marken", "url": "https://www.dm.de/neu/gewinnspiele/adventskalender-gewinnspiel-2948470", "category": "Beauty", "country": "Deutschland", "deadline": "16.08.2026", "winners": 70, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-seeberger-2026", "title": "VAUDE-Rucksack mit Snacks", "provider": "dm / Seeberger", "prize": "5 × VAUDE-Rucksack mit Seeberger-Snacks", "url": "https://www.dm.de/neu/gewinnspiele/seeberger-3487062", "category": "Freizeit", "country": "Deutschland", "deadline": "04.08.2026", "winners": 5, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Freizeit", "schnell"]}, {"id": "dm-borotalco-2026", "title": "Borotalco-Produktpakete", "provider": "dm / Borotalco", "prize": "Borotalco-Produktpakete", "url": "https://www.dm.de/neu/gewinnspiele/borotalco-3487104", "category": "Beauty", "country": "Deutschland", "deadline": "05.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "schnell"]}, {"id": "rossmann-neonail-2026", "title": "100 NEONAIL-Sommerpakete", "provider": "ROSSMANN", "prize": "100 × NEONAIL-Sommerpaket mit Kosmetiktasche", "url": "https://www.rossmann.de/de/service-und-hilfe/rossmann-app", "category": "Beauty", "country": "Deutschland", "deadline": "02.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenlose ROSSMANN-App und Registrierung", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Teilnahme im Aktionsbereich der ROSSMANN-App.", "providerTrust": 5, "effort": 2, "entryType": "app", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner"]}, {"id": "rossmann-centaur-juli-2026", "title": "Centaur-Rätsel Juli", "provider": "ROSSMANN", "prize": "Reise-, Wellness- und Freizeitgewinne", "url": "https://www.rossmann.de/cms/gewinnspiele/centaur-raetsel-202607.html", "category": "Reisen", "country": "Deutschland", "deadline": "09.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "ROSSMANN-App erforderlich", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 3, "entryType": "app", "multipleEntry": false, "highValuePrize": true, "tags": ["Reisen"]}, {"id": "qvc-insider-2026", "title": "10 QVC-INSIDER-Jahresabos", "provider": "QVC", "prize": "10 × Jahresabo des QVC-Kundenmagazins INSIDER", "url": "https://www.qvc.de/content/nichts-verpassen/gewinnspiel/teilnahmebedingungen.html", "category": "Wohnen", "country": "Deutschland & Österreich", "deadline": "10.08.2026", "winners": 10, "new": true, "daily": false, "international": true, "requirements": "Teilnahmebedingungen auf der QVC-Seite beachten", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Wohnen", "international"]}, {"id": "schoener-wohnen-2026", "title": "Aktuelle Monatsgewinnspiele", "provider": "SCHÖNER WOHNEN", "prize": "Design-, Wohn-, Technik- und Reisegewinne", "url": "https://www.schoener-wohnen.de/gewinnspiele/", "category": "Wohnen", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenlose Teilnahme über Bilderpuzzle und Formular", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite; die genaue Frist steht beim jeweiligen Gewinnspiel.", "providerTrust": 4, "effort": 3, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Wohnen"]}, {"id": "dm-produkttests-2026", "title": "Aktuelle dm-Produkttests", "provider": "dm Produkttester", "prize": "Produkte kostenlos testen und bewerten", "url": "https://www.dm.de/neu/produkttest", "category": "Produkttests", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite mit wechselnden Produkttests.", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Produkttests"]}];
 const $=(s,r=document)=>r.querySelector(s);
 const $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const safeJSON=(v,f)=>{try{return v?JSON.parse(v):f}catch{return f}};
 sourceQueue=safeJSON(localStorage.getItem(SOURCE_QUEUE_KEY),null);
+hitInbox=safeJSON(localStorage.getItem(HIT_INBOX_KEY),[]);
+if(!Array.isArray(hitInbox))hitInbox=[];
 let contests=[...FALLBACK];
 let baseContests=[...FALLBACK];
 let customContests=safeJSON(localStorage.getItem(CUSTOM_DATA_KEY),[]);
@@ -645,6 +649,7 @@ function buildFullBackup(){
      dashboardShowAll:Boolean(dashboardShowAll),
      dailyPlan:JSON.parse(JSON.stringify(dailyPlan)),
      customContests:JSON.parse(JSON.stringify(customContests)),
+     hitInbox:JSON.parse(JSON.stringify(hitInbox)),
      catalogBackup:safeJSON(localStorage.getItem(IMPORT_BACKUP_KEY),null),
      importHistory:JSON.parse(JSON.stringify(importHistory))
    },
@@ -654,7 +659,8 @@ function buildFullBackup(){
      ignored:Object.values(user.items||{}).filter(x=>x&&x.ignored).length,
      favorites:Object.values(user.items||{}).filter(x=>x&&x.favorite).length,
      wins:Object.values(user.items||{}).filter(x=>x&&x.won).length,
-     customContests:customContests.length
+     customContests:customContests.length,
+     hitInbox:hitInbox.length
    }
  }
 }
@@ -684,6 +690,7 @@ function applyFullBackup(payload){
  dashboardShowAll=Boolean(d.dashboardShowAll);
  dailyPlan=d.dailyPlan&&typeof d.dailyPlan==='object'?JSON.parse(JSON.stringify(d.dailyPlan)):dailyPlan;
  customContests=Array.isArray(d.customContests)?JSON.parse(JSON.stringify(d.customContests)):[];
+ hitInbox=Array.isArray(d.hitInbox)?JSON.parse(JSON.stringify(d.hitInbox)):[];
  importHistory=Array.isArray(d.importHistory)?JSON.parse(JSON.stringify(d.importHistory)):[];
  localStorage.setItem(STORAGE_KEY,JSON.stringify(user));
  localStorage.setItem(STORAGE_BACKUP_KEY,JSON.stringify(user));
@@ -692,6 +699,7 @@ function applyFullBackup(payload){
  localStorage.setItem(DASHBOARD_SHOW_ALL_KEY,String(dashboardShowAll));
  localStorage.setItem(DAILY_PLAN_KEY,JSON.stringify(dailyPlan));
  if(customContests.length)localStorage.setItem(CUSTOM_DATA_KEY,JSON.stringify(customContests));else localStorage.removeItem(CUSTOM_DATA_KEY);
+ if(hitInbox.length)localStorage.setItem(HIT_INBOX_KEY,JSON.stringify(hitInbox));else localStorage.removeItem(HIT_INBOX_KEY);
  if(d.catalogBackup)localStorage.setItem(IMPORT_BACKUP_KEY,JSON.stringify(d.catalogBackup));else localStorage.removeItem(IMPORT_BACKUP_KEY);
  localStorage.setItem(IMPORT_HISTORY_KEY,JSON.stringify(importHistory));
  const toggle=$('#dashboardShowAll');if(toggle)toggle.checked=dashboardShowAll;
@@ -714,9 +722,11 @@ function applyFullBackupWithoutPrompt(payload){
  dashboardShowAll=Boolean(d.dashboardShowAll);
  dailyPlan=d.dailyPlan&&typeof d.dailyPlan==='object'?JSON.parse(JSON.stringify(d.dailyPlan)):dailyPlan;
  customContests=Array.isArray(d.customContests)?JSON.parse(JSON.stringify(d.customContests)):[];
+ hitInbox=Array.isArray(d.hitInbox)?JSON.parse(JSON.stringify(d.hitInbox)):[];
  importHistory=Array.isArray(d.importHistory)?JSON.parse(JSON.stringify(d.importHistory)):[];
  localStorage.setItem(STORAGE_KEY,JSON.stringify(user));localStorage.setItem(STORAGE_BACKUP_KEY,JSON.stringify(user));localStorage.setItem(PREFERENCE_KEY,JSON.stringify(preferences));localStorage.setItem(FILTER_STORAGE_KEY,JSON.stringify(advancedFilters));localStorage.setItem(DASHBOARD_SHOW_ALL_KEY,String(dashboardShowAll));localStorage.setItem(DAILY_PLAN_KEY,JSON.stringify(dailyPlan));
  if(customContests.length)localStorage.setItem(CUSTOM_DATA_KEY,JSON.stringify(customContests));else localStorage.removeItem(CUSTOM_DATA_KEY);
+ if(hitInbox.length)localStorage.setItem(HIT_INBOX_KEY,JSON.stringify(hitInbox));else localStorage.removeItem(HIT_INBOX_KEY);
  if(d.catalogBackup)localStorage.setItem(IMPORT_BACKUP_KEY,JSON.stringify(d.catalogBackup));else localStorage.removeItem(IMPORT_BACKUP_KEY);
  localStorage.setItem(IMPORT_HISTORY_KEY,JSON.stringify(importHistory));
  const toggle=$('#dashboardShowAll');if(toggle)toggle.checked=dashboardShowAll;syncFilterUI();applyCustomData();renderImportHistory();renderBackupSummary()
@@ -725,7 +735,7 @@ function renderBackupSummary(){
  const box=$('#personalBackupSummary');if(!box)return;
  const states=Object.values(user.items||{});
  const hasRollback=Boolean(localStorage.getItem(FULL_BACKUP_ROLLBACK_KEY));
- box.innerHTML=`<div class="backup-summary-grid"><div><strong>${states.filter(x=>x&&x.done).length}</strong><span>Teilnahmen</span></div><div><strong>${states.filter(x=>x&&x.ignored).length}</strong><span>nicht interessant</span></div><div><strong>${states.filter(x=>x&&x.favorite).length}</strong><span>Favoriten</span></div><div><strong>${states.filter(x=>x&&x.won).length}</strong><span>Gewinne</span></div></div><p>${customContests.length} lokal ergänzte Gewinnspiele werden ebenfalls gesichert.</p>${hasRollback?'<p class="backup-rollback-note">Eine Sicherung des Stands vor der letzten Wiederherstellung ist verfügbar.</p>':''}`;
+ box.innerHTML=`<div class="backup-summary-grid"><div><strong>${states.filter(x=>x&&x.done).length}</strong><span>Teilnahmen</span></div><div><strong>${states.filter(x=>x&&x.ignored).length}</strong><span>nicht interessant</span></div><div><strong>${states.filter(x=>x&&x.favorite).length}</strong><span>Favoriten</span></div><div><strong>${states.filter(x=>x&&x.won).length}</strong><span>Gewinne</span></div></div><p>${customContests.length} lokal ergänzte Gewinnspiele und ${hitInbox.length} Inbox-Treffer werden ebenfalls gesichert.</p>${hasRollback?'<p class="backup-rollback-note">Eine Sicherung des Stands vor der letzten Wiederherstellung ist verfügbar.</p>':''}`;
  const undo=$('#undoBackupImportBtn');if(undo)undo.disabled=!hasRollback
 }
 function setupPersonalBackup(){
@@ -973,13 +983,44 @@ function previewContestDuplicates(){
  const box=$('#contestDuplicateWarning');if(!box)return;const c={url:$('#contestUrl')?.value,title:$('#contestTitle')?.value,provider:$('#contestProvider')?.value};const matches=contestDuplicates(c);
  box.hidden=!matches.length;box.innerHTML=matches.length?`<strong>⚠ Mögliche Dublette${matches.length>1?'n':''}</strong><p>${matches.map(i=>`${esc(i.provider)}: ${esc(i.title)}`).join('<br>')}</p>`:'';
 }
-function openContestDialog(){
- const form=$('#contestForm');form?.reset();if($('#contestCategory'))$('#contestCategory').value='Sonstiges';if($('#contestEffort'))$('#contestEffort').value='2';if($('#contestDeadline'))$('#contestDeadline').min=new Date().toISOString().slice(0,10);if($('#contestDuplicateWarning'))$('#contestDuplicateWarning').hidden=true;refreshContestSourceSuggestions();$('#contestDialog')?.showModal();
+function openContestDialog(prefill={}){
+ const form=$('#contestForm');form?.reset();if($('#contestCategory'))$('#contestCategory').value='Sonstiges';if($('#contestEffort'))$('#contestEffort').value='2';if($('#contestDeadline'))$('#contestDeadline').min=new Date().toISOString().slice(0,10);if($('#contestDuplicateWarning'))$('#contestDuplicateWarning').hidden=true;refreshContestSourceSuggestions();
+ if(prefill.url&&$('#contestUrl'))$('#contestUrl').value=prefill.url;
+ if(prefill.provider&&$('#contestProvider'))$('#contestProvider').value=prefill.provider;
+ if(prefill.category&&$('#contestCategory'))$('#contestCategory').value=prefill.category;
+ if(prefill.inboxId&&$('#contestInboxId'))$('#contestInboxId').value=prefill.inboxId;
+ updateContestUrlSuggestion();previewContestDuplicates();$('#contestDialog')?.showModal();
 }
+function normalizeInboxUrl(value){
+ const raw=String(value||'').trim();if(!raw)return '';
+ const withProtocol=/^https?:\/\//i.test(raw)?raw:`https://${raw}`;
+ try{const u=new URL(withProtocol);if(!/^https?:$/.test(u.protocol))return '';u.hash='';return u.toString().replace(/\/$/,'')}catch{return ''}
+}
+function inboxHost(value){try{return new URL(value).hostname.replace(/^www\./,'')}catch{return 'Unbekannte Domain'}}
+function saveHitInbox(){localStorage.setItem(HIT_INBOX_KEY,JSON.stringify(hitInbox));renderHitInbox()}
+function addHitInboxUrls(text){
+ const values=String(text||'').split(/[\s,;]+/).map(normalizeInboxUrl).filter(Boolean);if(!values.length)return toast('Keine gültigen Links erkannt');
+ const existing=new Set(hitInbox.map(x=>normalizeWebUrl(x.url)));const catalog=new Set(contests.map(x=>normalizeWebUrl(x.url)));let added=0,duplicates=0;
+ values.forEach(url=>{const key=normalizeWebUrl(url);if(existing.has(key)||catalog.has(key)){duplicates++;return}const source=sourceFromUrl(url);hitInbox.unshift({id:`hit-${Date.now().toString(36)}-${Math.random().toString(36).slice(2,7)}`,url,addedAt:new Date().toISOString(),sourceId:source?.id||null});existing.add(key);added++});
+ saveHitInbox();const input=$('#hitInboxInput');if(input)input.value='';toast(`${added} Treffer übernommen${duplicates?` · ${duplicates} Dublette${duplicates===1?'':'n'} übersprungen`:''}`)
+}
+function removeHitInboxItem(id,quiet=false){hitInbox=hitInbox.filter(x=>x.id!==id);saveHitInbox();if(!quiet)toast('Treffer aus der Inbox entfernt')}
+function captureHitInboxItem(id){const item=hitInbox.find(x=>x.id===id);if(!item)return;const source=sourceById(item.sourceId)||sourceFromUrl(item.url);openContestDialog({url:item.url,provider:source?.name||'',category:suggestedCategory(source),inboxId:item.id})}
+function renderHitInbox(){
+ const box=$('#hitInboxList'),badge=$('#hitInboxBadge');if(badge)badge.textContent=`${hitInbox.length} offen`;if(!box)return;
+ box.innerHTML=hitInbox.length?hitInbox.map(item=>{const source=sourceById(item.sourceId)||sourceFromUrl(item.url);const duplicate=contests.some(c=>normalizeWebUrl(c.url)===normalizeWebUrl(item.url));return `<article class="hit-inbox-item ${duplicate?'is-duplicate':''}"><div><strong>${esc(source?.name||inboxHost(item.url))}</strong><span>${esc(item.url)}</span></div><div class="hit-inbox-meta"><span>${source?esc(suggestedCategory(source)):'Quelle nicht erkannt'}</span>${duplicate?'<span class="duplicate-chip">bereits im Katalog</span>':''}</div><div class="hit-inbox-actions"><a href="${esc(item.url)}" target="_blank" rel="noopener">Öffnen ↗</a><button data-hit-capture="${esc(item.id)}" ${duplicate?'disabled':''}>Erfassen</button><button data-hit-remove="${esc(item.id)}">Entfernen</button></div></article>`}).join(''):empty('Noch keine Treffer vorgemerkt. Füge gefundene Direktlinks oben ein.');
+}
+function setupHitInbox(){
+ $('#addHitInboxBtn')?.addEventListener('click',()=>addHitInboxUrls($('#hitInboxInput')?.value));
+ $('#hitInboxInput')?.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='Enter')addHitInboxUrls(e.currentTarget.value)});
+ $('#clearHitInboxBtn')?.addEventListener('click',()=>{if(!hitInbox.length)return toast('Die Inbox ist bereits leer');if(confirm('Alle offenen Inbox-Treffer entfernen?')){hitInbox=[];saveHitInbox();toast('Treffer-Inbox geleert')}});
+ $('#hitInboxList')?.addEventListener('click',e=>{const capture=e.target.closest('[data-hit-capture]'),remove=e.target.closest('[data-hit-remove]');if(capture)captureHitInboxItem(capture.dataset.hitCapture);else if(remove)removeHitInboxItem(remove.dataset.hitRemove)});renderHitInbox();
+}
+
 function setupContestManager(){
- $('#addContestBtn')?.addEventListener('click',openContestDialog);$('#closeContestDialog')?.addEventListener('click',()=>$('#contestDialog')?.close());$('#cancelContestDialog')?.addEventListener('click',()=>$('#contestDialog')?.close());
+ $('#addContestBtn')?.addEventListener('click',()=>openContestDialog());$('#closeContestDialog')?.addEventListener('click',()=>$('#contestDialog')?.close());$('#cancelContestDialog')?.addEventListener('click',()=>$('#contestDialog')?.close());
  $('#contestUrl')?.addEventListener('blur',()=>{updateContestUrlSuggestion();previewContestDuplicates()});$('#contestTitle')?.addEventListener('input',previewContestDuplicates);$('#contestProvider')?.addEventListener('input',previewContestDuplicates);
- $('#contestForm')?.addEventListener('submit',e=>{e.preventDefault();const candidate=readContestForm();const dupes=contestDuplicates(candidate);if(dupes.length&&!confirm(`Es gibt ${dupes.length} mögliche Dublette${dupes.length===1?'':'n'}. Trotzdem speichern?`))return;customContests.push(candidate);localStorage.setItem(CUSTOM_DATA_KEY,JSON.stringify(customContests));applyCustomData();$('#contestDialog')?.close();toast('Gewinnspiel gespeichert');const note=$('#contestCaptureNote');if(note)note.textContent=`„${candidate.title}“ wurde lokal ergänzt.`;});
+ $('#contestForm')?.addEventListener('submit',e=>{e.preventDefault();const candidate=readContestForm();const dupes=contestDuplicates(candidate);if(dupes.length&&!confirm(`Es gibt ${dupes.length} mögliche Dublette${dupes.length===1?'':'n'}. Trotzdem speichern?`))return;const inboxId=$('#contestInboxId')?.value||'';customContests.push(candidate);localStorage.setItem(CUSTOM_DATA_KEY,JSON.stringify(customContests));if(inboxId)removeHitInboxItem(inboxId,true);applyCustomData();$('#contestDialog')?.close();toast('Gewinnspiel gespeichert');const note=$('#contestCaptureNote');if(note)note.textContent=`„${candidate.title}“ wurde lokal ergänzt.`;});
 }
 function renderContestManagerBadge(){const badge=$('#localContestBadge');if(badge)badge.textContent=`${customContests.length} lokal`}
 
@@ -1039,7 +1080,7 @@ function renderSourceQueue(){
 function setupSourceQueue(){
  $('#rebuildSourceQueueBtn')?.addEventListener('click',()=>rebuildSourceQueue());
  $('#openQueueSourceBtn')?.addEventListener('click',()=>{const s=currentQueueSource();const url=s&&sourceHomepage(s);if(url)window.open(url,'_blank','noopener')});
- $('#queueFoundBtn')?.addEventListener('click',()=>finishQueueSource('found'));
+ $('#queueFoundBtn')?.addEventListener('click',()=>{const s=currentQueueSource();if(!s)return toast('Die Warteschlange ist leer');openContestDialog({provider:s.name,category:suggestedCategory(s)})});
  $('#queueEmptyBtn')?.addEventListener('click',()=>finishQueueSource('empty'));
  $('#queueSkipBtn')?.addEventListener('click',skipQueueSource);
  renderSourceQueue();
@@ -1117,6 +1158,7 @@ if($('#saveWinBtn'))$('#saveWinBtn').onclick=saveWin;if($('#removeWinBtn'))$('#r
 setupDataCenter();
 setupSourceManager();
 setupContestManager();
+setupHitInbox();
 setupSourceQueue();
 if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
 Promise.allSettled([loadSources(),loadData()]).finally(()=>{

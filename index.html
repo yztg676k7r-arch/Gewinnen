@@ -13,8 +13,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=4.0">
-  <title>Win Win 4.0</title>
+  <link rel="stylesheet" href="./styles.css?v=4.1">
+  <title>Win Win 4.1</title>
 </head>
 <body>
   <div class="app-shell">
@@ -40,7 +40,7 @@
         <section class="update-status" id="updateStatus">
           <span class="status-dot"></span>
           <span id="updateText">Gewinnspiele werden geprüft …</span>
-          <small id="dataDiagnostics" class="data-diagnostics">App 4.0 · Daten werden geladen</small>
+          <small id="dataDiagnostics" class="data-diagnostics">App 4.1 · Daten werden geladen</small>
         </section>
         <section class="metric-grid" id="metrics"></section>
 
@@ -159,10 +159,18 @@
       <section id="dataView" class="view">
         <div class="view-title"><p class="section-kicker">DATENZENTRALE</p><h2>Import & Quellen</h2></div>
         <section class="data-hero">
-          <div><p class="section-kicker">WIN WIN 4.0</p><h3>Dashboard-Stabilität 4.0</h3><p>Stabiles Dashboard, reparierte Statusaktionen und transparente Katalog-Gesundheit. Persönliche Status bleiben unberührt.</p></div>
+          <div><p class="section-kicker">WIN WIN 4.1</p><h3>Treffer-Inbox 4.1</h3><p>Mehrere gefundene Links sammeln, automatisch Quellen zuordnen und anschließend strukturiert in den Katalog übernehmen.</p></div>
         </section>
         <section id="importSummary" class="import-summary"></section>
         <section id="importPreview" class="data-panel import-preview" hidden></section>
+        <section class="data-panel hit-inbox-panel">
+          <div class="section-head compact"><div><p class="section-kicker">TREFFER-INBOX</p><h3>Gefundene Links sammeln</h3></div><span id="hitInboxBadge" class="source-count"></span></div>
+          <p>Füge mehrere Direktlinks gleichzeitig ein. Die App erkennt bekannte Quellen, überspringt URL-Dubletten und hält die Treffer bis zur vollständigen Erfassung bereit.</p>
+          <textarea id="hitInboxInput" rows="4" spellcheck="false" placeholder="https://…&#10;https://…"></textarea>
+          <div class="data-actions"><button id="addHitInboxBtn" class="data-primary">Links übernehmen</button><button id="clearHitInboxBtn">Inbox leeren</button></div>
+          <div id="hitInboxList" class="hit-inbox-list"></div>
+          <p class="data-safety-note">Die Treffer-Inbox wird lokal gespeichert und ist Teil deiner persönlichen Komplettsicherung.</p>
+        </section>
         <section class="data-panel quick-contest-panel">
           <div class="section-head compact"><div><p class="section-kicker">KATALOG-MANAGER</p><h3>Gewinnspiel schnell erfassen</h3></div><span id="localContestBadge" class="source-count"></span></div>
           <p>Neue Aktion in wenigen Schritten eintragen. Quelle und Kategorie werden aus der URL vorgeschlagen; mögliche Dubletten werden vor dem Speichern angezeigt.</p>
@@ -306,7 +314,8 @@
     </dialog>
     <dialog id="contestDialog" class="source-dialog contest-dialog">
       <form id="contestForm" method="dialog">
-        <div class="source-dialog-head"><div><p class="section-kicker">KATALOG-MANAGER 4.0</p><h3>Neues Gewinnspiel</h3></div><button type="button" id="closeContestDialog" class="round-button">×</button></div>
+        <input id="contestInboxId" type="hidden">
+        <div class="source-dialog-head"><div><p class="section-kicker">KATALOG-MANAGER 4.1</p><h3>Neues Gewinnspiel</h3></div><button type="button" id="closeContestDialog" class="round-button">×</button></div>
         <div class="source-form-grid">
           <label class="source-form-wide"><span>Direktlink *</span><input id="contestUrl" required inputmode="url" placeholder="https://…"></label>
           <label class="source-form-wide"><span>Titel *</span><input id="contestTitle" required placeholder="Was kann man gewinnen?"></label>
@@ -354,6 +363,6 @@
       </form>
     </dialog>
 
-  <script src="./app.js?v=4.0"></script>
+  <script src="./app.js?v=4.1"></script>
 </body>
 </html>

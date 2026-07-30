@@ -1,0 +1,16 @@
+Win Win 4.1 – Treffer-Inbox
+
+Neu:
+- Mehrere gefundene Direktlinks gleichzeitig sammeln
+- Automatische Quellen- und Kategorieerkennung
+- URL-Dubletten gegen Inbox und Katalog
+- Einzelne Treffer öffnen, erfassen oder entfernen
+- Inbox wird lokal gespeichert und in der Komplettsicherung berücksichtigt
+- Treffer aus der Quellen-Warteschlange öffnen direkt die Erfassungsmaske
+
+Unverändert geschützt:
+- Teilgenommen
+- Nicht interessant
+- Favoriten
+- Gewinne
+- alle bisherigen lokalen Ergänzungen
