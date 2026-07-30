@@ -1,5 +1,5 @@
 
-const APP_VERSION='3.6.1';
+const APP_VERSION='3.6.2';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;
@@ -788,8 +788,32 @@ function renderSourceManager(){
 function renderSourceCoverage(){const box=$('#sourceCoverage');if(!box)return;const categoryCounts={};sources.filter(s=>s.active&&s.germanyEligibility!=='no').forEach(s=>(s.categories||[]).forEach(c=>categoryCounts[c]=(categoryCounts[c]||0)+1));const wanted=['Beauty','Mode','Wohnen','Technik','Reisen','Freizeit','Food','Auto','Regional'];box.innerHTML=wanted.map(c=>`<div class="coverage-item ${(categoryCounts[c]||0)<3?'gap':''}"><span>${esc(c)}</span><strong>${categoryCounts[c]||0}</strong><small>${(categoryCounts[c]||0)<3?'Ausbauen':'gut abgedeckt'}</small></div>`).join('')}
 function recordSourceResult(id,found){const s=sourceById(id);if(!s)return;const today=new Date().toISOString().slice(0,10);persistSource({...s,lastChecked:today,successfulChecks:s.successfulChecks+(found?1:0),emptyChecks:s.emptyChecks+(found?0:1),lastResultCount:found?Math.max(1,s.lastResultCount):0},s.id);toast(found?`${s.name}: Treffer erfasst`:`${s.name}: leere Prüfung erfasst`)}
 async function loadSources(){
- try{const r=await fetch('./data/sources.json',{cache:'no-store',headers:{'Accept':'application/json'}});if(!r.ok)throw new Error(`HTTP ${r.status}`);const raw=await r.text();if(raw.trim().startsWith('<'))throw new Error('HTML statt JSON');const p=JSON.parse(raw);if(!p||!Array.isArray(p.sources))throw new Error('Ungültiges Quellenformat');baseSources=p.sources.map(normalizeSource).filter(Boolean);sourceDataVersion=p.version||'unbekannt'}catch(e){console.warn('Win Win: Quellen konnten nicht geladen werden',e);baseSources=[];sourceDataVersion='lokal'}
- mergeSources();renderSourceFilters();renderSourceManager();
+ const badge=$('#sourceCountBadge'),note=$('#sourceDataNote'),box=$('#sourceOverview');
+ if(badge)badge.textContent='Quellen werden geladen …';
+ if(note)note.textContent='Quellen-Datenbank wird unabhängig von den Gewinnspielen geladen.';
+ try{
+  const r=await fetch('./data/sources.json',{cache:'no-store',headers:{'Accept':'application/json'}});
+  if(!r.ok)throw new Error(`HTTP ${r.status}`);
+  const raw=await r.text();
+  if(raw.trim().startsWith('<'))throw new Error('HTML statt JSON');
+  const p=JSON.parse(raw);
+  if(!p||!Array.isArray(p.sources))throw new Error('Ungültiges Quellenformat');
+  baseSources=p.sources.map(normalizeSource).filter(Boolean);
+  sourceDataVersion=p.version||'unbekannt';
+ }catch(e){
+  console.warn('Win Win: Quellen konnten nicht geladen werden',e);
+  baseSources=[];sourceDataVersion='lokal';
+  if(box)box.innerHTML=`<div class="source-render-error"><strong>Quellen-Datei konnte nicht geladen werden.</strong><p>${esc(e?.message||'Unbekannter Fehler')}</p><button type="button" id="retrySourcesBtn">Erneut versuchen</button></div>`;
+  $('#retrySourcesBtn')?.addEventListener('click',loadSources);
+ }
+ try{
+  mergeSources();renderSourceFilters();renderSourceManager();
+ }catch(e){
+  console.error('Win Win: Quelleninitialisierung fehlgeschlagen',e);
+  if(box)box.innerHTML=`<div class="source-render-error"><strong>Quellen konnten nicht initialisiert werden.</strong><p>${esc(e?.message||'Unbekannter Fehler')}</p><button type="button" id="retrySourcesBtn">Erneut versuchen</button></div>`;
+  $('#retrySourcesBtn')?.addEventListener('click',loadSources);
+  if(badge)badge.textContent=`${baseSources.length} Basisquellen gefunden`;
+ }
 }
 function validateSourceImport(payload){
  const list=Array.isArray(payload)?payload:Array.isArray(payload?.sources)?payload.sources:null;if(!list)throw new Error('Keine Quellenliste gefunden');
@@ -899,8 +923,7 @@ async function loadData(silent=false){
    const merged=mergeCatalog(baseContests,customContests);contests=merged.contests;
    dataVersionGlobal=dataVersion;
  }
- migrateContestStates();
- await loadSources();
+ try{migrateContestStates()}catch(e){console.warn('Win Win: Statusmigration fehlgeschlagen',e)}
  initializePreferences();
  renderAll();
  renderDataCenter();
@@ -923,13 +946,13 @@ syncFilterUI();
 const dashboardToggle=$('#dashboardShowAll');if(dashboardToggle){dashboardToggle.checked=dashboardShowAll;dashboardToggle.addEventListener('change',e=>{dashboardShowAll=e.target.checked;localStorage.setItem(DASHBOARD_SHOW_ALL_KEY,String(dashboardShowAll));renderPersonal()})}
 $('#dailyTarget')?.addEventListener('change',e=>{dailyPlan.target=Number(e.target.value)||10;saveDailyPlan()});
 $('#dailyMode')?.addEventListener('change',e=>{dailyPlan.mode=e.target.value||'balanced';saveDailyPlan()});
-$('#refreshBtn')?.addEventListener('click',async()=>{await loadData();toast('Daten neu geladen')});
+$('#refreshBtn')?.addEventListener('click',async()=>{await Promise.allSettled([loadData(),loadSources()]);toast('Daten neu geladen')});
 document.addEventListener('click',e=>{const m=e.target.closest('[data-metric]');if(!m)return;m.dataset.metric==='statsView'?openView('statsView'):openDiscover(m.dataset.metric)});
 if($('#saveWinBtn'))$('#saveWinBtn').onclick=saveWin;if($('#removeWinBtn'))$('#removeWinBtn').onclick=removeWin;if($('#cancelWinBtn'))$('#cancelWinBtn').onclick=()=>$('#winDialog')?.close();
 setupDataCenter();
 setupSourceManager();
 if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
-loadData().finally(()=>{
+Promise.allSettled([loadSources(),loadData()]).finally(()=>{
  setTimeout(()=>{user.lastVisit=new Date().toISOString();saveUser()},1200)
 });
 setInterval(()=>loadData(true),30*60*1000);

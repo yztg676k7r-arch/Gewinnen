@@ -260,4 +260,4 @@ main{padding:0 16px}.view{display:none;animation:fade .18s ease}.view.active{dis
 /* 3.6.1: mobile-sichere Quellenanzeige */
 .source-load-more{width:100%;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:14px;padding:13px;font:inherit;font-weight:800;grid-column:1/-1}
 .source-render-error{grid-column:1/-1;border:1px solid rgba(216,91,91,.35);background:rgba(216,91,91,.08);border-radius:16px;padding:16px}.source-render-error p{color:var(--muted)}.source-render-error button{border:0;border-radius:12px;padding:10px 13px;background:var(--blue-dark);color:#fff;font-weight:800}
-@media(max-width:760px){.source-catalog{max-height:none;overflow:visible}.source-card{content-visibility:auto;contain-intrinsic-size:300px}}
+@media(max-width:760px){.source-catalog{max-height:none;overflow:visible}.source-card{content-visibility:visible}}

@@ -1,4 +1,4 @@
-## 3.6.1
+## 3.6.2
 - Quellenanzeige auf iPhone/Safari stabilisiert und paginiert.
 - Versionsnummer und Cache vereinheitlicht.
 - Defensive Fehlerbehandlung für Quellenkarten ergänzt.

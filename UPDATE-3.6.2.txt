@@ -1,0 +1,8 @@
+WIN WIN 3.6.2 – QUELLEN-LADEFEHLER BEHOBEN
+
+- Quellen werden unabhängig von Gewinnspiel- und Statusdaten geladen.
+- Fehler in lokalen Gewinnspieldaten können die Quellenliste nicht mehr blockieren.
+- iPhone-Safari-Optimierung content-visibility für Quellenkarten entfernt.
+- Sichtbare Lade- und Fehlermeldungen ergänzt.
+- Aktualisieren lädt Gewinnspiele und Quellen getrennt neu.
+- Persönliche Status und lokale Quellen bleiben unverändert.
