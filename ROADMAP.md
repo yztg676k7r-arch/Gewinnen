@@ -41,3 +41,12 @@ Ein kostenloser, persönlicher Gewinnspiel-Assistent, der lokal arbeitet und tä
 - größere kuratierte Quellenbasis
 - Importbericht mit Dubletten- und Domain-Prüfung
 - Vorbereitung kostenloser GitHub-Actions-Aktualisierungen
+
+
+## Version 3.7 – umgesetzt
+- erster geprüfter Ausbau der aktiven Gewinnspiel-Datenbank
+- direkte Originalquellen und dokumentierter Datenstand
+
+## Nächster Schritt – Version 3.8
+- weitere Katalogpakete mit Fokus auf viele Gewinner und regionale Chancen
+- einfache Import-Warteschlange für regelmäßig geprüfte Quellen

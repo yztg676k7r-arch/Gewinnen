@@ -1,0 +1,12 @@
+# Win Win 3.7 – erster aktiver Katalogausbau
+
+## Neu
+- 7 aktuell geprüfte Gewinnspiele ergänzt
+- insgesamt 28 Katalogeinträge
+- neue Aktionen von BRIGITTE, ROSSMANN, Henkel und dm
+- direkte Verknüpfung mit vorhandenen Quellen
+- Datenstand und Prüftag im Katalog dokumentiert
+- Versionsnummer in App, Startseite, Manifest, Service Worker und Daten einheitlich auf 3.7 gesetzt
+
+## Datenschutz und Statusschutz
+Die vorhandenen LocalStorage-Schlüssel wurden nicht verändert. Teilgenommen, Nicht interessant, Favoriten, Gewinne, Notizen und lokale Importe bleiben erhalten.

@@ -1,6 +1,6 @@
-const CACHE='win-win-3.6.4';
+const CACHE='win-win-3.7';
 const CORE=[
- './','./index.html','./styles.css?v=3.6.4','./app.js?v=3.6.4','./manifest.webmanifest',
+ './','./index.html','./styles.css?v=3.7','./app.js?v=3.7','./manifest.webmanifest',
  './apple-touch-icon.png','./icons/icon-180.png','./icons/icon-192.png','./icons/icon-512.png'
 ];
 const OPTIONAL_DATA=['./data/contests.json','./contests.json','./data/sources.json','./sources.json'];

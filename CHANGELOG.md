@@ -131,3 +131,9 @@
 - Lernen kann pausiert oder zurückgesetzt werden
 - Reset betrifft ausschließlich die Gewichtung; alle persönlichen Status bleiben erhalten
 - unveränderte Speicherbereiche für Teilnahmen, Favoriten, Gewinne und Katalogdaten
+
+
+## 3.7 – 30.07.2026
+- Erster aktiver Katalogausbau mit 7 neu geprüften Gewinnspielen.
+- Katalog auf 28 Einträge erweitert.
+- Einheitliche Versionspflege in allen App- und Datendateien.

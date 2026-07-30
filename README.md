@@ -38,3 +38,7 @@ Die Heute-Ansicht bietet eine persönliche Tagesroutine mit Ziel, Sortiermodus u
 
 ## Version 3.2
 Das Quellen-Cockpit zeigt fällige Prüfungen und erlaubt das lokale Hinzufügen, Bearbeiten, Pausieren und Abhaken von Quellen. Persönliche Gewinnspielstatus bleiben getrennt.
+
+
+## Version 3.7
+Der Katalog enthält 28 Gewinnspiele und 183 Quellen. Neue Einträge wurden am 30.07.2026 anhand offizieller Veranstalterseiten geprüft.
