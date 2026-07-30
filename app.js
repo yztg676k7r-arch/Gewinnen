@@ -1,9 +1,11 @@
 
-const APP_VERSION='2.5.1';
+const APP_VERSION='2.6';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;
 const CUSTOM_DATA_KEY='winwin-custom-contests-v1';
+const IMPORT_BACKUP_KEY='winwin-catalog-backup-v1';
+const IMPORT_HISTORY_KEY='winwin-import-history-v1';
 const FILTER_STORAGE_KEY='winwin-discover-filters-v1';
 const DASHBOARD_SHOW_ALL_KEY='winwin-dashboard-show-all-v1';
 const FALLBACK=[{"id": "dm-ob-starterset-2026", "title": "100 limitierte o.b. Startersets", "provider": "dm", "prize": "100 × limitiertes o.b. Starterset", "url": "https://www.dm.de/neu/gewinnspiele/ob-3493126", "category": "Beauty", "country": "Deutschland", "deadline": "13.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-adventskalender-2026", "title": "70 Adventskalender gewinnen", "provider": "dm", "prize": "70 Adventskalender verschiedener Marken", "url": "https://www.dm.de/neu/gewinnspiele/adventskalender-gewinnspiel-2948470", "category": "Beauty", "country": "Deutschland", "deadline": "16.08.2026", "winners": 70, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-seeberger-2026", "title": "VAUDE-Rucksack mit Snacks", "provider": "dm / Seeberger", "prize": "5 × VAUDE-Rucksack mit Seeberger-Snacks", "url": "https://www.dm.de/neu/gewinnspiele/seeberger-3487062", "category": "Freizeit", "country": "Deutschland", "deadline": "04.08.2026", "winners": 5, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Freizeit", "schnell"]}, {"id": "dm-borotalco-2026", "title": "Borotalco-Produktpakete", "provider": "dm / Borotalco", "prize": "Borotalco-Produktpakete", "url": "https://www.dm.de/neu/gewinnspiele/borotalco-3487104", "category": "Beauty", "country": "Deutschland", "deadline": "05.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "schnell"]}, {"id": "rossmann-neonail-2026", "title": "100 NEONAIL-Sommerpakete", "provider": "ROSSMANN", "prize": "100 × NEONAIL-Sommerpaket mit Kosmetiktasche", "url": "https://www.rossmann.de/de/service-und-hilfe/rossmann-app", "category": "Beauty", "country": "Deutschland", "deadline": "02.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenlose ROSSMANN-App und Registrierung", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Teilnahme im Aktionsbereich der ROSSMANN-App.", "providerTrust": 5, "effort": 2, "entryType": "app", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner"]}, {"id": "rossmann-centaur-juli-2026", "title": "Centaur-Rätsel Juli", "provider": "ROSSMANN", "prize": "Reise-, Wellness- und Freizeitgewinne", "url": "https://www.rossmann.de/cms/gewinnspiele/centaur-raetsel-202607.html", "category": "Reisen", "country": "Deutschland", "deadline": "09.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "ROSSMANN-App erforderlich", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 3, "entryType": "app", "multipleEntry": false, "highValuePrize": true, "tags": ["Reisen"]}, {"id": "qvc-insider-2026", "title": "10 QVC-INSIDER-Jahresabos", "provider": "QVC", "prize": "10 × Jahresabo des QVC-Kundenmagazins INSIDER", "url": "https://www.qvc.de/content/nichts-verpassen/gewinnspiel/teilnahmebedingungen.html", "category": "Wohnen", "country": "Deutschland & Österreich", "deadline": "10.08.2026", "winners": 10, "new": true, "daily": false, "international": true, "requirements": "Teilnahmebedingungen auf der QVC-Seite beachten", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Wohnen", "international"]}, {"id": "schoener-wohnen-2026", "title": "Aktuelle Monatsgewinnspiele", "provider": "SCHÖNER WOHNEN", "prize": "Design-, Wohn-, Technik- und Reisegewinne", "url": "https://www.schoener-wohnen.de/gewinnspiele/", "category": "Wohnen", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenlose Teilnahme über Bilderpuzzle und Formular", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite; die genaue Frist steht beim jeweiligen Gewinnspiel.", "providerTrust": 4, "effort": 3, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Wohnen"]}, {"id": "dm-produkttests-2026", "title": "Aktuelle dm-Produkttests", "provider": "dm Produkttester", "prize": "Produkte kostenlos testen und bewerten", "url": "https://www.dm.de/neu/produkttest", "category": "Produkttests", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite mit wechselnden Produkttests.", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Produkttests"]}];
@@ -33,6 +35,9 @@ const previousVisit=user.lastVisit ? new Date(user.lastVisit) : null;
 let latestDataUpdate=null;
 let usingFallback=false;
 let dataVersionGlobal='–';
+let pendingImport=null;
+let importHistory=safeJSON(localStorage.getItem(IMPORT_HISTORY_KEY),[]);
+if(!Array.isArray(importHistory))importHistory=[];
 
 function saveUser(){
  user.schemaVersion=USER_SCHEMA_VERSION;
@@ -447,12 +452,45 @@ function extractContestArray(payload){
  if(payload&&Array.isArray(payload.contests))return payload.contests;
  throw new Error('Keine Gewinnspiel-Liste gefunden')
 }
-function importPayload(payload){
- const incoming=extractContestArray(payload);const result=mergeCatalog(baseContests,customContests.concat(incoming));
- // Store only imported records, deduplicated amongst themselves and against future base updates.
- const customResult=mergeCatalog([],customContests.concat(incoming));customContests=customResult.contests;
+function prepareImport(payload,source='JSON'){
+ const incoming=extractContestArray(payload);
+ const result=mergeCatalog(baseContests,customContests.concat(incoming));
+ const customResult=mergeCatalog([],customContests.concat(incoming));
+ pendingImport={incoming,customContests:customResult.contests,report:result.report,source,preparedAt:new Date().toISOString()};
+ renderImportPreview();
+ return pendingImport
+}
+function applyPendingImport(){
+ if(!pendingImport)return toast('Kein geprüfter Import vorhanden');
+ // Katalog sichern – persönliche Status liegen getrennt in STORAGE_KEY und werden niemals verändert.
+ localStorage.setItem(IMPORT_BACKUP_KEY,JSON.stringify({savedAt:new Date().toISOString(),contests:customContests}));
+ customContests=pendingImport.customContests;
  localStorage.setItem(CUSTOM_DATA_KEY,JSON.stringify(customContests));
- applyCustomData(result.report);toast(`${result.report.added} neu · ${result.report.updated} aktualisiert`)
+ const entry={date:new Date().toISOString(),source:pendingImport.source,...pendingImport.report};
+ importHistory=[entry,...importHistory].slice(0,20);
+ localStorage.setItem(IMPORT_HISTORY_KEY,JSON.stringify(importHistory));
+ const report=pendingImport.report;pendingImport=null;
+ applyCustomData(report);renderImportPreview();renderImportHistory();
+ toast(`${report.added} neu · ${report.updated} aktualisiert`)
+}
+function cancelPendingImport(){pendingImport=null;renderImportPreview();toast('Import verworfen')}
+function restoreCatalogBackup(){
+ const backup=safeJSON(localStorage.getItem(IMPORT_BACKUP_KEY),null);
+ if(!backup||!Array.isArray(backup.contests))return toast('Keine Katalog-Sicherung vorhanden');
+ if(!confirm('Letzten lokalen Katalogstand wiederherstellen? Persönliche Status bleiben erhalten.'))return;
+ customContests=backup.contests;localStorage.setItem(CUSTOM_DATA_KEY,JSON.stringify(customContests));
+ applyCustomData();renderImportHistory();toast('Katalog-Sicherung wiederhergestellt')
+}
+function renderImportPreview(){
+ const box=$('#importPreview');if(!box)return;
+ if(!pendingImport){box.hidden=true;box.innerHTML='';return}
+ const r=pendingImport.report;box.hidden=false;
+ box.innerHTML=`<div class="preview-head"><div><p class="section-kicker">IMPORTVORSCHAU</p><h3>Noch nicht übernommen</h3></div><span>${pendingImport.incoming.length} geprüft</span></div><div class="preview-grid"><div><strong>${r.added}</strong><span>neu</span></div><div><strong>${r.updated}</strong><span>aktualisiert</span></div><div><strong>${r.duplicates||0}</strong><span>Dubletten</span></div><div><strong>${r.invalid}</strong><span>ungültig</span></div></div><p class="preview-note">Deine Markierungen wie „Teilgenommen“, Favoriten, „Nicht interessant“ und Gewinne liegen getrennt und werden durch diesen Import nicht verändert.</p>${r.idConflicts?`<p class="preview-warning">⚠ ${r.idConflicts} ID-Konflikt${r.idConflicts===1?'':'e'} erkannt. Bestehende stabile IDs werden geschützt.</p>`:''}<div class="data-actions"><button id="applyImportBtn" class="data-primary">Änderungen übernehmen</button><button id="cancelImportBtn">Verwerfen</button></div>`;
+ $('#applyImportBtn').onclick=applyPendingImport;$('#cancelImportBtn').onclick=cancelPendingImport
+}
+function renderImportHistory(){
+ const box=$('#importHistory');if(!box)return;
+ box.innerHTML=importHistory.length?importHistory.slice(0,8).map(x=>`<div class="history-row"><div><strong>${esc(x.source||'JSON-Import')}</strong><span>${new Intl.DateTimeFormat('de-DE',{dateStyle:'short',timeStyle:'short'}).format(new Date(x.date))}</span></div><p>${x.added||0} neu · ${x.updated||0} aktualisiert · ${x.invalid||0} ungültig</p></div>`).join(''):empty('Noch keine Katalog-Updates übernommen.')
 }
 function downloadJSON(filename,payload){
  const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)
@@ -504,13 +542,14 @@ function renderProviderQuality(){
 function setupDataCenter(){
  const input=$('#importFile');if(!input)return;
  $('#chooseImportBtn').onclick=()=>input.click();
- input.onchange=async()=>{const f=input.files[0];if(!f)return;try{importPayload(JSON.parse(await f.text()))}catch(e){toast('Import fehlgeschlagen: '+e.message)}finally{input.value=''}};
- $('#pasteImportBtn').onclick=()=>{try{importPayload(JSON.parse($('#jsonPaste').value))}catch(e){toast('Import fehlgeschlagen: '+e.message)}};
+ input.onchange=async()=>{const f=input.files[0];if(!f)return;try{prepareImport(JSON.parse(await f.text()),f.name)}catch(e){toast('Import fehlgeschlagen: '+e.message)}finally{input.value=''}};
+ $('#pasteImportBtn').onclick=()=>{try{prepareImport(JSON.parse($('#jsonPaste').value),'Eingefügtes JSON')}catch(e){toast('Import fehlgeschlagen: '+e.message)}};
  $('#clearPasteBtn').onclick=()=>{$('#jsonPaste').value=''};
  $('#exportMergedBtn').onclick=()=>downloadJSON(`win-win-gesamtkatalog-${new Date().toISOString().slice(0,10)}.json`,{version:APP_VERSION,updated:new Date().toISOString(),contests});
  $('#exportLocalBtn').onclick=()=>downloadJSON(`win-win-lokale-ergaenzungen-${new Date().toISOString().slice(0,10)}.json`,{version:APP_VERSION,updated:new Date().toISOString(),contests:customContests});
- $('#clearLocalBtn').onclick=()=>{if(!customContests.length)return toast('Keine lokalen Ergänzungen vorhanden');if(confirm('Alle lokal importierten Gewinnspiele löschen?')){customContests=[];localStorage.removeItem(CUSTOM_DATA_KEY);applyCustomData({added:0,updated:0,invalid:0});toast('Lokale Ergänzungen gelöscht')}};
- renderDataCenter()
+ $('#clearLocalBtn').onclick=()=>{if(!customContests.length)return toast('Keine lokalen Ergänzungen vorhanden');if(confirm('Alle lokal importierten Gewinnspiele löschen? Persönliche Status bleiben erhalten.')){localStorage.setItem(IMPORT_BACKUP_KEY,JSON.stringify({savedAt:new Date().toISOString(),contests:customContests}));customContests=[];localStorage.removeItem(CUSTOM_DATA_KEY);applyCustomData({added:0,updated:0,invalid:0});toast('Lokale Ergänzungen gelöscht')}};
+ $('#restoreCatalogBtn').onclick=restoreCatalogBackup;
+ renderDataCenter();renderImportPreview();renderImportHistory()
 }
 
 function validContest(i){

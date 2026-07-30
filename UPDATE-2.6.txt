@@ -1,0 +1,24 @@
+WIN WIN 2.6
+
+Neu:
+- JSON-Importe werden vor dem Übernehmen als Vorschau angezeigt.
+- Übersicht: neu, aktualisiert, Dubletten, ungültig und ID-Konflikte.
+- Änderungen werden erst nach ausdrücklicher Bestätigung gespeichert.
+- Vor jedem übernommenen Import wird der vorherige lokale Katalog gesichert.
+- Letzte Katalog-Sicherung kann wiederhergestellt werden.
+- Importverlauf der letzten 20 Updates.
+
+Datenschutz und Statusschutz:
+- Persönliche Status bleiben im unveränderten Schlüssel "gewinnen-user-v1".
+- Teilgenommen, Nicht interessant, Favoriten, Gewinne und Notizen werden nicht vom Katalogimport berührt.
+- Der lokale Katalog nutzt weiterhin "winwin-custom-contests-v1".
+
+Geänderte Dateien:
+- index.html
+- app.js
+- styles.css
+- sw.js
+- manifest.webmanifest
+- README.md
+- ROADMAP.md
+- CHANGELOG.md

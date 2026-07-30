@@ -23,3 +23,5 @@ Ein kostenloser, persönlicher Gewinnspiel-Assistent, der lokal arbeitet und tä
 - GitHub Actions
 - geprüfte Quellenimporte
 - automatische Katalog-Aktualisierung ohne kostenpflichtiges Backend
+
+- [x] 2.6 Sichere Katalog-Aktualisierung mit Vorschau, Sicherung und Importverlauf

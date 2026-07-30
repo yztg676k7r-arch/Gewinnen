@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="stylesheet" href="./styles.css">
-  <title>Win Win 2.5.1</title>
+  <title>Win Win 2.6</title>
 </head>
 <body>
   <div class="app-shell">
@@ -40,7 +40,7 @@
         <section class="update-status" id="updateStatus">
           <span class="status-dot"></span>
           <span id="updateText">Gewinnspiele werden geprüft …</span>
-          <small id="dataDiagnostics" class="data-diagnostics">App 2.5.1 · Daten werden geladen</small>
+          <small id="dataDiagnostics" class="data-diagnostics">App 2.6 · Daten werden geladen</small>
         </section>
         <section class="metric-grid" id="metrics"></section>
 
@@ -152,9 +152,10 @@
       <section id="dataView" class="view">
         <div class="view-title"><p class="section-kicker">DATENZENTRALE</p><h2>Import & Quellen</h2></div>
         <section class="data-hero">
-          <div><p class="section-kicker">WIN WIN 2.5.1</p><h3>Quellen und Gewinnspiele zentral verwalten</h3><p>Importe werden auf Dubletten, ähnliche Einträge, stabile IDs und Datenwarnungen geprüft. Deine persönlichen Status bleiben bei jedem Update getrennt und unverändert erhalten.</p></div>
+          <div><p class="section-kicker">WIN WIN 2.6</p><h3>Katalog sicher aktualisieren</h3><p>Neue JSON-Dateien werden zuerst geprüft und als Vorschau angezeigt. Erst nach deiner Bestätigung werden neue Gewinnspiele ergänzt und bestehende aktualisiert. Persönliche Status bleiben vollständig getrennt und unverändert.</p></div>
         </section>
         <section id="importSummary" class="import-summary"></section>
+        <section id="importPreview" class="data-panel import-preview" hidden></section>
         <section class="data-panel">
           <div class="section-head compact"><div><p class="section-kicker">QUELLENKATALOG</p><h3>Enthaltene Anbieter</h3></div><span id="sourceCountBadge" class="source-count"></span></div>
           <div id="sourceOverview" class="source-overview"></div>
@@ -197,6 +198,15 @@
           </div>
         </section>
         <section class="data-panel">
+          <div class="section-head compact"><div><p class="section-kicker">SICHERUNG</p><h3>Katalog zurücksetzen</h3></div></div>
+          <p>Vor jedem übernommenen Import und vor dem Löschen lokaler Ergänzungen wird automatisch der vorherige lokale Katalogstand gesichert.</p>
+          <div class="data-actions"><button id="restoreCatalogBtn">Letzte Katalog-Sicherung wiederherstellen</button></div>
+        </section>
+        <section class="data-panel">
+          <div class="section-head compact"><div><p class="section-kicker">VERLAUF</p><h3>Letzte Katalog-Updates</h3></div></div>
+          <div id="importHistory" class="import-history"></div>
+        </section>
+        <section class="data-panel">
           <h3>Prüfregeln</h3>
           <ul class="check-list">
             <li>Pflichtfelder: ID, Titel, Anbieter, Link und Teilnahmeschluss</li>
@@ -204,7 +214,9 @@
             <li>Ähnliche Gewinnspiele werden zusätzlich als Prüfhinweis angezeigt</li>
             <li>ID-Konflikte werden erkannt; bestehende IDs und Status bleiben geschützt</li>
             <li>Nur kostenlose, noch laufende Einträge erscheinen als aktiv</li>
-            <li>Bei Updates gewinnt der importierte, neuere Datensatz</li>
+            <li>Importe werden zunächst nur als Vorschau angezeigt und erst nach Bestätigung übernommen</li>
+            <li>Vor jedem Import wird der vorherige lokale Katalog automatisch gesichert</li>
+            <li>Katalogdaten und persönliche Status werden in getrennten Speicherbereichen verwaltet</li>
           </ul>
         </section>
       </section>

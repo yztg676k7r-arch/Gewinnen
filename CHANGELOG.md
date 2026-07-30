@@ -1,3 +1,10 @@
+## 2.6
+- Importvorschau vor dem Speichern
+- automatische Katalog-Sicherung
+- Wiederherstellung des vorherigen Katalogstands
+- Importverlauf
+- unveränderter Schutz persönlicher Status
+
 # Win Win – Changelog
 
 ## 2.5.1
