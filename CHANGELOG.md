@@ -1,6 +1,12 @@
+# Version 3.8.1 – Navigations-Bugfix
+
+- Kritischen JavaScript-Startfehler behoben: `safeJSON` wurde vor der Definition aufgerufen.
+- Navigation und sämtliche Initialisierungen funktionieren wieder.
+- Keine Änderungen an persönlichen Speicherbereichen.
+
 # Win Win – Changelog
 
-## 3.8 – 30.07.2026
+## 3.8.1 – 30.07.2026
 - Prüf-Warteschlange für fällige Quellen
 - Priorisierung nach Quellenqualität, Prüffälligkeit und bisherigen Treffern
 - Direkter Webseitenaufruf sowie Treffer-/Leer-Erfassung

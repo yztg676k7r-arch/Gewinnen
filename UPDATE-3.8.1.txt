@@ -1,0 +1,9 @@
+WIN WIN 3.8.1 – NAVIGATIONS-BUGFIX
+
+Behoben:
+- Kritischer Startfehler durch Verwendung von safeJSON vor seiner Definition
+- Navigation erhält wieder ihre Klick-Handler
+- Prüf-Warteschlange startet erst nach Initialisierung der Hilfsfunktionen
+- Versions- und Cache-Angaben auf 3.8.1 vereinheitlicht
+
+Persönliche Daten und Status bleiben unverändert.

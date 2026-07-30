@@ -47,7 +47,7 @@ Ein kostenloser, persönlicher Gewinnspiel-Assistent, der lokal arbeitet und tä
 - erster geprüfter Ausbau der aktiven Gewinnspiel-Datenbank
 - direkte Originalquellen und dokumentierter Datenstand
 
-## Version 3.8 – umgesetzt
+## Version 3.8.1 – umgesetzt
 - Prüf-Warteschlange für regelmäßig kontrollierte Quellen
 - Tagesfortschritt und direkte Treffer-/Leer-Erfassung
 
