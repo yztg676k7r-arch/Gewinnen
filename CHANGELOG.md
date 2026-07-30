@@ -1,5 +1,11 @@
 # Win Win – Changelog
 
+## 2.5.1
+- Doppelte Filteroption „Endet bald“ entfernt.
+- Filter „Als neu markiert“ entfernt.
+- Bezeichnung „Neu seit letztem Besuch“ präzisiert.
+- Keine Änderung an lokalen Nutzerstatus oder Speicherschlüsseln.
+
 ## 2.5
 - Dublettenerkennung um stabile Fingerabdrücke erweitert
 - ähnliche Gewinnspiele werden als Prüfhinweise erkannt

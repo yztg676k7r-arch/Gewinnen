@@ -1,0 +1,8 @@
+WIN WIN 2.5.1
+
+Korrektur der Filter:
+- „Endet bald“ wird nur noch einmal angezeigt.
+- „Als neu markiert“ wurde entfernt.
+- „Neu seit letztem Besuch“ bleibt erhalten.
+
+Alle persönlichen Statusdaten bleiben unverändert gespeichert.

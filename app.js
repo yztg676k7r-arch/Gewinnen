@@ -1,5 +1,5 @@
 
-const APP_VERSION='2.5';
+const APP_VERSION='2.5.1';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;
@@ -152,10 +152,10 @@ function secret(i){return i.score>=62&&i.score<78&&(i.winners||0)<50&&(i.effort|
 function matches(i,f){
  if(f==='ignored')return stateFor(i.id).ignored;
  if(stateFor(i.id).ignored)return false;
- if(f==='all')return true;if(f==='recommended')return recommended(i);if(f==='newVisit')return isNewSinceVisit(i);if(f==='new')return i.new;
+ if(f==='all')return true;if(f==='recommended')return recommended(i);if(f==='newVisit')return isNewSinceVisit(i);
  if(f==='top')return i.score>=80;if(f==='secret')return secret(i);if(f==='ending')return daysLeft(i)<=7;
  if(f==='daily')return i.daily||i.multipleEntry;
- if(f==='international')return i.international;if(f==='regional')return Boolean(i.regional);if(f==='endingSoon')return endingSoon(i);return i.category===f
+ if(f==='international')return i.international;if(f==='regional')return Boolean(i.regional);return i.category===f
 }
 function toggleFavorite(id){const s=stateFor(id);s.favorite=!s.favorite;saveUser();renderAll();toast(s.favorite?'Zu Favoriten hinzugefügt':'Aus Favoriten entfernt')}
 function toggleDone(id){const s=stateFor(id);s.done=!s.done;if(s.done){s.doneAt=new Date().toISOString();sessionStorage.setItem('winwin-done-session',String(Number(sessionStorage.getItem('winwin-done-session')||0)+1))}else{s.doneAt=null}saveUser();renderAll();toast(s.done?'Als teilgenommen markiert':'Markierung entfernt')}
