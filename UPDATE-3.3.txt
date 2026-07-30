@@ -1,0 +1,13 @@
+WIN WIN 3.3 – QUELLENIMPORT & MASSENPFLEGE
+
+Neu:
+- Quellenimporte werden vor der Übernahme analysiert.
+- Importvorschau mit neuen, aktualisierten und ungültigen Quellen.
+- Warnungen bei gleicher Domain, doppelten IDs und Dubletten im Import.
+- Erst nach ausdrücklicher Bestätigung werden Quellen gespeichert.
+- Alle sichtbaren fälligen Quellen können gesammelt als geprüft markiert werden.
+- Die aktuell gefilterte Quellenauswahl kann separat exportiert werden.
+
+Datenschutz und Updatesicherheit:
+- Persönliche Gewinnspielstatus und bestehende Speicher-Keys bleiben unverändert.
+- Vor der Übernahme eines Quellenimports wird weiterhin eine Sicherung angelegt.

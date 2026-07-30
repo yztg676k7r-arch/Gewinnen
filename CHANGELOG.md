@@ -1,3 +1,9 @@
+# Version 3.5 – Quellen-Intelligence
+
+- Priorität, Ertragsprotokoll und Abdeckungsanalyse
+- DE-Teilnahme und Verifizierung
+- Quellen-Dialog technisch stabilisiert
+
 # Version 3.2
 - Quellen-Cockpit mit Prüfstatus und Fälligkeitsberechnung
 - Quellen hinzufügen, bearbeiten, pausieren und als geprüft markieren

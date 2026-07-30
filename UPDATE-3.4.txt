@@ -1,0 +1,14 @@
+WIN WIN 3.4 – QUELLEN-INTELLIGENCE
+
+Neu:
+- Quellen erhalten einen dynamischen Prioritätswert von 0 bis 100.
+- Sortierung nach Priorität, Trefferertrag, Prüffälligkeit, Qualität oder Name.
+- Teilnahme aus Deutschland und Verifizierungsstatus werden separat gepflegt.
+- Prüfungen können als „Treffer“ oder „leer“ protokolliert werden.
+- Quellen mit wiederholt leeren Prüfungen werden sichtbar abgewertet.
+- Abdeckungsanalyse zeigt schwach besetzte Gewinnspiel-Kategorien.
+- Kritischer Fehler behoben: Das Quellen-Dialogfenster wird nun vor app.js geladen und funktioniert zuverlässig.
+
+Datensicherheit:
+- Bestehende LocalStorage-Schlüssel bleiben unverändert.
+- Alte Quellen werden automatisch mit sicheren Standardwerten ergänzt.

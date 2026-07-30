@@ -1,0 +1,13 @@
+WIN WIN 3.5 – ERSTER GROSSER QUELLENKATALOG
+
+Neu:
+- Quellenkatalog auf über 100 offizielle Quellen erweitert.
+- Schwerpunkte: Magazine, Radio, Handel, Beauty, Wohnen, Technik, Gaming, Reisen, Food und Familie.
+- Bereits online bestätigte Quellen sind als „verifiziert“ markiert.
+- Noch nicht einzeln geprüfte offizielle Quellen sind ehrlich als „Kandidat“ markiert.
+- Keine Quelle wird ohne Prüfung künstlich als Deutschland-verifiziert ausgegeben.
+- Der Katalog kann über das bestehende Quellen-Cockpit gefiltert, priorisiert und gepflegt werden.
+
+Datensicherheit:
+- Persönliche Gewinnspielstatus und vorhandene LocalStorage-Schlüssel bleiben unverändert.
+- Nur der statische Startkatalog data/sources.json wurde erweitert.

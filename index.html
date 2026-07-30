@@ -158,7 +158,7 @@
       <section id="dataView" class="view">
         <div class="view-title"><p class="section-kicker">DATENZENTRALE</p><h2>Import & Quellen</h2></div>
         <section class="data-hero">
-          <div><p class="section-kicker">WIN WIN 3.2</p><h3>Quellen-Cockpit</h3><p>Sammle möglichst viele gute Fundstellen und behalte gleichzeitig im Blick, welche Quellen wieder geprüft werden müssen. Persönliche Status bleiben davon unberührt.</p></div>
+          <div><p class="section-kicker">WIN WIN 3.5</p><h3>Quellen-Intelligence</h3><p>Sammle möglichst viele gute Fundstellen und behalte gleichzeitig im Blick, welche Quellen wieder geprüft werden müssen. Persönliche Status bleiben davon unberührt.</p></div>
         </section>
         <section id="importSummary" class="import-summary"></section>
         <section id="importPreview" class="data-panel import-preview" hidden></section>
@@ -175,7 +175,9 @@
             <select id="sourceReviewFilter" aria-label="Prüfstatus filtern">
               <option value="">Alle Prüfstatus</option><option value="due">Jetzt fällig</option><option value="never">Noch nie geprüft</option><option value="inactive">Inaktiv</option>
             </select>
+            <select id="sourceSort" aria-label="Quellen sortieren"><option value="priority">Priorität</option><option value="yield">Aktive Treffer</option><option value="due">Prüffälligkeit</option><option value="quality">Qualität</option><option value="name">Name A–Z</option></select>
           </div>
+          <div id="sourceCoverage" class="source-coverage"></div>
           <div id="sourceOverview" class="source-overview source-catalog"></div>
           <div class="data-actions source-actions">
             <button id="addSourceBtn" class="data-primary">＋ Neue Quelle</button>
@@ -281,8 +283,6 @@
         <div class="dialog-actions"><button id="saveWinBtn" class="data-primary">Speichern</button><button id="removeWinBtn" class="danger-button" hidden>Aus Archiv entfernen</button></div>
       </form>
     </dialog>
-  <script src="./app.js"></script>
-
     <dialog id="sourceDialog" class="source-dialog">
       <form id="sourceForm" method="dialog">
         <div class="source-dialog-head">
@@ -298,7 +298,7 @@
           <label><span>Automatisierung</span><select id="sourceAutomation"><option value="green">Grün · automatisierbar</option><option value="yellow" selected>Gelb · halbautomatisch</option><option value="red">Rot · manuell</option></select></label>
           <label><span>Qualität</span><select id="sourceQuality"><option value="5">5 · ausgezeichnet</option><option value="4" selected>4 · gut</option><option value="3">3 · mittel</option><option value="2">2 · schwach</option><option value="1">1 · kritisch</option></select></label>
           <label><span>Prüfintervall</span><select id="sourceInterval"><option value="1">täglich</option><option value="2">alle 2 Tage</option><option value="3">alle 3 Tage</option><option value="7" selected>wöchentlich</option><option value="14">alle 2 Wochen</option><option value="30">monatlich</option></select></label>
-          <label><span>Kategorien</span><input id="sourceCategories" placeholder="Beauty, Wohnen, Reisen"></label>
+          <label><span>Kategorien</span><input id="sourceCategories" placeholder="Beauty, Wohnen, Reisen"></label><label><span>Teilnahme aus Deutschland</span><select id="sourceEligibility"><option value="yes">Ja · bestätigt</option><option value="check" selected>Noch prüfen</option><option value="no">Nein</option></select></label><label><span>Prüfstatus</span><select id="sourceVerification"><option value="verified">Verifiziert</option><option value="candidate" selected>Kandidat</option><option value="blocked">Gesperrt / ungeeignet</option></select></label>
           <label class="source-form-wide"><span>Notizen</span><textarea id="sourceNotes" rows="3" placeholder="Besonderheiten, Teilnahmegebiet, Login …"></textarea></label>
           <label class="source-check"><input id="sourceRequiresLogin" type="checkbox"><span>Login erforderlich</span></label>
           <label class="source-check"><input id="sourceSocialOnly" type="checkbox"><span>Nur Social Media</span></label>
@@ -309,5 +309,6 @@
       </form>
     </dialog>
 
+  <script src="./app.js"></script>
 </body>
 </html>

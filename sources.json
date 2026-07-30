@@ -1,51 +1,256 @@
 {
-  "version": "3.1.0",
-  "updated": "2026-07-30T08:45:00+02:00",
+  "version": "3.5",
+  "updated": "2026-07-30",
   "sources": [
     {
-      "id": "dm",
-      "name": "dm",
-      "domain": "dm.de",
+      "id": "80s80s-radio",
+      "name": "80s80s Radio",
+      "domain": "80s80s.de",
       "country": "Deutschland",
       "countriesAllowed": [
         "Deutschland"
       ],
-      "type": "Direkter Veranstalter",
+      "type": "Radio",
       "categories": [
-        "Beauty",
-        "Produkttests",
+        "Musik",
+        "Events"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": "2026-07-30",
+      "notes": "Offizielle Gewinnspiel-/Aktionsquelle; Deutschland-Teilnahme bestätigt.",
+      "germanyEligibility": "yes",
+      "verification": "verified",
+      "successfulChecks": 1,
+      "emptyChecks": 0,
+      "lastResultCount": 1
+    },
+    {
+      "id": "absolut-radio",
+      "name": "Absolut Radio",
+      "domain": "absolutradio.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Musik",
+        "Events",
+        "Freizeit"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Offizielle Gewinnspiel-/Aktionsquelle; Deutschland-Teilnahme bestätigt.",
+      "germanyEligibility": "yes",
+      "verification": "verified",
+      "successfulChecks": 1,
+      "emptyChecks": 0,
+      "lastResultCount": 1
+    },
+    {
+      "id": "bb-radio",
+      "name": "BB RADIO",
+      "domain": "bbradio.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Regional",
+        "Musik",
         "Freizeit"
       ],
       "automation": "green",
       "quality": 5,
       "active": true,
-      "requiresLogin": true,
+      "requiresLogin": false,
       "socialOnly": false,
       "checkIntervalDays": 2,
       "lastChecked": "2026-07-30",
-      "notes": "Gewinnspiele und Produkttests auf offiziellen dm-Seiten."
+      "notes": "Offizielle Gewinnspiel-/Aktionsquelle; Deutschland-Teilnahme bestätigt.",
+      "germanyEligibility": "yes",
+      "verification": "verified",
+      "successfulChecks": 1,
+      "emptyChecks": 0,
+      "lastResultCount": 1
     },
     {
-      "id": "rossmann",
-      "name": "ROSSMANN",
-      "domain": "rossmann.de",
+      "id": "beats-radio",
+      "name": "Beats Radio",
+      "domain": "beatsradio.de",
       "country": "Deutschland",
       "countriesAllowed": [
         "Deutschland"
       ],
-      "type": "Direkter Veranstalter",
+      "type": "Radio",
       "categories": [
-        "Beauty",
-        "Reisen"
+        "Musik",
+        "Events"
       ],
-      "automation": "yellow",
-      "quality": 5,
+      "automation": "green",
+      "quality": 4,
       "active": true,
-      "requiresLogin": true,
+      "requiresLogin": false,
       "socialOnly": false,
       "checkIntervalDays": 2,
       "lastChecked": "2026-07-30",
-      "notes": "Einige Aktionen laufen ausschließlich in der ROSSMANN-App."
+      "notes": "Offizielle Gewinnspiel-/Aktionsquelle; Deutschland-Teilnahme bestätigt.",
+      "germanyEligibility": "yes",
+      "verification": "verified",
+      "successfulChecks": 1,
+      "emptyChecks": 0,
+      "lastResultCount": 1
+    },
+    {
+      "id": "brigitte",
+      "name": "BRIGITTE",
+      "domain": "brigitte.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Beauty",
+        "Mode",
+        "Wohnen",
+        "Reisen"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Offizielle Gewinnspiel-/Aktionsquelle; Deutschland-Teilnahme bestätigt.",
+      "germanyEligibility": "yes",
+      "verification": "verified",
+      "successfulChecks": 1,
+      "emptyChecks": 0,
+      "lastResultCount": 1
+    },
+    {
+      "id": "energy",
+      "name": "ENERGY",
+      "domain": "energy.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Musik",
+        "Events",
+        "Reisen"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Offizielle Gewinnspiel-/Aktionsquelle; Deutschland-Teilnahme bestätigt.",
+      "germanyEligibility": "yes",
+      "verification": "verified",
+      "successfulChecks": 1,
+      "emptyChecks": 0,
+      "lastResultCount": 1
+    },
+    {
+      "id": "gala",
+      "name": "GALA",
+      "domain": "gala.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Beauty",
+        "Mode",
+        "Reisen"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Offizielle Gewinnspiel-/Aktionsquelle; Deutschland-Teilnahme bestätigt.",
+      "germanyEligibility": "yes",
+      "verification": "verified",
+      "successfulChecks": 1,
+      "emptyChecks": 0,
+      "lastResultCount": 1
+    },
+    {
+      "id": "klassik-radio",
+      "name": "Klassik Radio",
+      "domain": "klassikradio.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Musik",
+        "Reisen",
+        "Freizeit"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": "2026-07-30",
+      "notes": "Offizielle Gewinnspiel-/Aktionsquelle; Deutschland-Teilnahme bestätigt.",
+      "germanyEligibility": "yes",
+      "verification": "verified",
+      "successfulChecks": 1,
+      "emptyChecks": 0,
+      "lastResultCount": 1
+    },
+    {
+      "id": "mediamarkt",
+      "name": "MediaMarkt",
+      "domain": "mediamarkt.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Technik",
+        "Gaming"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": "2026-07-30",
+      "notes": "Offizielle Gewinnspiel-/Aktionsquelle; Deutschland-Teilnahme bestätigt.",
+      "germanyEligibility": "yes",
+      "verification": "verified",
+      "successfulChecks": 1,
+      "emptyChecks": 0,
+      "lastResultCount": 1
     },
     {
       "id": "qvc",
@@ -68,7 +273,201 @@
       "socialOnly": false,
       "checkIntervalDays": 7,
       "lastChecked": "2026-07-30",
-      "notes": "Teilnahmegebiet je Aktion prüfen."
+      "notes": "Teilnahmegebiet je Aktion prüfen.",
+      "germanyEligibility": "yes",
+      "verification": "verified"
+    },
+    {
+      "id": "radio-bob",
+      "name": "Radio BOB!",
+      "domain": "radiobob.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Musik",
+        "Reisen",
+        "Freizeit"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Offizielle Gewinnspiel-/Aktionsquelle; Deutschland-Teilnahme bestätigt.",
+      "germanyEligibility": "yes",
+      "verification": "verified",
+      "successfulChecks": 1,
+      "emptyChecks": 0,
+      "lastResultCount": 1
+    },
+    {
+      "id": "radio-bonn-rhein-sieg",
+      "name": "Radio Bonn / Rhein-Sieg",
+      "domain": "radiobonn.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Regional",
+        "Freizeit"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Offizielle Gewinnspiel-/Aktionsquelle; Deutschland-Teilnahme bestätigt.",
+      "germanyEligibility": "yes",
+      "verification": "verified",
+      "successfulChecks": 1,
+      "emptyChecks": 0,
+      "lastResultCount": 1
+    },
+    {
+      "id": "radio-duisburg",
+      "name": "Radio Duisburg",
+      "domain": "radioduisburg.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Regional",
+        "Freizeit"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Offizielle Gewinnspiel-/Aktionsquelle; Deutschland-Teilnahme bestätigt.",
+      "germanyEligibility": "yes",
+      "verification": "verified",
+      "successfulChecks": 1,
+      "emptyChecks": 0,
+      "lastResultCount": 1
+    },
+    {
+      "id": "radio-muelheim",
+      "name": "Radio Mülheim",
+      "domain": "radiomuelheim.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Regional",
+        "Freizeit"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Offizielle Gewinnspiel-/Aktionsquelle; Deutschland-Teilnahme bestätigt.",
+      "germanyEligibility": "yes",
+      "verification": "verified",
+      "successfulChecks": 1,
+      "emptyChecks": 0,
+      "lastResultCount": 1
+    },
+    {
+      "id": "radio-saw",
+      "name": "radio SAW",
+      "domain": "radiosaw.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Regional",
+        "Freizeit",
+        "Reisen"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Offizielle Gewinnspiel-/Aktionsquelle; Deutschland-Teilnahme bestätigt.",
+      "germanyEligibility": "yes",
+      "verification": "verified",
+      "successfulChecks": 1,
+      "emptyChecks": 0,
+      "lastResultCount": 1
+    },
+    {
+      "id": "radio-siegen",
+      "name": "Radio Siegen",
+      "domain": "radiosiegen.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Regional",
+        "Freizeit"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Offizielle Gewinnspiel-/Aktionsquelle; Deutschland-Teilnahme bestätigt.",
+      "germanyEligibility": "yes",
+      "verification": "verified",
+      "successfulChecks": 1,
+      "emptyChecks": 0,
+      "lastResultCount": 1
+    },
+    {
+      "id": "rtl-radio",
+      "name": "RTL Radio",
+      "domain": "rtlradio.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Musik",
+        "Auto",
+        "Freizeit"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": "2026-07-30",
+      "notes": "Offizielle Gewinnspiel-/Aktionsquelle; Deutschland-Teilnahme bestätigt.",
+      "germanyEligibility": "yes",
+      "verification": "verified",
+      "successfulChecks": 1,
+      "emptyChecks": 0,
+      "lastResultCount": 1
     },
     {
       "id": "schoener-wohnen",
@@ -91,7 +490,690 @@
       "socialOnly": false,
       "checkIntervalDays": 3,
       "lastChecked": "2026-07-30",
-      "notes": "Regelmäßig wechselnde Monatsgewinnspiele."
+      "notes": "Regelmäßig wechselnde Monatsgewinnspiele.",
+      "germanyEligibility": "yes",
+      "verification": "verified"
+    },
+    {
+      "id": "toggo-eltern",
+      "name": "TOGGO Eltern",
+      "domain": "toggoeltern.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Familie",
+      "categories": [
+        "Familie",
+        "Kinder",
+        "Freizeit"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": "2026-07-30",
+      "notes": "Offizielle Gewinnspiel-/Aktionsquelle; Deutschland-Teilnahme bestätigt.",
+      "germanyEligibility": "yes",
+      "verification": "verified",
+      "successfulChecks": 1,
+      "emptyChecks": 0,
+      "lastResultCount": 1
+    },
+    {
+      "id": "adac",
+      "name": "ADAC",
+      "domain": "adac.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Organisation",
+      "categories": [
+        "Auto",
+        "Reisen",
+        "Freizeit"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "aida-cruises",
+      "name": "AIDA Cruises",
+      "domain": "aida.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Reiseanbieter",
+      "categories": [
+        "Reisen"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "aldi-nord",
+      "name": "ALDI Nord",
+      "domain": "aldi-nord.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Food",
+        "Reisen",
+        "Wohnen"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "aldi-sued",
+      "name": "ALDI Süd",
+      "domain": "aldi-sued.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Food",
+        "Reisen",
+        "Wohnen"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "antenne-bayern",
+      "name": "Antenne Bayern",
+      "domain": "antenne.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Musik",
+        "Regional",
+        "Freizeit"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "auto-bild",
+      "name": "AUTO BILD",
+      "domain": "autobild.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Auto",
+        "Reisen"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "auto-motor-und-sport",
+      "name": "auto motor und sport",
+      "domain": "auto-motor-und-sport.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Auto",
+        "Reisen"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "bauhaus",
+      "name": "BAUHAUS",
+      "domain": "bauhaus.info",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Garten",
+        "Wohnen"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "bayern-3",
+      "name": "BAYERN 3",
+      "domain": "bayern3.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Musik",
+        "Regional",
+        "Freizeit"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "bunte",
+      "name": "BUNTE",
+      "domain": "bunte.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Lifestyle",
+        "Beauty",
+        "Reisen"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "catrice",
+      "name": "Catrice",
+      "domain": "catrice.eu",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Beauty"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "chefkoch",
+      "name": "Chefkoch",
+      "domain": "chefkoch.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Portal",
+      "categories": [
+        "Food",
+        "Küche"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "chip",
+      "name": "CHIP",
+      "domain": "chip.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Technik",
+        "Software"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "computer-bild",
+      "name": "COMPUTER BILD",
+      "domain": "computerbild.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Technik",
+        "Gaming"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "cosmopolitan",
+      "name": "COSMOPOLITAN",
+      "domain": "cosmopolitan.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Mode",
+        "Beauty",
+        "Lifestyle"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "couch",
+      "name": "COUCH",
+      "domain": "couchstyle.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Wohnen",
+        "Lifestyle",
+        "Mode"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "db-mobil",
+      "name": "DB mobil",
+      "domain": "dbmobil.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Reisen",
+        "Freizeit"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "dehner",
+      "name": "Dehner",
+      "domain": "dehner.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Garten",
+        "Tiere"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "dertour",
+      "name": "DERTOUR",
+      "domain": "dertour.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Reiseanbieter",
+      "categories": [
+        "Reisen"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "dm",
+      "name": "dm",
+      "domain": "dm.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Direkter Veranstalter",
+      "categories": [
+        "Beauty",
+        "Produkttests",
+        "Freizeit"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": true,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Gewinnspiele und Produkttests auf offiziellen dm-Seiten.",
+      "germanyEligibility": "check",
+      "verification": "candidate"
+    },
+    {
+      "id": "douglas",
+      "name": "Douglas",
+      "domain": "douglas.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Beauty",
+        "Parfum"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "edeka",
+      "name": "EDEKA",
+      "domain": "edeka.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Food",
+        "Reisen",
+        "Freizeit"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "elle",
+      "name": "ELLE",
+      "domain": "elle.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Mode",
+        "Beauty",
+        "Reisen"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "eltern",
+      "name": "Eltern",
+      "domain": "eltern.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Familie",
+        "Kinder"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
     },
     {
       "id": "erlebnis-zoo-hannover",
@@ -116,6 +1198,388 @@
       "notes": "Regionale Quelle mit oft kleinerem Teilnehmerkreis."
     },
     {
+      "id": "essen-trinken",
+      "name": "essen & trinken",
+      "domain": "essen-und-trinken.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Food",
+        "Reisen"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "essence",
+      "name": "essence",
+      "domain": "essence.eu",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Beauty"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "famila",
+      "name": "famila",
+      "domain": "famila-nordost.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Food",
+        "Regional"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "familie-de",
+      "name": "familie.de",
+      "domain": "familie.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Portal",
+      "categories": [
+        "Familie",
+        "Kinder"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "flaconi",
+      "name": "flaconi",
+      "domain": "flaconi.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Beauty",
+        "Parfum"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "focus-online",
+      "name": "FOCUS Online",
+      "domain": "focus.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Technik",
+        "Reisen",
+        "Auto"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "for-me",
+      "name": "for me",
+      "domain": "for-me-online.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Produkttests",
+      "categories": [
+        "Produkttests",
+        "Beauty",
+        "Haushalt"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "freundin",
+      "name": "freundin",
+      "domain": "freundin.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Beauty",
+        "Mode",
+        "Reisen",
+        "Wohnen"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "fuer-sie",
+      "name": "Für Sie",
+      "domain": "fuersie.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Beauty",
+        "Food",
+        "Wohnen"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "gamestar",
+      "name": "GameStar",
+      "domain": "gamestar.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Gaming",
+        "Technik"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "garnier",
+      "name": "Garnier",
+      "domain": "garnier.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Beauty"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "gartenflora",
+      "name": "GartenFlora",
+      "domain": "gartenflora.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Garten",
+        "Wohnen"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "geo-saison",
+      "name": "Geo Saison",
+      "domain": "geo.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Reisen",
+        "Natur"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "globus",
+      "name": "Globus",
+      "domain": "globus.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Food",
+        "Wohnen",
+        "Freizeit"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
       "id": "hammerite",
       "name": "Hammerite",
       "domain": "hammerite.de",
@@ -138,17 +1602,17 @@
       "notes": "Markenaktionen und saisonale Gewinnspiele."
     },
     {
-      "id": "ndr-mv",
-      "name": "NDR MV",
-      "domain": "ndr.de",
+      "id": "hit-radio-ffh",
+      "name": "HIT RADIO FFH",
+      "domain": "ffh.de",
       "country": "Deutschland",
       "countriesAllowed": [
         "Deutschland"
       ],
-      "type": "Radio & Medien",
+      "type": "Radio",
       "categories": [
-        "Tickets",
-        "Freizeit",
+        "Musik",
+        "Regional",
         "Reisen"
       ],
       "automation": "green",
@@ -157,8 +1621,658 @@
       "requiresLogin": false,
       "socialOnly": false,
       "checkIntervalDays": 2,
-      "lastChecked": "2026-07-30",
-      "notes": "Regionaler NDR-Bereich Mecklenburg-Vorpommern."
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "holidaycheck",
+      "name": "HolidayCheck",
+      "domain": "holidaycheck.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Reiseportal",
+      "categories": [
+        "Reisen"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "home24",
+      "name": "home24",
+      "domain": "home24.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Wohnen"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "hornbach",
+      "name": "Hornbach",
+      "domain": "hornbach.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Garten",
+        "Wohnen"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "hoeffner",
+      "name": "Höffner",
+      "domain": "hoeffner.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Wohnen"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "ikea-deutschland",
+      "name": "IKEA Deutschland",
+      "domain": "ikea.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Wohnen"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "instyle",
+      "name": "InStyle",
+      "domain": "instyle.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Mode",
+        "Beauty"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "jolie",
+      "name": "JOLIE",
+      "domain": "jolie.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Mode",
+        "Beauty",
+        "Lifestyle"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "jysk",
+      "name": "JYSK",
+      "domain": "jysk.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Wohnen"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "kaufland",
+      "name": "Kaufland",
+      "domain": "kaufland.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Food",
+        "Wohnen",
+        "Freizeit"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "kika",
+      "name": "KiKA",
+      "domain": "kika.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "TV",
+      "categories": [
+        "Kinder",
+        "Familie"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "kneipp",
+      "name": "Kneipp",
+      "domain": "kneipp.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Beauty",
+        "Wellness"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "konsumgoettinnen",
+      "name": "Konsumgöttinnen",
+      "domain": "konsumgoettinnen.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Produkttests",
+      "categories": [
+        "Produkttests",
+        "Beauty",
+        "Food"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "lavera",
+      "name": "lavera",
+      "domain": "lavera.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Beauty"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "lecker",
+      "name": "LECKER",
+      "domain": "lecker.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Food",
+        "Küche"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "lidl",
+      "name": "Lidl",
+      "domain": "lidl.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Food",
+        "Wohnen",
+        "Reisen"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "living-at-home",
+      "name": "Living at Home",
+      "domain": "livingathome.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Wohnen",
+        "Food"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "l-or-al-paris",
+      "name": "L’Oréal Paris",
+      "domain": "loreal-paris.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Beauty"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "marktkauf",
+      "name": "Marktkauf",
+      "domain": "marktkauf.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Food",
+        "Regional"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "maybelline-new-york",
+      "name": "Maybelline New York",
+      "domain": "maybelline.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Beauty"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "mein-schoener-garten",
+      "name": "Mein schöner Garten",
+      "domain": "mein-schoener-garten.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Garten",
+        "Wohnen"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "merian",
+      "name": "MERIAN",
+      "domain": "merian.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Reisen"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "myself",
+      "name": "myself",
+      "domain": "myself.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Beauty",
+        "Mode",
+        "Lifestyle"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "mueller",
+      "name": "Müller",
+      "domain": "mueller.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Drogerie",
+      "categories": [
+        "Beauty",
+        "Spielzeug",
+        "Technik"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "national-geographic-deutschland",
+      "name": "National Geographic Deutschland",
+      "domain": "nationalgeographic.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Natur",
+        "Reisen"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
     },
     {
       "id": "ndr-1-niedersachsen",
@@ -203,7 +2317,512 @@
       "socialOnly": false,
       "checkIntervalDays": 2,
       "lastChecked": "2026-07-30",
-      "notes": "Hamburger Regionalprogramm des NDR."
+      "notes": "Hamburger Regionalprogramm des NDR.",
+      "germanyEligibility": "check",
+      "verification": "candidate"
+    },
+    {
+      "id": "ndr-mv",
+      "name": "NDR MV",
+      "domain": "ndr.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio & Medien",
+      "categories": [
+        "Tickets",
+        "Freizeit",
+        "Reisen"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Regionaler NDR-Bereich Mecklenburg-Vorpommern."
+    },
+    {
+      "id": "netto-marken-discount",
+      "name": "Netto Marken-Discount",
+      "domain": "netto-online.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Food",
+        "Reisen"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "nivea",
+      "name": "NIVEA",
+      "domain": "nivea.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Beauty",
+        "Familie"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "obi",
+      "name": "OBI",
+      "domain": "obi.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Garten",
+        "Wohnen"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "ok-magazin",
+      "name": "OK! Magazin",
+      "domain": "ok-magazin.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Lifestyle",
+        "Beauty"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "otto",
+      "name": "OTTO",
+      "domain": "otto.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Wohnen",
+        "Mode",
+        "Technik"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "parfumdreams",
+      "name": "parfumdreams",
+      "domain": "parfumdreams.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Beauty",
+        "Parfum"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "pc-games",
+      "name": "PC Games",
+      "domain": "pcgames.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Gaming",
+        "Technik"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "penny",
+      "name": "PENNY",
+      "domain": "penny.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Food",
+        "Reisen"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "play3",
+      "name": "Play3",
+      "domain": "play3.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Gaming",
+        "Technik"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "porta",
+      "name": "porta",
+      "domain": "porta.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Wohnen"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "prosieben",
+      "name": "ProSieben",
+      "domain": "prosieben.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "TV",
+      "categories": [
+        "Entertainment",
+        "Events"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "radio-hamburg",
+      "name": "Radio Hamburg",
+      "domain": "radiohamburg.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Musik",
+        "Regional",
+        "Freizeit"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "rewe",
+      "name": "REWE",
+      "domain": "rewe.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Food",
+        "Reisen",
+        "Freizeit"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "rossmann",
+      "name": "ROSSMANN",
+      "domain": "rossmann.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Direkter Veranstalter",
+      "categories": [
+        "Beauty",
+        "Reisen"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": true,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Einige Aktionen laufen ausschließlich in der ROSSMANN-App.",
+      "germanyEligibility": "check",
+      "verification": "candidate"
+    },
+    {
+      "id": "rtl",
+      "name": "RTL",
+      "domain": "rtl.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "TV",
+      "categories": [
+        "Entertainment",
+        "Reisen"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "sat-1",
+      "name": "SAT.1",
+      "domain": "sat1.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "TV",
+      "categories": [
+        "Entertainment",
+        "Freizeit"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "saturn",
+      "name": "SATURN",
+      "domain": "saturn.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Technik",
+        "Gaming"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "swr-kultur",
+      "name": "SWR Kultur",
+      "domain": "swr.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio & Medien",
+      "categories": [
+        "Tickets",
+        "Kultur"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": "2026-07-30",
+      "notes": "Kultur- und Veranstaltungsgewinne."
     },
     {
       "id": "swr1",
@@ -229,16 +2848,205 @@
       "notes": "Regelmäßige Radio-, Konzert- und Eventgewinnspiele."
     },
     {
-      "id": "swr-kultur",
-      "name": "SWR Kultur",
-      "domain": "swr.de",
+      "id": "swr3",
+      "name": "SWR3",
+      "domain": "swr3.de",
       "country": "Deutschland",
       "countriesAllowed": [
         "Deutschland"
       ],
-      "type": "Radio & Medien",
+      "type": "Radio",
       "categories": [
-        "Tickets",
+        "Musik",
+        "Reisen",
+        "Regional"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "travelbook",
+      "name": "Travelbook",
+      "domain": "travelbook.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Reisen"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "trnd",
+      "name": "trnd",
+      "domain": "trnd.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Produkttests",
+      "categories": [
+        "Produkttests",
+        "Food",
+        "Beauty"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "tui",
+      "name": "TUI",
+      "domain": "tui.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Reiseanbieter",
+      "categories": [
+        "Reisen"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "urbia",
+      "name": "Urbia",
+      "domain": "urbia.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Portal",
+      "categories": [
+        "Familie",
+        "Kinder"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "urlaubsguru",
+      "name": "Urlaubsguru",
+      "domain": "urlaubsguru.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Reiseportal",
+      "categories": [
+        "Reisen"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "vox",
+      "name": "VOX",
+      "domain": "vox.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "TV",
+      "categories": [
+        "Entertainment",
+        "Food"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 4,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "wdr",
+      "name": "WDR",
+      "domain": "wdr.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio & TV",
+      "categories": [
+        "Regional",
+        "Freizeit",
         "Kultur"
       ],
       "automation": "green",
@@ -247,8 +3055,93 @@
       "requiresLogin": false,
       "socialOnly": false,
       "checkIntervalDays": 3,
-      "lastChecked": "2026-07-30",
-      "notes": "Kultur- und Veranstaltungsgewinne."
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "weleda",
+      "name": "Weleda",
+      "domain": "weleda.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Beauty",
+        "Wellness"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "westwing",
+      "name": "Westwing",
+      "domain": "westwing.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Wohnen",
+        "Lifestyle"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "xxxlutz",
+      "name": "XXXLutz",
+      "domain": "xxxlutz.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Wohnen"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 5,
+      "lastChecked": null,
+      "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
     }
   ]
 }
