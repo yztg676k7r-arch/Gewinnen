@@ -34,3 +34,7 @@ Unter Daten kann der vollständige lokale Stand exportiert und auf einem anderen
 
 ## Version 2.9
 Die Heute-Ansicht bietet eine persönliche Tagesroutine mit Ziel, Sortiermodus und klaren Etappen. Lokale Statusdaten werden bei Updates weiterhin nicht überschrieben.
+
+
+## Version 3.2
+Das Quellen-Cockpit zeigt fällige Prüfungen und erlaubt das lokale Hinzufügen, Bearbeiten, Pausieren und Abhaken von Quellen. Persönliche Gewinnspielstatus bleiben getrennt.

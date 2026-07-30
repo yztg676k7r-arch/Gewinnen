@@ -31,3 +31,13 @@ Ein kostenloser, persönlicher Gewinnspiel-Assistent, der lokal arbeitet und tä
 ## Version 3.1 – umgesetzt
 - Quellen-Datenbank und sourceId-Verknüpfung
 - Quellenfilter, Import, Export und Qualitätsübersicht
+
+## Version 3.2 – umgesetzt
+- Quellen-Cockpit und Prüfwarteschlange
+- lokale Quellenpflege direkt in der App
+- Vorbereitung für einen großen, laufend gepflegten Quellenkatalog
+
+## Nächster Schritt – Version 3.3
+- größere kuratierte Quellenbasis
+- Importbericht mit Dubletten- und Domain-Prüfung
+- Vorbereitung kostenloser GitHub-Actions-Aktualisierungen

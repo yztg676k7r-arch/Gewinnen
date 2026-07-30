@@ -1,3 +1,9 @@
+# Version 3.2
+- Quellen-Cockpit mit Prüfstatus und Fälligkeitsberechnung
+- Quellen hinzufügen, bearbeiten, pausieren und als geprüft markieren
+- direkte Website-Links und verbesserter Quellenimport
+- persönliche Gewinnspielstatus bleiben unverändert
+
 # Win Win – Changelog
 
 ## 3.1.0 – Quellen-Datenbank

@@ -1,0 +1,14 @@
+WIN WIN 3.2 – QUELLEN-COCKPIT
+
+Neu:
+- Quellen nach Prüfstatus filtern: fällig, nie geprüft oder inaktiv
+- automatische Berechnung der nächsten Quellenprüfung
+- Quellen direkt als „heute geprüft“ markieren
+- neue Quellen in der App hinzufügen
+- bestehende Quellen lokal bearbeiten
+- Quellen aktivieren oder pausieren
+- direkte Schaltfläche zur Website
+- bessere Import-Rückmeldung für neue und aktualisierte Quellen
+
+Datenschutz und Update-Schutz:
+Alle Quellenänderungen werden getrennt von den persönlichen Gewinnspielstatus gespeichert. Teilnahmen, Favoriten, Nicht interessant und Gewinne bleiben unverändert.

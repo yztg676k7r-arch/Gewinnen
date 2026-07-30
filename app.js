@@ -1,5 +1,5 @@
 
-const APP_VERSION='3.1.0';
+const APP_VERSION='3.2.0';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;
@@ -18,7 +18,7 @@ const SOURCE_BACKUP_KEY='winwin-sources-backup-v1';
 let baseSources=[];
 let sources=[];
 let sourceDataVersion='–';
-let sourceFilters={search:'',country:'',type:'',automation:''};
+let sourceFilters={search:'',country:'',type:'',automation:'',review:''};
 
 const FALLBACK=[{"id": "dm-ob-starterset-2026", "title": "100 limitierte o.b. Startersets", "provider": "dm", "prize": "100 × limitiertes o.b. Starterset", "url": "https://www.dm.de/neu/gewinnspiele/ob-3493126", "category": "Beauty", "country": "Deutschland", "deadline": "13.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-adventskalender-2026", "title": "70 Adventskalender gewinnen", "provider": "dm", "prize": "70 Adventskalender verschiedener Marken", "url": "https://www.dm.de/neu/gewinnspiele/adventskalender-gewinnspiel-2948470", "category": "Beauty", "country": "Deutschland", "deadline": "16.08.2026", "winners": 70, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-seeberger-2026", "title": "VAUDE-Rucksack mit Snacks", "provider": "dm / Seeberger", "prize": "5 × VAUDE-Rucksack mit Seeberger-Snacks", "url": "https://www.dm.de/neu/gewinnspiele/seeberger-3487062", "category": "Freizeit", "country": "Deutschland", "deadline": "04.08.2026", "winners": 5, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Freizeit", "schnell"]}, {"id": "dm-borotalco-2026", "title": "Borotalco-Produktpakete", "provider": "dm / Borotalco", "prize": "Borotalco-Produktpakete", "url": "https://www.dm.de/neu/gewinnspiele/borotalco-3487104", "category": "Beauty", "country": "Deutschland", "deadline": "05.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "schnell"]}, {"id": "rossmann-neonail-2026", "title": "100 NEONAIL-Sommerpakete", "provider": "ROSSMANN", "prize": "100 × NEONAIL-Sommerpaket mit Kosmetiktasche", "url": "https://www.rossmann.de/de/service-und-hilfe/rossmann-app", "category": "Beauty", "country": "Deutschland", "deadline": "02.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenlose ROSSMANN-App und Registrierung", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Teilnahme im Aktionsbereich der ROSSMANN-App.", "providerTrust": 5, "effort": 2, "entryType": "app", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner"]}, {"id": "rossmann-centaur-juli-2026", "title": "Centaur-Rätsel Juli", "provider": "ROSSMANN", "prize": "Reise-, Wellness- und Freizeitgewinne", "url": "https://www.rossmann.de/cms/gewinnspiele/centaur-raetsel-202607.html", "category": "Reisen", "country": "Deutschland", "deadline": "09.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "ROSSMANN-App erforderlich", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 3, "entryType": "app", "multipleEntry": false, "highValuePrize": true, "tags": ["Reisen"]}, {"id": "qvc-insider-2026", "title": "10 QVC-INSIDER-Jahresabos", "provider": "QVC", "prize": "10 × Jahresabo des QVC-Kundenmagazins INSIDER", "url": "https://www.qvc.de/content/nichts-verpassen/gewinnspiel/teilnahmebedingungen.html", "category": "Wohnen", "country": "Deutschland & Österreich", "deadline": "10.08.2026", "winners": 10, "new": true, "daily": false, "international": true, "requirements": "Teilnahmebedingungen auf der QVC-Seite beachten", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Wohnen", "international"]}, {"id": "schoener-wohnen-2026", "title": "Aktuelle Monatsgewinnspiele", "provider": "SCHÖNER WOHNEN", "prize": "Design-, Wohn-, Technik- und Reisegewinne", "url": "https://www.schoener-wohnen.de/gewinnspiele/", "category": "Wohnen", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenlose Teilnahme über Bilderpuzzle und Formular", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite; die genaue Frist steht beim jeweiligen Gewinnspiel.", "providerTrust": 4, "effort": 3, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Wohnen"]}, {"id": "dm-produkttests-2026", "title": "Aktuelle dm-Produkttests", "provider": "dm Produkttester", "prize": "Produkte kostenlos testen und bewerten", "url": "https://www.dm.de/neu/produkttest", "category": "Produkttests", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite mit wechselnden Produkttests.", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Produkttests"]}];
 const $=(s,r=document)=>r.querySelector(s);
@@ -725,7 +725,7 @@ function normalizeSource(raw,index=0){
  if(!raw||typeof raw!=='object')return null;
  const id=String(raw.id||'').trim();const name=String(raw.name||'').trim();
  if(!id||!name)return null;
- return {id,name,domain:String(raw.domain||'').trim(),country:String(raw.country||'Unbekannt').trim(),countriesAllowed:Array.isArray(raw.countriesAllowed)?raw.countriesAllowed.map(String):[],type:String(raw.type||'Sonstige Quelle').trim(),categories:Array.isArray(raw.categories)?raw.categories.map(String):[],automation:['green','yellow','red'].includes(raw.automation)?raw.automation:'red',quality:Math.max(1,Math.min(5,Number(raw.quality)||3)),active:raw.active!==false,requiresLogin:Boolean(raw.requiresLogin),socialOnly:Boolean(raw.socialOnly),checkIntervalDays:Math.max(1,Number(raw.checkIntervalDays)||7),lastChecked:raw.lastChecked||null,notes:String(raw.notes||'').trim(),local:Boolean(raw.local),_index:index};
+ return {id,name,domain:String(raw.domain||'').trim().replace(/^https?:\/\//i,'').replace(/\/$/,''),country:String(raw.country||'Unbekannt').trim(),countriesAllowed:Array.isArray(raw.countriesAllowed)?raw.countriesAllowed.map(String):[],type:String(raw.type||'Sonstige Quelle').trim(),categories:Array.isArray(raw.categories)?raw.categories.map(String).filter(Boolean):[],automation:['green','yellow','red'].includes(raw.automation)?raw.automation:'red',quality:Math.max(1,Math.min(5,Number(raw.quality)||3)),active:raw.active!==false,requiresLogin:Boolean(raw.requiresLogin),socialOnly:Boolean(raw.socialOnly),checkIntervalDays:Math.max(1,Number(raw.checkIntervalDays)||7),lastChecked:raw.lastChecked||null,notes:String(raw.notes||'').trim(),local:Boolean(raw.local),_index:index};
 }
 function localSources(){const raw=safeJSON(localStorage.getItem(SOURCE_DATA_KEY),[]);return Array.isArray(raw)?raw.map(normalizeSource).filter(Boolean):[]}
 function mergeSources(){const map=new Map(baseSources.map((s,i)=>[s.id,normalizeSource(s,i)]));localSources().forEach((s,i)=>map.set(s.id,{...s,local:true,_index:baseSources.length+i}));sources=[...map.values()]}
@@ -733,6 +733,26 @@ function sourceById(id){return sources.find(s=>s.id===id)||null}
 function sourceForContest(i){return sourceById(i.sourceId)||sources.find(s=>s.name.toLowerCase()===(i.provider||'').toLowerCase())||null}
 function sourceContestCounts(){const map=new Map(sources.map(s=>[s.id,{total:0,active:0,top:0}]));contests.forEach(i=>{const s=sourceForContest(i);if(!s)return;const r=map.get(s.id)||{total:0,active:0,top:0};r.total++;if(active(i))r.active++;if(active(i)&&scoreContest(i).score>=80)r.top++;map.set(s.id,r)});return map}
 function sourceAutomationLabel(v){return v==='green'?'Grün · automatisierbar':v==='yellow'?'Gelb · halbautomatisch':'Rot · manuell'}
+function sourceReviewState(s){
+ if(!s.active)return {key:'inactive',label:'Inaktiv',due:false,days:0};
+ if(!s.lastChecked)return {key:'never',label:'Noch nie geprüft',due:true,days:null};
+ const checked=new Date(String(s.lastChecked).slice(0,10)+'T12:00:00');
+ if(Number.isNaN(checked.getTime()))return {key:'never',label:'Noch nie geprüft',due:true,days:null};
+ const dueDate=new Date(checked);dueDate.setDate(dueDate.getDate()+Math.max(1,Number(s.checkIntervalDays)||7));
+ const today=new Date();today.setHours(12,0,0,0);dueDate.setHours(12,0,0,0);
+ const delta=Math.floor((today-dueDate)/86400000);
+ if(delta>=0)return {key:'due',label:delta===0?'Heute prüfen':`${delta} T. überfällig`,due:true,days:delta};
+ const remaining=Math.ceil((dueDate-today)/86400000);return {key:'ok',label:`in ${remaining} T.`,due:false,days:-remaining};
+}
+function sourceHomepage(s){return s.domain?`https://${s.domain.replace(/^https?:\/\//i,'')}`:''}
+function sourceSlug(value){return String(value||'quelle').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,60)||`quelle-${Date.now()}`}
+function persistSource(source,originalId=''){
+ const clean=normalizeSource({...source,local:true});if(!clean)throw new Error('Name und ID fehlen');
+ const list=localSources();const map=new Map(list.map(x=>[x.id,x]));
+ if(originalId&&originalId!==clean.id)map.delete(originalId);
+ map.set(clean.id,{...clean,local:true});
+ localStorage.setItem(SOURCE_DATA_KEY,JSON.stringify([...map.values()]));mergeSources();renderSourceFilters();renderSourceManager();
+}
 function renderSourceFilters(){
  const countries=[...new Set(sources.map(s=>s.country).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'de'));const types=[...new Set(sources.map(s=>s.type).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'de'));
  const country=$('#sourceCountryFilter'),type=$('#sourceTypeFilter');
@@ -742,10 +762,11 @@ function renderSourceFilters(){
 function renderSourceManager(){
  const box=$('#sourceOverview'),badge=$('#sourceCountBadge'),stats=$('#sourceStats');if(!box)return;
  const counts=sourceContestCounts();const q=sourceFilters.search.trim().toLowerCase();
- const rows=sources.filter(s=>(!q||[s.name,s.domain,s.notes,...s.categories].join(' ').toLowerCase().includes(q))&&(!sourceFilters.country||s.country===sourceFilters.country)&&(!sourceFilters.type||s.type===sourceFilters.type)&&(!sourceFilters.automation||s.automation===sourceFilters.automation)).sort((a,b)=>Number(b.active)-Number(a.active)||b.quality-a.quality||a.name.localeCompare(b.name,'de'));
+ const review=s=>sourceReviewState(s);
+ const rows=sources.filter(s=>(!q||[s.name,s.domain,s.notes,...s.categories].join(' ').toLowerCase().includes(q))&&(!sourceFilters.country||s.country===sourceFilters.country)&&(!sourceFilters.type||s.type===sourceFilters.type)&&(!sourceFilters.automation||s.automation===sourceFilters.automation)&&(!sourceFilters.review||(sourceFilters.review==='due'?review(s).due:review(s).key===sourceFilters.review))).sort((a,b)=>Number(review(b).due)-Number(review(a).due)||Number(b.active)-Number(a.active)||b.quality-a.quality||a.name.localeCompare(b.name,'de'));
  if(badge)badge.textContent=`${rows.length} von ${sources.length} Quellen`;
- if(stats){const activeSources=sources.filter(s=>s.active).length;const auto=sources.filter(s=>s.automation==='green').length;const linked=contests.filter(i=>sourceForContest(i)).length;stats.innerHTML=`<div><strong>${sources.length}</strong><span>Quellen gesamt</span></div><div><strong>${activeSources}</strong><span>aktiv</span></div><div><strong>${auto}</strong><span>automatisierbar</span></div><div><strong>${linked}/${contests.length}</strong><span>Gewinnspiele verknüpft</span></div>`}
- box.innerHTML=rows.length?rows.map(s=>{const c=counts.get(s.id)||{total:0,active:0,top:0};return `<article class="source-card"><div class="source-card-head"><div><strong>${esc(s.name)}</strong><span>${esc(s.domain||s.country)}</span></div><span class="automation-dot ${s.automation}" title="${esc(sourceAutomationLabel(s.automation))}"></span></div><div class="source-card-meta"><span>${esc(s.type)}</span><span>${esc(s.country)}</span><span>Qualität ${s.quality}/5</span>${s.local?'<span>Lokal</span>':''}</div><p>${esc(s.notes||'Keine Notiz')}</p><div class="source-card-foot"><span>${c.active} aktiv · ${c.total} gesamt${c.top?` · ${c.top} Top`:''}</span><small>${esc(sourceAutomationLabel(s.automation))}${s.lastChecked?` · geprüft ${esc(s.lastChecked)}`:''}</small></div></article>`}).join(''):empty('Keine Quellen passen zu den Filtern.');
+ if(stats){const activeSources=sources.filter(s=>s.active).length;const auto=sources.filter(s=>s.automation==='green').length;const due=sources.filter(s=>sourceReviewState(s).due).length;const linked=contests.filter(i=>sourceForContest(i)).length;stats.innerHTML=`<div><strong>${sources.length}</strong><span>Quellen gesamt</span></div><div><strong>${activeSources}</strong><span>aktiv</span></div><div><strong>${due}</strong><span>jetzt prüfen</span></div><div><strong>${linked}/${contests.length}</strong><span>Gewinnspiele verknüpft</span></div>`}
+ box.innerHTML=rows.length?rows.map(s=>{const c=counts.get(s.id)||{total:0,active:0,top:0};const r=review(s);const home=sourceHomepage(s);return `<article class="source-card ${r.due?'source-due':''} ${!s.active?'source-inactive':''}"><div class="source-card-head"><div><strong>${esc(s.name)}</strong><span>${esc(s.domain||s.country)}</span></div><span class="automation-dot ${s.automation}" title="${esc(sourceAutomationLabel(s.automation))}"></span></div><div class="source-card-meta"><span>${esc(s.type)}</span><span>${esc(s.country)}</span><span>Qualität ${s.quality}/5</span><span class="review-chip ${r.key}">${esc(r.label)}</span>${s.local?'<span>Lokal</span>':''}</div><p>${esc(s.notes||'Keine Notiz')}</p><div class="source-card-foot"><span>${c.active} aktiv · ${c.total} gesamt${c.top?` · ${c.top} Top`:''}</span><small>${esc(sourceAutomationLabel(s.automation))}${s.lastChecked?` · geprüft ${esc(s.lastChecked)}`:''}</small></div><div class="source-card-actions">${home?`<a href="${esc(home)}" target="_blank" rel="noopener" data-source-open="${esc(s.id)}">Website ↗</a>`:''}<button type="button" data-source-check="${esc(s.id)}">✓ Heute geprüft</button><button type="button" data-source-edit="${esc(s.id)}">Bearbeiten</button><button type="button" data-source-toggle="${esc(s.id)}">${s.active?'Pausieren':'Aktivieren'}</button></div></article>`}).join(''):empty('Keine Quellen passen zu den Filtern.');
  const note=$('#sourceDataNote');if(note)note.textContent=`Quellen-Daten ${sourceDataVersion} · ${sources.length} geladen · lokale Änderungen bleiben nur auf diesem Gerät.`;
 }
 async function loadSources(){
@@ -753,64 +774,25 @@ async function loadSources(){
  mergeSources();renderSourceFilters();renderSourceManager();
 }
 function validateSourceImport(payload){const list=Array.isArray(payload)?payload:Array.isArray(payload?.sources)?payload.sources:null;if(!list)throw new Error('Keine Quellenliste gefunden');const clean=list.map(normalizeSource).filter(Boolean);if(!clean.length)throw new Error('Keine gültigen Quellen gefunden');return clean}
-function importSources(payload){const clean=validateSourceImport(payload);const previous=localSources();localStorage.setItem(SOURCE_BACKUP_KEY,JSON.stringify({savedAt:new Date().toISOString(),sources:previous}));const map=new Map(previous.map(s=>[s.id,s]));clean.forEach(s=>map.set(s.id,{...s,local:true}));localStorage.setItem(SOURCE_DATA_KEY,JSON.stringify([...map.values()]));mergeSources();renderSourceFilters();renderSourceManager();toast(`${clean.length} Quellen übernommen`)}
+function importSources(payload){const clean=validateSourceImport(payload);const previous=localSources();localStorage.setItem(SOURCE_BACKUP_KEY,JSON.stringify({savedAt:new Date().toISOString(),sources:previous}));const map=new Map(previous.map(s=>[s.id,s]));let added=0,updated=0;clean.forEach(s=>{(map.has(s.id)||sourceById(s.id))?updated++:added++;map.set(s.id,{...s,local:true})});localStorage.setItem(SOURCE_DATA_KEY,JSON.stringify([...map.values()]));mergeSources();renderSourceFilters();renderSourceManager();toast(`${added} neue · ${updated} aktualisierte Quellen`)}
+function openSourceDialog(source=null){
+ const d=$('#sourceDialog');if(!d)return;const s=source||{};
+ $('#sourceDialogTitle').textContent=source?'Quelle bearbeiten':'Neue Quelle';$('#sourceEditOriginalId').value=s.id||'';$('#sourceName').value=s.name||'';$('#sourceDomain').value=s.domain||'';$('#sourceCountry').value=s.country||'Deutschland';$('#sourceType').value=s.type||'Direkter Veranstalter';$('#sourceAutomation').value=s.automation||'yellow';$('#sourceQuality').value=String(s.quality||4);$('#sourceInterval').value=String(s.checkIntervalDays||7);$('#sourceCategories').value=(s.categories||[]).join(', ');$('#sourceNotes').value=s.notes||'';$('#sourceRequiresLogin').checked=Boolean(s.requiresLogin);$('#sourceSocialOnly').checked=Boolean(s.socialOnly);$('#sourceActive').checked=s.active!==false;$('#sourceFormHint').textContent=source?`ID: ${s.id} · Änderungen werden lokal gespeichert.`:'Die Quelle wird lokal ergänzt und ist in deiner persönlichen Sicherung enthalten.';d.showModal();
+}
+function saveSourceForm(e){
+ e.preventDefault();const original=$('#sourceEditOriginalId').value.trim();const name=$('#sourceName').value.trim();const domain=$('#sourceDomain').value.trim().replace(/^https?:\/\//i,'').replace(/\/$/,'');if(!name||!domain)return toast('Bitte Name und Domain eintragen');
+ const id=original||sourceSlug(name+'-'+domain.split('.')[0]);const duplicate=sources.find(x=>x.id!==original&&x.domain.toLowerCase()===domain.toLowerCase());if(duplicate&&!confirm(`Die Domain ist bereits bei „${duplicate.name}“ vorhanden. Trotzdem speichern?`))return;
+ const previous=sourceById(original);persistSource({...(previous||{}),id,name,domain,country:$('#sourceCountry').value.trim()||'Deutschland',countriesAllowed:previous?.countriesAllowed||[$('#sourceCountry').value.trim()||'Deutschland'],type:$('#sourceType').value,categories:$('#sourceCategories').value.split(',').map(x=>x.trim()).filter(Boolean),automation:$('#sourceAutomation').value,quality:Number($('#sourceQuality').value),active:$('#sourceActive').checked,requiresLogin:$('#sourceRequiresLogin').checked,socialOnly:$('#sourceSocialOnly').checked,checkIntervalDays:Number($('#sourceInterval').value),lastChecked:previous?.lastChecked||null,notes:$('#sourceNotes').value.trim()},original);$('#sourceDialog').close();toast(sourceById(original)?'Quelle aktualisiert':'Quelle gespeichert');
+}
 function setupSourceManager(){
- const search=$('#sourceSearch'),country=$('#sourceCountryFilter'),type=$('#sourceTypeFilter'),auto=$('#sourceAutomationFilter'),file=$('#sourceImportFile');
- search?.addEventListener('input',e=>{sourceFilters.search=e.target.value;renderSourceManager()});country?.addEventListener('change',e=>{sourceFilters.country=e.target.value;renderSourceManager()});type?.addEventListener('change',e=>{sourceFilters.type=e.target.value;renderSourceManager()});auto?.addEventListener('change',e=>{sourceFilters.automation=e.target.value;renderSourceManager()});
- $('#chooseSourceImportBtn')?.addEventListener('click',()=>file?.click());
+ const search=$('#sourceSearch'),country=$('#sourceCountryFilter'),type=$('#sourceTypeFilter'),auto=$('#sourceAutomationFilter'),review=$('#sourceReviewFilter'),file=$('#sourceImportFile');
+ search?.addEventListener('input',e=>{sourceFilters.search=e.target.value;renderSourceManager()});country?.addEventListener('change',e=>{sourceFilters.country=e.target.value;renderSourceManager()});type?.addEventListener('change',e=>{sourceFilters.type=e.target.value;renderSourceManager()});auto?.addEventListener('change',e=>{sourceFilters.automation=e.target.value;renderSourceManager()});review?.addEventListener('change',e=>{sourceFilters.review=e.target.value;renderSourceManager()});
+ $('#addSourceBtn')?.addEventListener('click',()=>openSourceDialog());$('#chooseSourceImportBtn')?.addEventListener('click',()=>file?.click());
  if(file)file.onchange=async()=>{const f=file.files[0];if(!f)return;try{importSources(JSON.parse(await f.text()))}catch(e){toast('Quellenimport fehlgeschlagen: '+e.message)}finally{file.value=''}};
  $('#exportSourcesBtn')?.addEventListener('click',()=>downloadJSON(`win-win-quellen-${new Date().toISOString().slice(0,10)}.json`,{version:APP_VERSION,updated:new Date().toISOString(),sources}));
- $('#resetSourcesBtn')?.addEventListener('click',()=>{if(!localStorage.getItem(SOURCE_DATA_KEY))return toast('Keine lokalen Quellenänderungen vorhanden');if(confirm('Lokale Quellenänderungen zurücksetzen? Persönliche Status bleiben erhalten.')){localStorage.removeItem(SOURCE_DATA_KEY);mergeSources();renderSourceFilters();renderSourceManager();toast('Quellen zurückgesetzt')}});
-}
-
-function renderDataCenter(report=null){
- const el=$('#importSummary'),local=$('#localDataText');if(!el||!local)return;
- const activeCount=allActive().length;
- el.innerHTML=`<div class="data-stat"><strong>${contests.length}</strong><span>gesamt</span></div><div class="data-stat"><strong>${activeCount}</strong><span>aktiv</span></div><div class="data-stat"><strong>${customContests.length}</strong><span>lokal ergänzt</span></div>${report?`<div class="import-report"><strong>Letzter Import:</strong> ${report.added} neu, ${report.updated} aktualisiert, ${report.invalid} ungültig, ${report.duplicates||0} Dubletten, ${report.idConflicts||0} ID-Konflikte.</div>`:''}`;
- local.textContent=customContests.length?`${customContests.length} lokal importierte Datensätze sind auf diesem Gerät gespeichert.`:'Noch keine lokalen Ergänzungen gespeichert.'
- renderSourceOverview();
- renderQualityOverview();
-}
-function renderSourceOverview(){renderSourceManager()}
-function renderQualityOverview(){
- const box=$('#qualityOverview');if(!box)return;
- const total=contests.length||1;
- const checks=[
-  ['Direktlink vorhanden',contests.filter(i=>/^https?:\/\//i.test(i.url||'')).length],
-  ['Gewinnerzahl bekannt',contests.filter(i=>Number(i.winners)>0).length],
-  ['Anbieter bewertet',contests.filter(i=>Number(i.providerTrust)>0).length],
-  ['Aufwand bewertet',contests.filter(i=>Number(i.effort)>0).length],
-  ['Aktuell verifiziert',contests.filter(i=>i.verified).length],
-  ['Stabile ID',contests.filter(i=>i.id&&!i.id.startsWith('import-')).length]
- ];
- box.innerHTML=checks.map(([name,count])=>{const pct=Math.round(count/total*100);return `<div class="quality-row"><span><strong>${esc(name)}</strong><em>${count} von ${contests.length}</em></span><i><u style="width:${pct}%"></u></i><b>${pct}%</b></div>`}).join('');
- renderQualityWarnings();renderProviderQuality();
-}
-function renderQualityWarnings(){
- const box=$('#qualityWarnings');if(!box)return;
- const rows=contests.map(i=>({i,w:contestWarnings(i)})).filter(x=>x.w.length).sort((a,b)=>b.w.length-a.w.length);
- const similar=[];for(let a=0;a<contests.length;a++)for(let b=a+1;b<contests.length;b++)if(areSimilarContests(contests[a],contests[b]))similar.push([contests[a],contests[b]]);
- box.innerHTML=`<div class="warning-summary"><div><strong>${rows.length}</strong><span>Einträge mit Hinweisen</span></div><div><strong>${similar.length}</strong><span>ähnliche Paare</span></div></div>`+
- (rows.length?rows.slice(0,12).map(({i,w})=>`<div class="quality-warning"><div><strong>${esc(i.title)}</strong><span>${esc(i.provider)}</span></div><p>${w.map(esc).join(' · ')}</p></div>`).join(''):empty('Keine auffälligen Datensätze gefunden.'))+
- (similar.length?`<details class="similar-details"><summary>${similar.length} ähnliche Gewinnspiel-Paare prüfen</summary>${similar.slice(0,12).map(([a,b])=>`<p><strong>${esc(a.provider)}</strong><br>${esc(a.title)} ↔ ${esc(b.title)}</p>`).join('')}</details>`:'');
-}
-function renderProviderQuality(){
- const box=$('#providerQuality');if(!box)return;
- const map=new Map();contests.forEach(i=>{const k=i.provider||'Unbekannt',r=map.get(k)||{n:0,trust:0,warn:0};r.n++;r.trust+=Number(i.providerTrust)||3;r.warn+=contestWarnings(i).length;map.set(k,r)});
- const rows=[...map].map(([name,r])=>({name,...r,avg:Math.round(r.trust/r.n*10)/10})).sort((a,b)=>b.avg-a.avg||b.n-a.n);
- box.innerHTML=rows.map(r=>`<div class="provider-quality-row"><div><strong>${esc(r.name)}</strong><span>${r.n} Einträge · ${r.warn} Hinweise</span></div><b>${r.avg}/5</b></div>`).join('')||empty('Keine Anbieter vorhanden.');
-}
-function setupDataCenter(){
- const input=$('#importFile');if(!input)return;
- $('#chooseImportBtn').onclick=()=>input.click();
- input.onchange=async()=>{const f=input.files[0];if(!f)return;try{prepareImport(JSON.parse(await f.text()),f.name)}catch(e){toast('Import fehlgeschlagen: '+e.message)}finally{input.value=''}};
- $('#pasteImportBtn').onclick=()=>{try{prepareImport(JSON.parse($('#jsonPaste').value),'Eingefügtes JSON')}catch(e){toast('Import fehlgeschlagen: '+e.message)}};
- $('#clearPasteBtn').onclick=()=>{$('#jsonPaste').value=''};
- $('#exportMergedBtn').onclick=()=>downloadJSON(`win-win-gesamtkatalog-${new Date().toISOString().slice(0,10)}.json`,{version:APP_VERSION,updated:new Date().toISOString(),contests});
- $('#exportLocalBtn').onclick=()=>downloadJSON(`win-win-lokale-ergaenzungen-${new Date().toISOString().slice(0,10)}.json`,{version:APP_VERSION,updated:new Date().toISOString(),contests:customContests});
- $('#clearLocalBtn').onclick=()=>{if(!customContests.length)return toast('Keine lokalen Ergänzungen vorhanden');if(confirm('Alle lokal importierten Gewinnspiele löschen? Persönliche Status bleiben erhalten.')){localStorage.setItem(IMPORT_BACKUP_KEY,JSON.stringify({savedAt:new Date().toISOString(),contests:customContests}));customContests=[];localStorage.removeItem(CUSTOM_DATA_KEY);applyCustomData({added:0,updated:0,invalid:0});toast('Lokale Ergänzungen gelöscht')}};
- $('#restoreCatalogBtn').onclick=restoreCatalogBackup;
- renderDataCenter();renderImportPreview();renderImportHistory()
+ $('#resetSourcesBtn')?.addEventListener('click',()=>{if(!localStorage.getItem(SOURCE_DATA_KEY))return toast('Keine lokalen Quellenänderungen vorhanden');if(confirm('Lokale Quellenänderungen zurücksetzen? Die Basisliste bleibt erhalten.')){localStorage.removeItem(SOURCE_DATA_KEY);mergeSources();renderSourceFilters();renderSourceManager();toast('Lokale Quellen zurückgesetzt')}});
+ $('#sourceForm')?.addEventListener('submit',saveSourceForm);$('#closeSourceDialog')?.addEventListener('click',()=>$('#sourceDialog')?.close());$('#cancelSourceDialog')?.addEventListener('click',()=>$('#sourceDialog')?.close());
+ $('#sourceOverview')?.addEventListener('click',e=>{const check=e.target.closest('[data-source-check]'),edit=e.target.closest('[data-source-edit]'),toggle=e.target.closest('[data-source-toggle]');if(check){const s=sourceById(check.dataset.sourceCheck);if(s){persistSource({...s,lastChecked:new Date().toISOString().slice(0,10)},s.id);toast(`${s.name} als geprüft markiert`)}}else if(edit){const s=sourceById(edit.dataset.sourceEdit);if(s)openSourceDialog(s)}else if(toggle){const s=sourceById(toggle.dataset.sourceToggle);if(s){persistSource({...s,active:!s.active},s.id);toast(`${s.name} ${s.active?'pausiert':'aktiviert'}`)}}});
 }
 
 function validContest(i){
