@@ -26,3 +26,8 @@ Ein kostenloser, persönlicher Gewinnspiel-Assistent, der lokal arbeitet und tä
 - [ ] 2.9 Tagesroutine und flexible Tagesziele
 
 - Vollständige persönliche Sicherung und geräteübergreifende Wiederherstellung per JSON
+
+
+## Version 3.1 – umgesetzt
+- Quellen-Datenbank und sourceId-Verknüpfung
+- Quellenfilter, Import, Export und Qualitätsübersicht

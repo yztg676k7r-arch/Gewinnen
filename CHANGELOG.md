@@ -1,3 +1,11 @@
+# Win Win – Changelog
+
+## 3.1.0 – Quellen-Datenbank
+- Separate Quellen-Datenbank mit `data/sources.json`
+- Quellenfilter, Statistik, Import und Export
+- Gewinnspiele über `sourceId` verknüpft
+- Persönliche Statusspeicher unverändert
+
 # Changelog
 
 ## 3.0.0

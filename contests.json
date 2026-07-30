@@ -1,6 +1,6 @@
 {
-  "version": "1.8.0",
-  "updated": "2026-07-29T20:35:00+02:00",
+  "version": "3.1.0",
+  "updated": "2026-07-30T08:45:00+02:00",
   "contests": [
     {
       "id": "dm-ob-starterset-2026",
@@ -30,7 +30,8 @@
         "viele Gewinner",
         "schnell"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "dm"
     },
     {
       "id": "dm-adventskalender-2026",
@@ -60,7 +61,8 @@
         "viele Gewinner",
         "schnell"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "dm"
     },
     {
       "id": "dm-seeberger-2026",
@@ -89,7 +91,8 @@
         "Freizeit",
         "schnell"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "dm"
     },
     {
       "id": "dm-borotalco-2026",
@@ -118,7 +121,8 @@
         "Beauty",
         "schnell"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "dm"
     },
     {
       "id": "rossmann-neonail-2026",
@@ -148,7 +152,8 @@
         "Beauty",
         "viele Gewinner"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "rossmann"
     },
     {
       "id": "rossmann-centaur-juli-2026",
@@ -176,7 +181,8 @@
       "tags": [
         "Reisen"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "rossmann"
     },
     {
       "id": "qvc-insider-2026",
@@ -205,7 +211,8 @@
         "Wohnen",
         "international"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "qvc"
     },
     {
       "id": "schoener-wohnen-2026",
@@ -234,7 +241,8 @@
       "tags": [
         "Wohnen"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "schoener-wohnen"
     },
     {
       "id": "dm-produkttests-2026",
@@ -263,7 +271,8 @@
       "tags": [
         "Produkttests"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "dm"
     },
     {
       "id": "dm-alverde-kreuzwortraetsel-juli-2026",
@@ -294,7 +303,8 @@
         "Reisen",
         "Wellness"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "dm"
     },
     {
       "id": "dm-alverde-sudoku-juli-2026",
@@ -325,7 +335,8 @@
         "Beauty",
         "Rätsel"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "dm"
     },
     {
       "id": "dm-instagram-cool-blue-box-2026",
@@ -356,7 +367,8 @@
         "Beauty",
         "Instagram"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "dm"
     },
     {
       "id": "zoo-hannover-nacht-der-erlebnisse-2026",
@@ -389,7 +401,8 @@
         "Hannover",
         "Tickets"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "erlebnis-zoo-hannover"
     },
     {
       "id": "hammerite-feuerkorb-2026",
@@ -421,7 +434,8 @@
         "Wohnen",
         "Feuerkorb"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "hammerite"
     },
     {
       "id": "swr1-perfekter-tag-ulm-2026",
@@ -454,7 +468,8 @@
         "Erlebnistag",
         "Ulm"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "swr1"
     },
     {
       "id": "swr1-perfekter-tag-konstanz-2026",
@@ -487,7 +502,8 @@
         "Erlebnistag",
         "Konstanz"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "swr1"
     },
     {
       "id": "swr1-perfekter-tag-baden-baden-2026",
@@ -520,7 +536,8 @@
         "Erlebnistag",
         "Baden-Baden"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "swr1"
     },
     {
       "id": "ndr-marteria-rostock-2026",
@@ -553,7 +570,8 @@
         "Musik",
         "Rostock"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "ndr-mv"
     },
     {
       "id": "ndr-63-hektar-ipad-2026",
@@ -585,7 +603,8 @@
         "iPad",
         "Podcast"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "ndr-1-niedersachsen"
     },
     {
       "id": "ndr-hitsekunde-sommerdom-2026",
@@ -618,7 +637,8 @@
         "Hamburg",
         "Radio"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "ndr-90-3"
     },
     {
       "id": "swr-kultur-la-traviata-2026",
@@ -650,7 +670,8 @@
         "Oper",
         "Bregenzer Festspiele"
       ],
-      "addedAt": "29.07.2026"
+      "addedAt": "29.07.2026",
+      "sourceId": "swr-kultur"
     }
   ],
   "appName": "Win Win",

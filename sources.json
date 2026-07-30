@@ -1,0 +1,254 @@
+{
+  "version": "3.1.0",
+  "updated": "2026-07-30T08:45:00+02:00",
+  "sources": [
+    {
+      "id": "dm",
+      "name": "dm",
+      "domain": "dm.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Direkter Veranstalter",
+      "categories": [
+        "Beauty",
+        "Produkttests",
+        "Freizeit"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": true,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Gewinnspiele und Produkttests auf offiziellen dm-Seiten."
+    },
+    {
+      "id": "rossmann",
+      "name": "ROSSMANN",
+      "domain": "rossmann.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Direkter Veranstalter",
+      "categories": [
+        "Beauty",
+        "Reisen"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": true,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Einige Aktionen laufen ausschließlich in der ROSSMANN-App."
+    },
+    {
+      "id": "qvc",
+      "name": "QVC",
+      "domain": "qvc.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland",
+        "Österreich"
+      ],
+      "type": "Direkter Veranstalter",
+      "categories": [
+        "Wohnen",
+        "Beauty"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": "2026-07-30",
+      "notes": "Teilnahmegebiet je Aktion prüfen."
+    },
+    {
+      "id": "schoener-wohnen",
+      "name": "SCHÖNER WOHNEN",
+      "domain": "schoener-wohnen.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Wohnen",
+        "Reisen",
+        "Technik"
+      ],
+      "automation": "green",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": "2026-07-30",
+      "notes": "Regelmäßig wechselnde Monatsgewinnspiele."
+    },
+    {
+      "id": "erlebnis-zoo-hannover",
+      "name": "Erlebnis-Zoo Hannover",
+      "domain": "erlebnis-zoo.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Regionaler Veranstalter",
+      "categories": [
+        "Freizeit",
+        "Familie"
+      ],
+      "automation": "yellow",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": "2026-07-30",
+      "notes": "Regionale Quelle mit oft kleinerem Teilnehmerkreis."
+    },
+    {
+      "id": "hammerite",
+      "name": "Hammerite",
+      "domain": "hammerite.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Garten",
+        "Wohnen"
+      ],
+      "automation": "yellow",
+      "quality": 4,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 14,
+      "lastChecked": "2026-07-30",
+      "notes": "Markenaktionen und saisonale Gewinnspiele."
+    },
+    {
+      "id": "ndr-mv",
+      "name": "NDR MV",
+      "domain": "ndr.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio & Medien",
+      "categories": [
+        "Tickets",
+        "Freizeit",
+        "Reisen"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Regionaler NDR-Bereich Mecklenburg-Vorpommern."
+    },
+    {
+      "id": "ndr-1-niedersachsen",
+      "name": "NDR 1 Niedersachsen",
+      "domain": "ndr.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio & Medien",
+      "categories": [
+        "Tickets",
+        "Freizeit",
+        "Reisen"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Regionale Radiogewinnspiele in Niedersachsen."
+    },
+    {
+      "id": "ndr-90-3",
+      "name": "NDR 90,3",
+      "domain": "ndr.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio & Medien",
+      "categories": [
+        "Tickets",
+        "Freizeit"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Hamburger Regionalprogramm des NDR."
+    },
+    {
+      "id": "swr1",
+      "name": "SWR1",
+      "domain": "swr.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio & Medien",
+      "categories": [
+        "Tickets",
+        "Freizeit",
+        "Reisen"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 2,
+      "lastChecked": "2026-07-30",
+      "notes": "Regelmäßige Radio-, Konzert- und Eventgewinnspiele."
+    },
+    {
+      "id": "swr-kultur",
+      "name": "SWR Kultur",
+      "domain": "swr.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio & Medien",
+      "categories": [
+        "Tickets",
+        "Kultur"
+      ],
+      "automation": "green",
+      "quality": 5,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 3,
+      "lastChecked": "2026-07-30",
+      "notes": "Kultur- und Veranstaltungsgewinne."
+    }
+  ]
+}

@@ -40,7 +40,7 @@
         <section class="update-status" id="updateStatus">
           <span class="status-dot"></span>
           <span id="updateText">Gewinnspiele werden geprüft …</span>
-          <small id="dataDiagnostics" class="data-diagnostics">App 3.0 · Daten werden geladen</small>
+          <small id="dataDiagnostics" class="data-diagnostics">App 3.1 · Daten werden geladen</small>
         </section>
         <section class="metric-grid" id="metrics"></section>
 
@@ -158,13 +158,29 @@
       <section id="dataView" class="view">
         <div class="view-title"><p class="section-kicker">DATENZENTRALE</p><h2>Import & Quellen</h2></div>
         <section class="data-hero">
-          <div><p class="section-kicker">WIN WIN 3.0</p><h3>Deine tägliche Gewinnspiel-Routine</h3><p>Die Heute-Ansicht führt dich jetzt in klaren Etappen durch deine wichtigsten offenen Gewinnspiele. Tagesziel und Reihenfolge kannst du selbst festlegen; erledigte und nicht interessante Einträge bleiben außen vor.</p></div>
+          <div><p class="section-kicker">WIN WIN 3.1</p><h3>Quellen-Datenbank</h3><p>Verwalte direkte Veranstalter, Magazine, Radiosender und weitere Fundstellen getrennt vom Gewinnspielkatalog. Persönliche Status bleiben davon unberührt.</p></div>
         </section>
         <section id="importSummary" class="import-summary"></section>
         <section id="importPreview" class="data-panel import-preview" hidden></section>
-        <section class="data-panel">
-          <div class="section-head compact"><div><p class="section-kicker">QUELLENKATALOG</p><h3>Enthaltene Anbieter</h3></div><span id="sourceCountBadge" class="source-count"></span></div>
-          <div id="sourceOverview" class="source-overview"></div>
+        <section class="data-panel source-manager-panel">
+          <div class="section-head compact"><div><p class="section-kicker">QUELLEN-DATENBANK</p><h3>Quellen verwalten</h3></div><span id="sourceCountBadge" class="source-count"></span></div>
+          <div id="sourceStats" class="source-stats"></div>
+          <div class="source-toolbar">
+            <input id="sourceSearch" type="search" placeholder="Quelle oder Domain suchen" aria-label="Quellen suchen">
+            <select id="sourceCountryFilter" aria-label="Land filtern"><option value="">Alle Länder</option></select>
+            <select id="sourceTypeFilter" aria-label="Quellentyp filtern"><option value="">Alle Typen</option></select>
+            <select id="sourceAutomationFilter" aria-label="Automatisierung filtern">
+              <option value="">Alle Status</option><option value="green">Grün · automatisierbar</option><option value="yellow">Gelb · halbautomatisch</option><option value="red">Rot · manuell</option>
+            </select>
+          </div>
+          <div id="sourceOverview" class="source-overview source-catalog"></div>
+          <div class="data-actions source-actions">
+            <button id="chooseSourceImportBtn" class="data-primary">Quellen-JSON importieren</button>
+            <input id="sourceImportFile" type="file" accept="application/json,.json" hidden>
+            <button id="exportSourcesBtn">Quellen exportieren</button>
+            <button id="resetSourcesBtn" class="danger-button">Lokale Quellen zurücksetzen</button>
+          </div>
+          <p id="sourceDataNote" class="data-safety-note">Die Quellen-Datenbank wird getrennt von deinen persönlichen Gewinnspielstatus gespeichert.</p>
         </section>
         <section class="data-panel">
           <div class="section-head compact"><div><p class="section-kicker">DATENQUALITÄT</p><h3>Katalog-Prüfung</h3></div></div>

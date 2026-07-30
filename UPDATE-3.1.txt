@@ -1,0 +1,13 @@
+WIN WIN 3.1 – QUELLEN-DATENBANK
+
+Neu:
+- separate data/sources.json
+- eindeutige sourceId-Verknüpfung in contests.json
+- Quellen-Suche und Filter nach Land, Typ und Automatisierbarkeit
+- Qualitäts-, Aktivitäts- und Verknüpfungsstatistik
+- separater Quellenimport und Quellenexport
+- lokales Zurücksetzen der Quellenänderungen
+- persönliche Status und bestehende LocalStorage-Schlüssel bleiben unverändert
+
+Installation:
+Alle Dateien in das bestehende GitHub-Repository hochladen und vorhandene Dateien ersetzen.
