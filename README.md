@@ -34,3 +34,7 @@ Unter Daten kann der vollständige lokale Stand exportiert und auf einem anderen
 
 ## Version 2.9
 Die Heute-Ansicht bietet eine persönliche Tagesroutine mit Ziel, Sortiermodus und klaren Etappen. Lokale Statusdaten werden bei Updates weiterhin nicht überschrieben.
+
+
+## Version 3.0.0
+Das Dashboard wurde vollständig neu aufgebaut und fehlertolerant gemacht.

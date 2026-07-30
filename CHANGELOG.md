@@ -1,3 +1,12 @@
+# Changelog
+
+## 3.0.0
+- Dashboard-Cockpit technisch neu aufgebaut
+- robuste Bereich-für-Bereich-Darstellung
+- kompakte Kennzahlen, Top-Empfehlung und Tagesplan
+- defekte ältere Gewinnarchiveinträge blockieren das Dashboard nicht mehr
+- persönliche Status und LocalStorage-Schlüssel unverändert
+
 # Version 2.9.2
 
 - Dashboard-Abbruch durch fehlerhafte oder ältere Gewinnarchiv-Datumswerte behoben.
@@ -11,7 +20,6 @@
 - Mobile Kennzahlen und Abstände überarbeitet.
 - Bestehende lokale Statusdaten und Speicherschlüssel bleiben unverändert.
 
-# Changelog
 
 ## 2.9
 - Persönliche Tagesroutine mit frei wählbarem Tagesziel.

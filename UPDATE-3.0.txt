@@ -1,0 +1,12 @@
+Win Win 3.0.0
+
+Geänderte Dateien:
+- index.html
+- app.js
+- styles.css
+- sw.js
+- README.md
+- ROADMAP.md
+- CHANGELOG.md
+
+Wichtig: Die bestehenden LocalStorage-Schlüssel wurden nicht verändert. Teilgenommen, Nicht interessant, Favoriten, Gewinne und Importe bleiben erhalten.
