@@ -1,5 +1,5 @@
 
-const APP_VERSION='2.9';
+const APP_VERSION='2.9.1';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;
@@ -384,21 +384,28 @@ function renderPersonal(){
  if(ending)focus.push(`<button onclick="openDiscover('endingSoon')"><b>${ending}</b><span>offene Gewinnspiele enden in höchstens 3 Tagen</span><em>Jetzt prüfen →</em></button>`);
  if(topOpen)focus.push(`<button onclick="openDiscover('top')"><b>${topOpen}</b><span>offene Top-Chancen warten auf dich</span><em>Priorisieren →</em></button>`);
  if(daily)focus.push(`<button onclick="openDiscover('daily')"><b>${daily}</b><span>Gewinnspiele erlauben eine Wiederholung</span><em>Täglich teilnehmen →</em></button>`);
- $('#dashboardFocus').innerHTML=focus.length?`<p class="section-kicker">JETZT SINNVOLL</p><h2>Dein nächster Schritt</h2><div>${focus.join('')}</div>`:'';
+ const focusBox=$('#dashboardFocus');
+ if(focusBox){
+  focusBox.innerHTML=focus.length?`<p class="section-kicker">JETZT SINNVOLL</p><h2>Dein nächster Schritt</h2><div>${focus.join('')}</div>`:'';
+  focusBox.hidden=!focus.length;
+ }
  const todayFirst=pool.filter(i=>!stateFor(i.id).done&&!stateFor(i.id).ignored).sort((x,y)=>((y.score+(daysLeft(y)<=2?12:0))- (x.score+(daysLeft(x)<=2?12:0))));
  const endingToday=pool.filter(i=>daysLeft(i)===0);
  const ending3=pool.filter(i=>daysLeft(i)>=0&&daysLeft(i)<=3).sort((x,y)=>daysLeft(x)-daysLeft(y));
  const top=pool.filter(i=>i.score>=80);
  const highValue=pool.filter(i=>i.highValuePrize).sort((x,y)=>y.score-x.score);
  const quick=pool.filter(i=>(i.effort||3)===1).sort((x,y)=>y.score-x.score);
- $('#dashboardPriorityGroups').innerHTML=[
-  dashboardGroup('Heute zuerst teilnehmen','DEINE BESTE REIHENFOLGE',todayFirst,'recommended','Für heute ist alles erledigt.'),
-  dashboardGroup('Endet heute','JETZT ODER NIE',endingToday,'endingSoon','Heute endet kein offenes Gewinnspiel.'),
-  dashboardGroup('Endet in 3 Tagen','SCHNELL SEIN',ending3,'endingSoon','In den nächsten drei Tagen endet nichts.'),
-  dashboardGroup('Top-Gewinnchancen','HOHE TREFFERCHANCE',top,'top','Aktuell gibt es keine offene Top-Chance.'),
-  dashboardGroup('Hoher Gewinnwert','BESONDERS ATTRAKTIV',highValue,'all','Keine offenen hochwertigen Gewinne markiert.'),
-  dashboardGroup('Schnell erledigt','UNTER 1 MINUTE',quick,'all','Aktuell ist kein besonders schnelles Gewinnspiel offen.')
- ].join('');
+ const dashboardGroups=[
+  ['Heute zuerst teilnehmen','DEINE BESTE REIHENFOLGE',todayFirst,'recommended'],
+  ['Endet heute','JETZT ODER NIE',endingToday,'endingSoon'],
+  ['Endet in 3 Tagen','SCHNELL SEIN',ending3,'endingSoon'],
+  ['Top-Gewinnchancen','HOHE TREFFERCHANCE',top,'top'],
+  ['Hoher Gewinnwert','BESONDERS ATTRAKTIV',highValue,'all'],
+  ['Schnell erledigt','UNTER 1 MINUTE',quick,'all']
+ ].filter(([, ,items])=>items.length);
+ $('#dashboardPriorityGroups').innerHTML=dashboardGroups.length
+  ?dashboardGroups.map(([title,kicker,items,filter])=>dashboardGroup(title,kicker,items,filter,'')).join('')
+  :empty('Aktuell gibt es keine offenen Empfehlungen für dein Dashboard.');
  const counts={};
  done.forEach(i=>{const c=i.category||'Sonstiges';counts[c]=(counts[c]||0)+1});
  const cats=Object.entries(counts).sort((x,y)=>y[1]-x[1]).slice(0,6);
@@ -414,7 +421,17 @@ function renderPreferencePanel(){
  $('#preferenceEnabled').onchange=e=>{preferences.enabled=e.target.checked;savePreferences();renderAll();toast(preferences.enabled?'Persönliche Gewichtung aktiviert':'Persönliche Gewichtung pausiert')};
  $('#resetPreferencesBtn').onclick=()=>{if(confirm('Persönliche Gewichtung wirklich zurücksetzen? Deine Teilnahmen, Favoriten und Gewinne bleiben erhalten.'))resetPreferences()};
 }
-function renderAll(){renderMetrics();renderHome();renderToday();renderDiscover();renderPersonal();renderPreferencePanel()}
+function safeRender(name,fn){
+ try{fn()}catch(error){console.error(`Win Win: ${name} konnte nicht gerendert werden`,error)}
+}
+function renderAll(){
+ safeRender('Start-Kennzahlen',renderMetrics);
+ safeRender('Startseite',renderHome);
+ safeRender('Heute',renderToday);
+ safeRender('Entdecken',renderDiscover);
+ safeRender('Dashboard',renderPersonal);
+ safeRender('Vorlieben',renderPreferencePanel);
+}
 function openView(id){$$('.view').forEach(v=>v.classList.toggle('active',v.id===id));$$('.nav-item').forEach(n=>n.classList.toggle('active',n.dataset.view===id));window.scrollTo({top:0,behavior:'smooth'})}
 function openDiscover(f){currentFilter=f;$$('.chip').forEach(c=>c.classList.toggle('active',c.dataset.filter===f));openView('discoverView');renderDiscover()}
 

@@ -1,3 +1,10 @@
+# Version 2.9.1
+
+- Dashboard-Rendering gegen Fehler in anderen Ansichten abgesichert.
+- Leere Dashboard-Bereiche werden ausgeblendet.
+- Mobile Kennzahlen und Abstände überarbeitet.
+- Bestehende lokale Statusdaten und Speicherschlüssel bleiben unverändert.
+
 # Changelog
 
 ## 2.9

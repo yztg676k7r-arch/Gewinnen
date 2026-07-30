@@ -205,3 +205,26 @@ main{padding:0 16px}.view{display:none;animation:fade .18s ease}.view.active{dis
 .today-next{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:17px;margin:0 0 18px;border-radius:22px;background:linear-gradient(135deg,var(--surface),var(--surface-2));border:1px solid var(--line);box-shadow:var(--shadow)}.today-next h3{margin:3px 0 6px;font-size:18px}.today-next p:not(.section-kicker){margin:0;color:var(--muted);font-size:12px}.today-next>a{padding:11px 13px;border-radius:13px;background:var(--blue-dark);color:#fff;text-decoration:none;font-weight:850;white-space:nowrap}
 .today-stage-list{display:grid;gap:20px}.today-stage{display:grid;gap:10px}.today-stage-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 2px}.today-stage-head h3{margin:0;font-size:18px}.today-stage-head p{margin:3px 0 0;color:var(--muted);font-size:11px}.today-stage-head>span{display:grid;place-items:center;min-width:30px;height:30px;border-radius:999px;background:var(--surface-2);font-weight:850;color:var(--muted)}
 @media(max-width:520px){.daily-routine-controls{grid-template-columns:1fr}.today-next{align-items:stretch;flex-direction:column}.today-next>a{text-align:center}}
+
+
+/* Win Win 2.9.1 – Dashboard-Reparatur und mobile Aufräumung */
+[hidden]{display:none!important}
+#statsView .view-title{margin-bottom:4px}
+#statsView .stats-hero{min-height:132px;display:flex;flex-direction:column;justify-content:center}
+#statsView .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:18px}
+#statsView .stat-card{min-height:104px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+#statsView .stat-card>span:first-child{font-size:20px;color:var(--ink);margin-bottom:3px}
+#statsView .stat-card strong{line-height:1.05}
+#statsView .dashboard-mode-note{margin:0 0 18px}
+#statsView .preference-panel:empty,#statsView .win-of-day:empty,#statsView .dashboard-focus:empty,#statsView .category-stats:empty,#statsView .win-archive-list:empty{display:none}
+#statsView .section{margin-bottom:24px}
+#statsView .section-head{align-items:flex-start}
+@media(max-width:430px){
+ #statsView .dashboard-title-row{display:grid;grid-template-columns:1fr auto;align-items:start}
+ #statsView .dashboard-toggle{font-size:11px;padding:8px 10px}
+ #statsView .stats-hero{padding:20px;min-height:118px}
+ #statsView .stats-hero strong{font-size:42px}
+ #statsView .stat-card{padding:13px;min-height:94px}
+ #statsView .stat-card strong{font-size:24px}
+ #statsView .stat-card span:last-child{font-size:11px;line-height:1.25}
+}
