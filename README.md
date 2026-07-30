@@ -1,4 +1,4 @@
-# Win Win 4.2
+# Win Win 4.3
 
 Persönliche, kostenlose PWA zur Verwaltung und Priorisierung von Gewinnspielen.
 
@@ -52,5 +52,8 @@ Die Datenzentrale enthält eine lokale Prüf-Warteschlange. Fällige Quellen wer
 Die Treffer-Inbox sammelt mehrere gefundene Direktlinks, erkennt bekannte Quellen und übergibt einzelne Treffer an den Katalog-Manager. Alle Daten bleiben lokal.
 
 
-## Version 4.2
+## Version 4.3
 Der Katalog-Manager prüft neue Gewinnspiele live auf Frist, Direktlink, Quelle, Teilnahmegebiet und Vollständigkeit.
+
+
+Version 4.3 ergänzt einen Tagesmodus für die tägliche Gewinnspielbearbeitung.

@@ -1,4 +1,10 @@
-## 4.2 – Qualitätsprüfung
+
+## 4.3 Daily Workflow
+- Tagesmodus hinzugefügt
+- Dashboard-Stabilität weiter verbessert
+- Fokus auf täglichen Arbeitsablauf.
+
+## 4.3 – Qualitätsprüfung
 - Live-Prüfung neuer Katalogeinträge auf Frist, Link, Quelle und Teilnahmegebiet.
 - Ungültige oder abgelaufene Einträge werden blockiert.
 - Qualitätswert und Warnungen werden lokal gespeichert.
