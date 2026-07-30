@@ -1,5 +1,5 @@
 
-const APP_VERSION='3.6.3';
+const APP_VERSION='3.6.4';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;
@@ -842,19 +842,34 @@ function renderSourceManager(){
 }
 function renderSourceCoverage(){const box=$('#sourceCoverage');if(!box)return;const categoryCounts={};sources.filter(s=>s.active&&s.germanyEligibility!=='no').forEach(s=>(s.categories||[]).forEach(c=>categoryCounts[c]=(categoryCounts[c]||0)+1));const wanted=['Beauty','Mode','Wohnen','Technik','Reisen','Freizeit','Food','Auto','Regional'];box.innerHTML=wanted.map(c=>`<div class="coverage-item ${(categoryCounts[c]||0)<3?'gap':''}"><span>${esc(c)}</span><strong>${categoryCounts[c]||0}</strong><small>${(categoryCounts[c]||0)<3?'Ausbauen':'gut abgedeckt'}</small></div>`).join('')}
 function recordSourceResult(id,found){const s=sourceById(id);if(!s)return;const today=new Date().toISOString().slice(0,10);persistSource({...s,lastChecked:today,successfulChecks:s.successfulChecks+(found?1:0),emptyChecks:s.emptyChecks+(found?0:1),lastResultCount:found?Math.max(1,s.lastResultCount):0},s.id);toast(found?`${s.name}: Treffer erfasst`:`${s.name}: leere Prüfung erfasst`)}
+async function fetchJsonFromPaths(paths, validator){
+ const errors=[];
+ for(const path of paths){
+  try{
+   const r=await fetch(path,{cache:'no-store',headers:{'Accept':'application/json'}});
+   if(!r.ok)throw new Error(`HTTP ${r.status}`);
+   const raw=await r.text();
+   if(raw.trim().startsWith('<'))throw new Error('HTML statt JSON');
+   const payload=JSON.parse(raw);
+   if(validator&&!validator(payload))throw new Error('Ungültiges Datenformat');
+   return {payload,path};
+  }catch(error){errors.push(`${path}: ${error.message}`)}
+ }
+ throw new Error(errors.join(' · '));
+}
 async function loadSources(){
  const badge=$('#sourceCountBadge'),note=$('#sourceDataNote'),box=$('#sourceOverview');
  if(badge)badge.textContent='Quellen werden geladen …';
  if(note)note.textContent='Quellen-Datenbank wird unabhängig von den Gewinnspielen geladen.';
  try{
-  const r=await fetch('./data/sources.json',{cache:'no-store',headers:{'Accept':'application/json'}});
-  if(!r.ok)throw new Error(`HTTP ${r.status}`);
-  const raw=await r.text();
-  if(raw.trim().startsWith('<'))throw new Error('HTML statt JSON');
-  const p=JSON.parse(raw);
-  if(!p||!Array.isArray(p.sources))throw new Error('Ungültiges Quellenformat');
+  const result=await fetchJsonFromPaths(
+   ['./data/sources.json','./sources.json'],
+   p=>p&&Array.isArray(p.sources)
+  );
+  const p=result.payload;
   baseSources=p.sources.map(normalizeSource).filter(Boolean);
   sourceDataVersion=p.version||'unbekannt';
+  if(note)note.textContent=`Quellen aus ${result.path} geladen.`;
  }catch(e){
   console.warn('Win Win: Quellen konnten nicht geladen werden',e);
   baseSources=[];sourceDataVersion='lokal';
@@ -951,18 +966,11 @@ async function loadData(silent=false){
  try{
    // Keine wechselnde Query-Zeichenfolge: ältere Service Worker konnten
    // JSON-Anfragen mit Cache-Buster fälschlich als HTML beantworten.
-   const r=await fetch('./data/contests.json',{
-     cache:'no-store',
-     headers:{'Accept':'application/json'}
-   });
-   if(!r.ok)throw new Error(`HTTP ${r.status}`);
-   const contentType=r.headers.get('content-type')||'';
-   const raw=await r.text();
-   if(contentType.includes('text/html')||raw.trim().startsWith('<')){
-     throw new Error('Statt JSON wurde HTML geliefert');
-   }
-   const p=JSON.parse(raw);
-   if(!p || !Array.isArray(p.contests))throw new Error('Ungültiges Datenformat');
+   const result=await fetchJsonFromPaths(
+     ['./data/contests.json','./contests.json'],
+     p=>p&&Array.isArray(p.contests)
+   );
+   const p=result.payload;
    const clean=p.contests.filter(validContest);
    if(!clean.length)throw new Error('Keine gültigen Gewinnspiele gefunden');
    baseContests=clean;

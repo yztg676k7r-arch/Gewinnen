@@ -1,0 +1,9 @@
+WIN WIN 3.6.4 – PFAD- UND STARTFIX
+
+Behoben:
+- Quellen werden sowohl aus data/sources.json als auch aus sources.json geladen.
+- Gewinnspiele werden sowohl aus data/contests.json als auch aus contests.json geladen.
+- Die ZIP enthält beide Varianten, damit GitHub-Uploads mit oder ohne Unterordner funktionieren.
+- Der Service Worker scheitert nicht mehr, wenn eine optionale JSON-Datei an einem Pfad fehlt.
+- Cache und sichtbare Versionsnummer auf 3.6.4 erhöht.
+- Persönliche LocalStorage-Daten bleiben unverändert.

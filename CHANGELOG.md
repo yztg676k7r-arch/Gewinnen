@@ -1,3 +1,12 @@
+# Changelog
+
+## 3.6.4
+- Quellenpfad auf GitHub Pages repariert: Fallback zwischen `data/sources.json` und `sources.json`.
+- Entsprechender Fallback für Gewinnspieldaten.
+- Service-Worker-Installation toleriert fehlende optionale Datenpfade.
+- JSON-Dateien werden im ZIP zusätzlich im Hauptverzeichnis mitgeliefert.
+- Version und Cache vereinheitlicht.
+
 ## 3.6.3
 - Quellenanzeige auf iPhone/Safari stabilisiert und paginiert.
 - Versionsnummer und Cache vereinheitlicht.

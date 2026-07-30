@@ -1,35 +1,54 @@
-const CACHE='win-win-3.6.3';
+const CACHE='win-win-3.6.4';
 const CORE=[
- './','./index.html','./styles.css','./app.js','./manifest.webmanifest',
- './apple-touch-icon.png','./icons/icon-180.png','./icons/icon-192.png',
- './icons/icon-512.png','./data/contests.json','./data/sources.json'
+ './','./index.html','./styles.css?v=3.6.4','./app.js?v=3.6.4','./manifest.webmanifest',
+ './apple-touch-icon.png','./icons/icon-180.png','./icons/icon-192.png','./icons/icon-512.png'
 ];
+const OPTIONAL_DATA=['./data/contests.json','./contests.json','./data/sources.json','./sources.json'];
 
 self.addEventListener('install',event=>{
- event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)));
+ event.waitUntil((async()=>{
+  const cache=await caches.open(CACHE);
+  await cache.addAll(CORE);
+  await Promise.allSettled(OPTIONAL_DATA.map(path=>cache.add(path)));
+ })());
  self.skipWaiting();
 });
 
 self.addEventListener('activate',event=>{
- event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)))));
- self.clients.claim();
+ event.waitUntil((async()=>{
+  const keys=await caches.keys();
+  await Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)));
+  await self.clients.claim();
+ })());
 });
 
 self.addEventListener('fetch',event=>{
  if(event.request.method!=='GET')return;
  const url=new URL(event.request.url);
- const jsonPath=url.pathname.endsWith('/data/contests.json')?'./data/contests.json':url.pathname.endsWith('/data/sources.json')?'./data/sources.json':null;
- if(jsonPath){
-   event.respondWith(
-     fetch(event.request,{cache:'no-store'})
-       .then(response=>{if(!response.ok)throw new Error('JSON HTTP '+response.status);const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(jsonPath,copy));return response})
-       .catch(()=>caches.match(jsonPath))
-   );
-   return;
+ const isJson=url.pathname.endsWith('/contests.json')||url.pathname.endsWith('/sources.json');
+ if(isJson){
+  event.respondWith((async()=>{
+   try{
+    const response=await fetch(event.request,{cache:'no-store'});
+    if(!response.ok)throw new Error('JSON HTTP '+response.status);
+    const cache=await caches.open(CACHE);
+    cache.put(event.request,response.clone());
+    return response;
+   }catch(error){
+    const cached=await caches.match(event.request,{ignoreSearch:true});
+    if(cached)return cached;
+    return new Response(JSON.stringify({error:'Datei nicht verfügbar'}),{status:404,headers:{'Content-Type':'application/json'}});
+   }
+  })());
+  return;
  }
- event.respondWith(
-   fetch(event.request)
-     .then(response=>{const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy));return response})
-     .catch(async()=>{const cached=await caches.match(event.request,{ignoreSearch:true});return cached||caches.match('./index.html')})
- );
+ event.respondWith((async()=>{
+  try{
+   const response=await fetch(event.request);
+   if(response.ok){const cache=await caches.open(CACHE);cache.put(event.request,response.clone())}
+   return response;
+  }catch(error){
+   return (await caches.match(event.request,{ignoreSearch:true}))||(await caches.match('./index.html'));
+  }
+ })());
 });
