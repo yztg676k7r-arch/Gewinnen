@@ -1,0 +1,6 @@
+Win Win 2.9.2
+
+- Dashboard-Abbruch durch ungültige Gewinnarchiv-Daten behoben
+- Datumsformatierung fehlertolerant
+- Gewinnarchiv kann übriges Dashboard nicht mehr blockieren
+- Bestehende persönliche Status bleiben unverändert erhalten

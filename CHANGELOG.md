@@ -1,3 +1,9 @@
+# Version 2.9.2
+
+- Dashboard-Abbruch durch fehlerhafte oder ältere Gewinnarchiv-Datumswerte behoben.
+- Einzelne Dashboard-Bereiche sind gegen fehlerhafte lokale Daten abgesichert.
+- Persönliche Status und bestehende Speicherschlüssel bleiben unverändert.
+
 # Version 2.9.1
 
 - Dashboard-Rendering gegen Fehler in anderen Ansichten abgesichert.
