@@ -1,3 +1,10 @@
+## 3.9 – Katalog-Manager
+- Schnellerfassung für neue Gewinnspiele
+- automatische Quellen- und Kategorieerkennung aus URLs
+- Dublettenprüfung vor dem Speichern
+- neue Dashboard-Kennzahlen für heute, morgen und diese Woche endende Aktionen
+- alle Versionsstellen auf 3.9 aktualisiert
+
 # Version 3.8.1 – Navigations-Bugfix
 
 - Kritischen JavaScript-Startfehler behoben: `safeJSON` wurde vor der Definition aufgerufen.

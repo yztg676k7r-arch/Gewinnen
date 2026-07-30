@@ -1,0 +1,3 @@
+WIN WIN 3.9 – KATALOG-MANAGER
+
+Neue Gewinnspiele können direkt in der Datenzentrale erfasst werden. Quellen und Kategorien werden aus der URL vorgeschlagen. Vor dem Speichern prüft die App URL, Titel und Anbieter auf mögliche Dubletten. Das Dashboard zeigt neue und bald endende Aktionen. Persönliche Status bleiben unverändert.

@@ -13,8 +13,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=3.8.1">
-  <title>Win Win 3.8.1</title>
+  <link rel="stylesheet" href="./styles.css?v=3.9">
+  <title>Win Win 3.9</title>
 </head>
 <body>
   <div class="app-shell">
@@ -40,7 +40,7 @@
         <section class="update-status" id="updateStatus">
           <span class="status-dot"></span>
           <span id="updateText">Gewinnspiele werden geprüft …</span>
-          <small id="dataDiagnostics" class="data-diagnostics">App 3.8.1 · Daten werden geladen</small>
+          <small id="dataDiagnostics" class="data-diagnostics">App 3.9 · Daten werden geladen</small>
         </section>
         <section class="metric-grid" id="metrics"></section>
 
@@ -158,10 +158,16 @@
       <section id="dataView" class="view">
         <div class="view-title"><p class="section-kicker">DATENZENTRALE</p><h2>Import & Quellen</h2></div>
         <section class="data-hero">
-          <div><p class="section-kicker">WIN WIN 3.8.1</p><h3>Quellenkatalog 3.8.1</h3><p>183 Quellen, 28 geprüfte Gewinnspiele und eine neue Prüf-Warteschlange für den laufenden Katalogausbau. Persönliche Status bleiben unberührt.</p></div>
+          <div><p class="section-kicker">WIN WIN 3.9</p><h3>Katalog-Manager 3.9</h3><p>Gewinnspiele schnell erfassen, Quellen automatisch erkennen und Dubletten bereits vor dem Speichern vermeiden. Persönliche Status bleiben unberührt.</p></div>
         </section>
         <section id="importSummary" class="import-summary"></section>
         <section id="importPreview" class="data-panel import-preview" hidden></section>
+        <section class="data-panel quick-contest-panel">
+          <div class="section-head compact"><div><p class="section-kicker">KATALOG-MANAGER</p><h3>Gewinnspiel schnell erfassen</h3></div><span id="localContestBadge" class="source-count"></span></div>
+          <p>Neue Aktion in wenigen Schritten eintragen. Quelle und Kategorie werden aus der URL vorgeschlagen; mögliche Dubletten werden vor dem Speichern angezeigt.</p>
+          <div class="data-actions"><button id="addContestBtn" class="data-primary">＋ Neues Gewinnspiel</button></div>
+          <div id="contestCaptureNote" class="data-safety-note">Lokale Ergänzungen bleiben auf diesem Gerät und können über die Datensicherung exportiert werden.</div>
+        </section>
         <section class="data-panel source-queue-panel">
           <div class="section-head compact"><div><p class="section-kicker">PRÜF-WARTESCHLANGE</p><h3>Quellen systematisch prüfen</h3></div><span id="sourceQueueBadge" class="source-count"></span></div>
           <p>Die App stellt fällige und erfolgversprechende Quellen automatisch nach Priorität zusammen. Öffne eine Quelle, prüfe aktuelle Aktionen und erfasse anschließend das Ergebnis.</p>
@@ -297,6 +303,30 @@
         <div class="dialog-actions"><button id="saveWinBtn" class="data-primary">Speichern</button><button id="removeWinBtn" class="danger-button" hidden>Aus Archiv entfernen</button></div>
       </form>
     </dialog>
+    <dialog id="contestDialog" class="source-dialog contest-dialog">
+      <form id="contestForm" method="dialog">
+        <div class="source-dialog-head"><div><p class="section-kicker">KATALOG-MANAGER 3.9</p><h3>Neues Gewinnspiel</h3></div><button type="button" id="closeContestDialog" class="round-button">×</button></div>
+        <div class="source-form-grid">
+          <label class="source-form-wide"><span>Direktlink *</span><input id="contestUrl" required inputmode="url" placeholder="https://…"></label>
+          <label class="source-form-wide"><span>Titel *</span><input id="contestTitle" required placeholder="Was kann man gewinnen?"></label>
+          <label><span>Quelle / Anbieter</span><input id="contestProvider" list="contestSourceNames" placeholder="wird aus der URL erkannt"><datalist id="contestSourceNames"></datalist></label>
+          <label><span>Kategorie</span><select id="contestCategory"><option>Beauty</option><option>Mode</option><option>Wohnen</option><option>Garten</option><option>Technik</option><option>Gaming</option><option>Reisen</option><option>Food</option><option>Familie</option><option>Freizeit</option><option>Auto</option><option>Produkttests</option><option>Sonstiges</option></select></label>
+          <label class="source-form-wide"><span>Gewinn *</span><input id="contestPrize" required placeholder="z. B. 10 × Einkaufsgutschein à 100 €"></label>
+          <label><span>Enddatum *</span><input id="contestDeadline" required type="date"></label>
+          <label><span>Anzahl Gewinner</span><input id="contestWinners" type="number" min="1" inputmode="numeric" placeholder="optional"></label>
+          <label><span>Aufwand</span><select id="contestEffort"><option value="1">1 · sehr schnell</option><option value="2" selected>2 · schnell</option><option value="3">3 · mittel</option><option value="4">4 · höher</option><option value="5">5 · aufwändig</option></select></label>
+          <label><span>Teilnahmeart</span><select id="contestEntryType"><option value="form">Formular</option><option value="app">App</option><option value="social">Social Media</option><option value="email">E-Mail</option><option value="purchase">Kauf / Kassenbon</option><option value="other">Sonstiges</option></select></label>
+          <label class="source-form-wide"><span>Tags</span><input id="contestTags" placeholder="viele Gewinner, schnell, hoher Wert"></label>
+          <label class="source-check"><input id="contestDaily" type="checkbox"><span>Tägliche Teilnahme</span></label>
+          <label class="source-check"><input id="contestHighValue" type="checkbox"><span>Hoher Gewinnwert</span></label>
+          <label class="source-check"><input id="contestPurchase" type="checkbox"><span>Kauf erforderlich</span></label>
+          <label class="source-form-wide"><span>Notizen / Bedingungen</span><textarea id="contestNotes" rows="3" placeholder="Login, Teilnahmegebiet, Besonderheiten …"></textarea></label>
+        </div>
+        <div id="contestDuplicateWarning" class="contest-duplicate-warning" hidden></div>
+        <div class="source-dialog-actions"><button type="button" id="cancelContestDialog">Abbrechen</button><button type="submit" class="data-primary">Gewinnspiel speichern</button></div>
+      </form>
+    </dialog>
+
     <dialog id="sourceDialog" class="source-dialog">
       <form id="sourceForm" method="dialog">
         <div class="source-dialog-head">
@@ -323,6 +353,6 @@
       </form>
     </dialog>
 
-  <script src="./app.js?v=3.8.1"></script>
+  <script src="./app.js?v=3.9"></script>
 </body>
 </html>

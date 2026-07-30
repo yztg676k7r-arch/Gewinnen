@@ -1,5 +1,5 @@
 
-const APP_VERSION='3.8.1';
+const APP_VERSION='3.9';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;
@@ -378,6 +378,11 @@ function renderPersonalCore(){
  const ending=openPool.filter(i=>daysLeft(i)<=3).length;
  const daily=openPool.filter(i=>i.daily||i.multipleEntry).length;
  const topOpen=openPool.filter(i=>i.score>=80).length;
+ const tomorrow=new Date();tomorrow.setDate(tomorrow.getDate()+1);const tomorrowKey=dayKey(tomorrow);
+ const addedToday=all.filter(i=>dayKey(i.addedAt||i.createdAt)===today).length;
+ const endingTodayCount=openPool.filter(i=>daysLeft(i)===0).length;
+ const endingTomorrow=openPool.filter(i=>dayKey(parseDeadline(i.deadline))===tomorrowKey).length;
+ const endingWeek=openPool.filter(i=>daysLeft(i)>=0&&daysLeft(i)<=7).length;
  $('#favoriteList').innerHTML=fav.map(full).join('')||empty('Deine Favoriten erscheinen hier.');
  $('#doneList').innerHTML=done.sort((x,y)=>String(stateFor(y.id).doneAt||'').localeCompare(String(stateFor(x.id).doneAt||''))).map(full).join('')||empty('Hier erscheinen deine markierten Teilnahmen.');
  const totalValue=wins.reduce((sum,i)=>sum+(Number(stateFor(i.id).winDetails?.value)||0),0);
@@ -387,7 +392,7 @@ function renderPersonalCore(){
  }catch(error){console.error('Gewinnarchiv konnte nicht gerendert werden',error);$('#winArchiveList').innerHTML=empty('Das Gewinnarchiv enthält einen unvollständigen Eintrag. Die übrigen Dashboard-Inhalte bleiben verfügbar.')}
  const avg=done.length?Math.round(done.reduce((sum,i)=>sum+i.score,0)/done.length):0;
  $('#statsHero').innerHTML=`<strong>${done.length}</strong><p>Teilnahmen insgesamt · ${doneToday} heute · ${doneWeek} in den letzten 7 Tagen</p>`;
- const stats=[['🏆',wins.length,'Gewinne'],['☀',doneToday,'Heute erledigt'],['7',doneWeek,'Letzte 7 Tage'],['⭐',topOpen,'Offene Top-Chancen'],['⏳',ending,'Enden in 3 Tagen'],['↻',daily,'Täglich möglich'],['♡',fav.length,'Favoriten'],['⊘',ignored.length,'Nicht interessant'],['Ø',avg,'Ø Teilnahme-Score']];
+ const stats=[['＋',addedToday,'Heute neu'],['!',endingTodayCount,'Endet heute'],['→',endingTomorrow,'Endet morgen'],['7',endingWeek,'Endet diese Woche'],['🏆',wins.length,'Gewinne'],['☀',doneToday,'Heute erledigt'],['7',doneWeek,'Letzte 7 Tage'],['⭐',topOpen,'Offene Top-Chancen'],['⏳',ending,'Enden in 3 Tagen'],['↻',daily,'Täglich möglich'],['♡',fav.length,'Favoriten'],['⊘',ignored.length,'Nicht interessant'],['Ø',avg,'Ø Teilnahme-Score']];
  $('#statsGrid').innerHTML=stats.map(([ic,n,l])=>`<button class="stat-card dashboard-stat" data-dashboard="${l}"><span>${ic}</span><strong>${n}</strong><span>${l}</span></button>`).join('');
  const pool=dashboardPool().sort((x,y)=>y.score-x.score);
  const modeNote=$('#dashboardModeNote');
@@ -570,7 +575,7 @@ function mergeCatalog(base,extra){
  return {contests:out,report:{added,updated,duplicates,invalid,idConflicts,similar,similarPairs,total:out.length}}
 }
 function applyCustomData(report=null){
- const merged=mergeCatalog(baseContests,customContests);contests=merged.contests;migrateContestStates();renderAll();renderDataCenter(report||merged.report);updateDiagnostics(dataVersionGlobal);return merged
+ const merged=mergeCatalog(baseContests,customContests);contests=merged.contests;migrateContestStates();renderAll();renderDataCenter(report||merged.report);renderContestManagerBadge();updateDiagnostics(dataVersionGlobal);return merged
 }
 function extractContestArray(payload){
  if(Array.isArray(payload))return payload;
@@ -934,6 +939,44 @@ function saveSourceForm(e){
  const id=original||sourceSlug(name+'-'+domain.split('.')[0]);const duplicate=sources.find(x=>x.id!==original&&x.domain.toLowerCase()===domain.toLowerCase());if(duplicate&&!confirm(`Die Domain ist bereits bei „${duplicate.name}“ vorhanden. Trotzdem speichern?`))return;
  const previous=sourceById(original);persistSource({...(previous||{}),id,name,domain,country:$('#sourceCountry').value.trim()||'Deutschland',countriesAllowed:previous?.countriesAllowed||[$('#sourceCountry').value.trim()||'Deutschland'],type:$('#sourceType').value,categories:$('#sourceCategories').value.split(',').map(x=>x.trim()).filter(Boolean),automation:$('#sourceAutomation').value,quality:Number($('#sourceQuality').value),active:$('#sourceActive').checked,requiresLogin:$('#sourceRequiresLogin').checked,socialOnly:$('#sourceSocialOnly').checked,checkIntervalDays:Number($('#sourceInterval').value),lastChecked:previous?.lastChecked||null,notes:$('#sourceNotes').value.trim(),germanyEligibility:$('#sourceEligibility').value,verification:$('#sourceVerification').value,successfulChecks:previous?.successfulChecks||0,emptyChecks:previous?.emptyChecks||0,lastResultCount:previous?.lastResultCount||0},original);$('#sourceDialog').close();toast(sourceById(original)?'Quelle aktualisiert':'Quelle gespeichert');
 }
+function normalizeWebUrl(value){
+ try{const u=new URL(String(value||'').trim());u.hash='';u.hostname=u.hostname.toLowerCase().replace(/^www\./,'');return u.toString().replace(/\/$/,'')}catch{return String(value||'').trim().toLowerCase().replace(/\/$/,'')}
+}
+function contestSlug(text){return String(text||'gewinnspiel').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,55)}
+function sourceFromUrl(value){
+ try{const host=new URL(value).hostname.toLowerCase().replace(/^www\./,'');return sources.find(s=>host===String(s.domain||'').toLowerCase().replace(/^www\./,'')||host.endsWith('.'+String(s.domain||'').toLowerCase().replace(/^www\./,'')))||null}catch{return null}
+}
+function suggestedCategory(source){return Array.isArray(source?.categories)&&source.categories.length?source.categories[0]:'Sonstiges'}
+function contestDuplicates(candidate){
+ const url=normalizeWebUrl(candidate.url),title=String(candidate.title||'').trim().toLowerCase(),provider=String(candidate.provider||'').trim().toLowerCase();
+ return contests.filter(i=>normalizeWebUrl(i.url)===url||(title&&String(i.title||'').trim().toLowerCase()===title&&(!provider||String(i.provider||'').trim().toLowerCase()===provider))).slice(0,5)
+}
+function refreshContestSourceSuggestions(){const list=$('#contestSourceNames');if(list)list.innerHTML=sources.filter(s=>s.active!==false).sort((a,b)=>a.name.localeCompare(b.name,'de')).map(s=>`<option value="${esc(s.name)}">${esc(s.domain||'')}</option>`).join('')}
+function updateContestUrlSuggestion(){
+ const source=sourceFromUrl($('#contestUrl')?.value||'');if(!source)return;
+ if($('#contestProvider')&&!$('#contestProvider').value)$('#contestProvider').value=source.name;
+ if($('#contestCategory'))$('#contestCategory').value=suggestedCategory(source);
+ const note=$('#contestCaptureNote');if(note)note.textContent=`Quelle erkannt: ${source.name} · ${source.domain}`;
+}
+function readContestForm(){
+ const provider=$('#contestProvider').value.trim();const source=sources.find(s=>s.name.toLowerCase()===provider.toLowerCase())||sourceFromUrl($('#contestUrl').value);
+ const deadline=$('#contestDeadline').value;const deadlineDE=deadline?deadline.split('-').reverse().join('.'):'';
+ return {id:`local-${contestSlug(provider||'quelle')}-${contestSlug($('#contestTitle').value)}-${Date.now().toString(36)}`,title:$('#contestTitle').value.trim(),provider:provider||source?.name||'Unbekannte Quelle',sourceId:source?.id||null,prize:$('#contestPrize').value.trim(),url:$('#contestUrl').value.trim(),category:$('#contestCategory').value,country:source?.country||'Deutschland',deadline:deadlineDE,winners:Number($('#contestWinners').value)||null,new:true,daily:$('#contestDaily').checked,international:false,requirements:$('#contestNotes').value.trim(),note:$('#contestNotes').value.trim(),purchaseRequired:$('#contestPurchase').checked,receiptRequired:false,winnerKnown:Boolean(Number($('#contestWinners').value)),verified:new Intl.DateTimeFormat('de-DE').format(new Date()),providerTrust:Number(source?.quality)||3,effort:Number($('#contestEffort').value)||2,entryType:$('#contestEntryType').value,multipleEntry:$('#contestDaily').checked,highValuePrize:$('#contestHighValue').checked,tags:$('#contestTags').value.split(',').map(x=>x.trim()).filter(Boolean),addedAt:new Date().toISOString()}
+}
+function previewContestDuplicates(){
+ const box=$('#contestDuplicateWarning');if(!box)return;const c={url:$('#contestUrl')?.value,title:$('#contestTitle')?.value,provider:$('#contestProvider')?.value};const matches=contestDuplicates(c);
+ box.hidden=!matches.length;box.innerHTML=matches.length?`<strong>⚠ Mögliche Dublette${matches.length>1?'n':''}</strong><p>${matches.map(i=>`${esc(i.provider)}: ${esc(i.title)}`).join('<br>')}</p>`:'';
+}
+function openContestDialog(){
+ const form=$('#contestForm');form?.reset();if($('#contestCategory'))$('#contestCategory').value='Sonstiges';if($('#contestEffort'))$('#contestEffort').value='2';if($('#contestDeadline'))$('#contestDeadline').min=new Date().toISOString().slice(0,10);if($('#contestDuplicateWarning'))$('#contestDuplicateWarning').hidden=true;refreshContestSourceSuggestions();$('#contestDialog')?.showModal();
+}
+function setupContestManager(){
+ $('#addContestBtn')?.addEventListener('click',openContestDialog);$('#closeContestDialog')?.addEventListener('click',()=>$('#contestDialog')?.close());$('#cancelContestDialog')?.addEventListener('click',()=>$('#contestDialog')?.close());
+ $('#contestUrl')?.addEventListener('blur',()=>{updateContestUrlSuggestion();previewContestDuplicates()});$('#contestTitle')?.addEventListener('input',previewContestDuplicates);$('#contestProvider')?.addEventListener('input',previewContestDuplicates);
+ $('#contestForm')?.addEventListener('submit',e=>{e.preventDefault();const candidate=readContestForm();const dupes=contestDuplicates(candidate);if(dupes.length&&!confirm(`Es gibt ${dupes.length} mögliche Dublette${dupes.length===1?'':'n'}. Trotzdem speichern?`))return;customContests.push(candidate);localStorage.setItem(CUSTOM_DATA_KEY,JSON.stringify(customContests));applyCustomData();$('#contestDialog')?.close();toast('Gewinnspiel gespeichert');const note=$('#contestCaptureNote');if(note)note.textContent=`„${candidate.title}“ wurde lokal ergänzt.`;});
+}
+function renderContestManagerBadge(){const badge=$('#localContestBadge');if(badge)badge.textContent=`${customContests.length} lokal`}
+
 function setupSourceManager(){
  const search=$('#sourceSearch'),country=$('#sourceCountryFilter'),type=$('#sourceTypeFilter'),auto=$('#sourceAutomationFilter'),review=$('#sourceReviewFilter'),sort=$('#sourceSort'),file=$('#sourceImportFile');
  search?.addEventListener('input',e=>{sourceFilters.search=e.target.value;sourceRenderLimit=30;renderSourceManager()});country?.addEventListener('change',e=>{sourceFilters.country=e.target.value;sourceRenderLimit=30;renderSourceManager()});type?.addEventListener('change',e=>{sourceFilters.type=e.target.value;sourceRenderLimit=30;renderSourceManager()});auto?.addEventListener('change',e=>{sourceFilters.automation=e.target.value;sourceRenderLimit=30;renderSourceManager()});review?.addEventListener('change',e=>{sourceFilters.review=e.target.value;sourceRenderLimit=30;renderSourceManager()});sort?.addEventListener('change',e=>{sourceFilters.sort=e.target.value;sourceRenderLimit=30;renderSourceManager()});
@@ -1067,6 +1110,7 @@ document.addEventListener('click',e=>{const m=e.target.closest('[data-metric]');
 if($('#saveWinBtn'))$('#saveWinBtn').onclick=saveWin;if($('#removeWinBtn'))$('#removeWinBtn').onclick=removeWin;if($('#cancelWinBtn'))$('#cancelWinBtn').onclick=()=>$('#winDialog')?.close();
 setupDataCenter();
 setupSourceManager();
+setupContestManager();
 setupSourceQueue();
 if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
 Promise.allSettled([loadSources(),loadData()]).finally(()=>{
