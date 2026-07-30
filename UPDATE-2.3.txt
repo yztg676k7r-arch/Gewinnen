@@ -1,0 +1,9 @@
+WIN WIN 2.3
+
+NEU
+- Teilgenommene und nicht interessante Gewinnspiele werden im Dashboard standardmäßig ausgeblendet.
+- Optionaler Schalter „Alle anzeigen“.
+- Win des Tages mit transparenter Begründung.
+- Neue Bereiche: Heute zuerst teilnehmen, Endet heute, Endet in 3 Tagen, Top-Gewinnchancen, Hoher Gewinnwert und Schnell erledigt.
+- ROADMAP.md und CHANGELOG.md ergänzt.
+- Offline-Cache auf 2.3 aktualisiert.

@@ -1,8 +1,9 @@
 
-const APP_VERSION='2.2.1';
+const APP_VERSION='2.3';
 const STORAGE_KEY='gewinnen-user-v1';
 const CUSTOM_DATA_KEY='winwin-custom-contests-v1';
 const FILTER_STORAGE_KEY='winwin-discover-filters-v1';
+const DASHBOARD_SHOW_ALL_KEY='winwin-dashboard-show-all-v1';
 const FALLBACK=[{"id": "dm-ob-starterset-2026", "title": "100 limitierte o.b. Startersets", "provider": "dm", "prize": "100 × limitiertes o.b. Starterset", "url": "https://www.dm.de/neu/gewinnspiele/ob-3493126", "category": "Beauty", "country": "Deutschland", "deadline": "13.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-adventskalender-2026", "title": "70 Adventskalender gewinnen", "provider": "dm", "prize": "70 Adventskalender verschiedener Marken", "url": "https://www.dm.de/neu/gewinnspiele/adventskalender-gewinnspiel-2948470", "category": "Beauty", "country": "Deutschland", "deadline": "16.08.2026", "winners": 70, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-seeberger-2026", "title": "VAUDE-Rucksack mit Snacks", "provider": "dm / Seeberger", "prize": "5 × VAUDE-Rucksack mit Seeberger-Snacks", "url": "https://www.dm.de/neu/gewinnspiele/seeberger-3487062", "category": "Freizeit", "country": "Deutschland", "deadline": "04.08.2026", "winners": 5, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Freizeit", "schnell"]}, {"id": "dm-borotalco-2026", "title": "Borotalco-Produktpakete", "provider": "dm / Borotalco", "prize": "Borotalco-Produktpakete", "url": "https://www.dm.de/neu/gewinnspiele/borotalco-3487104", "category": "Beauty", "country": "Deutschland", "deadline": "05.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "schnell"]}, {"id": "rossmann-neonail-2026", "title": "100 NEONAIL-Sommerpakete", "provider": "ROSSMANN", "prize": "100 × NEONAIL-Sommerpaket mit Kosmetiktasche", "url": "https://www.rossmann.de/de/service-und-hilfe/rossmann-app", "category": "Beauty", "country": "Deutschland", "deadline": "02.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenlose ROSSMANN-App und Registrierung", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Teilnahme im Aktionsbereich der ROSSMANN-App.", "providerTrust": 5, "effort": 2, "entryType": "app", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner"]}, {"id": "rossmann-centaur-juli-2026", "title": "Centaur-Rätsel Juli", "provider": "ROSSMANN", "prize": "Reise-, Wellness- und Freizeitgewinne", "url": "https://www.rossmann.de/cms/gewinnspiele/centaur-raetsel-202607.html", "category": "Reisen", "country": "Deutschland", "deadline": "09.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "ROSSMANN-App erforderlich", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 3, "entryType": "app", "multipleEntry": false, "highValuePrize": true, "tags": ["Reisen"]}, {"id": "qvc-insider-2026", "title": "10 QVC-INSIDER-Jahresabos", "provider": "QVC", "prize": "10 × Jahresabo des QVC-Kundenmagazins INSIDER", "url": "https://www.qvc.de/content/nichts-verpassen/gewinnspiel/teilnahmebedingungen.html", "category": "Wohnen", "country": "Deutschland & Österreich", "deadline": "10.08.2026", "winners": 10, "new": true, "daily": false, "international": true, "requirements": "Teilnahmebedingungen auf der QVC-Seite beachten", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Wohnen", "international"]}, {"id": "schoener-wohnen-2026", "title": "Aktuelle Monatsgewinnspiele", "provider": "SCHÖNER WOHNEN", "prize": "Design-, Wohn-, Technik- und Reisegewinne", "url": "https://www.schoener-wohnen.de/gewinnspiele/", "category": "Wohnen", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenlose Teilnahme über Bilderpuzzle und Formular", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite; die genaue Frist steht beim jeweiligen Gewinnspiel.", "providerTrust": 4, "effort": 3, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Wohnen"]}, {"id": "dm-produkttests-2026", "title": "Aktuelle dm-Produkttests", "provider": "dm Produkttester", "prize": "Produkte kostenlos testen und bewerten", "url": "https://www.dm.de/neu/produkttest", "category": "Produkttests", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite mit wechselnden Produkttests.", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Produkttests"]}];
 const $=(s,r=document)=>r.querySelector(s);
 const $$=(s,r=document)=>[...r.querySelectorAll(s)];
@@ -14,6 +15,7 @@ if(!Array.isArray(customContests))customContests=[];
 let user=safeJSON(localStorage.getItem(STORAGE_KEY),{items:{},lastVisit:null,clicks:{}});
 let currentFilter='all';
 let advancedFilters=safeJSON(localStorage.getItem(FILTER_STORAGE_KEY),{entryType:'',effort:'',winners:'',deadline:'',daily:false,noApp:false,noSocial:false,knownWinners:false,onlyOpen:true});
+let dashboardShowAll=localStorage.getItem(DASHBOARD_SHOW_ALL_KEY)==='true';
 const previousVisit=user.lastVisit ? new Date(user.lastVisit) : null;
 let latestDataUpdate=null;
 let usingFallback=false;
@@ -221,14 +223,27 @@ function inLastDays(value,days){
  const d=new Date(value);if(Number.isNaN(d.getTime()))return false;
  return Date.now()-d.getTime() < days*86400000 && d.getTime()<=Date.now()+60000
 }
+function dashboardPool(){
+ const all=scored(true);
+ if(dashboardShowAll)return all;
+ return all.filter(i=>{const s=stateFor(i.id);return !s.done&&!s.ignored});
+}
+function dashboardMini(i){
+ const s=stateFor(i.id),status=s.ignored?'Nicht interessant':s.done?'Teilgenommen':'';
+ return `<article class="dashboard-mini ${status?'has-status':''}">${status?`<span class="dashboard-status">${esc(status)}</span>`:''}<div class="provider">${esc(i.provider)}</div><h3>${esc(i.title)}</h3>${badges(i)}<div class="prize">🎁 ${esc(i.prize)}</div><div class="dashboard-mini-meta"><span>${i.winners?`${i.winners} Gewinner`:'Gewinnerzahl offen'}</span><span>${daysLeft(i)===0?'endet heute':`${daysLeft(i)} Tage`}</span><span>Aufwand ${i.effort||3}/5</span></div><div class="mini-actions"><a class="primary" href="${esc(i.url)}" target="_blank" rel="noopener" onclick="registerClick('${esc(i.id)}')">Teilnehmen</a><button class="secondary" onclick="toggleFavorite('${esc(i.id)}')">${s.favorite?'♥':'♡'}</button><button class="secondary ignore-mini" onclick="toggleIgnored('${esc(i.id)}')">Nicht interessant</button></div></article>`;
+}
+function dashboardGroup(title,kicker,items,filter,emptyText){
+ return `<section class="dashboard-priority-section"><div class="section-head"><div><p class="section-kicker">${esc(kicker)}</p><h2>${esc(title)}</h2></div>${filter?`<button class="text-button" onclick="openDiscover('${esc(filter)}')">Alle</button>`:''}</div><div class="card-row">${items.length?items.slice(0,6).map(dashboardMini).join(''):empty(emptyText)}</div></section>`;
+}
 function renderPersonal(){
  const a=scored(),all=scored(true),fav=a.filter(i=>stateFor(i.id).favorite),done=all.filter(i=>stateFor(i.id).done),ignored=all.filter(i=>stateFor(i.id).ignored),wins=all.filter(i=>stateFor(i.id).won);
  const today=dayKey();
  const doneToday=done.filter(i=>dayKey(stateFor(i.id).doneAt)===today).length;
  const doneWeek=done.filter(i=>inLastDays(stateFor(i.id).doneAt,7)).length;
- const ending=a.filter(i=>!stateFor(i.id).done&&daysLeft(i)<=3).length;
- const daily=a.filter(i=>!stateFor(i.id).done&&(i.daily||i.multipleEntry)).length;
- const topOpen=a.filter(i=>!stateFor(i.id).done&&i.score>=80).length;
+ const openPool=all.filter(i=>{const s=stateFor(i.id);return !s.done&&!s.ignored});
+ const ending=openPool.filter(i=>daysLeft(i)<=3).length;
+ const daily=openPool.filter(i=>i.daily||i.multipleEntry).length;
+ const topOpen=openPool.filter(i=>i.score>=80).length;
  $('#favoriteList').innerHTML=fav.map(full).join('')||empty('Deine Favoriten erscheinen hier.');
  $('#doneList').innerHTML=done.sort((x,y)=>String(stateFor(y.id).doneAt||'').localeCompare(String(stateFor(x.id).doneAt||''))).map(full).join('')||empty('Hier erscheinen deine markierten Teilnahmen.');
  const totalValue=wins.reduce((sum,i)=>sum+(Number(stateFor(i.id).winDetails?.value)||0),0);
@@ -238,17 +253,37 @@ function renderPersonal(){
  $('#statsHero').innerHTML=`<strong>${done.length}</strong><p>Teilnahmen insgesamt · ${doneToday} heute · ${doneWeek} in den letzten 7 Tagen</p>`;
  const stats=[['🏆',wins.length,'Gewinne'],['☀',doneToday,'Heute erledigt'],['7',doneWeek,'Letzte 7 Tage'],['⭐',topOpen,'Offene Top-Chancen'],['⏳',ending,'Enden in 3 Tagen'],['↻',daily,'Täglich möglich'],['♡',fav.length,'Favoriten'],['⊘',ignored.length,'Nicht interessant'],['Ø',avg,'Ø Teilnahme-Score']];
  $('#statsGrid').innerHTML=stats.map(([ic,n,l])=>`<button class="stat-card dashboard-stat" data-dashboard="${l}"><span>${ic}</span><strong>${n}</strong><span>${l}</span></button>`).join('');
+ const pool=dashboardPool().sort((x,y)=>y.score-x.score);
+ const modeNote=$('#dashboardModeNote');
+ if(modeNote)modeNote.textContent=dashboardShowAll?'Kontrollansicht: Auch erledigte und ausgeblendete Gewinnspiele werden angezeigt.':'Aufgeräumt: Teilgenommene und nicht interessante Gewinnspiele sind ausgeblendet.';
+ const win=pool.find(i=>!stateFor(i.id).done&&!stateFor(i.id).ignored)||pool[0];
+ $('#winOfDay').innerHTML=win?`<p class="section-kicker">🏆 WIN DES TAGES</p><div class="win-of-day-card"><div><span class="provider">${esc(win.provider)}</span><h2>${esc(win.title)}</h2><p>Heute besonders sinnvoll: ${esc(win.reasons.slice(0,3).join(' · ')||'gute Kombination aus Chance und Aufwand')}.</p><div class="badges"><span class="badge score">${win.score}/100</span><span class="badge">${win.winners?`${win.winners} Gewinner`:'Gewinnerzahl offen'}</span><span class="badge">Aufwand ${win.effort||3}/5</span></div></div><a href="${esc(win.url)}" target="_blank" rel="noopener" onclick="registerClick('${esc(win.id)}')">Jetzt teilnehmen ↗</a></div>`:empty('Aktuell ist kein offenes Gewinnspiel verfügbar.');
  const focus=[];
- if(ending)focus.push(`<button onclick="openDiscover('endingSoon')"><b>${ending}</b><span>Gewinnspiele enden sehr bald</span><em>Jetzt prüfen →</em></button>`);
- if(topOpen)focus.push(`<button onclick="openDiscover('top')"><b>${topOpen}</b><span>Top-Chancen sind noch offen</span><em>Priorisieren →</em></button>`);
- if(daily)focus.push(`<button onclick="openDiscover('daily')"><b>${daily}</b><span>Gewinnspiele erlauben Wiederholung</span><em>Täglich teilnehmen →</em></button>`);
+ if(ending)focus.push(`<button onclick="openDiscover('endingSoon')"><b>${ending}</b><span>offene Gewinnspiele enden in höchstens 3 Tagen</span><em>Jetzt prüfen →</em></button>`);
+ if(topOpen)focus.push(`<button onclick="openDiscover('top')"><b>${topOpen}</b><span>offene Top-Chancen warten auf dich</span><em>Priorisieren →</em></button>`);
+ if(daily)focus.push(`<button onclick="openDiscover('daily')"><b>${daily}</b><span>Gewinnspiele erlauben eine Wiederholung</span><em>Täglich teilnehmen →</em></button>`);
  $('#dashboardFocus').innerHTML=focus.length?`<p class="section-kicker">JETZT SINNVOLL</p><h2>Dein nächster Schritt</h2><div>${focus.join('')}</div>`:'';
+ const todayFirst=pool.filter(i=>!stateFor(i.id).done&&!stateFor(i.id).ignored).sort((x,y)=>((y.score+(daysLeft(y)<=2?12:0))- (x.score+(daysLeft(x)<=2?12:0))));
+ const endingToday=pool.filter(i=>daysLeft(i)===0);
+ const ending3=pool.filter(i=>daysLeft(i)>=0&&daysLeft(i)<=3).sort((x,y)=>daysLeft(x)-daysLeft(y));
+ const top=pool.filter(i=>i.score>=80);
+ const highValue=pool.filter(i=>i.highValuePrize).sort((x,y)=>y.score-x.score);
+ const quick=pool.filter(i=>(i.effort||3)===1).sort((x,y)=>y.score-x.score);
+ $('#dashboardPriorityGroups').innerHTML=[
+  dashboardGroup('Heute zuerst teilnehmen','DEINE BESTE REIHENFOLGE',todayFirst,'recommended','Für heute ist alles erledigt.'),
+  dashboardGroup('Endet heute','JETZT ODER NIE',endingToday,'endingSoon','Heute endet kein offenes Gewinnspiel.'),
+  dashboardGroup('Endet in 3 Tagen','SCHNELL SEIN',ending3,'endingSoon','In den nächsten drei Tagen endet nichts.'),
+  dashboardGroup('Top-Gewinnchancen','HOHE TREFFERCHANCE',top,'top','Aktuell gibt es keine offene Top-Chance.'),
+  dashboardGroup('Hoher Gewinnwert','BESONDERS ATTRAKTIV',highValue,'all','Keine offenen hochwertigen Gewinne markiert.'),
+  dashboardGroup('Schnell erledigt','UNTER 1 MINUTE',quick,'all','Aktuell ist kein besonders schnelles Gewinnspiel offen.')
+ ].join('');
  const counts={};
  done.forEach(i=>{const c=i.category||'Sonstiges';counts[c]=(counts[c]||0)+1});
  const cats=Object.entries(counts).sort((x,y)=>y[1]-x[1]).slice(0,6);
  const max=cats[0]?.[1]||1;
  $('#categoryStats').innerHTML=cats.length?cats.map(([name,n])=>`<button onclick="openDiscover('${esc(name)}')"><span><b>${esc(name)}</b><em>${n} Teilnahme${n===1?'':'n'}</em></span><i><u style="width:${Math.round(n/max*100)}%"></u></i></button>`).join(''):empty('Sobald du Teilnahmen markierst, siehst du hier deine aktivsten Kategorien.');
 }
+
 function renderAll(){renderMetrics();renderHome();renderToday();renderDiscover();renderPersonal()}
 function openView(id){$$('.view').forEach(v=>v.classList.toggle('active',v.id===id));$$('.nav-item').forEach(n=>n.classList.toggle('active',n.dataset.view===id));window.scrollTo({top:0,behavior:'smooth'})}
 function openDiscover(f){currentFilter=f;$$('.chip').forEach(c=>c.classList.toggle('active',c.dataset.filter===f));openView('discoverView');renderDiscover()}
@@ -438,6 +473,7 @@ const filterBindings={filterEntryType:'entryType',filterEffort:'effort',filterWi
 Object.entries(filterBindings).forEach(([id,key])=>$('#'+id)?.addEventListener('change',e=>{advancedFilters[key]=e.target.type==='checkbox'?e.target.checked:e.target.value;saveAdvancedFilters()}));
 $('#resetFilters').addEventListener('click',()=>{advancedFilters={entryType:'',effort:'',winners:'',deadline:'',daily:false,noApp:false,noSocial:false,knownWinners:false,onlyOpen:false};saveAdvancedFilters();toast('Zusatzfilter zurückgesetzt')});
 syncFilterUI();
+const dashboardToggle=$('#dashboardShowAll');if(dashboardToggle){dashboardToggle.checked=dashboardShowAll;dashboardToggle.addEventListener('change',e=>{dashboardShowAll=e.target.checked;localStorage.setItem(DASHBOARD_SHOW_ALL_KEY,String(dashboardShowAll));renderPersonal()})}
 $('#refreshBtn').addEventListener('click',async()=>{await loadData();toast('Daten neu geladen')});
 document.addEventListener('click',e=>{const m=e.target.closest('[data-metric]');if(!m)return;m.dataset.metric==='statsView'?openView('statsView'):openDiscover(m.dataset.metric)});
 $('#saveWinBtn').onclick=saveWin;$('#removeWinBtn').onclick=removeWin;$('#cancelWinBtn').onclick=()=>$('#winDialog').close();

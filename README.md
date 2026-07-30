@@ -1,7 +1,7 @@
-## Korrektur 2.2.1
+## Korrektur 2.3
 
 - sichtbare Versionsangaben korrigiert
-- Gewinnarchiv aus 2.1 und Filter aus 2.2 gemeinsam enthalten
+- Gewinnarchiv aus 2.1 und Filter aus 2.3 gemeinsam enthalten
 - Cache-Version erhöht
 
 # Win Win 1.7
@@ -24,3 +24,11 @@ Neue Datenzentrale für geprüfte JSON-Importe, Dublettenprüfung, lokale Ergän
 - Quellenübersicht mit Anbieteranzahl und aktiven Einträgen
 - Datenqualitätsprüfung für Links, Gewinnerzahl, Vertrauen, Aufwand und Verifizierung
 - Kompatibel mit bestehenden Favoriten, Teilnahmen und lokalen Importen
+
+
+## Version 2.3
+- Dashboard blendet erledigte und nicht interessante Gewinnspiele standardmäßig aus
+- Win des Tages
+- sechs priorisierte Dashboard-Bereiche
+- optionale Kontrollansicht „Alle anzeigen“
+- ROADMAP.md und CHANGELOG.md
