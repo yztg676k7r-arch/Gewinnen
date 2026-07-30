@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.9
+- Persönliche Tagesroutine mit frei wählbarem Tagesziel.
+- Vier Sortiermodi für die tägliche Reihenfolge.
+- Neue Empfehlung „Als Nächstes“.
+- Tagesliste in Dringend, Schnell erledigt und Beste Chancen gegliedert.
+- Fortschritt zählt tatsächliche heutige Teilnahmen statt nur die aktuelle Sitzung.
+- Tagesroutine in Komplettsicherung aufgenommen.
+- Vorhandene lokale Status bleiben unverändert erhalten.
+
 ## 2.8
 - Vollständige persönliche Sicherung als JSON
 - Wiederherstellung auf demselben oder einem anderen Gerät

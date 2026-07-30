@@ -1,0 +1,13 @@
+WIN WIN 2.9
+
+Neu:
+- Tagesziel mit 5, 10, 15 oder 20 Teilnahmen
+- wählbare Reihenfolge: ausgewogen, schnell, dringend oder beste Chance
+- prominente Empfehlung „Als Nächstes“
+- Tagesliste in Dringend, Schnell erledigt und Beste Chancen gegliedert
+- Tagesfortschritt basiert dauerhaft auf dem tatsächlichen Teilnahmedatum
+- „Teilgenommen“ und „Nicht interessant“ bleiben aus der offenen Tagesliste entfernt
+- Tagesroutine wird in der persönlichen Komplettsicherung mitgesichert
+
+Statusschutz:
+Bestehende Teilnahmen, Favoriten, Gewinne, Notizen und „Nicht interessant“-Markierungen werden nicht überschrieben.

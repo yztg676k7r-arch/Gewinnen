@@ -1,5 +1,5 @@
 
-const APP_VERSION='2.8';
+const APP_VERSION='2.9';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;
@@ -10,6 +10,7 @@ const PREFERENCE_KEY='winwin-preferences-v1';
 const FILTER_STORAGE_KEY='winwin-discover-filters-v1';
 const DASHBOARD_SHOW_ALL_KEY='winwin-dashboard-show-all-v1';
 const FULL_BACKUP_ROLLBACK_KEY='winwin-full-backup-rollback-v1';
+const DAILY_PLAN_KEY='winwin-daily-plan-v1';
 const FULL_BACKUP_FORMAT='winwin-personal-backup';
 const FULL_BACKUP_VERSION=1;
 const FALLBACK=[{"id": "dm-ob-starterset-2026", "title": "100 limitierte o.b. Startersets", "provider": "dm", "prize": "100 × limitiertes o.b. Starterset", "url": "https://www.dm.de/neu/gewinnspiele/ob-3493126", "category": "Beauty", "country": "Deutschland", "deadline": "13.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-adventskalender-2026", "title": "70 Adventskalender gewinnen", "provider": "dm", "prize": "70 Adventskalender verschiedener Marken", "url": "https://www.dm.de/neu/gewinnspiele/adventskalender-gewinnspiel-2948470", "category": "Beauty", "country": "Deutschland", "deadline": "16.08.2026", "winners": 70, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-seeberger-2026", "title": "VAUDE-Rucksack mit Snacks", "provider": "dm / Seeberger", "prize": "5 × VAUDE-Rucksack mit Seeberger-Snacks", "url": "https://www.dm.de/neu/gewinnspiele/seeberger-3487062", "category": "Freizeit", "country": "Deutschland", "deadline": "04.08.2026", "winners": 5, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Freizeit", "schnell"]}, {"id": "dm-borotalco-2026", "title": "Borotalco-Produktpakete", "provider": "dm / Borotalco", "prize": "Borotalco-Produktpakete", "url": "https://www.dm.de/neu/gewinnspiele/borotalco-3487104", "category": "Beauty", "country": "Deutschland", "deadline": "05.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "schnell"]}, {"id": "rossmann-neonail-2026", "title": "100 NEONAIL-Sommerpakete", "provider": "ROSSMANN", "prize": "100 × NEONAIL-Sommerpaket mit Kosmetiktasche", "url": "https://www.rossmann.de/de/service-und-hilfe/rossmann-app", "category": "Beauty", "country": "Deutschland", "deadline": "02.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenlose ROSSMANN-App und Registrierung", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Teilnahme im Aktionsbereich der ROSSMANN-App.", "providerTrust": 5, "effort": 2, "entryType": "app", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner"]}, {"id": "rossmann-centaur-juli-2026", "title": "Centaur-Rätsel Juli", "provider": "ROSSMANN", "prize": "Reise-, Wellness- und Freizeitgewinne", "url": "https://www.rossmann.de/cms/gewinnspiele/centaur-raetsel-202607.html", "category": "Reisen", "country": "Deutschland", "deadline": "09.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "ROSSMANN-App erforderlich", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 3, "entryType": "app", "multipleEntry": false, "highValuePrize": true, "tags": ["Reisen"]}, {"id": "qvc-insider-2026", "title": "10 QVC-INSIDER-Jahresabos", "provider": "QVC", "prize": "10 × Jahresabo des QVC-Kundenmagazins INSIDER", "url": "https://www.qvc.de/content/nichts-verpassen/gewinnspiel/teilnahmebedingungen.html", "category": "Wohnen", "country": "Deutschland & Österreich", "deadline": "10.08.2026", "winners": 10, "new": true, "daily": false, "international": true, "requirements": "Teilnahmebedingungen auf der QVC-Seite beachten", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Wohnen", "international"]}, {"id": "schoener-wohnen-2026", "title": "Aktuelle Monatsgewinnspiele", "provider": "SCHÖNER WOHNEN", "prize": "Design-, Wohn-, Technik- und Reisegewinne", "url": "https://www.schoener-wohnen.de/gewinnspiele/", "category": "Wohnen", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenlose Teilnahme über Bilderpuzzle und Formular", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite; die genaue Frist steht beim jeweiligen Gewinnspiel.", "providerTrust": 4, "effort": 3, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Wohnen"]}, {"id": "dm-produkttests-2026", "title": "Aktuelle dm-Produkttests", "provider": "dm Produkttester", "prize": "Produkte kostenlos testen und bewerten", "url": "https://www.dm.de/neu/produkttest", "category": "Produkttests", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite mit wechselnden Produkttests.", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Produkttests"]}];
@@ -35,6 +36,10 @@ let user=normalizeUser(safeJSON(storedUserRaw,{items:{},lastVisit:null,clicks:{}
 let currentFilter='all';
 let advancedFilters=safeJSON(localStorage.getItem(FILTER_STORAGE_KEY),{entryType:'',effort:'',winners:'',deadline:'',daily:false,noApp:false,noSocial:false,knownWinners:false,onlyOpen:true});
 let dashboardShowAll=localStorage.getItem(DASHBOARD_SHOW_ALL_KEY)==='true';
+let dailyPlan=safeJSON(localStorage.getItem(DAILY_PLAN_KEY),{target:10,mode:'balanced'});
+if(!dailyPlan||typeof dailyPlan!=='object')dailyPlan={target:10,mode:'balanced'};
+dailyPlan.target=[5,10,15,20].includes(Number(dailyPlan.target))?Number(dailyPlan.target):10;
+dailyPlan.mode=['balanced','quick','urgent','chance'].includes(dailyPlan.mode)?dailyPlan.mode:'balanced';
 const previousVisit=user.lastVisit ? new Date(user.lastVisit) : null;
 let latestDataUpdate=null;
 let usingFallback=false;
@@ -240,26 +245,49 @@ function mini(i){const s=stateFor(i.id);return `<article class="mini-card"><div 
 function full(i){const s=stateFor(i.id),left=daysLeft(i),wins=i.winners?`${i.winners} bekannte Gewinne`:'Gewinnerzahl nicht angegeben';return `<article class="contest-card ${s.ignored?'ignored-card':''}"><div class="card-top"><div><div class="provider">${esc(i.provider)}</div><h3>${esc(i.title)}</h3></div><button class="heart ${s.favorite?'active':''}" onclick="toggleFavorite('${esc(i.id)}')">${s.favorite?'♥':'♡'}</button></div>${badges(i)}${s.ignored?'<div class="ignored-note">Nicht interessant – nur in dieser Ansicht sichtbar.</div>':''}<div class="prize">🎁 ${esc(i.prize)}</div><div class="scoreline"><strong>${label(i.score)}</strong><div class="scorebar"><i style="width:${i.score}%"></i></div><strong>${i.score}</strong></div>${reasonBox(i)}<div class="details">Teilnahmeschluss: ${esc(i.deadline)} · ${left===0?'endet heute':`${left} Tag${left===1?'':'e'} übrig`}<br>${esc(wins)} · Aufwand: ${'●'.repeat(Math.min(5,i.effort||3))}${'○'.repeat(Math.max(0,5-(i.effort||3)))}<br>${esc(i.country)}${i.region?` · ${esc(i.region)}`:''} · geprüft: ${esc(i.verified||'–')}</div><div class="card-actions"><a href="${esc(i.url)}" target="_blank" rel="noopener" onclick="registerClick('${esc(i.id)}')">Teilnehmen ↗</a><button class="${s.done?'done':''}" onclick="toggleDone('${esc(i.id)}')">${s.done?'✓ Erledigt':'Teilgenommen'}</button><button class="win-button ${s.won?'active':''}" onclick="openWinDialog('${esc(i.id)}')">${s.won?'🏆 Gewonnen':'Gewonnen'}</button><button class="ignore-button ${s.ignored?'active':''}" onclick="toggleIgnored('${esc(i.id)}')">${s.ignored?'Wieder anzeigen':'Nicht interessant'}</button></div></article>`}
 function empty(t){return `<div class="empty">${esc(t)}</div>`}
 
+function todayRank(i){
+ const left=daysLeft(i),effort=Number(i.effort||3),chance=Number(i.score||0);
+ const urgency=left<=0?35:left<=2?24:left<=7?10:0;
+ const speed=Math.max(0,6-effort)*6;
+ if(dailyPlan.mode==='quick')return chance*.45+speed*1.5+urgency*.45;
+ if(dailyPlan.mode==='urgent')return chance*.45+urgency*1.8+speed*.35;
+ if(dailyPlan.mode==='chance')return chance*1.35+urgency*.45+speed*.25;
+ return chance+urgency+speed*.55;
+}
 function todayQueue(){
  return scored()
-  .filter(i=>!stateFor(i.id).done)
-  .sort((a,b)=>{
-    const aUrg=daysLeft(a)<=2?12:daysLeft(a)<=7?5:0;
-    const bUrg=daysLeft(b)<=2?12:daysLeft(b)<=7?5:0;
-    return (b.score+bUrg)-(a.score+aUrg);
-  })
-  .slice(0,20);
+  .filter(i=>{const s=stateFor(i.id);return !s.done&&!s.ignored})
+  .sort((a,b)=>todayRank(b)-todayRank(a))
+  .slice(0,Math.max(20,dailyPlan.target));
 }
+function todayStage(i){
+ if(daysLeft(i)<=2)return {key:'urgent',label:'Dringend',icon:'⏳'};
+ if(Number(i.effort||3)<=1)return {key:'quick',label:'Schnell erledigt',icon:'⚡'};
+ return {key:'best',label:'Beste Chancen',icon:'🎯'};
+}
+function saveDailyPlan(){localStorage.setItem(DAILY_PLAN_KEY,JSON.stringify(dailyPlan));renderToday()}
 function renderToday(){
- const queue=todayQueue();
+ const queue=todayQueue(),today=dayKey();
  const completed=scored(true).filter(i=>stateFor(i.id).done).length;
- const totalToday=queue.length;
- const target=Math.min(10,totalToday);
- const doneToday=Number(sessionStorage.getItem('winwin-done-session')||0);
+ const doneToday=scored(true).filter(i=>{const s=stateFor(i.id);return s.done&&dayKey(s.doneAt)===today}).length;
+ const target=Number(dailyPlan.target||10),remaining=Math.max(0,target-doneToday);
  const progress=target?Math.min(100,Math.round(doneToday/target*100)):0;
- $('#todaySummary').innerHTML=`<div><span>Dein Tagesziel</span><strong>${Math.min(doneToday,target)} / ${target}</strong></div><div class="today-progress"><i style="width:${progress}%"></i></div><p>${totalToday?`${totalToday} priorisierte Gewinnspiele warten noch auf dich.`:'Für heute ist alles erledigt.'} Insgesamt hast du ${completed} Teilnahmen markiert.</p>`;
- $('#todayList').innerHTML=queue.map(full).join('')||empty('Stark – deine heutige Prioritätenliste ist leer.');
+ const next=queue[0];
+ $('#todaySummary').innerHTML=`<div><span>Dein Tagesziel</span><strong>${Math.min(doneToday,target)} / ${target}</strong></div><div class="today-progress"><i style="width:${progress}%"></i></div><p>${remaining?`Noch ${remaining} Teilnahme${remaining===1?'':'n'} bis zu deinem Tagesziel.`:'Tagesziel erreicht – stark!'} Insgesamt hast du ${completed} Teilnahmen markiert.</p>`;
+ const nextBox=$('#todayNext');
+ if(nextBox)nextBox.innerHTML=next?`<div><p class="section-kicker">ALS NÄCHSTES</p><h3>${esc(next.title)}</h3><p>${esc(next.provider)} · ${todayStage(next).label} · Priorität ${Math.round(todayRank(next))}</p></div><a href="${esc(next.url)}" target="_blank" rel="noopener" onclick="registerClick('${esc(next.id)}')">Jetzt teilnehmen ↗</a>`:`<div><p class="section-kicker">FERTIG FÜR HEUTE</p><h3>Keine offenen Empfehlungen mehr</h3><p>Deine aktuelle Tagesliste ist vollständig erledigt.</p></div>`;
+ const groups=[
+  ['urgent','⏳ Dringend','Endet spätestens in zwei Tagen'],
+  ['quick','⚡ Schnell erledigt','Wenig Aufwand für zwischendurch'],
+  ['best','🎯 Beste Chancen','Danach nach persönlicher Priorität']
+ ];
+ const used=new Set();let html='';
+ groups.forEach(([key,title,copy])=>{const items=queue.filter(i=>todayStage(i).key===key&&!used.has(i.id)).slice(0,target);items.forEach(i=>used.add(i.id));if(items.length)html+=`<section class="today-stage"><div class="today-stage-head"><div><h3>${title}</h3><p>${copy}</p></div><span>${items.length}</span></div>${items.map(full).join('')}</section>`});
+ $('#todayList').innerHTML=html||empty('Stark – deine heutige Prioritätenliste ist leer.');
+ const targetEl=$('#dailyTarget');if(targetEl)targetEl.value=String(target);
+ const modeEl=$('#dailyMode');if(modeEl)modeEl.value=dailyPlan.mode;
 }
+window.saveDailyPlan=saveDailyPlan;
 function renderMetrics(){
  const a=scored(),done=a.filter(i=>stateFor(i.id).done).length;
  const m=[['🆕',a.filter(isNewSinceVisit).length,'neu seit Besuch','newVisit'],['🎯',a.filter(recommended).length,'heute lohnenswert','recommended'],['⭐',a.filter(i=>i.score>=80).length,'Top-Chancen','top'],['✓',done,'teilgenommen','statsView']];
@@ -553,6 +581,7 @@ function buildFullBackup(){
      preferences:JSON.parse(JSON.stringify(preferences)),
      discoverFilters:JSON.parse(JSON.stringify(advancedFilters)),
      dashboardShowAll:Boolean(dashboardShowAll),
+     dailyPlan:JSON.parse(JSON.stringify(dailyPlan)),
      customContests:JSON.parse(JSON.stringify(customContests)),
      catalogBackup:safeJSON(localStorage.getItem(IMPORT_BACKUP_KEY),null),
      importHistory:JSON.parse(JSON.stringify(importHistory))
@@ -591,6 +620,7 @@ function applyFullBackup(payload){
  preferences=d.preferences&&typeof d.preferences==='object'?JSON.parse(JSON.stringify(d.preferences)):defaultPreferences();
  advancedFilters=d.discoverFilters&&typeof d.discoverFilters==='object'?JSON.parse(JSON.stringify(d.discoverFilters)):advancedFilters;
  dashboardShowAll=Boolean(d.dashboardShowAll);
+ dailyPlan=d.dailyPlan&&typeof d.dailyPlan==='object'?JSON.parse(JSON.stringify(d.dailyPlan)):dailyPlan;
  customContests=Array.isArray(d.customContests)?JSON.parse(JSON.stringify(d.customContests)):[];
  importHistory=Array.isArray(d.importHistory)?JSON.parse(JSON.stringify(d.importHistory)):[];
  localStorage.setItem(STORAGE_KEY,JSON.stringify(user));
@@ -598,6 +628,7 @@ function applyFullBackup(payload){
  localStorage.setItem(PREFERENCE_KEY,JSON.stringify(preferences));
  localStorage.setItem(FILTER_STORAGE_KEY,JSON.stringify(advancedFilters));
  localStorage.setItem(DASHBOARD_SHOW_ALL_KEY,String(dashboardShowAll));
+ localStorage.setItem(DAILY_PLAN_KEY,JSON.stringify(dailyPlan));
  if(customContests.length)localStorage.setItem(CUSTOM_DATA_KEY,JSON.stringify(customContests));else localStorage.removeItem(CUSTOM_DATA_KEY);
  if(d.catalogBackup)localStorage.setItem(IMPORT_BACKUP_KEY,JSON.stringify(d.catalogBackup));else localStorage.removeItem(IMPORT_BACKUP_KEY);
  localStorage.setItem(IMPORT_HISTORY_KEY,JSON.stringify(importHistory));
@@ -619,9 +650,10 @@ function applyFullBackupWithoutPrompt(payload){
  preferences=d.preferences&&typeof d.preferences==='object'?JSON.parse(JSON.stringify(d.preferences)):defaultPreferences();
  advancedFilters=d.discoverFilters&&typeof d.discoverFilters==='object'?JSON.parse(JSON.stringify(d.discoverFilters)):advancedFilters;
  dashboardShowAll=Boolean(d.dashboardShowAll);
+ dailyPlan=d.dailyPlan&&typeof d.dailyPlan==='object'?JSON.parse(JSON.stringify(d.dailyPlan)):dailyPlan;
  customContests=Array.isArray(d.customContests)?JSON.parse(JSON.stringify(d.customContests)):[];
  importHistory=Array.isArray(d.importHistory)?JSON.parse(JSON.stringify(d.importHistory)):[];
- localStorage.setItem(STORAGE_KEY,JSON.stringify(user));localStorage.setItem(STORAGE_BACKUP_KEY,JSON.stringify(user));localStorage.setItem(PREFERENCE_KEY,JSON.stringify(preferences));localStorage.setItem(FILTER_STORAGE_KEY,JSON.stringify(advancedFilters));localStorage.setItem(DASHBOARD_SHOW_ALL_KEY,String(dashboardShowAll));
+ localStorage.setItem(STORAGE_KEY,JSON.stringify(user));localStorage.setItem(STORAGE_BACKUP_KEY,JSON.stringify(user));localStorage.setItem(PREFERENCE_KEY,JSON.stringify(preferences));localStorage.setItem(FILTER_STORAGE_KEY,JSON.stringify(advancedFilters));localStorage.setItem(DASHBOARD_SHOW_ALL_KEY,String(dashboardShowAll));localStorage.setItem(DAILY_PLAN_KEY,JSON.stringify(dailyPlan));
  if(customContests.length)localStorage.setItem(CUSTOM_DATA_KEY,JSON.stringify(customContests));else localStorage.removeItem(CUSTOM_DATA_KEY);
  if(d.catalogBackup)localStorage.setItem(IMPORT_BACKUP_KEY,JSON.stringify(d.catalogBackup));else localStorage.removeItem(IMPORT_BACKUP_KEY);
  localStorage.setItem(IMPORT_HISTORY_KEY,JSON.stringify(importHistory));
@@ -770,6 +802,8 @@ Object.entries(filterBindings).forEach(([id,key])=>$('#'+id)?.addEventListener('
 $('#resetFilters').addEventListener('click',()=>{advancedFilters={entryType:'',effort:'',winners:'',deadline:'',daily:false,noApp:false,noSocial:false,knownWinners:false,onlyOpen:false};saveAdvancedFilters();toast('Zusatzfilter zurückgesetzt')});
 syncFilterUI();
 const dashboardToggle=$('#dashboardShowAll');if(dashboardToggle){dashboardToggle.checked=dashboardShowAll;dashboardToggle.addEventListener('change',e=>{dashboardShowAll=e.target.checked;localStorage.setItem(DASHBOARD_SHOW_ALL_KEY,String(dashboardShowAll));renderPersonal()})}
+$('#dailyTarget')?.addEventListener('change',e=>{dailyPlan.target=Number(e.target.value)||10;saveDailyPlan()});
+$('#dailyMode')?.addEventListener('change',e=>{dailyPlan.mode=e.target.value||'balanced';saveDailyPlan()});
 $('#refreshBtn').addEventListener('click',async()=>{await loadData();toast('Daten neu geladen')});
 document.addEventListener('click',e=>{const m=e.target.closest('[data-metric]');if(!m)return;m.dataset.metric==='statsView'?openView('statsView'):openDiscover(m.dataset.metric)});
 $('#saveWinBtn').onclick=saveWin;$('#removeWinBtn').onclick=removeWin;$('#cancelWinBtn').onclick=()=>$('#winDialog').close();
