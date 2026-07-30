@@ -1,0 +1,19 @@
+WIN WIN 2.7 – UPDATE
+
+Geänderte Dateien:
+- index.html
+- app.js
+- styles.css
+- manifest.webmanifest
+- sw.js
+- README.md
+- ROADMAP.md
+- CHANGELOG.md
+
+Neu:
+- Lokale persönliche Gewichtung aus deinem Nutzungsverhalten
+- Vorlieben können pausiert und zurückgesetzt werden
+- Persönlicher Einfluss wird im Score transparent angezeigt
+
+Statusschutz:
+Bestehende Teilnahmen, Favoriten, Gewinne, Notizen und „Nicht interessant“-Markierungen werden nicht überschrieben.

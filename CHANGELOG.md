@@ -35,3 +35,12 @@
 
 ## 2.2.1
 - Gewinnarchiv aus 2.1 und Filter aus 2.2 zusammengeführt
+
+
+## 2.7
+- lokale persönliche Priorisierung ohne Profil, Konto oder Cloud
+- Kategorien werden aus Favoriten, Teilnahmen, Gewinnen, Klicks und „Nicht interessant“ gewichtet
+- transparente persönliche Score-Komponente auf jeder Karte
+- Lernen kann pausiert oder zurückgesetzt werden
+- Reset betrifft ausschließlich die Gewichtung; alle persönlichen Status bleiben erhalten
+- unveränderte Speicherbereiche für Teilnahmen, Favoriten, Gewinne und Katalogdaten

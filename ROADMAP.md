@@ -3,7 +3,7 @@
 ## Produktziel
 Ein kostenloser, persönlicher Gewinnspiel-Assistent, der lokal arbeitet und täglich die sinnvollsten offenen Gewinnspiele priorisiert.
 
-## Erledigt bis Version 2.5
+## Erledigt bis Version 2.7
 - PWA für GitHub Pages
 - Favoriten, Teilgenommen, Nicht interessant und Gewinnarchiv
 - kombinierbare Suche und Filter
@@ -14,14 +14,12 @@ Ein kostenloser, persönlicher Gewinnspiel-Assistent, der lokal arbeitet und tä
 - stärkere Dublettenerkennung, ähnliche Gewinnspiele und Datenwarnungen
 - Anbieterqualität und Prüfung stabiler IDs
 
-## Als Nächstes: Version 2.6 – persönliche Optimierung
-- lokale Präferenzen aus dem Nutzungsverhalten
-- bevorzugte Kategorien höher gewichten
-- jederzeit zurücksetzbar und ausschließlich lokal
-
 ## Später – kostenlose Automatisierung
 - GitHub Actions
 - geprüfte Quellenimporte
 - automatische Katalog-Aktualisierung ohne kostenpflichtiges Backend
 
 - [x] 2.6 Sichere Katalog-Aktualisierung mit Vorschau, Sicherung und Importverlauf
+
+- [x] 2.7 Lokale persönliche Gewichtung aus Favoriten, Teilnahmen, Gewinnen und Ablehnungen
+- [ ] 2.8 Datenexport und vollständige persönliche Sicherung
