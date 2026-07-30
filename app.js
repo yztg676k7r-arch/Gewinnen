@@ -1,5 +1,5 @@
 
-const APP_VERSION='4.1';
+const APP_VERSION='4.2';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;
@@ -977,8 +977,28 @@ function updateContestUrlSuggestion(){
 function readContestForm(){
  const provider=$('#contestProvider').value.trim();const source=sources.find(s=>s.name.toLowerCase()===provider.toLowerCase())||sourceFromUrl($('#contestUrl').value);
  const deadline=$('#contestDeadline').value;const deadlineDE=deadline?deadline.split('-').reverse().join('.'):'';
- return {id:`local-${contestSlug(provider||'quelle')}-${contestSlug($('#contestTitle').value)}-${Date.now().toString(36)}`,title:$('#contestTitle').value.trim(),provider:provider||source?.name||'Unbekannte Quelle',sourceId:source?.id||null,prize:$('#contestPrize').value.trim(),url:$('#contestUrl').value.trim(),category:$('#contestCategory').value,country:source?.country||'Deutschland',deadline:deadlineDE,winners:Number($('#contestWinners').value)||null,new:true,daily:$('#contestDaily').checked,international:false,requirements:$('#contestNotes').value.trim(),note:$('#contestNotes').value.trim(),purchaseRequired:$('#contestPurchase').checked,receiptRequired:false,winnerKnown:Boolean(Number($('#contestWinners').value)),verified:new Intl.DateTimeFormat('de-DE').format(new Date()),providerTrust:Number(source?.quality)||3,effort:Number($('#contestEffort').value)||2,entryType:$('#contestEntryType').value,multipleEntry:$('#contestDaily').checked,highValuePrize:$('#contestHighValue').checked,tags:$('#contestTags').value.split(',').map(x=>x.trim()).filter(Boolean),addedAt:new Date().toISOString()}
+ const eligibility=$('#contestEligibility')?.value||'check',verification=$('#contestVerification')?.value||'candidate';
+ return {id:`local-${contestSlug(provider||'quelle')}-${contestSlug($('#contestTitle').value)}-${Date.now().toString(36)}`,title:$('#contestTitle').value.trim(),provider:provider||source?.name||'Unbekannte Quelle',sourceId:source?.id||null,prize:$('#contestPrize').value.trim(),url:$('#contestUrl').value.trim(),category:$('#contestCategory').value,country:source?.country||'Deutschland',deadline:deadlineDE,winners:Number($('#contestWinners').value)||null,new:true,daily:$('#contestDaily').checked,international:eligibility!=='yes',germanyEligibility:eligibility,requirements:$('#contestNotes').value.trim(),note:$('#contestNotes').value.trim(),purchaseRequired:$('#contestPurchase').checked,receiptRequired:false,winnerKnown:Boolean(Number($('#contestWinners').value)),verified:verification==='verified'?new Intl.DateTimeFormat('de-DE').format(new Date()):'',verification,providerTrust:Number(source?.quality)||3,effort:Number($('#contestEffort').value)||2,entryType:$('#contestEntryType').value,multipleEntry:$('#contestDaily').checked,highValuePrize:$('#contestHighValue').checked,tags:$('#contestTags').value.split(',').map(x=>x.trim()).filter(Boolean),addedAt:new Date().toISOString()}
 }
+function contestQualityReport(candidate){
+ const checks=[],warnings=[],errors=[];let parsedUrl=null;
+ try{parsedUrl=new URL(candidate.url);if(!/^https?:$/.test(parsedUrl.protocol))errors.push('Der Direktlink muss mit http oder https beginnen.')}catch{errors.push('Der Direktlink ist ungültig.')}
+ const deadline=parseFlexibleDate(candidate.deadline);const left=deadline?Math.ceil((deadline-new Date())/86400000):null;
+ if(!deadline)errors.push('Das Enddatum konnte nicht gelesen werden.');else if(left<0)errors.push('Das Gewinnspiel ist bereits abgelaufen.');else if(left===0)warnings.push('Das Gewinnspiel endet heute.');else if(left<=2)warnings.push(`Nur noch ${left} Tag${left===1?'':'e'} bis zum Ende.`);else checks.push(`${left} Tage Restlaufzeit`);
+ const source=candidate.sourceId?sourceById(candidate.sourceId):sourceFromUrl(candidate.url);
+ if(source){checks.push(`Quelle erkannt: ${source.name}`);if(source.germanyEligibility==='no')errors.push('Die Quelle ist für Deutschland als ungeeignet markiert.');if((source.quality||0)<3)warnings.push('Die Quellenqualität ist niedrig.')}else warnings.push('Keine bekannte Quelle zur URL gefunden.');
+ if(candidate.germanyEligibility==='no')errors.push('Teilnahme aus Deutschland ist ausgeschlossen.');else if(candidate.germanyEligibility==='check')warnings.push('Teilnahme aus Deutschland ist noch nicht bestätigt.');else checks.push('Teilnahme aus Deutschland bestätigt');
+ if(!candidate.winners)warnings.push('Gewinnerzahl ist nicht angegeben.');else checks.push(`${candidate.winners} Gewinner angegeben`);
+ if(candidate.verification!=='verified')warnings.push('Datensatz ist noch nicht als verifiziert markiert.');else checks.push('Heute verifiziert');
+ if(contestDuplicates(candidate).length)warnings.push('Mögliche Dublette erkannt.');
+ const score=Math.max(0,100-errors.length*35-warnings.length*9);
+ return {checks,warnings,errors,score,parsedUrl};
+}
+function renderContestQuality(){
+ const box=$('#contestQualityCheck');if(!box)return null;const c=readContestForm(),r=contestQualityReport(c);const level=r.errors.length?'bad':r.warnings.length?'warn':'good';
+ box.className=`contest-quality-check ${level}`;box.innerHTML=`<div class="quality-head"><strong>Datenqualität ${r.score}/100</strong><span>${r.errors.length?'Speichern blockiert':r.warnings.length?'Bitte prüfen':'bereit'}</span></div>${r.errors.length?`<div class="quality-errors">${r.errors.map(x=>`<p>✕ ${esc(x)}</p>`).join('')}</div>`:''}${r.warnings.length?`<div class="quality-warnings">${r.warnings.map(x=>`<p>⚠ ${esc(x)}</p>`).join('')}</div>`:''}${r.checks.length?`<div class="quality-checks">${r.checks.map(x=>`<p>✓ ${esc(x)}</p>`).join('')}</div>`:''}`;return r;
+}
+function setDeadlineFromToday(days){const d=new Date();d.setDate(d.getDate()+Number(days||0));const input=$('#contestDeadline');if(input){input.value=d.toISOString().slice(0,10);renderContestQuality()}}
 function previewContestDuplicates(){
  const box=$('#contestDuplicateWarning');if(!box)return;const c={url:$('#contestUrl')?.value,title:$('#contestTitle')?.value,provider:$('#contestProvider')?.value};const matches=contestDuplicates(c);
  box.hidden=!matches.length;box.innerHTML=matches.length?`<strong>⚠ Mögliche Dublette${matches.length>1?'n':''}</strong><p>${matches.map(i=>`${esc(i.provider)}: ${esc(i.title)}`).join('<br>')}</p>`:'';
@@ -989,7 +1009,7 @@ function openContestDialog(prefill={}){
  if(prefill.provider&&$('#contestProvider'))$('#contestProvider').value=prefill.provider;
  if(prefill.category&&$('#contestCategory'))$('#contestCategory').value=prefill.category;
  if(prefill.inboxId&&$('#contestInboxId'))$('#contestInboxId').value=prefill.inboxId;
- updateContestUrlSuggestion();previewContestDuplicates();$('#contestDialog')?.showModal();
+ updateContestUrlSuggestion();previewContestDuplicates();renderContestQuality();$('#contestDialog')?.showModal();
 }
 function normalizeInboxUrl(value){
  const raw=String(value||'').trim();if(!raw)return '';
@@ -1019,8 +1039,10 @@ function setupHitInbox(){
 
 function setupContestManager(){
  $('#addContestBtn')?.addEventListener('click',()=>openContestDialog());$('#closeContestDialog')?.addEventListener('click',()=>$('#contestDialog')?.close());$('#cancelContestDialog')?.addEventListener('click',()=>$('#contestDialog')?.close());
- $('#contestUrl')?.addEventListener('blur',()=>{updateContestUrlSuggestion();previewContestDuplicates()});$('#contestTitle')?.addEventListener('input',previewContestDuplicates);$('#contestProvider')?.addEventListener('input',previewContestDuplicates);
- $('#contestForm')?.addEventListener('submit',e=>{e.preventDefault();const candidate=readContestForm();const dupes=contestDuplicates(candidate);if(dupes.length&&!confirm(`Es gibt ${dupes.length} mögliche Dublette${dupes.length===1?'':'n'}. Trotzdem speichern?`))return;const inboxId=$('#contestInboxId')?.value||'';customContests.push(candidate);localStorage.setItem(CUSTOM_DATA_KEY,JSON.stringify(customContests));if(inboxId)removeHitInboxItem(inboxId,true);applyCustomData();$('#contestDialog')?.close();toast('Gewinnspiel gespeichert');const note=$('#contestCaptureNote');if(note)note.textContent=`„${candidate.title}“ wurde lokal ergänzt.`;});
+ const refreshQuality=()=>{updateContestUrlSuggestion();previewContestDuplicates();renderContestQuality()};
+ ['contestUrl','contestTitle','contestProvider','contestPrize','contestDeadline','contestWinners','contestEligibility','contestVerification','contestCategory','contestEntryType'].forEach(id=>$('#'+id)?.addEventListener(id==='contestUrl'?'blur':'input',refreshQuality));
+ $$('[data-deadline-days]').forEach(b=>b.addEventListener('click',()=>setDeadlineFromToday(b.dataset.deadlineDays)));
+ $('#contestForm')?.addEventListener('submit',e=>{e.preventDefault();const candidate=readContestForm();const quality=contestQualityReport(candidate);if(quality.errors.length)return toast(quality.errors[0]);const dupes=contestDuplicates(candidate);if(dupes.length&&!confirm(`Es gibt ${dupes.length} mögliche Dublette${dupes.length===1?'':'n'}. Trotzdem speichern?`))return;if(quality.warnings.length&&!confirm(`${quality.warnings.length} Qualitäts-Hinweis${quality.warnings.length===1?'':'e'} sind noch offen. Trotzdem speichern?`))return;const inboxId=$('#contestInboxId')?.value||'';candidate.dataQuality=quality.score;candidate.qualityWarnings=quality.warnings;customContests.push(candidate);localStorage.setItem(CUSTOM_DATA_KEY,JSON.stringify(customContests));if(inboxId)removeHitInboxItem(inboxId,true);applyCustomData();$('#contestDialog')?.close();toast('Gewinnspiel gespeichert');const note=$('#contestCaptureNote');if(note)note.textContent=`„${candidate.title}“ wurde lokal ergänzt · Qualität ${quality.score}/100.`;});
 }
 function renderContestManagerBadge(){const badge=$('#localContestBadge');if(badge)badge.textContent=`${customContests.length} lokal`}
 

@@ -13,8 +13,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=4.1">
-  <title>Win Win 4.1</title>
+  <link rel="stylesheet" href="./styles.css?v=4.2">
+  <title>Win Win 4.2</title>
 </head>
 <body>
   <div class="app-shell">
@@ -40,7 +40,7 @@
         <section class="update-status" id="updateStatus">
           <span class="status-dot"></span>
           <span id="updateText">Gewinnspiele werden geprüft …</span>
-          <small id="dataDiagnostics" class="data-diagnostics">App 4.1 · Daten werden geladen</small>
+          <small id="dataDiagnostics" class="data-diagnostics">App 4.2 · Daten werden geladen</small>
         </section>
         <section class="metric-grid" id="metrics"></section>
 
@@ -159,7 +159,7 @@
       <section id="dataView" class="view">
         <div class="view-title"><p class="section-kicker">DATENZENTRALE</p><h2>Import & Quellen</h2></div>
         <section class="data-hero">
-          <div><p class="section-kicker">WIN WIN 4.1</p><h3>Treffer-Inbox 4.1</h3><p>Mehrere gefundene Links sammeln, automatisch Quellen zuordnen und anschließend strukturiert in den Katalog übernehmen.</p></div>
+          <div><p class="section-kicker">WIN WIN 4.2</p><h3>Qualitäts-Check 4.2</h3><p>Neue Gewinnspiele vor dem Speichern auf Frist, Quelle, Teilnahmegebiet und Datenqualität prüfen.</p></div>
         </section>
         <section id="importSummary" class="import-summary"></section>
         <section id="importPreview" class="data-panel import-preview" hidden></section>
@@ -315,15 +315,17 @@
     <dialog id="contestDialog" class="source-dialog contest-dialog">
       <form id="contestForm" method="dialog">
         <input id="contestInboxId" type="hidden">
-        <div class="source-dialog-head"><div><p class="section-kicker">KATALOG-MANAGER 4.1</p><h3>Neues Gewinnspiel</h3></div><button type="button" id="closeContestDialog" class="round-button">×</button></div>
+        <div class="source-dialog-head"><div><p class="section-kicker">KATALOG-MANAGER 4.2</p><h3>Neues Gewinnspiel</h3></div><button type="button" id="closeContestDialog" class="round-button">×</button></div>
         <div class="source-form-grid">
           <label class="source-form-wide"><span>Direktlink *</span><input id="contestUrl" required inputmode="url" placeholder="https://…"></label>
           <label class="source-form-wide"><span>Titel *</span><input id="contestTitle" required placeholder="Was kann man gewinnen?"></label>
           <label><span>Quelle / Anbieter</span><input id="contestProvider" list="contestSourceNames" placeholder="wird aus der URL erkannt"><datalist id="contestSourceNames"></datalist></label>
           <label><span>Kategorie</span><select id="contestCategory"><option>Beauty</option><option>Mode</option><option>Wohnen</option><option>Garten</option><option>Technik</option><option>Gaming</option><option>Reisen</option><option>Food</option><option>Familie</option><option>Freizeit</option><option>Auto</option><option>Produkttests</option><option>Sonstiges</option></select></label>
           <label class="source-form-wide"><span>Gewinn *</span><input id="contestPrize" required placeholder="z. B. 10 × Einkaufsgutschein à 100 €"></label>
-          <label><span>Enddatum *</span><input id="contestDeadline" required type="date"></label>
+          <label><span>Enddatum *</span><input id="contestDeadline" required type="date"><div class="deadline-shortcuts"><button type="button" data-deadline-days="7">+7 Tage</button><button type="button" data-deadline-days="14">+14</button><button type="button" data-deadline-days="30">+30</button></div></label>
           <label><span>Anzahl Gewinner</span><input id="contestWinners" type="number" min="1" inputmode="numeric" placeholder="optional"></label>
+          <label><span>Teilnahme aus Deutschland</span><select id="contestEligibility"><option value="yes">Ja · bestätigt</option><option value="check" selected>Noch prüfen</option><option value="no">Nein</option></select></label>
+          <label><span>Datenstatus</span><select id="contestVerification"><option value="verified">Verifiziert</option><option value="candidate" selected>Noch prüfen</option></select></label>
           <label><span>Aufwand</span><select id="contestEffort"><option value="1">1 · sehr schnell</option><option value="2" selected>2 · schnell</option><option value="3">3 · mittel</option><option value="4">4 · höher</option><option value="5">5 · aufwändig</option></select></label>
           <label><span>Teilnahmeart</span><select id="contestEntryType"><option value="form">Formular</option><option value="app">App</option><option value="social">Social Media</option><option value="email">E-Mail</option><option value="purchase">Kauf / Kassenbon</option><option value="other">Sonstiges</option></select></label>
           <label class="source-form-wide"><span>Tags</span><input id="contestTags" placeholder="viele Gewinner, schnell, hoher Wert"></label>
@@ -332,6 +334,7 @@
           <label class="source-check"><input id="contestPurchase" type="checkbox"><span>Kauf erforderlich</span></label>
           <label class="source-form-wide"><span>Notizen / Bedingungen</span><textarea id="contestNotes" rows="3" placeholder="Login, Teilnahmegebiet, Besonderheiten …"></textarea></label>
         </div>
+        <div id="contestQualityCheck" class="contest-quality-check" aria-live="polite"></div>
         <div id="contestDuplicateWarning" class="contest-duplicate-warning" hidden></div>
         <div class="source-dialog-actions"><button type="button" id="cancelContestDialog">Abbrechen</button><button type="submit" class="data-primary">Gewinnspiel speichern</button></div>
       </form>
@@ -363,6 +366,6 @@
       </form>
     </dialog>
 
-  <script src="./app.js?v=4.1"></script>
+  <script src="./app.js?v=4.2"></script>
 </body>
 </html>

@@ -1,0 +1,10 @@
+# Win Win 4.2 – Qualitätsprüfung
+
+- Live-Datenqualitätscheck beim Erfassen neuer Gewinnspiele
+- Prüfung von Direktlink, Enddatum, Quelle und Deutschland-Teilnahme
+- Frist-Schnellwahl für 7, 14 oder 30 Tage
+- Warnungen bei unbekannter Quelle, fehlender Gewinnerzahl und ungeprüften Daten
+- Abgelaufene oder ungültige Einträge werden blockiert
+- Qualitätswert wird im lokalen Datensatz gespeichert
+- doppelte Event-Registrierung im Quellenmanager entfernt
+- persönliche Statusdaten bleiben unverändert

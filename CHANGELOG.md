@@ -1,3 +1,8 @@
+## 4.2 – Qualitätsprüfung
+- Live-Prüfung neuer Katalogeinträge auf Frist, Link, Quelle und Teilnahmegebiet.
+- Ungültige oder abgelaufene Einträge werden blockiert.
+- Qualitätswert und Warnungen werden lokal gespeichert.
+
 ## 4.0 – Dashboard-Stabilität
 
 - Dashboard-Ladefehler behoben.

@@ -61,6 +61,10 @@ Ein kostenloser, persönlicher Gewinnspiel-Assistent, der lokal arbeitet und tä
 - automatische Quellenzuordnung und URL-Dublettenprüfung
 - strukturierte Übernahme in den lokalen Katalog
 
-## Nächster Schritt – Version 4.2
-- Katalogausbau mit zusätzlichen verifizierten Gewinnspielen
+## Version 4.2 – umgesetzt
 - bessere Fristen- und Qualitätsprüfung beim Erfassen
+- Live-Warnungen und blockierende Fehlerprüfung
+
+## Nächster Schritt – Version 4.3
+- Katalogausbau mit zusätzlichen verifizierten Gewinnspielen
+- lokale Bearbeitung und Korrektur eigener Katalogeinträge
