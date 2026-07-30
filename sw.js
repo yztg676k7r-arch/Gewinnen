@@ -1,6 +1,6 @@
 const CACHE='win-win-3.0.0';
 const CORE=[
- './','./index.html','./styles.css?v=3.0.0','./app.js?v=3.0.0','./manifest.webmanifest',
+ './','./index.html','./styles.css','./app.js','./manifest.webmanifest',
  './apple-touch-icon.png','./icons/icon-180.png','./icons/icon-192.png',
  './icons/icon-512.png','./data/contests.json'
 ];

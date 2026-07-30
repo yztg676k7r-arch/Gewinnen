@@ -26,8 +26,3 @@ Ein kostenloser, persönlicher Gewinnspiel-Assistent, der lokal arbeitet und tä
 - [ ] 2.9 Tagesroutine und flexible Tagesziele
 
 - Vollständige persönliche Sicherung und geräteübergreifende Wiederherstellung per JSON
-
-
-## Version 3.0.0 – erledigt
-- stabiles Dashboard-Cockpit
-- vollständiger Statusschutz

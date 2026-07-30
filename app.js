@@ -357,89 +357,84 @@ function dashboardMini(i){
 function dashboardGroup(title,kicker,items,filter,emptyText){
  return `<section class="dashboard-priority-section"><div class="section-head"><div><p class="section-kicker">${esc(kicker)}</p><h2>${esc(title)}</h2></div>${filter?`<button class="text-button" onclick="openDiscover('${esc(filter)}')">Alle</button>`:''}</div><div class="card-row">${items.length?items.slice(0,6).map(dashboardMini).join(''):empty(emptyText)}</div></section>`;
 }
-function renderPersonal(){
- const setHTML=(id,html)=>{const el=$(id);if(el)el.innerHTML=html||''};
- const setText=(id,text)=>{const el=$(id);if(el)el.textContent=text||''};
- let all=[],active=[],done=[],ignored=[],fav=[],wins=[],openPool=[];
- try{all=scored(true)||[]}catch(error){console.error('Dashboard: Katalog konnte nicht bewertet werden',error);all=[]}
- try{active=scored()||[]}catch{active=all.filter(i=>!stateFor(i.id).ignored)}
- try{
-  done=all.filter(i=>Boolean(stateFor(i.id).done));
-  ignored=all.filter(i=>Boolean(stateFor(i.id).ignored));
-  fav=all.filter(i=>Boolean(stateFor(i.id).favorite));
-  wins=all.filter(i=>Boolean(stateFor(i.id).won));
-  openPool=all.filter(i=>{const s=stateFor(i.id);return dashboardShowAll||(!s.done&&!s.ignored)});
- }catch(error){console.error('Dashboard: Status konnten nicht gelesen werden',error)}
-
+function renderPersonalCore(){
+ const a=scored(),all=scored(true),fav=a.filter(i=>stateFor(i.id).favorite),done=all.filter(i=>stateFor(i.id).done),ignored=all.filter(i=>stateFor(i.id).ignored),wins=all.filter(i=>stateFor(i.id).won);
  const today=dayKey();
  const doneToday=done.filter(i=>dayKey(stateFor(i.id).doneAt)===today).length;
  const doneWeek=done.filter(i=>inLastDays(stateFor(i.id).doneAt,7)).length;
- const ending7=openPool.filter(i=>{const d=daysLeft(i);return d>=0&&d<=7}).length;
- const quick=openPool.filter(i=>(Number(i.effort)||3)<=2).length;
- const top=openPool.filter(i=>(Number(i.score)||0)>=75).length;
+ const openPool=all.filter(i=>{const s=stateFor(i.id);return !s.done&&!s.ignored});
+ const ending=openPool.filter(i=>daysLeft(i)<=3).length;
  const daily=openPool.filter(i=>i.daily||i.multipleEntry).length;
-
- // Diese beiden Listen gehören zwar nicht zum Cockpit, müssen aber weiter gepflegt werden.
- setHTML('#favoriteList',fav.length?fav.map(full).join(''):empty('Deine Favoriten erscheinen hier.'));
- setHTML('#doneList',done.length?done.sort((x,y)=>String(stateFor(y.id).doneAt||'').localeCompare(String(stateFor(x.id).doneAt||''))).map(full).join(''):empty('Hier erscheinen deine markierten Teilnahmen.'));
-
- // Cockpit-Kopf zuerst rendern. Dadurch bleibt das Dashboard auch bei defekten Einzeldaten sichtbar.
- setHTML('#statsHero',`<div class="cockpit-hero-number">${openPool.length}</div><div><strong>offene Gewinnspiele</strong><p>${doneToday} heute erledigt · ${doneWeek} in den letzten 7 Tagen</p></div>`);
- const stats=[
-  ['🎁',openPool.length,'Offen'],
-  ['⏰',ending7,'Endet bald'],
-  ['🎯',top,'Hohe Chance'],
-  ['⚡',quick,'Schnell erledigt']
- ];
- setHTML('#statsGrid',stats.map(([ic,n,l])=>`<button class="stat-card dashboard-stat" data-dashboard="${esc(l)}"><span class="cockpit-stat-icon">${ic}</span><strong>${n}</strong><span>${esc(l)}</span></button>`).join(''));
+ const topOpen=openPool.filter(i=>i.score>=80).length;
+ $('#favoriteList').innerHTML=fav.map(full).join('')||empty('Deine Favoriten erscheinen hier.');
+ $('#doneList').innerHTML=done.sort((x,y)=>String(stateFor(y.id).doneAt||'').localeCompare(String(stateFor(x.id).doneAt||''))).map(full).join('')||empty('Hier erscheinen deine markierten Teilnahmen.');
+ const totalValue=wins.reduce((sum,i)=>sum+(Number(stateFor(i.id).winDetails?.value)||0),0);
+ $('#winArchiveSummary').innerHTML=`<div><strong>${wins.length}</strong><span>Gewinne</span></div><div><strong>${new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(totalValue)}</strong><span>erfasster Wert</span></div>`;
+ try{
+ $('#winArchiveList').innerHTML=wins.sort((x,y)=>String(stateFor(y.id).winDetails?.date||stateFor(y.id).wonAt||'').localeCompare(String(stateFor(x.id).winDetails?.date||stateFor(x.id).wonAt||''))).map(i=>{const d=stateFor(i.id).winDetails||{};const val=Number(d.value)||0;let dateLabel='Datum offen';if(d.date){const parsed=new Date(String(d.date).includes('T')?d.date:d.date+'T12:00:00');dateLabel=Number.isNaN(parsed.getTime())?'Datum ungültig':new Intl.DateTimeFormat('de-DE').format(parsed)}return `<article class="win-archive-card"><div><span>🏆 ${esc(i.provider)}</span><h3>${esc(d.prizeName||i.prize)}</h3><p>${dateLabel} · ${esc(d.deliveryStatus==='erhalten'?'Erhalten':d.deliveryStatus==='versendet'?'Versendet':'Ausstehend')}${val?` · ${new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'}).format(val)}`:''}</p>${d.note?`<small>${esc(d.note)}</small>`:''}</div><button onclick="openWinDialog('${esc(i.id)}')">Bearbeiten</button></article>`}).join('')||empty('Noch kein Gewinn eingetragen – das ändern wir hoffentlich bald. 🍀');
+ }catch(error){console.error('Gewinnarchiv konnte nicht gerendert werden',error);$('#winArchiveList').innerHTML=empty('Das Gewinnarchiv enthält einen unvollständigen Eintrag. Die übrigen Dashboard-Inhalte bleiben verfügbar.')}
+ const avg=done.length?Math.round(done.reduce((sum,i)=>sum+i.score,0)/done.length):0;
+ $('#statsHero').innerHTML=`<strong>${done.length}</strong><p>Teilnahmen insgesamt · ${doneToday} heute · ${doneWeek} in den letzten 7 Tagen</p>`;
+ const stats=[['🏆',wins.length,'Gewinne'],['☀',doneToday,'Heute erledigt'],['7',doneWeek,'Letzte 7 Tage'],['⭐',topOpen,'Offene Top-Chancen'],['⏳',ending,'Enden in 3 Tagen'],['↻',daily,'Täglich möglich'],['♡',fav.length,'Favoriten'],['⊘',ignored.length,'Nicht interessant'],['Ø',avg,'Ø Teilnahme-Score']];
+ $('#statsGrid').innerHTML=stats.map(([ic,n,l])=>`<button class="stat-card dashboard-stat" data-dashboard="${l}"><span>${ic}</span><strong>${n}</strong><span>${l}</span></button>`).join('');
+ const pool=dashboardPool().sort((x,y)=>y.score-x.score);
  const modeNote=$('#dashboardModeNote');
- if(modeNote)modeNote.textContent=dashboardShowAll?'Kontrollansicht: Auch erledigte und ausgeblendete Gewinnspiele werden angezeigt.':'Nur offene, interessante Gewinnspiele werden angezeigt.';
-
- // Top-Empfehlung
- let recommendation=null;
- try{recommendation=[...openPool].sort((a,b)=>(Number(b.score)||0)-(Number(a.score)||0))[0]||null}catch{}
- setHTML('#winOfDay',recommendation?`<div class="cockpit-recommendation"><div class="cockpit-trophy">🏆</div><div class="cockpit-rec-copy"><p class="section-kicker">DEINE TOP-EMPFEHLUNG</p><h2>${esc(recommendation.title)}</h2><p>${esc(recommendation.provider)} · ${recommendation.winners?`${recommendation.winners} Gewinner`:'Gewinnerzahl offen'} · Aufwand ${recommendation.effort||3}/5</p></div><a href="${esc(recommendation.url)}" target="_blank" rel="noopener" onclick="registerClick('${esc(recommendation.id)}')">Anzeigen</a></div>`:empty('Aktuell ist keine offene Empfehlung verfügbar.'));
-
- // Tagesplan als robuste, kompakte Navigation
- const focusItems=[];
- if(ending7)focusItems.push(`<button onclick="openDiscover('endingSoon')"><span class="cockpit-focus-icon">⏰</span><span><b>Dringend</b><em>${ending7} enden bald</em></span><strong>›</strong></button>`);
- if(quick)focusItems.push(`<button onclick="openDiscover('all')"><span class="cockpit-focus-icon">⚡</span><span><b>Schnell & einfach</b><em>${quick} mit wenig Aufwand</em></span><strong>›</strong></button>`);
- if(top)focusItems.push(`<button onclick="openDiscover('top')"><span class="cockpit-focus-icon">🎯</span><span><b>Beste Chancen</b><em>${top} hoch bewertet</em></span><strong>›</strong></button>`);
- if(daily)focusItems.push(`<button onclick="openDiscover('daily')"><span class="cockpit-focus-icon">↻</span><span><b>Täglich möglich</b><em>${daily} Wiederholungen</em></span><strong>›</strong></button>`);
+ if(modeNote)modeNote.textContent=dashboardShowAll?'Kontrollansicht: Auch erledigte und ausgeblendete Gewinnspiele werden angezeigt.':'Aufgeräumt: Teilgenommene und nicht interessante Gewinnspiele sind ausgeblendet.';
+ const win=pool.find(i=>!stateFor(i.id).done&&!stateFor(i.id).ignored)||pool[0];
+ $('#winOfDay').innerHTML=win?`<p class="section-kicker">🏆 WIN DES TAGES</p><div class="win-of-day-card"><div><span class="provider">${esc(win.provider)}</span><h2>${esc(win.title)}</h2><p>Heute besonders sinnvoll: ${esc(win.reasons.slice(0,3).join(' · ')||'gute Kombination aus Chance und Aufwand')}.</p><div class="badges"><span class="badge score">${win.score}/100</span><span class="badge">${win.winners?`${win.winners} Gewinner`:'Gewinnerzahl offen'}</span><span class="badge">Aufwand ${win.effort||3}/5</span></div></div><a href="${esc(win.url)}" target="_blank" rel="noopener" onclick="registerClick('${esc(win.id)}')">Jetzt teilnehmen ↗</a></div>`:empty('Aktuell ist kein offenes Gewinnspiel verfügbar.');
+ const focus=[];
+ if(ending)focus.push(`<button onclick="openDiscover('endingSoon')"><b>${ending}</b><span>offene Gewinnspiele enden in höchstens 3 Tagen</span><em>Jetzt prüfen →</em></button>`);
+ if(topOpen)focus.push(`<button onclick="openDiscover('top')"><b>${topOpen}</b><span>offene Top-Chancen warten auf dich</span><em>Priorisieren →</em></button>`);
+ if(daily)focus.push(`<button onclick="openDiscover('daily')"><b>${daily}</b><span>Gewinnspiele erlauben eine Wiederholung</span><em>Täglich teilnehmen →</em></button>`);
  const focusBox=$('#dashboardFocus');
  if(focusBox){
-  focusBox.hidden=false;
-  focusBox.innerHTML=`<div class="cockpit-section-title"><div><p class="section-kicker">WAS JETZT SINNVOLL IST</p><h2>Dein Tagesplan</h2></div></div><div class="cockpit-focus-grid">${focusItems.join('')||'<p class="cockpit-calm">Für heute ist alles Wichtige erledigt. 🍀</p>'}</div>`;
+  focusBox.innerHTML=focus.length?`<p class="section-kicker">JETZT SINNVOLL</p><h2>Dein nächster Schritt</h2><div>${focus.join('')}</div>`:'';
+  focusBox.hidden=!focus.length;
  }
-
- // Alte breite Karten werden im Cockpit bewusst nicht doppelt ausgegeben.
- setHTML('#dashboardPriorityGroups','');
- const priorityGroups=$('#dashboardPriorityGroups');if(priorityGroups)priorityGroups.hidden=true;
-
- // Kategorien
- try{
-  const counts={};
-  done.forEach(i=>{const c=i.category||'Sonstiges';counts[c]=(counts[c]||0)+1});
-  const cats=Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,6);
-  const max=cats[0]?.[1]||1;
-  setHTML('#categoryStats',cats.length?cats.map(([name,n])=>`<button onclick="openDiscover('${esc(name)}')"><span><b>${esc(name)}</b><em>${n} Teilnahme${n===1?'':'n'}</em></span><i><u style="width:${Math.max(8,Math.round(n/max*100))}%"></u></i></button>`).join(''):empty('Nach deinen ersten Teilnahmen zeigt Win Win hier deine aktivsten Kategorien.'));
- }catch(error){console.error('Dashboard: Kategorien konnten nicht gerendert werden',error);setHTML('#categoryStats',empty('Kategorien können gerade nicht angezeigt werden.'))}
-
- // Gewinnarchiv: jeden Datensatz einzeln absichern.
- let totalValue=0;
- wins.forEach(i=>{try{totalValue+=Number(stateFor(i.id).winDetails?.value)||0}catch{}});
- setHTML('#winArchiveSummary',`<div><strong>${wins.length}</strong><span>Gewinne</span></div><div><strong>${new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(totalValue)}</strong><span>erfasster Wert</span></div>`);
- const archive=[];
- wins.slice().sort((x,y)=>String(stateFor(y.id).winDetails?.date||stateFor(y.id).wonAt||'').localeCompare(String(stateFor(x.id).winDetails?.date||stateFor(x.id).wonAt||''))).slice(0,5).forEach(i=>{
-  try{
-   const d=stateFor(i.id).winDetails||{};
-   const parsed=d.date?new Date(String(d.date).includes('T')?d.date:d.date+'T12:00:00'):null;
-   const dateLabel=parsed&&!Number.isNaN(parsed.getTime())?new Intl.DateTimeFormat('de-DE').format(parsed):'Datum offen';
-   archive.push(`<article class="win-archive-card"><div><span>🏆 ${esc(i.provider||'Gewinn')}</span><h3>${esc(d.prizeName||i.prize||i.title)}</h3><p>${dateLabel}</p></div><button onclick="openWinDialog('${esc(i.id)}')">Bearbeiten</button></article>`);
-  }catch(error){console.warn('Ein Gewinnarchiveintrag wurde übersprungen',error)}
- });
- setHTML('#winArchiveList',archive.length?archive.join(''):empty('Noch kein Gewinn eingetragen – das ändern wir hoffentlich bald. 🍀'));
+ const todayFirst=pool.filter(i=>!stateFor(i.id).done&&!stateFor(i.id).ignored).sort((x,y)=>((y.score+(daysLeft(y)<=2?12:0))- (x.score+(daysLeft(x)<=2?12:0))));
+ const endingToday=pool.filter(i=>daysLeft(i)===0);
+ const ending3=pool.filter(i=>daysLeft(i)>=0&&daysLeft(i)<=3).sort((x,y)=>daysLeft(x)-daysLeft(y));
+ const top=pool.filter(i=>i.score>=80);
+ const highValue=pool.filter(i=>i.highValuePrize).sort((x,y)=>y.score-x.score);
+ const quick=pool.filter(i=>(i.effort||3)===1).sort((x,y)=>y.score-x.score);
+ const dashboardGroups=[
+  ['Heute zuerst teilnehmen','DEINE BESTE REIHENFOLGE',todayFirst,'recommended'],
+  ['Endet heute','JETZT ODER NIE',endingToday,'endingSoon'],
+  ['Endet in 3 Tagen','SCHNELL SEIN',ending3,'endingSoon'],
+  ['Top-Gewinnchancen','HOHE TREFFERCHANCE',top,'top'],
+  ['Hoher Gewinnwert','BESONDERS ATTRAKTIV',highValue,'all'],
+  ['Schnell erledigt','UNTER 1 MINUTE',quick,'all']
+ ].filter(([, ,items])=>items.length);
+ $('#dashboardPriorityGroups').innerHTML=dashboardGroups.length
+  ?dashboardGroups.map(([title,kicker,items,filter])=>dashboardGroup(title,kicker,items,filter,'')).join('')
+  :empty('Aktuell gibt es keine offenen Empfehlungen für dein Dashboard.');
+ const counts={};
+ done.forEach(i=>{const c=i.category||'Sonstiges';counts[c]=(counts[c]||0)+1});
+ const cats=Object.entries(counts).sort((x,y)=>y[1]-x[1]).slice(0,6);
+ const max=cats[0]?.[1]||1;
+ $('#categoryStats').innerHTML=cats.length?cats.map(([name,n])=>`<button onclick="openDiscover('${esc(name)}')"><span><b>${esc(name)}</b><em>${n} Teilnahme${n===1?'':'n'}</em></span><i><u style="width:${Math.round(n/max*100)}%"></u></i></button>`).join(''):empty('Sobald du Teilnahmen markierst, siehst du hier deine aktivsten Kategorien.');
 }
+
+
+function renderPersonal(){
+ const fallbacks={
+  statsHero:'Dashboard-Daten konnten nicht vollständig geladen werden.',
+  statsGrid:'', winOfDay:'', dashboardFocus:'', dashboardPriorityGroups:'',
+  categoryStats:'Noch keine Kategorien verfügbar.', winArchiveSummary:'',
+  winArchiveList:'Noch kein Gewinn eingetragen.', doneList:'Noch keine Teilnahmen markiert.'
+ };
+ try{
+  renderPersonalCore();
+ }catch(error){
+  console.error('Win Win: Dashboard konnte nicht vollständig gerendert werden',error);
+  Object.entries(fallbacks).forEach(([id,text])=>{
+   const el=$('#'+id);if(!el||el.innerHTML.trim())return;
+   el.innerHTML=text?empty(text):'';
+  });
+  const note=$('#dashboardModeNote');if(note)note.textContent='Ein lokaler Datensatz konnte nicht vollständig gelesen werden. Deine Status bleiben gespeichert.';
+ }
+}
+
 function renderPreferencePanel(){
  const box=$('#preferencePanel');if(!box)return;
  const cats=Object.entries(preferences.categories||{}).filter(([,v])=>Math.abs(Number(v))>=1).sort((a,b)=>b[1]-a[1]);
@@ -839,18 +834,18 @@ async function loadData(silent=false){
 $$('.nav-item').forEach(b=>b.addEventListener('click',()=>openView(b.dataset.view)));
 $$('.chip').forEach(b=>b.addEventListener('click',()=>{currentFilter=b.dataset.filter;$$('.chip').forEach(c=>c.classList.toggle('active',c===b));renderDiscover()}));
 $$('[data-show]').forEach(b=>b.addEventListener('click',()=>openDiscover(b.dataset.show)));
-$('#searchInput').addEventListener('input',renderDiscover);$('#sortSelect').addEventListener('change',renderDiscover);
-$('#filterToggle').addEventListener('click',()=>{const panel=$('#advancedFilters');panel.hidden=!panel.hidden;$('#filterToggle').classList.toggle('active',!panel.hidden)});
+$('#searchInput')?.addEventListener('input',renderDiscover);$('#sortSelect')?.addEventListener('change',renderDiscover);
+$('#filterToggle')?.addEventListener('click',()=>{const panel=$('#advancedFilters');if(!panel)return;panel.hidden=!panel.hidden;$('#filterToggle')?.classList.toggle('active',!panel.hidden)});
 const filterBindings={filterEntryType:'entryType',filterEffort:'effort',filterWinners:'winners',filterDeadline:'deadline',filterDaily:'daily',filterNoApp:'noApp',filterNoSocial:'noSocial',filterKnownWinners:'knownWinners',filterOnlyOpen:'onlyOpen'};
 Object.entries(filterBindings).forEach(([id,key])=>$('#'+id)?.addEventListener('change',e=>{advancedFilters[key]=e.target.type==='checkbox'?e.target.checked:e.target.value;saveAdvancedFilters()}));
-$('#resetFilters').addEventListener('click',()=>{advancedFilters={entryType:'',effort:'',winners:'',deadline:'',daily:false,noApp:false,noSocial:false,knownWinners:false,onlyOpen:false};saveAdvancedFilters();toast('Zusatzfilter zurückgesetzt')});
+$('#resetFilters')?.addEventListener('click',()=>{advancedFilters={entryType:'',effort:'',winners:'',deadline:'',daily:false,noApp:false,noSocial:false,knownWinners:false,onlyOpen:false};saveAdvancedFilters();toast('Zusatzfilter zurückgesetzt')});
 syncFilterUI();
 const dashboardToggle=$('#dashboardShowAll');if(dashboardToggle){dashboardToggle.checked=dashboardShowAll;dashboardToggle.addEventListener('change',e=>{dashboardShowAll=e.target.checked;localStorage.setItem(DASHBOARD_SHOW_ALL_KEY,String(dashboardShowAll));renderPersonal()})}
 $('#dailyTarget')?.addEventListener('change',e=>{dailyPlan.target=Number(e.target.value)||10;saveDailyPlan()});
 $('#dailyMode')?.addEventListener('change',e=>{dailyPlan.mode=e.target.value||'balanced';saveDailyPlan()});
-$('#refreshBtn').addEventListener('click',async()=>{await loadData();toast('Daten neu geladen')});
+$('#refreshBtn')?.addEventListener('click',async()=>{await loadData();toast('Daten neu geladen')});
 document.addEventListener('click',e=>{const m=e.target.closest('[data-metric]');if(!m)return;m.dataset.metric==='statsView'?openView('statsView'):openDiscover(m.dataset.metric)});
-$('#saveWinBtn').onclick=saveWin;$('#removeWinBtn').onclick=removeWin;$('#cancelWinBtn').onclick=()=>$('#winDialog').close();
+if($('#saveWinBtn'))$('#saveWinBtn').onclick=saveWin;if($('#removeWinBtn'))$('#removeWinBtn').onclick=removeWin;if($('#cancelWinBtn'))$('#cancelWinBtn').onclick=()=>$('#winDialog')?.close();
 setupDataCenter();
 if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
 loadData().finally(()=>{

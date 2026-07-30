@@ -1,12 +1,14 @@
 Win Win 3.0.0
 
+Wichtigste Korrektur:
+app.js brach beim Start ab, weil nicht mehr vorhandene Filter-Elemente direkt angesprochen wurden. Diese Zugriffe sind jetzt abgesichert.
+
 Geänderte Dateien:
-- index.html
 - app.js
-- styles.css
+- index.html
 - sw.js
+- CHANGELOG.md
 - README.md
 - ROADMAP.md
-- CHANGELOG.md
 
-Wichtig: Die bestehenden LocalStorage-Schlüssel wurden nicht verändert. Teilgenommen, Nicht interessant, Favoriten, Gewinne und Importe bleiben erhalten.
+Persönliche Status bleiben erhalten.

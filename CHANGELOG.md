@@ -1,11 +1,11 @@
 # Changelog
 
 ## 3.0.0
-- Dashboard-Cockpit technisch neu aufgebaut
-- robuste Bereich-für-Bereich-Darstellung
-- kompakte Kennzahlen, Top-Empfehlung und Tagesplan
-- defekte ältere Gewinnarchiveinträge blockieren das Dashboard nicht mehr
-- persönliche Status und LocalStorage-Schlüssel unverändert
+- Kritischen Startfehler behoben: fehlende Filter-Elemente brechen JavaScript nicht mehr ab.
+- Dashboard lädt Kennzahlen, Empfehlungen, Kategorien und Gewinnarchiv wieder zuverlässig.
+- Optionale Bedienelemente werden defensiv geprüft.
+- Dashboard-Rendering gegen unvollständige lokale Datensätze abgesichert.
+- Bestehende LocalStorage-Schlüssel und persönliche Status bleiben unverändert.
 
 # Version 2.9.2
 
