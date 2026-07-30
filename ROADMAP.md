@@ -3,7 +3,7 @@
 ## Produktziel
 Ein kostenloser, persönlicher Gewinnspiel-Assistent, der lokal arbeitet und täglich die sinnvollsten offenen Gewinnspiele priorisiert.
 
-## Erledigt bis Version 2.7
+## Erledigt bis Version 2.8
 - PWA für GitHub Pages
 - Favoriten, Teilgenommen, Nicht interessant und Gewinnarchiv
 - kombinierbare Suche und Filter
@@ -22,4 +22,7 @@ Ein kostenloser, persönlicher Gewinnspiel-Assistent, der lokal arbeitet und tä
 - [x] 2.6 Sichere Katalog-Aktualisierung mit Vorschau, Sicherung und Importverlauf
 
 - [x] 2.7 Lokale persönliche Gewichtung aus Favoriten, Teilnahmen, Gewinnen und Ablehnungen
-- [ ] 2.8 Datenexport und vollständige persönliche Sicherung
+- [x] 2.8 Datenexport und vollständige persönliche Sicherung
+- [ ] 2.9 Tagesroutine und flexible Tagesziele
+
+- Vollständige persönliche Sicherung und geräteübergreifende Wiederherstellung per JSON

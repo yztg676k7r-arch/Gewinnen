@@ -1,3 +1,12 @@
+# Changelog
+
+## 2.8
+- Vollständige persönliche Sicherung als JSON
+- Wiederherstellung auf demselben oder einem anderen Gerät
+- Sicherung umfasst Status, Gewinne, Einstellungen, Präferenzen und lokale Katalogdaten
+- Automatische Rücksprung-Sicherung vor jeder Wiederherstellung
+- Bestehende Status-Schlüssel bleiben unverändert
+
 ## 2.6
 - Importvorschau vor dem Speichern
 - automatische Katalog-Sicherung

@@ -1,5 +1,5 @@
 
-const APP_VERSION='2.7';
+const APP_VERSION='2.8';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;
@@ -9,6 +9,9 @@ const IMPORT_HISTORY_KEY='winwin-import-history-v1';
 const PREFERENCE_KEY='winwin-preferences-v1';
 const FILTER_STORAGE_KEY='winwin-discover-filters-v1';
 const DASHBOARD_SHOW_ALL_KEY='winwin-dashboard-show-all-v1';
+const FULL_BACKUP_ROLLBACK_KEY='winwin-full-backup-rollback-v1';
+const FULL_BACKUP_FORMAT='winwin-personal-backup';
+const FULL_BACKUP_VERSION=1;
 const FALLBACK=[{"id": "dm-ob-starterset-2026", "title": "100 limitierte o.b. Startersets", "provider": "dm", "prize": "100 × limitiertes o.b. Starterset", "url": "https://www.dm.de/neu/gewinnspiele/ob-3493126", "category": "Beauty", "country": "Deutschland", "deadline": "13.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-adventskalender-2026", "title": "70 Adventskalender gewinnen", "provider": "dm", "prize": "70 Adventskalender verschiedener Marken", "url": "https://www.dm.de/neu/gewinnspiele/adventskalender-gewinnspiel-2948470", "category": "Beauty", "country": "Deutschland", "deadline": "16.08.2026", "winners": 70, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-seeberger-2026", "title": "VAUDE-Rucksack mit Snacks", "provider": "dm / Seeberger", "prize": "5 × VAUDE-Rucksack mit Seeberger-Snacks", "url": "https://www.dm.de/neu/gewinnspiele/seeberger-3487062", "category": "Freizeit", "country": "Deutschland", "deadline": "04.08.2026", "winners": 5, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Freizeit", "schnell"]}, {"id": "dm-borotalco-2026", "title": "Borotalco-Produktpakete", "provider": "dm / Borotalco", "prize": "Borotalco-Produktpakete", "url": "https://www.dm.de/neu/gewinnspiele/borotalco-3487104", "category": "Beauty", "country": "Deutschland", "deadline": "05.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "schnell"]}, {"id": "rossmann-neonail-2026", "title": "100 NEONAIL-Sommerpakete", "provider": "ROSSMANN", "prize": "100 × NEONAIL-Sommerpaket mit Kosmetiktasche", "url": "https://www.rossmann.de/de/service-und-hilfe/rossmann-app", "category": "Beauty", "country": "Deutschland", "deadline": "02.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenlose ROSSMANN-App und Registrierung", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Teilnahme im Aktionsbereich der ROSSMANN-App.", "providerTrust": 5, "effort": 2, "entryType": "app", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner"]}, {"id": "rossmann-centaur-juli-2026", "title": "Centaur-Rätsel Juli", "provider": "ROSSMANN", "prize": "Reise-, Wellness- und Freizeitgewinne", "url": "https://www.rossmann.de/cms/gewinnspiele/centaur-raetsel-202607.html", "category": "Reisen", "country": "Deutschland", "deadline": "09.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "ROSSMANN-App erforderlich", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 3, "entryType": "app", "multipleEntry": false, "highValuePrize": true, "tags": ["Reisen"]}, {"id": "qvc-insider-2026", "title": "10 QVC-INSIDER-Jahresabos", "provider": "QVC", "prize": "10 × Jahresabo des QVC-Kundenmagazins INSIDER", "url": "https://www.qvc.de/content/nichts-verpassen/gewinnspiel/teilnahmebedingungen.html", "category": "Wohnen", "country": "Deutschland & Österreich", "deadline": "10.08.2026", "winners": 10, "new": true, "daily": false, "international": true, "requirements": "Teilnahmebedingungen auf der QVC-Seite beachten", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Wohnen", "international"]}, {"id": "schoener-wohnen-2026", "title": "Aktuelle Monatsgewinnspiele", "provider": "SCHÖNER WOHNEN", "prize": "Design-, Wohn-, Technik- und Reisegewinne", "url": "https://www.schoener-wohnen.de/gewinnspiele/", "category": "Wohnen", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenlose Teilnahme über Bilderpuzzle und Formular", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite; die genaue Frist steht beim jeweiligen Gewinnspiel.", "providerTrust": 4, "effort": 3, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Wohnen"]}, {"id": "dm-produkttests-2026", "title": "Aktuelle dm-Produkttests", "provider": "dm Produkttester", "prize": "Produkte kostenlos testen und bewerten", "url": "https://www.dm.de/neu/produkttest", "category": "Produkttests", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite mit wechselnden Produkttests.", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Produkttests"]}];
 const $=(s,r=document)=>r.querySelector(s);
 const $$=(s,r=document)=>[...r.querySelectorAll(s)];
@@ -537,6 +540,107 @@ function renderImportHistory(){
 }
 function downloadJSON(filename,payload){
  const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)
+}
+
+function buildFullBackup(){
+ return {
+   format:FULL_BACKUP_FORMAT,
+   backupVersion:FULL_BACKUP_VERSION,
+   appVersion:APP_VERSION,
+   exportedAt:new Date().toISOString(),
+   deviceData:{
+     user:normalizeUser(JSON.parse(JSON.stringify(user))),
+     preferences:JSON.parse(JSON.stringify(preferences)),
+     discoverFilters:JSON.parse(JSON.stringify(advancedFilters)),
+     dashboardShowAll:Boolean(dashboardShowAll),
+     customContests:JSON.parse(JSON.stringify(customContests)),
+     catalogBackup:safeJSON(localStorage.getItem(IMPORT_BACKUP_KEY),null),
+     importHistory:JSON.parse(JSON.stringify(importHistory))
+   },
+   summary:{
+     statuses:Object.keys(user.items||{}).length,
+     participated:Object.values(user.items||{}).filter(x=>x&&x.done).length,
+     ignored:Object.values(user.items||{}).filter(x=>x&&x.ignored).length,
+     favorites:Object.values(user.items||{}).filter(x=>x&&x.favorite).length,
+     wins:Object.values(user.items||{}).filter(x=>x&&x.won).length,
+     customContests:customContests.length
+   }
+ }
+}
+function validateFullBackup(payload){
+ if(!payload||payload.format!==FULL_BACKUP_FORMAT)throw new Error('Keine gültige Win-Win-Komplettsicherung');
+ if(Number(payload.backupVersion)!==FULL_BACKUP_VERSION)throw new Error('Diese Sicherungsversion wird noch nicht unterstützt');
+ const d=payload.deviceData;if(!d||typeof d!=='object')throw new Error('Sicherungsdaten fehlen');
+ if(!d.user||typeof d.user!=='object'||!d.user.items||typeof d.user.items!=='object')throw new Error('Persönliche Status fehlen');
+ if(d.customContests!=null&&!Array.isArray(d.customContests))throw new Error('Lokaler Katalog ist ungültig');
+ return d
+}
+function exportFullBackup(){
+ const backup=buildFullBackup();
+ downloadJSON(`win-win-persoenliche-sicherung-${new Date().toISOString().slice(0,10)}.json`,backup);
+ toast('Persönliche Sicherung erstellt')
+}
+function applyFullBackup(payload){
+ const d=validateFullBackup(payload);
+ const summary=payload.summary||{};
+ const date=payload.exportedAt?new Intl.DateTimeFormat('de-DE',{dateStyle:'medium',timeStyle:'short'}).format(new Date(payload.exportedAt)):'unbekannt';
+ const message=`Sicherung vom ${date} wiederherstellen?\n\n${summary.participated||0} Teilnahmen · ${summary.ignored||0} nicht interessant · ${summary.favorites||0} Favoriten · ${summary.wins||0} Gewinne\n\nDer aktuelle Stand wird vorher automatisch gesichert.`;
+ if(!confirm(message))return;
+ localStorage.setItem(FULL_BACKUP_ROLLBACK_KEY,JSON.stringify(buildFullBackup()));
+ user=normalizeUser(JSON.parse(JSON.stringify(d.user)));
+ preferences=d.preferences&&typeof d.preferences==='object'?JSON.parse(JSON.stringify(d.preferences)):defaultPreferences();
+ advancedFilters=d.discoverFilters&&typeof d.discoverFilters==='object'?JSON.parse(JSON.stringify(d.discoverFilters)):advancedFilters;
+ dashboardShowAll=Boolean(d.dashboardShowAll);
+ customContests=Array.isArray(d.customContests)?JSON.parse(JSON.stringify(d.customContests)):[];
+ importHistory=Array.isArray(d.importHistory)?JSON.parse(JSON.stringify(d.importHistory)):[];
+ localStorage.setItem(STORAGE_KEY,JSON.stringify(user));
+ localStorage.setItem(STORAGE_BACKUP_KEY,JSON.stringify(user));
+ localStorage.setItem(PREFERENCE_KEY,JSON.stringify(preferences));
+ localStorage.setItem(FILTER_STORAGE_KEY,JSON.stringify(advancedFilters));
+ localStorage.setItem(DASHBOARD_SHOW_ALL_KEY,String(dashboardShowAll));
+ if(customContests.length)localStorage.setItem(CUSTOM_DATA_KEY,JSON.stringify(customContests));else localStorage.removeItem(CUSTOM_DATA_KEY);
+ if(d.catalogBackup)localStorage.setItem(IMPORT_BACKUP_KEY,JSON.stringify(d.catalogBackup));else localStorage.removeItem(IMPORT_BACKUP_KEY);
+ localStorage.setItem(IMPORT_HISTORY_KEY,JSON.stringify(importHistory));
+ const toggle=$('#dashboardShowAll');if(toggle)toggle.checked=dashboardShowAll;
+ syncFilterUI();applyCustomData();renderImportHistory();renderBackupSummary();
+ toast('Persönliche Sicherung wiederhergestellt')
+}
+function restoreBeforeBackupImport(){
+ const rollback=safeJSON(localStorage.getItem(FULL_BACKUP_ROLLBACK_KEY),null);
+ if(!rollback)return toast('Keine vorherige Sicherung vorhanden');
+ if(!confirm('Den Stand vor der letzten Wiederherstellung zurückholen?'))return;
+ applyFullBackupWithoutPrompt(rollback);
+ localStorage.removeItem(FULL_BACKUP_ROLLBACK_KEY);
+ toast('Vorheriger Stand wiederhergestellt')
+}
+function applyFullBackupWithoutPrompt(payload){
+ const d=validateFullBackup(payload);
+ user=normalizeUser(JSON.parse(JSON.stringify(d.user)));
+ preferences=d.preferences&&typeof d.preferences==='object'?JSON.parse(JSON.stringify(d.preferences)):defaultPreferences();
+ advancedFilters=d.discoverFilters&&typeof d.discoverFilters==='object'?JSON.parse(JSON.stringify(d.discoverFilters)):advancedFilters;
+ dashboardShowAll=Boolean(d.dashboardShowAll);
+ customContests=Array.isArray(d.customContests)?JSON.parse(JSON.stringify(d.customContests)):[];
+ importHistory=Array.isArray(d.importHistory)?JSON.parse(JSON.stringify(d.importHistory)):[];
+ localStorage.setItem(STORAGE_KEY,JSON.stringify(user));localStorage.setItem(STORAGE_BACKUP_KEY,JSON.stringify(user));localStorage.setItem(PREFERENCE_KEY,JSON.stringify(preferences));localStorage.setItem(FILTER_STORAGE_KEY,JSON.stringify(advancedFilters));localStorage.setItem(DASHBOARD_SHOW_ALL_KEY,String(dashboardShowAll));
+ if(customContests.length)localStorage.setItem(CUSTOM_DATA_KEY,JSON.stringify(customContests));else localStorage.removeItem(CUSTOM_DATA_KEY);
+ if(d.catalogBackup)localStorage.setItem(IMPORT_BACKUP_KEY,JSON.stringify(d.catalogBackup));else localStorage.removeItem(IMPORT_BACKUP_KEY);
+ localStorage.setItem(IMPORT_HISTORY_KEY,JSON.stringify(importHistory));
+ const toggle=$('#dashboardShowAll');if(toggle)toggle.checked=dashboardShowAll;syncFilterUI();applyCustomData();renderImportHistory();renderBackupSummary()
+}
+function renderBackupSummary(){
+ const box=$('#personalBackupSummary');if(!box)return;
+ const states=Object.values(user.items||{});
+ const hasRollback=Boolean(localStorage.getItem(FULL_BACKUP_ROLLBACK_KEY));
+ box.innerHTML=`<div class="backup-summary-grid"><div><strong>${states.filter(x=>x&&x.done).length}</strong><span>Teilnahmen</span></div><div><strong>${states.filter(x=>x&&x.ignored).length}</strong><span>nicht interessant</span></div><div><strong>${states.filter(x=>x&&x.favorite).length}</strong><span>Favoriten</span></div><div><strong>${states.filter(x=>x&&x.won).length}</strong><span>Gewinne</span></div></div><p>${customContests.length} lokal ergänzte Gewinnspiele werden ebenfalls gesichert.</p>${hasRollback?'<p class="backup-rollback-note">Eine Sicherung des Stands vor der letzten Wiederherstellung ist verfügbar.</p>':''}`;
+ const undo=$('#undoBackupImportBtn');if(undo)undo.disabled=!hasRollback
+}
+function setupPersonalBackup(){
+ const input=$('#personalBackupFile');if(!input)return;
+ $('#exportPersonalBackupBtn').onclick=exportFullBackup;
+ $('#choosePersonalBackupBtn').onclick=()=>input.click();
+ input.onchange=async()=>{const f=input.files[0];if(!f)return;try{applyFullBackup(JSON.parse(await f.text()))}catch(e){toast('Wiederherstellung fehlgeschlagen: '+e.message)}finally{input.value=''}};
+ $('#undoBackupImportBtn').onclick=restoreBeforeBackupImport;
+ renderBackupSummary()
 }
 function renderDataCenter(report=null){
  const el=$('#importSummary'),local=$('#localDataText');if(!el||!local)return;

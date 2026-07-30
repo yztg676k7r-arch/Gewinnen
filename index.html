@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="stylesheet" href="./styles.css">
-  <title>Win Win 2.7</title>
+  <title>Win Win 2.8</title>
 </head>
 <body>
   <div class="app-shell">
@@ -40,7 +40,7 @@
         <section class="update-status" id="updateStatus">
           <span class="status-dot"></span>
           <span id="updateText">Gewinnspiele werden geprüft …</span>
-          <small id="dataDiagnostics" class="data-diagnostics">App 2.7 · Daten werden geladen</small>
+          <small id="dataDiagnostics" class="data-diagnostics">App 2.6 · Daten werden geladen</small>
         </section>
         <section class="metric-grid" id="metrics"></section>
 
@@ -153,7 +153,7 @@
       <section id="dataView" class="view">
         <div class="view-title"><p class="section-kicker">DATENZENTRALE</p><h2>Import & Quellen</h2></div>
         <section class="data-hero">
-          <div><p class="section-kicker">WIN WIN 2.7</p><h3>Persönlicher und sicherer</h3><p>Die Priorisierung lernt jetzt lokal aus deinen Favoriten und Teilnahmen. Neue JSON-Dateien werden zuerst geprüft und als Vorschau angezeigt. Erst nach deiner Bestätigung werden neue Gewinnspiele ergänzt und bestehende aktualisiert. Persönliche Status bleiben vollständig getrennt und unverändert.</p></div>
+          <div><p class="section-kicker">WIN WIN 2.8</p><h3>Vollständig sicherbar</h3><p>Du kannst jetzt deinen gesamten persönlichen Stand als eine einzige JSON-Datei sichern und auf demselben oder einem anderen Gerät wiederherstellen. Teilnahmen, Favoriten, „Nicht interessant“, Gewinne, Einstellungen und lokale Katalogergänzungen bleiben zusammen.</p></div>
         </section>
         <section id="importSummary" class="import-summary"></section>
         <section id="importPreview" class="data-panel import-preview" hidden></section>
@@ -197,6 +197,18 @@
             <button id="exportLocalBtn">Nur Ergänzungen sichern</button>
             <button id="clearLocalBtn" class="danger-button">Lokale Ergänzungen löschen</button>
           </div>
+        </section>
+        <section class="data-panel personal-backup-panel">
+          <div class="section-head compact"><div><p class="section-kicker">PERSÖNLICHE KOMPLETTSICHERUNG</p><h3>Alles sichern oder wiederherstellen</h3></div></div>
+          <p>Diese Sicherung enthält deine Teilnahmen, Favoriten, „Nicht interessant“, Gewinne, persönliche Gewichtung, Filtereinstellungen und lokal importierte Gewinnspiele.</p>
+          <div id="personalBackupSummary" class="personal-backup-summary"></div>
+          <div class="data-actions">
+            <button id="exportPersonalBackupBtn" class="data-primary">Persönliche Sicherung exportieren</button>
+            <button id="choosePersonalBackupBtn">Sicherung wiederherstellen</button>
+            <input id="personalBackupFile" type="file" accept="application/json,.json" hidden>
+            <button id="undoBackupImportBtn">Stand vor Wiederherstellung zurückholen</button>
+          </div>
+          <p class="data-safety-note">Vor jeder Wiederherstellung legt Win Win automatisch eine Rücksprung-Sicherung des aktuellen Stands an.</p>
         </section>
         <section class="data-panel">
           <div class="section-head compact"><div><p class="section-kicker">SICHERUNG</p><h3>Katalog zurücksetzen</h3></div></div>

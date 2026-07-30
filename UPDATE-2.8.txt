@@ -1,0 +1,10 @@
+WIN WIN 2.8
+
+Neu:
+- Vollständige persönliche JSON-Sicherung
+- Wiederherstellung auf demselben oder einem anderen Gerät
+- Enthält Teilnahmen, Nicht interessant, Favoriten, Gewinne, Einstellungen und lokale Katalogdaten
+- Automatische Rücksprung-Sicherung vor jeder Wiederherstellung
+
+Statusschutz:
+Die bestehenden LocalStorage-Schlüssel bleiben unverändert. Ein normales App-Update überschreibt keine persönlichen Markierungen.
