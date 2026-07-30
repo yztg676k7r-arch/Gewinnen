@@ -1,3 +1,12 @@
+# Changelog
+
+## 4.4 – Aktiver Katalogausbau
+
+- Gewinnspielkatalog mit neu verifizierten, aktuell laufenden Aktionen erweitert.
+- Vier neue offizielle Gewinnspiele ergänzt: ESSEN & TRINKEN Sommergewinnspiel sowie drei AUTO-BILD-Leserwahlen.
+- Neue Einträge enthalten Frist, Gewinnerzahl, Aufwand, Teilnahmeart, Quelle und Qualitätsmerkmale.
+- Datenstand und Versionsdiagnose auf 4.4 aktualisiert.
+- Dashboard-, Status- und lokale Nutzerdatenlogik bleiben unverändert.
 
 ## 4.3 Daily Workflow
 - Tagesmodus hinzugefügt

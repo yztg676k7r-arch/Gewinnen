@@ -71,3 +71,13 @@ Ein kostenloser, persönlicher Gewinnspiel-Assistent, der lokal arbeitet und tä
 
 
 Nächster Schwerpunkt: Version 4.4 erweitert den Gewinnspielkatalog.
+
+## Version 4.4 – umgesetzt
+
+- Aktiven Gewinnspielkatalog erweitert
+- Neue Einträge ausschließlich mit prüfbarer Originalquelle
+- Datenqualität und Fristen aktualisiert
+
+## Nächster Schritt – Version 4.5
+
+Tagesansicht für neue, bald endende und noch nicht bearbeitete Gewinnspiele weiter ausbauen.
