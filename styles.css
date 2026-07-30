@@ -256,3 +256,8 @@ main{padding:0 16px}.view{display:none;animation:fade .18s ease}.view.active{dis
 /* 3.4 Quellen-Intelligence */
 .source-priority{min-width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:var(--blue-dark);color:#fff;font-size:15px}.source-health.good{background:rgba(42,157,92,.13);color:#187b43}.source-health.check{background:rgba(226,162,43,.14);color:#9b6710}.source-health.weak,.source-health.bad{background:rgba(216,91,91,.13);color:#a43636}.source-coverage{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px;margin:0 0 14px}.coverage-item{background:var(--surface-2);border-radius:13px;padding:9px;text-align:center}.coverage-item span,.coverage-item small{display:block;font-size:9px;color:var(--muted)}.coverage-item strong{display:block;font-size:18px}.coverage-item.gap{outline:1px solid rgba(226,162,43,.45);background:rgba(226,162,43,.08)}
 @media(max-width:760px){.source-coverage{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* 3.6.1: mobile-sichere Quellenanzeige */
+.source-load-more{width:100%;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:14px;padding:13px;font:inherit;font-weight:800;grid-column:1/-1}
+.source-render-error{grid-column:1/-1;border:1px solid rgba(216,91,91,.35);background:rgba(216,91,91,.08);border-radius:16px;padding:16px}.source-render-error p{color:var(--muted)}.source-render-error button{border:0;border-radius:12px;padding:10px 13px;background:var(--blue-dark);color:#fff;font-weight:800}
+@media(max-width:760px){.source-catalog{max-height:none;overflow:visible}.source-card{content-visibility:auto;contain-intrinsic-size:300px}}

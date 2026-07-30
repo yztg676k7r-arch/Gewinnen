@@ -1,3 +1,8 @@
+## 3.6.1
+- Quellenanzeige auf iPhone/Safari stabilisiert und paginiert.
+- Versionsnummer und Cache vereinheitlicht.
+- Defensive Fehlerbehandlung für Quellenkarten ergänzt.
+
 # Version 3.5 – Quellen-Intelligence
 
 - Priorität, Ertragsprotokoll und Abdeckungsanalyse

@@ -1,0 +1,9 @@
+WIN WIN 3.6.1 – BUGFIX
+
+- Versionsanzeige überall auf 3.6.1 vereinheitlicht
+- Quellen werden auf Mobilgeräten in Paketen zu 30 geladen
+- Button „Weitere Quellen anzeigen“ ergänzt
+- Einzelne fehlerhafte Quellen blockieren die Gesamtliste nicht mehr
+- Sichtbare Fehlermeldung und Wiederholen-Button ergänzt
+- Service-Worker-Cache auf 3.6.1 erhöht
+- Persönliche Status und lokale Quellenänderungen bleiben erhalten
