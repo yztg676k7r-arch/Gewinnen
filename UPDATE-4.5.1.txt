@@ -1,0 +1,14 @@
+WIN WIN 4.5.1 – LADE-BUGFIX
+
+Fehlerursache:
+Die veröffentlichte index.html verwies auf app-4.5.js, styles-4.5.css und sw-4.5.js. Mindestens app-4.5.js fehlte im GitHub-Repository. Dadurch wurde kein JavaScript gestartet und es erschienen 0 Ergebnisse.
+
+Korrektur:
+- index.html lädt wieder app.js und styles.css
+- app.js registriert wieder sw.js
+- stabile Dateien enthalten vollständig den Stand 4.5
+- Versionsdiagnose auf 4.5.1 aktualisiert
+- contests.json und data/contests.json enthalten weiterhin 32 Einträge
+
+UPLOAD:
+Den gesamten Inhalt dieses Ordners direkt in das Hauptverzeichnis des Repositorys hochladen und vorhandene Dateien ersetzen.

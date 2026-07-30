@@ -1,5 +1,5 @@
 
-const APP_VERSION='4.5';
+const APP_VERSION='4.5.1';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;
@@ -1229,7 +1229,7 @@ setupSourceManager();
 setupContestManager();
 setupHitInbox();
 setupSourceQueue();
-if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw-4.5.js').catch(()=>{});
+if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
 Promise.allSettled([loadSources(),loadData()]).finally(async()=>{
  await renderDeploymentStatus();
  setTimeout(()=>{user.lastVisit=new Date().toISOString();saveUser()},1200)

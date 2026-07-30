@@ -1,8 +1,9 @@
 {
   "app": "Win Win",
-  "version": "4.5",
+  "version": "4.5.1",
   "catalogVersion": "4.4",
   "catalogCount": 32,
   "builtAt": "2026-07-30T22:30:00+02:00",
-  "release": "Deployment- und Datenfix"
+  "release": "Deployment- und Datenfix",
+  "note": "Bugfix: stabile Dateinamen app.js, styles.css und sw.js"
 }

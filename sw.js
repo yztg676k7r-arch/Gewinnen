@@ -1,4 +1,4 @@
-const CACHE='win-win-4.5';
+const CACHE='win-win-4.5.1';
 const CORE=['./','./index.html','./styles-4.5.css','./app-4.5.js','./manifest.webmanifest','./version.json','./apple-touch-icon.png','./icons/icon-180.png','./icons/icon-192.png','./icons/icon-512.png'];
 const OPTIONAL_DATA=['./data/contests.json','./contests.json','./data/sources.json','./sources.json'];
 self.addEventListener('install',event=>{event.waitUntil((async()=>{const cache=await caches.open(CACHE);await cache.addAll(CORE);await Promise.allSettled(OPTIONAL_DATA.map(path=>cache.add(path)))})());self.skipWaiting()});
