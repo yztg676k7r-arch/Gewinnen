@@ -1,0 +1,7 @@
+# Update 3.6 – Quellenkatalog ausgebaut
+
+- Quellenkatalog auf 183 offizielle Marken-, Händler-, Medien-, Radio- und Reisequellen erweitert.
+- Neue Quellen sind bewusst als Prüfkandidaten markiert, bis Teilnahmebedingungen und Ertrag bestätigt sind.
+- Quellen können als Favorit markiert und gefiltert werden.
+- Versionsnummern in Startseite, App, Manifest, Service Worker und Datenkatalog vereinheitlicht.
+- Persönliche Gewinnspielstatus und bestehende LocalStorage-Schlüssel bleiben unverändert.

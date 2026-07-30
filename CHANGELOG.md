@@ -12,6 +12,13 @@
 
 # Win Win – Changelog
 
+## 3.6
+- Quellenkatalog auf 183 Quellen erweitert
+- Quellen-Favoriten und Favoritenfilter ergänzt
+- Versionsanzeige in allen relevanten Dateien vereinheitlicht
+- neue Einträge zunächst als ehrliche Prüfkandidaten gekennzeichnet
+
+
 ## 3.1.0 – Quellen-Datenbank
 - Separate Quellen-Datenbank mit `data/sources.json`
 - Quellenfilter, Statistik, Import und Export
@@ -65,6 +72,13 @@
 - unveränderter Schutz persönlicher Status
 
 # Win Win – Changelog
+
+## 3.6
+- Quellenkatalog auf 183 Quellen erweitert
+- Quellen-Favoriten und Favoritenfilter ergänzt
+- Versionsanzeige in allen relevanten Dateien vereinheitlicht
+- neue Einträge zunächst als ehrliche Prüfkandidaten gekennzeichnet
+
 
 ## 2.5.1
 - Doppelte Filteroption „Endet bald“ entfernt.

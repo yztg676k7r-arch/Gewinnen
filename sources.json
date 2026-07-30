@@ -1,5 +1,5 @@
 {
-  "version": "3.5",
+  "version": "3.6",
   "updated": "2026-07-30",
   "sources": [
     {
@@ -3137,6 +3137,1737 @@
       "checkIntervalDays": 5,
       "lastChecked": null,
       "notes": "Offizielle deutsche Quelle. Einzelne Gewinnspiele und Teilnahmebedingungen noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "alltours-alltours",
+      "name": "alltours",
+      "domain": "alltours.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Reisen",
+      "categories": [
+        "Reisen"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "eurowings-eurowings",
+      "name": "Eurowings",
+      "domain": "eurowings.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Reisen",
+      "categories": [
+        "Reisen"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "lufthansa-lufthansa",
+      "name": "Lufthansa",
+      "domain": "lufthansa.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Reisen",
+      "categories": [
+        "Reisen"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "deutsche-bahn-bahn",
+      "name": "Deutsche Bahn",
+      "domain": "bahn.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Reisen",
+      "categories": [
+        "Reisen"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "center-parcs-centerparcs",
+      "name": "Center Parcs",
+      "domain": "centerparcs.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Reisen",
+      "categories": [
+        "Reisen",
+        "Familie"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "landal-landal",
+      "name": "Landal",
+      "domain": "landal.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Reisen",
+      "categories": [
+        "Reisen",
+        "Familie"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "hrs-hrs",
+      "name": "HRS",
+      "domain": "hrs.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Reisen",
+      "categories": [
+        "Reisen"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "sephora-deutschland-sephora",
+      "name": "Sephora Deutschland",
+      "domain": "sephora.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Beauty"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "eucerin-eucerin",
+      "name": "Eucerin",
+      "domain": "eucerin.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Beauty"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "la-roche-posay-larocheposay",
+      "name": "La Roche-Posay",
+      "domain": "larocheposay.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Beauty"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "momax-moemax",
+      "name": "Mömax",
+      "domain": "moemax.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Wohnen"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "wayfair-wayfair",
+      "name": "Wayfair",
+      "domain": "wayfair.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Wohnen"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "depot-depot-online",
+      "name": "DEPOT",
+      "domain": "depot-online.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Wohnen"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "butlers-butlers",
+      "name": "BUTLERS",
+      "domain": "butlers.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Wohnen"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "zalando-zalando",
+      "name": "Zalando",
+      "domain": "zalando.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Mode"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "about-you-aboutyou",
+      "name": "ABOUT YOU",
+      "domain": "aboutyou.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Mode"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "breuninger-breuninger",
+      "name": "Breuninger",
+      "domain": "breuninger.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Mode"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "peek-cloppenburg-peek-cloppenburg",
+      "name": "Peek & Cloppenburg",
+      "domain": "peek-cloppenburg.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Mode"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "h-m-deutschland-hm",
+      "name": "H&M Deutschland",
+      "domain": "hm.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Mode"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "c-a-c-and-a",
+      "name": "C&A",
+      "domain": "c-and-a.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Mode"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "mango-mango",
+      "name": "Mango",
+      "domain": "mango.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Mode"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "reserved-reserved",
+      "name": "Reserved",
+      "domain": "reserved.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Mode"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "s-oliver-soliver",
+      "name": "s.Oliver",
+      "domain": "soliver.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Mode"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "tom-tailor-tom-tailor",
+      "name": "Tom Tailor",
+      "domain": "tom-tailor.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Mode"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "marc-opolo-marc-o-polo",
+      "name": "Marc O’Polo",
+      "domain": "marc-o-polo.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Mode"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "esprit-esprit",
+      "name": "Esprit",
+      "domain": "esprit.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Mode"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "bonprix-bonprix",
+      "name": "Bonprix",
+      "domain": "bonprix.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Mode"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "tchibo-tchibo",
+      "name": "Tchibo",
+      "domain": "tchibo.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Mode",
+        "Wohnen",
+        "Reisen"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "cyberport-cyberport",
+      "name": "Cyberport",
+      "domain": "cyberport.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Technik"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "alternate-alternate",
+      "name": "Alternate",
+      "domain": "alternate.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Technik",
+        "Gaming"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "notebooksbilliger-de-notebooksbilliger",
+      "name": "notebooksbilliger.de",
+      "domain": "notebooksbilliger.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Technik"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "conrad-conrad",
+      "name": "Conrad",
+      "domain": "conrad.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Technik"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "samsung-deutschland-samsung",
+      "name": "Samsung Deutschland",
+      "domain": "samsung.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Technik"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "sony-deutschland-sony",
+      "name": "Sony Deutschland",
+      "domain": "sony.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Technik",
+        "Gaming"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "lg-deutschland-lg",
+      "name": "LG Deutschland",
+      "domain": "lg.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Technik"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "bosch-home-bosch-home",
+      "name": "Bosch Home",
+      "domain": "bosch-home.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Technik",
+        "Wohnen"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "siemens-home-siemens-home",
+      "name": "Siemens Home",
+      "domain": "siemens-home.bsh-group.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Technik",
+        "Wohnen"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "nintendo-deutschland-nintendo",
+      "name": "Nintendo Deutschland",
+      "domain": "nintendo.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Gaming"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "playstation-deutschland-playstation",
+      "name": "PlayStation Deutschland",
+      "domain": "playstation.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Gaming"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "xbox-deutschland-xbox",
+      "name": "Xbox Deutschland",
+      "domain": "xbox.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Gaming"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "tegut-tegut",
+      "name": "tegut",
+      "domain": "tegut.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Food"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "hellofresh-hellofresh",
+      "name": "HelloFresh",
+      "domain": "hellofresh.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Händler",
+      "categories": [
+        "Food"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "knorr-knorr",
+      "name": "Knorr",
+      "domain": "knorr.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Food"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "dr-oetker-oetker",
+      "name": "Dr. Oetker",
+      "domain": "oetker.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Food"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "milka-milka",
+      "name": "Milka",
+      "domain": "milka.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Food"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "ritter-sport-ritter-sport",
+      "name": "Ritter Sport",
+      "domain": "ritter-sport.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Food"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "haribo-haribo",
+      "name": "Haribo",
+      "domain": "haribo.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Food"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "ferrero-ferrero",
+      "name": "Ferrero",
+      "domain": "ferrero.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Food"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "coca-cola-deutschland-coca-cola",
+      "name": "Coca-Cola Deutschland",
+      "domain": "coca-cola.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Food"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "veltins-veltins",
+      "name": "Veltins",
+      "domain": "veltins.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Food"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "krombacher-krombacher",
+      "name": "Krombacher",
+      "domain": "krombacher.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Food"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "volkswagen-volkswagen",
+      "name": "Volkswagen",
+      "domain": "volkswagen.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Auto"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "skoda-deutschland-skoda-auto",
+      "name": "Škoda Deutschland",
+      "domain": "skoda-auto.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Auto"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "seat-deutschland-seat",
+      "name": "SEAT Deutschland",
+      "domain": "seat.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Auto"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "hyundai-deutschland-hyundai",
+      "name": "Hyundai Deutschland",
+      "domain": "hyundai.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Auto"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "kia-deutschland-kia",
+      "name": "Kia Deutschland",
+      "domain": "kia.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Auto"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "jeep-deutschland-jeep",
+      "name": "Jeep Deutschland",
+      "domain": "jeep.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Marke",
+      "categories": [
+        "Auto"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "stern-stern",
+      "name": "stern",
+      "domain": "stern.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Lifestyle",
+        "Wissen"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "laura-laura",
+      "name": "Laura",
+      "domain": "laura.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Lifestyle"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "neue-post-neue-post",
+      "name": "Neue Post",
+      "domain": "neue-post.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Magazin",
+      "categories": [
+        "Lifestyle"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "hr3-hr3",
+      "name": "hr3",
+      "domain": "hr3.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Radio",
+        "Musik"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "mdr-jump-jumpradio",
+      "name": "MDR JUMP",
+      "domain": "jumpradio.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Radio",
+        "Musik"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "antenne-niedersachsen-antenne",
+      "name": "Antenne Niedersachsen",
+      "domain": "antenne.com",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Regional",
+        "Musik"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "radio-ffn-ffn",
+      "name": "Radio ffn",
+      "domain": "ffn.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Regional",
+        "Musik"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "hitradio-rtl-hitradio-rtl",
+      "name": "Hitradio RTL",
+      "domain": "hitradio-rtl.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Regional",
+        "Musik"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
+      "germanyEligibility": "check",
+      "verification": "candidate",
+      "successfulChecks": 0,
+      "emptyChecks": 0,
+      "lastResultCount": 0
+    },
+    {
+      "id": "radio-regenbogen-regenbogen",
+      "name": "Radio Regenbogen",
+      "domain": "regenbogen.de",
+      "country": "Deutschland",
+      "countriesAllowed": [
+        "Deutschland"
+      ],
+      "type": "Radio",
+      "categories": [
+        "Regional",
+        "Musik"
+      ],
+      "automation": "yellow",
+      "quality": 3,
+      "active": true,
+      "requiresLogin": false,
+      "socialOnly": false,
+      "checkIntervalDays": 7,
+      "lastChecked": null,
+      "notes": "Offizielle Marken- oder Medienquelle. Kandidat für die Gewinnspielsuche; Teilnahmebedingungen und Ertrag noch prüfen.",
       "germanyEligibility": "check",
       "verification": "candidate",
       "successfulChecks": 0,
