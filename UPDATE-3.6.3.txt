@@ -1,0 +1,11 @@
+WIN WIN 3.6.3 – Vollständiger Stabilitäts-Bugfix
+
+Behoben:
+- fehlende Funktionen setupDataCenter() und renderDataCenter() wiederhergestellt
+- dadurch verursachter kompletter JavaScript-Startabbruch beseitigt
+- Quellen laden wieder, weil der Startprozess nicht mehr vor loadSources() stoppt
+- Import, Export, Katalog-Sicherung und persönliche Sicherung wieder verdrahtet
+- Datenqualität, Warnungen und Anbieterübersicht wieder funktionsfähig
+- Version und Service-Worker-Cache einheitlich auf 3.6.3 erhöht
+
+Persönliche Status und lokale Daten bleiben unverändert.

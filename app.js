@@ -1,5 +1,5 @@
 
-const APP_VERSION='3.6.2';
+const APP_VERSION='3.6.3';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;
@@ -721,6 +721,61 @@ function setupPersonalBackup(){
  input.onchange=async()=>{const f=input.files[0];if(!f)return;try{applyFullBackup(JSON.parse(await f.text()))}catch(e){toast('Wiederherstellung fehlgeschlagen: '+e.message)}finally{input.value=''}};
  $('#undoBackupImportBtn').onclick=restoreBeforeBackupImport;
  renderBackupSummary()
+}
+
+
+function renderDataCenter(report=null){
+ const summary=$('#importSummary');
+ const quality=$('#qualityOverview');
+ const warnings=$('#qualityWarnings');
+ const providers=$('#providerQuality');
+ const localText=$('#localDataText');
+ const backupBtn=$('#restoreCatalogBtn');
+ const all=Array.isArray(contests)?contests:[];
+ const activeRows=all.filter(i=>{try{return active(i)}catch{return false}});
+ const warningRows=all.map(i=>({i,w:contestWarnings(i)})).filter(x=>x.w.length);
+ const providerMap=new Map();
+ all.forEach(i=>{
+   const name=String(i.provider||'Unbekannt');
+   const row=providerMap.get(name)||{name,total:0,active:0,trust:0};
+   row.total++; if(activeRows.includes(i))row.active++; row.trust+=Number(i.providerTrust)||3;
+   providerMap.set(name,row);
+ });
+ if(summary){
+   const r=report||{};
+   summary.innerHTML=`<div><strong>${all.length}</strong><span>Gewinnspiele</span></div><div><strong>${activeRows.length}</strong><span>aktuell aktiv</span></div><div><strong>${customContests.length}</strong><span>lokale Ergänzungen</span></div><div><strong>${r.added||0}</strong><span>zuletzt neu</span></div>`;
+ }
+ if(quality){
+   const validLinks=all.filter(i=>/^https?:\/\//i.test(i.url||'')).length;
+   const dated=all.filter(i=>Boolean(parseGermanDate(i.deadline))).length;
+   const verified=all.filter(i=>Boolean(i.verified)).length;
+   quality.innerHTML=`<div><strong>${validLinks}/${all.length}</strong><span>gültige Links</span></div><div><strong>${dated}/${all.length}</strong><span>lesbare Fristen</span></div><div><strong>${verified}/${all.length}</strong><span>mit Prüfdatum</span></div><div><strong>${warningRows.length}</strong><span>mit Hinweisen</span></div>`;
+ }
+ if(warnings){
+   warnings.innerHTML=warningRows.length?warningRows.slice(0,20).map(({i,w})=>`<div class="quality-warning-row"><strong>${esc(i.title)}</strong><span>${esc(w.join(' · '))}</span></div>`).join(''):empty('Keine auffälligen Datensätze gefunden.');
+ }
+ if(providers){
+   const rows=[...providerMap.values()].map(x=>({...x,avg:x.total?x.trust/x.total:0})).sort((a,b)=>b.avg-a.avg||b.active-a.active).slice(0,20);
+   providers.innerHTML=rows.length?rows.map(x=>`<div class="provider-quality-row"><div><strong>${esc(x.name)}</strong><span>${x.active} aktiv · ${x.total} gesamt</span></div><b>${x.avg.toFixed(1)}/5</b></div>`).join(''):empty('Noch keine Anbieter vorhanden.');
+ }
+ if(localText)localText.textContent=customContests.length?`${customContests.length} lokale Ergänzung${customContests.length===1?'':'en'} gespeichert.`:'Noch keine lokalen Ergänzungen gespeichert.';
+ if(backupBtn)backupBtn.disabled=!localStorage.getItem(IMPORT_BACKUP_KEY);
+ renderImportPreview();renderImportHistory();renderBackupSummary();
+}
+function setupDataCenter(){
+ const importFile=$('#importFile');
+ $('#chooseImportBtn')?.addEventListener('click',()=>importFile?.click());
+ if(importFile)importFile.addEventListener('change',async()=>{
+   const f=importFile.files?.[0];if(!f)return;
+   try{prepareImport(JSON.parse(await f.text()),f.name);toast('Import geprüft – Vorschau beachten')}catch(e){toast('Import fehlgeschlagen: '+(e?.message||e))}finally{importFile.value=''}
+ });
+ $('#pasteImportBtn')?.addEventListener('click',()=>{const value=$('#jsonPaste')?.value?.trim();if(!value)return toast('Bitte zuerst JSON einfügen');try{prepareImport(JSON.parse(value),'Eingefügtes JSON');toast('Import geprüft – Vorschau beachten')}catch(e){toast('Import fehlgeschlagen: '+(e?.message||e))}});
+ $('#clearPasteBtn')?.addEventListener('click',()=>{const el=$('#jsonPaste');if(el)el.value=''});
+ $('#exportMergedBtn')?.addEventListener('click',()=>downloadJSON(`win-win-gesamtkatalog-${new Date().toISOString().slice(0,10)}.json`,{version:APP_VERSION,updated:new Date().toISOString(),contests}));
+ $('#exportLocalBtn')?.addEventListener('click',()=>downloadJSON(`win-win-lokale-ergaenzungen-${new Date().toISOString().slice(0,10)}.json`,{version:APP_VERSION,updated:new Date().toISOString(),contests:customContests}));
+ $('#clearLocalBtn')?.addEventListener('click',()=>{if(!customContests.length)return toast('Keine lokalen Ergänzungen vorhanden');if(!confirm('Lokale Ergänzungen löschen? Persönliche Status bleiben erhalten.'))return;localStorage.setItem(IMPORT_BACKUP_KEY,JSON.stringify({savedAt:new Date().toISOString(),contests:customContests}));customContests=[];localStorage.removeItem(CUSTOM_DATA_KEY);applyCustomData();toast('Lokale Ergänzungen gelöscht')});
+ $('#restoreCatalogBtn')?.addEventListener('click',restoreCatalogBackup);
+ setupPersonalBackup();renderDataCenter();
 }
 
 function normalizeSource(raw,index=0){
