@@ -1,5 +1,5 @@
 
-const APP_VERSION='3.9';
+const APP_VERSION='4.0';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;
@@ -381,7 +381,7 @@ function renderPersonalCore(){
  const tomorrow=new Date();tomorrow.setDate(tomorrow.getDate()+1);const tomorrowKey=dayKey(tomorrow);
  const addedToday=all.filter(i=>dayKey(i.addedAt||i.createdAt)===today).length;
  const endingTodayCount=openPool.filter(i=>daysLeft(i)===0).length;
- const endingTomorrow=openPool.filter(i=>dayKey(parseDeadline(i.deadline))===tomorrowKey).length;
+ const endingTomorrow=openPool.filter(i=>dayKey(parseDate(i.deadline))===tomorrowKey).length;
  const endingWeek=openPool.filter(i=>daysLeft(i)>=0&&daysLeft(i)<=7).length;
  $('#favoriteList').innerHTML=fav.map(full).join('')||empty('Deine Favoriten erscheinen hier.');
  $('#doneList').innerHTML=done.sort((x,y)=>String(stateFor(y.id).doneAt||'').localeCompare(String(stateFor(x.id).doneAt||''))).map(full).join('')||empty('Hier erscheinen deine markierten Teilnahmen.');
@@ -394,6 +394,12 @@ function renderPersonalCore(){
  $('#statsHero').innerHTML=`<strong>${done.length}</strong><p>Teilnahmen insgesamt · ${doneToday} heute · ${doneWeek} in den letzten 7 Tagen</p>`;
  const stats=[['＋',addedToday,'Heute neu'],['!',endingTodayCount,'Endet heute'],['→',endingTomorrow,'Endet morgen'],['7',endingWeek,'Endet diese Woche'],['🏆',wins.length,'Gewinne'],['☀',doneToday,'Heute erledigt'],['7',doneWeek,'Letzte 7 Tage'],['⭐',topOpen,'Offene Top-Chancen'],['⏳',ending,'Enden in 3 Tagen'],['↻',daily,'Täglich möglich'],['♡',fav.length,'Favoriten'],['⊘',ignored.length,'Nicht interessant'],['Ø',avg,'Ø Teilnahme-Score']];
  $('#statsGrid').innerHTML=stats.map(([ic,n,l])=>`<button class="stat-card dashboard-stat" data-dashboard="${l}"><span>${ic}</span><strong>${n}</strong><span>${l}</span></button>`).join('');
+ const health=$('#dashboardHealth');
+ if(health){
+  const expiredCount=contests.filter(i=>daysLeft(i)<0).length;
+  const invalidCount=contests.filter(i=>!validContest(i)||!parseDate(i.deadline)).length;
+  health.innerHTML=`<div><strong>${allActive().length}</strong><span>aktive Gewinnspiele</span></div><div><strong>${expiredCount}</strong><span>abgelaufen</span></div><div><strong>${contests.length}</strong><span>gesamt geladen</span></div><div><strong>${invalidCount}</strong><span>prüfbedürftige Datensätze</span></div>`;
+ }
  const pool=dashboardPool().sort((x,y)=>y.score-x.score);
  const modeNote=$('#dashboardModeNote');
  if(modeNote)modeNote.textContent=dashboardShowAll?'Kontrollansicht: Auch erledigte und ausgeblendete Gewinnspiele werden angezeigt.':'Aufgeräumt: Teilgenommene und nicht interessante Gewinnspiele sind ausgeblendet.';
@@ -436,7 +442,7 @@ function renderPersonalCore(){
 function renderPersonal(){
  const fallbacks={
   statsHero:'Dashboard-Daten konnten nicht vollständig geladen werden.',
-  statsGrid:'', winOfDay:'', dashboardFocus:'', dashboardPriorityGroups:'',
+  statsGrid:'', dashboardHealth:'', winOfDay:'', dashboardFocus:'', dashboardPriorityGroups:'',
   categoryStats:'Noch keine Kategorien verfügbar.', winArchiveSummary:'',
   winArchiveList:'Noch kein Gewinn eingetragen.', doneList:'Noch keine Teilnahmen markiert.'
  };

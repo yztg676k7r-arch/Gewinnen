@@ -1,0 +1,12 @@
+Win Win 4.0 – Dashboard-Stabilität
+
+Behoben:
+- Dashboard-Abbruch durch Aufruf der nicht vorhandenen Funktion parseDeadline().
+- Aktion „Nicht interessant“ wieder vollständig implementiert.
+- Dashboard-Fallback um Katalog-Gesundheit ergänzt.
+
+Neu:
+- Anzeige aktiver, abgelaufener, insgesamt geladener und prüfbedürftiger Datensätze.
+- Einheitliche Versions- und Cache-Angaben 4.0.
+
+Persönliche lokale Statusdaten werden nicht überschrieben.

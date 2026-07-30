@@ -1,3 +1,10 @@
+## 4.0 – Dashboard-Stabilität
+
+- Dashboard-Ladefehler behoben.
+- „Nicht interessant“ repariert.
+- Katalog-Gesundheit ergänzt.
+- Cache auf 4.0 aktualisiert.
+
 ## 3.9 – Katalog-Manager
 - Schnellerfassung für neue Gewinnspiele
 - automatische Quellen- und Kategorieerkennung aus URLs

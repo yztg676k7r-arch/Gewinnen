@@ -271,3 +271,11 @@ main{padding:0 16px}.view{display:none;animation:fade .18s ease}.view.active{dis
 /* Version 3.9 – Katalog-Manager */
 .quick-contest-panel{border-color:color-mix(in srgb,var(--blue-dark) 24%,var(--line));background:linear-gradient(135deg,var(--surface),color-mix(in srgb,var(--blue) 10%,var(--surface)))}
 .contest-dialog{width:min(720px,calc(100vw - 24px))}.contest-duplicate-warning{margin-top:14px;border:1px solid rgba(226,162,43,.45);background:rgba(226,162,43,.1);border-radius:14px;padding:12px}.contest-duplicate-warning strong{display:block;color:#8b5d10}.contest-duplicate-warning p{margin:6px 0 0;font-size:11px;color:var(--muted);line-height:1.5}
+
+
+/* Win Win 4.0 – Dashboard-Stabilität */
+.dashboard-health{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:12px 0 18px}
+.dashboard-health>div{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px;min-width:0}
+.dashboard-health strong{display:block;font-size:22px;line-height:1.1}
+.dashboard-health span{display:block;margin-top:5px;color:var(--muted);font-size:12px;font-weight:700}
+@media(max-width:700px){.dashboard-health{grid-template-columns:repeat(2,minmax(0,1fr))}}

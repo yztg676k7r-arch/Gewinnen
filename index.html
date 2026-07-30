@@ -13,8 +13,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=3.9">
-  <title>Win Win 3.9</title>
+  <link rel="stylesheet" href="./styles.css?v=4.0">
+  <title>Win Win 4.0</title>
 </head>
 <body>
   <div class="app-shell">
@@ -40,7 +40,7 @@
         <section class="update-status" id="updateStatus">
           <span class="status-dot"></span>
           <span id="updateText">Gewinnspiele werden geprüft …</span>
-          <small id="dataDiagnostics" class="data-diagnostics">App 3.9 · Daten werden geladen</small>
+          <small id="dataDiagnostics" class="data-diagnostics">App 4.0 · Daten werden geladen</small>
         </section>
         <section class="metric-grid" id="metrics"></section>
 
@@ -136,6 +136,7 @@
         <section id="statsHero" class="stats-hero"></section>
         <div id="statsGrid" class="stats-grid"></div>
         <p id="dashboardModeNote" class="dashboard-mode-note">Es werden nur offene, interessante Gewinnspiele angezeigt.</p>
+        <section id="dashboardHealth" class="dashboard-health" aria-label="Katalog-Gesundheit"></section>
         <section id="preferencePanel" class="preference-panel"></section>
         <section id="winOfDay" class="win-of-day"></section>
         <section id="dashboardFocus" class="dashboard-focus"></section>
@@ -158,7 +159,7 @@
       <section id="dataView" class="view">
         <div class="view-title"><p class="section-kicker">DATENZENTRALE</p><h2>Import & Quellen</h2></div>
         <section class="data-hero">
-          <div><p class="section-kicker">WIN WIN 3.9</p><h3>Katalog-Manager 3.9</h3><p>Gewinnspiele schnell erfassen, Quellen automatisch erkennen und Dubletten bereits vor dem Speichern vermeiden. Persönliche Status bleiben unberührt.</p></div>
+          <div><p class="section-kicker">WIN WIN 4.0</p><h3>Dashboard-Stabilität 4.0</h3><p>Stabiles Dashboard, reparierte Statusaktionen und transparente Katalog-Gesundheit. Persönliche Status bleiben unberührt.</p></div>
         </section>
         <section id="importSummary" class="import-summary"></section>
         <section id="importPreview" class="data-panel import-preview" hidden></section>
@@ -305,7 +306,7 @@
     </dialog>
     <dialog id="contestDialog" class="source-dialog contest-dialog">
       <form id="contestForm" method="dialog">
-        <div class="source-dialog-head"><div><p class="section-kicker">KATALOG-MANAGER 3.9</p><h3>Neues Gewinnspiel</h3></div><button type="button" id="closeContestDialog" class="round-button">×</button></div>
+        <div class="source-dialog-head"><div><p class="section-kicker">KATALOG-MANAGER 4.0</p><h3>Neues Gewinnspiel</h3></div><button type="button" id="closeContestDialog" class="round-button">×</button></div>
         <div class="source-form-grid">
           <label class="source-form-wide"><span>Direktlink *</span><input id="contestUrl" required inputmode="url" placeholder="https://…"></label>
           <label class="source-form-wide"><span>Titel *</span><input id="contestTitle" required placeholder="Was kann man gewinnen?"></label>
@@ -353,6 +354,6 @@
       </form>
     </dialog>
 
-  <script src="./app.js?v=3.9"></script>
+  <script src="./app.js?v=4.0"></script>
 </body>
 </html>
