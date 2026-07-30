@@ -1,7 +1,7 @@
-## Korrektur 2.3
+## Korrektur 2.4
 
 - sichtbare Versionsangaben korrigiert
-- Gewinnarchiv aus 2.1 und Filter aus 2.3 gemeinsam enthalten
+- Gewinnarchiv aus 2.1 und Filter aus 2.4 gemeinsam enthalten
 - Cache-Version erhöht
 
 # Win Win 1.7
@@ -26,9 +26,13 @@ Neue Datenzentrale für geprüfte JSON-Importe, Dublettenprüfung, lokale Ergän
 - Kompatibel mit bestehenden Favoriten, Teilnahmen und lokalen Importen
 
 
-## Version 2.3
+## Version 2.4
 - Dashboard blendet erledigte und nicht interessante Gewinnspiele standardmäßig aus
 - Win des Tages
 - sechs priorisierte Dashboard-Bereiche
 - optionale Kontrollansicht „Alle anzeigen“
 - ROADMAP.md und CHANGELOG.md
+
+
+## Update-Sicherheit
+Persönliche Statusdaten liegen getrennt vom Gewinnspiel-Katalog im LocalStorage. App- und Datenupdates überschreiben diese Daten nicht. Zusätzlich wird eine lokale Sicherung geführt und bei geänderten IDs über den Direktlink migriert.

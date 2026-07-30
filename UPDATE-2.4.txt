@@ -1,0 +1,10 @@
+WIN WIN 2.4
+
+Neu:
+- Prioritäts-Engine v1 mit getrennten Scores für Gewinnchance, Zeitnutzen und Attraktivität
+- transparente Erklärung jeder Priorität
+- updatefeste lokale Statusdaten
+- automatische lokale Sicherung des Nutzerstatus
+- Wiederherstellung von Statusmarkierungen über den Direktlink, falls sich eine Gewinnspiel-ID ändert
+
+Wichtig: Teilgenommen, Nicht interessant, Favoriten und Gewinne bleiben bei Katalog- und App-Updates erhalten.

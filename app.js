@@ -1,6 +1,8 @@
 
-const APP_VERSION='2.3';
+const APP_VERSION='2.4';
 const STORAGE_KEY='gewinnen-user-v1';
+const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
+const USER_SCHEMA_VERSION=2;
 const CUSTOM_DATA_KEY='winwin-custom-contests-v1';
 const FILTER_STORAGE_KEY='winwin-discover-filters-v1';
 const DASHBOARD_SHOW_ALL_KEY='winwin-dashboard-show-all-v1';
@@ -12,7 +14,18 @@ let contests=[...FALLBACK];
 let baseContests=[...FALLBACK];
 let customContests=safeJSON(localStorage.getItem(CUSTOM_DATA_KEY),[]);
 if(!Array.isArray(customContests))customContests=[];
-let user=safeJSON(localStorage.getItem(STORAGE_KEY),{items:{},lastVisit:null,clicks:{}});
+function normalizeUser(raw){
+ const u=raw&&typeof raw==='object'?raw:{};
+ if(!u.items||typeof u.items!=='object'||Array.isArray(u.items))u.items={};
+ if(!u.clicks||typeof u.clicks!=='object'||Array.isArray(u.clicks))u.clicks={};
+ if(!u.urlIndex||typeof u.urlIndex!=='object'||Array.isArray(u.urlIndex))u.urlIndex={};
+ u.schemaVersion=USER_SCHEMA_VERSION;
+ u.lastVisit=u.lastVisit||null;
+ return u;
+}
+const storedUserRaw=localStorage.getItem(STORAGE_KEY);
+if(storedUserRaw&&!localStorage.getItem(STORAGE_BACKUP_KEY))localStorage.setItem(STORAGE_BACKUP_KEY,storedUserRaw);
+let user=normalizeUser(safeJSON(storedUserRaw,{items:{},lastVisit:null,clicks:{},urlIndex:{}}));
 let currentFilter='all';
 let advancedFilters=safeJSON(localStorage.getItem(FILTER_STORAGE_KEY),{entryType:'',effort:'',winners:'',deadline:'',daily:false,noApp:false,noSocial:false,knownWinners:false,onlyOpen:true});
 let dashboardShowAll=localStorage.getItem(DASHBOARD_SHOW_ALL_KEY)==='true';
@@ -21,7 +34,26 @@ let latestDataUpdate=null;
 let usingFallback=false;
 let dataVersionGlobal='–';
 
-function saveUser(){localStorage.setItem(STORAGE_KEY,JSON.stringify(user))}
+function saveUser(){
+ user.schemaVersion=USER_SCHEMA_VERSION;
+ const serialized=JSON.stringify(user);
+ localStorage.setItem(STORAGE_KEY,serialized);
+ localStorage.setItem(STORAGE_BACKUP_KEY,serialized);
+}
+function migrateContestStates(){
+ let changed=false;
+ contests.forEach(i=>{
+   const key=normalizeUrl(i.url||'');
+   if(!key)return;
+   const oldId=user.urlIndex[key];
+   if(!user.items[i.id]&&oldId&&user.items[oldId]){
+     user.items[i.id]=JSON.parse(JSON.stringify(user.items[oldId]));
+     changed=true;
+   }
+   if(user.urlIndex[key]!==i.id){user.urlIndex[key]=i.id;changed=true}
+ });
+ if(changed)saveUser();
+}
 function stateFor(id){
  const s=user.items[id]??={favorite:false,done:false,won:false,ignored:false};
  if(typeof s.ignored!=='boolean')s.ignored=false;
@@ -53,47 +85,66 @@ function allActive(){return contests.filter(active)}
 function esc(v=''){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
 function toast(m){const n=$('#toast');n.textContent=m;n.classList.add('show');clearTimeout(window.t);window.t=setTimeout(()=>n.classList.remove('show'),1700)}
 
+function clampScore(v){return Math.max(0,Math.min(100,Math.round(v)))}
 function scoreContest(i){
- // Score 1.6: Erfolgschance + Zeitnutzen, nicht bloß Preiswert.
- let score=30;
- const reasons=[];
+ // Prioritäts-Engine v1: Chance, Zeitnutzen und Attraktivität werden getrennt bewertet.
  const winners=Number(i.winners)||0;
  const trust=Number(i.providerTrust)||3;
- const effort=Number(i.effort)||3;
+ const effort=Math.max(1,Math.min(5,Number(i.effort)||3));
  const left=daysLeft(i);
+ const reasons=[];
 
- if(winners>=100){score+=30;reasons.push(`${winners} Gewinner`)}
- else if(winners>=50){score+=24;reasons.push(`${winners} Gewinner`)}
- else if(winners>=20){score+=18;reasons.push(`${winners} Gewinne`)}
- else if(winners>=10){score+=13;reasons.push(`${winners} Gewinne`)}
- else if(winners>=3){score+=7;reasons.push(`${winners} Gewinne`)}
- else if(winners===1){score+=2}
- else {score-=3;reasons.push('Gewinnerzahl offen')}
+ let chance=35;
+ if(winners>=100){chance+=45;reasons.push(`${winners} Gewinner`)}
+ else if(winners>=50){chance+=36;reasons.push(`${winners} Gewinner`)}
+ else if(winners>=20){chance+=27;reasons.push(`${winners} Gewinne`)}
+ else if(winners>=10){chance+=20;reasons.push(`${winners} Gewinne`)}
+ else if(winners>=3){chance+=11;reasons.push(`${winners} Gewinne`)}
+ else if(winners===1){chance+=3}
+ else {chance-=8;reasons.push('Gewinnerzahl offen')}
+ if(i.regional){chance+=15;reasons.push('kleinerer regionaler Kreis')}
+ if(i.international)chance-=7;
+ if(trust>=5){chance+=10;reasons.push('sehr seriöser Anbieter')}
+ else if(trust===4){chance+=6;reasons.push('seriöser Anbieter')}
+ else if(trust<=2)chance-=18;
+ chance=clampScore(chance);
 
- if(trust>=5){score+=15;reasons.push('sehr seriöser Anbieter')}
- else if(trust===4){score+=10;reasons.push('seriöser Anbieter')}
- else if(trust<=2){score-=10}
+ let time=100-(effort-1)*20;
+ if(i.entryType==='social')time-=8;
+ if(i.entryType==='app')time-=5;
+ if(i.purchaseRequired||i.receiptRequired)time-=25;
+ if(i.daily||i.multipleEntry){time+=8;reasons.push('mehrfach teilnehmbar')}
+ if(effort===1)reasons.push('in unter 1 Minute');
+ else if(effort===2)reasons.push('geringer Aufwand');
+ time=clampScore(time);
 
- if(effort===1){score+=15;reasons.push('in unter 1 Minute')}
- else if(effort===2){score+=10;reasons.push('geringer Aufwand')}
- else if(effort===3){score+=3}
- else if(effort===4){score-=5}
- else if(effort>=5){score-=10}
+ let attractiveness=48;
+ if(i.highValuePrize)attractiveness+=28;
+ if(['Reisen','Technik','Wohnen','Beauty'].includes(i.category))attractiveness+=6;
+ if(winners>=20)attractiveness+=5;
+ if(i.prizeValue){
+   const value=Number(i.prizeValue)||0;
+   attractiveness+=value>=1000?25:value>=300?16:value>=100?9:3;
+ }
+ attractiveness=clampScore(attractiveness);
 
- if(i.daily||i.multipleEntry){score+=10;reasons.push('mehrfach teilnehmbar')}
- if(i.regional){score+=12;reasons.push('kleinerer regionaler Kreis')}
- if(i.international){score-=5}
- if(i.entryType==='social'){score-=3}
- if(i.highValuePrize)score+=2;
+ let urgency=50;
+ if(left===0){urgency=100;reasons.push('endet heute')}
+ else if(left<=2){urgency=88;reasons.push('endet sehr bald')}
+ else if(left<=7)urgency=72;
+ else if(left<=21)urgency=56;
+ else if(left>60)urgency=35;
 
- if(left===0){score+=8;reasons.push('endet heute')}
- else if(left<=2){score+=6;reasons.push('endet sehr bald')}
- else if(left<=7){score+=3}
- else if(left>60){score-=2}
-
- score=Math.max(0,Math.min(100,score));
+ // Ziel: hohe reale Trefferchance und viel Nutzen pro Minute; Preisattraktivität bleibt relevant, dominiert aber nicht.
+ let priority=chance*.42+time*.28+attractiveness*.18+urgency*.12;
+ if(i.daily||i.multipleEntry)priority+=4;
+ priority=clampScore(priority);
  const confidence=winners>0&&trust>=4?'hoch':winners>0||trust>=4?'mittel':'begrenzt';
- return {score,reasons:[...new Set(reasons)].slice(0,3),scoreConfidence:confidence};
+ return {
+   score:priority,priorityScore:priority,chanceScore:chance,timeScore:time,
+   attractivenessScore:attractiveness,urgencyScore:urgency,
+   reasons:[...new Set(reasons)].slice(0,4),scoreConfidence:confidence
+ };
 }
 function scored(includeIgnored=false){return allActive().map(i=>({...i,...scoreContest(i)})).filter(i=>includeIgnored||!stateFor(i.id).ignored)}
 function recommended(i){return i.score>=72&&!stateFor(i.id).done}
@@ -141,7 +192,7 @@ window.toggleFavorite=toggleFavorite;window.toggleDone=toggleDone;window.toggleI
 
 function label(score){return score>=88?'Unbedingt mitmachen':score>=75?'Sehr empfehlenswert':score>=62?'Gute Chance':'Solide Aktion'}
 function badges(i){const left=daysLeft(i);return `<div class="badges">${isNewSinceVisit(i)?'<span class="new-ribbon">NEU</span>':''}<span class="badge">${esc(i.category)}</span><span class="badge score">${i.score}/100</span>${i.score>=80?'<span class="badge score">Top-Chance</span>':''}${secret(i)?'<span class="badge secret">Geheimtipp</span>':''}${left<=3?`<span class="badge hot">Noch ${left} Tag${left===1?'':'e'}</span>`:''}${i.international?'<span class="badge intl">International</span>':''}${i.regional?`<span class="badge regional">📍 ${esc(i.region||'Regional')}</span>`:''}${endingSoon(i)?`<span class="badge ending">⏰ Endet bald</span>`:''}</div>`}
-function reasonBox(i){return `<div class="reason-box"><strong>Warum empfohlen?</strong><br>${i.reasons.length?i.reasons.map(x=>'✓ '+esc(x)).join(' · '):'Kostenlose, geprüfte Teilnahme'}<small>Score-Sicherheit: ${esc(i.scoreConfidence||'begrenzt')}</small></div>`}
+function reasonBox(i){return `<div class="reason-box priority-explain"><strong>Warum diese Priorität?</strong><div class="score-components"><span><b>${i.chanceScore}</b>Chance</span><span><b>${i.timeScore}</b>Zeitnutzen</span><span><b>${i.attractivenessScore}</b>Attraktivität</span></div><p>${i.reasons.length?i.reasons.map(x=>'✓ '+esc(x)).join(' · '):'Kostenlose, geprüfte Teilnahme'}</p><small>Priorität ${i.score}/100 · Datensicherheit: ${esc(i.scoreConfidence||'begrenzt')}</small></div>`}
 function mini(i){const s=stateFor(i.id);return `<article class="mini-card"><div class="provider">${esc(i.provider)}</div><h3>${esc(i.title)}</h3>${badges(i)}<div class="prize">🎁 ${esc(i.prize)}</div>${reasonBox(i)}<div class="mini-actions"><a class="primary" href="${esc(i.url)}" target="_blank" rel="noopener" onclick="registerClick('${esc(i.id)}')">Teilnehmen</a><button class="secondary" onclick="toggleFavorite('${esc(i.id)}')">${s.favorite?'♥':'♡'}</button><button class="secondary ignore-mini" aria-label="Nicht interessant" onclick="toggleIgnored('${esc(i.id)}')">Nicht interessant</button></div></article>`}
 function full(i){const s=stateFor(i.id),left=daysLeft(i),wins=i.winners?`${i.winners} bekannte Gewinne`:'Gewinnerzahl nicht angegeben';return `<article class="contest-card ${s.ignored?'ignored-card':''}"><div class="card-top"><div><div class="provider">${esc(i.provider)}</div><h3>${esc(i.title)}</h3></div><button class="heart ${s.favorite?'active':''}" onclick="toggleFavorite('${esc(i.id)}')">${s.favorite?'♥':'♡'}</button></div>${badges(i)}${s.ignored?'<div class="ignored-note">Nicht interessant – nur in dieser Ansicht sichtbar.</div>':''}<div class="prize">🎁 ${esc(i.prize)}</div><div class="scoreline"><strong>${label(i.score)}</strong><div class="scorebar"><i style="width:${i.score}%"></i></div><strong>${i.score}</strong></div>${reasonBox(i)}<div class="details">Teilnahmeschluss: ${esc(i.deadline)} · ${left===0?'endet heute':`${left} Tag${left===1?'':'e'} übrig`}<br>${esc(wins)} · Aufwand: ${'●'.repeat(Math.min(5,i.effort||3))}${'○'.repeat(Math.max(0,5-(i.effort||3)))}<br>${esc(i.country)}${i.region?` · ${esc(i.region)}`:''} · geprüft: ${esc(i.verified||'–')}</div><div class="card-actions"><a href="${esc(i.url)}" target="_blank" rel="noopener" onclick="registerClick('${esc(i.id)}')">Teilnehmen ↗</a><button class="${s.done?'done':''}" onclick="toggleDone('${esc(i.id)}')">${s.done?'✓ Erledigt':'Teilgenommen'}</button><button class="win-button ${s.won?'active':''}" onclick="openWinDialog('${esc(i.id)}')">${s.won?'🏆 Gewonnen':'Gewonnen'}</button><button class="ignore-button ${s.ignored?'active':''}" onclick="toggleIgnored('${esc(i.id)}')">${s.ignored?'Wieder anzeigen':'Nicht interessant'}</button></div></article>`}
 function empty(t){return `<div class="empty">${esc(t)}</div>`}
@@ -348,7 +399,7 @@ function mergeCatalog(base,extra){
  return {contests:out,report:{added,updated,duplicates,invalid,total:out.length}}
 }
 function applyCustomData(report=null){
- const merged=mergeCatalog(baseContests,customContests);contests=merged.contests;renderAll();renderDataCenter(report||merged.report);updateDiagnostics(dataVersionGlobal);return merged
+ const merged=mergeCatalog(baseContests,customContests);contests=merged.contests;migrateContestStates();renderAll();renderDataCenter(report||merged.report);updateDiagnostics(dataVersionGlobal);return merged
 }
 function extractContestArray(payload){
  if(Array.isArray(payload))return payload;
@@ -455,6 +506,7 @@ async function loadData(silent=false){
    const merged=mergeCatalog(baseContests,customContests);contests=merged.contests;
    dataVersionGlobal=dataVersion;
  }
+ migrateContestStates();
  renderAll();
  renderDataCenter();
  status.classList.toggle('error',usingFallback);

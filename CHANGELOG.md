@@ -1,25 +1,17 @@
-# Changelog
+# Win Win – Changelog
 
-## 2.3 – 30.07.2026
-### Neu
-- Dashboard zeigt standardmäßig ausschließlich offene, interessante Gewinnspiele.
-- Kontrollschalter „Alle anzeigen“.
-- „Win des Tages“ mit Auswahlbegründung.
-- Prioritätsbereiche für Tagesreihenfolge, Fristen, Trefferchance, Gewinnwert und schnelle Teilnahmen.
-- ROADMAP.md und CHANGELOG.md.
+## 2.4
+- Prioritäts-Engine v1 eingeführt
+- separate Teilwerte für Chance, Zeitnutzen, Attraktivität und Dringlichkeit
+- Prioritätsgründe direkt auf jeder Karte sichtbar
+- bestehender LocalStorage-Schlüssel unverändert beibehalten
+- automatische Sicherung der persönlichen Statusdaten ergänzt
+- URL-basierte Statusmigration schützt Markierungen bei geänderten IDs
 
-### Behoben
-- Als „Teilgenommen“ oder „Nicht interessant“ markierte Gewinnspiele tauchen nicht mehr prominent im normalen Dashboard auf.
+## 2.3
+- Dashboard blendet Teilgenommen und Nicht interessant standardmäßig aus
+- Win des Tages und Prioritätsbereiche
+- ROADMAP und CHANGELOG eingeführt
 
 ## 2.2.1
-- Versionsangaben und Offline-Cache korrigiert.
-- Gewinnarchiv aus 2.1 und Filter aus 2.2 gemeinsam ausgeliefert.
-
-## 2.2
-- kombinierbare Such- und Zusatzfilter.
-
-## 2.1
-- Gewinnstatus und persönliches Gewinnarchiv.
-
-## 2.0
-- mobile Navigation und Datenübersicht überarbeitet.
+- Gewinnarchiv aus 2.1 und Filter aus 2.2 zusammengeführt
