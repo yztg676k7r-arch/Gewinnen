@@ -1,3 +1,8 @@
+## 4.5 – Deployment-Sicherheit (abgeschlossen)
+- Versionsdiagnose
+- reproduzierbarer GitHub-Pages-Workflow
+- Cache-Reset ohne Verlust persönlicher Daten
+
 # Win Win – Roadmap
 
 ## Produktziel

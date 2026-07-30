@@ -1,4 +1,4 @@
-# Win Win 4.4
+# Win Win 4.5
 
 Persönliche, kostenlose PWA zur Verwaltung und Priorisierung von Gewinnspielen.
 
@@ -58,6 +58,10 @@ Der Katalog-Manager prüft neue Gewinnspiele live auf Frist, Direktlink, Quelle,
 
 Version 4.3 ergänzt einen Tagesmodus für die tägliche Gewinnspielbearbeitung.
 
-## Version 4.4
+## Version 4.5
 
-Version 4.4 erweitert den aktiven Katalog um neu geprüfte Gewinnspiele offizieller Veranstalter. Der Fokus liegt auf verwertbaren Direktlinks, klaren Fristen und vollständig gepflegten Qualitätsdaten.
+Version 4.5 erweitert den aktiven Katalog um neu geprüfte Gewinnspiele offizieller Veranstalter. Der Fokus liegt auf verwertbaren Direktlinks, klaren Fristen und vollständig gepflegten Qualitätsdaten.
+
+
+## Veröffentlichung prüfen
+Nach dem Upload zeigt `DEPLOYMENT-CHECK.html`, welche Version GitHub Pages tatsächlich ausliefert.

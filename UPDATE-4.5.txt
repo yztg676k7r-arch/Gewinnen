@@ -1,0 +1,21 @@
+WIN WIN 4.5 – DEPLOYMENT- UND DATENFIX
+
+WICHTIGER BEFUND
+Die veröffentlichte Seite unter https://yztg676k7r-arch.github.io/WinWin/ zeigte am 30.07.2026 weiterhin App 3.6.3. Deshalb konnten die Daten aus 4.4 dort nicht erscheinen.
+
+NEU
+- Versionsdiagnose direkt auf der Startseite
+- Button „Update erzwingen“ löscht nur Win-Win-Caches und registriert den Service Worker neu
+- eindeutige, versionierte Dateien app-4.5.js, styles-4.5.css und sw-4.5.js
+- version.json mit App-Version und Kataloganzahl
+- DEPLOYMENT-CHECK.html zur unabhängigen Prüfung
+- GitHub-Actions-Workflow für eine reproduzierbare Pages-Veröffentlichung
+- persönliche LocalStorage-Daten bleiben unberührt
+
+UPLOAD
+Den INHALT dieses ZIP-Archivs direkt in das Stammverzeichnis des GitHub-Repositories hochladen. Nicht den übergeordneten Ordner und nicht nur einzelne JSON-Dateien. Vorhandene Dateien ersetzen.
+
+PRÜFUNG
+Nach GitHub Pages Veröffentlichung öffnen:
+https://yztg676k7r-arch.github.io/WinWin/DEPLOYMENT-CHECK.html
+Dort muss Version 4.5 erscheinen.
