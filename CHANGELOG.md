@@ -1,5 +1,12 @@
 # Win Win – Changelog
 
+## 2.5
+- Dublettenerkennung um stabile Fingerabdrücke erweitert
+- ähnliche Gewinnspiele werden als Prüfhinweise erkannt
+- Datenwarnungen und Anbieterqualität in der Datenzentrale ergänzt
+- ID-Konflikte werden gemeldet, bestehende IDs bleiben erhalten
+- lokale Nutzerstatus bleiben unverändert im bisherigen Speicherbereich
+
 ## 2.4
 - Prioritäts-Engine v1 eingeführt
 - separate Teilwerte für Chance, Zeitnutzen, Attraktivität und Dringlichkeit

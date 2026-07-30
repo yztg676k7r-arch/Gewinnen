@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="stylesheet" href="./styles.css">
-  <title>Win Win 2.4</title>
+  <title>Win Win 2.5</title>
 </head>
 <body>
   <div class="app-shell">
@@ -40,7 +40,7 @@
         <section class="update-status" id="updateStatus">
           <span class="status-dot"></span>
           <span id="updateText">Gewinnspiele werden geprüft …</span>
-          <small id="dataDiagnostics" class="data-diagnostics">App 2.4 · Daten werden geladen</small>
+          <small id="dataDiagnostics" class="data-diagnostics">App 2.5 · Daten werden geladen</small>
         </section>
         <section class="metric-grid" id="metrics"></section>
 
@@ -152,7 +152,7 @@
       <section id="dataView" class="view">
         <div class="view-title"><p class="section-kicker">DATENZENTRALE</p><h2>Import & Quellen</h2></div>
         <section class="data-hero">
-          <div><p class="section-kicker">WIN WIN 2.4</p><h3>Quellen und Gewinnspiele zentral verwalten</h3><p>Importe werden geprüft, mit dem vorhandenen Katalog zusammengeführt und lokal gespeichert. Zusätzlich siehst du Quellenabdeckung und Datenqualität auf einen Blick. Deine persönlichen Status bleiben erhalten.</p></div>
+          <div><p class="section-kicker">WIN WIN 2.5</p><h3>Quellen und Gewinnspiele zentral verwalten</h3><p>Importe werden auf Dubletten, ähnliche Einträge, stabile IDs und Datenwarnungen geprüft. Deine persönlichen Status bleiben bei jedem Update getrennt und unverändert erhalten.</p></div>
         </section>
         <section id="importSummary" class="import-summary"></section>
         <section class="data-panel">
@@ -162,6 +162,14 @@
         <section class="data-panel">
           <div class="section-head compact"><div><p class="section-kicker">DATENQUALITÄT</p><h3>Katalog-Prüfung</h3></div></div>
           <div id="qualityOverview" class="quality-overview"></div>
+        </section>
+        <section class="data-panel">
+          <div class="section-head compact"><div><p class="section-kicker">WARNUNGEN</p><h3>Auffällige Datensätze</h3></div></div>
+          <div id="qualityWarnings" class="quality-warnings"></div>
+        </section>
+        <section class="data-panel">
+          <div class="section-head compact"><div><p class="section-kicker">ANBIETERQUALITÄT</p><h3>Vertrauen nach Quelle</h3></div></div>
+          <div id="providerQuality" class="provider-quality"></div>
         </section>
         <section class="data-panel">
           <h3>JSON-Datei importieren</h3>
@@ -192,7 +200,9 @@
           <h3>Prüfregeln</h3>
           <ul class="check-list">
             <li>Pflichtfelder: ID, Titel, Anbieter, Link und Teilnahmeschluss</li>
-            <li>Dublettenprüfung über ID und normalisierten Direktlink</li>
+            <li>Dublettenprüfung über ID, normalisierten Direktlink und stabilen Fingerabdruck</li>
+            <li>Ähnliche Gewinnspiele werden zusätzlich als Prüfhinweis angezeigt</li>
+            <li>ID-Konflikte werden erkannt; bestehende IDs und Status bleiben geschützt</li>
             <li>Nur kostenlose, noch laufende Einträge erscheinen als aktiv</li>
             <li>Bei Updates gewinnt der importierte, neuere Datensatz</li>
           </ul>

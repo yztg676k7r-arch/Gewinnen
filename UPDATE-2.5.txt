@@ -1,0 +1,5 @@
+WIN WIN 2.5
+
+Neu: Datenqualität, stärkere Dublettenerkennung, ähnliche Gewinnspiele, Anbieterqualität und Schutz stabiler IDs.
+
+Wichtig: Persönliche Statusdaten werden weiterhin getrennt im unveränderten LocalStorage-Schlüssel gespeichert und durch Updates nicht überschrieben.

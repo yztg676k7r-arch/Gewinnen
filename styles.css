@@ -170,3 +170,9 @@ main{padding:0 16px}.view{display:none;animation:fade .18s ease}.view.active{dis
 .priority-explain .score-components b{font-size:17px;color:var(--ink)}
 .priority-explain p{margin:7px 0;line-height:1.45}
 @media(max-width:380px){.priority-explain .score-components{gap:5px}.priority-explain .score-components span{padding:7px 4px;font-size:9px}}
+
+
+/* Win Win 2.5 – Datenqualität und Dublettenschutz */
+.warning-summary{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}.warning-summary>div{background:var(--surface-2);border-radius:15px;padding:12px}.warning-summary strong{display:block;font-size:22px}.warning-summary span{font-size:11px;color:var(--muted)}
+.quality-warnings{display:grid;gap:9px}.quality-warning{border:1px solid var(--line);border-radius:15px;padding:11px 12px}.quality-warning div{display:flex;justify-content:space-between;gap:8px}.quality-warning span{font-size:11px;color:var(--muted)}.quality-warning p{margin:6px 0 0;font-size:12px;color:#9a5a16;line-height:1.4}.similar-details{margin-top:5px;background:var(--surface-2);border-radius:14px;padding:11px}.similar-details summary{font-weight:800;cursor:pointer}.similar-details p{font-size:12px;line-height:1.4;border-top:1px solid var(--line);padding-top:8px}
+.provider-quality{display:grid;gap:8px;max-height:360px;overflow:auto}.provider-quality-row{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--surface-2);border-radius:14px;padding:11px 12px}.provider-quality-row span{display:block;font-size:11px;color:var(--muted);margin-top:3px}.provider-quality-row b{font-size:15px;white-space:nowrap}

@@ -1,5 +1,5 @@
 
-const APP_VERSION='2.4';
+const APP_VERSION='2.5';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;
@@ -372,6 +372,37 @@ function makeContestId(i){
  const raw=`${i.provider||'anbieter'}-${i.title||'gewinnspiel'}`.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
  return raw.slice(0,80)||`import-${Date.now()}`
 }
+function normalizeText(value=''){
+ return String(value).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim()
+}
+function contestFingerprint(i){
+ const provider=normalizeText(i.provider).split(' ').slice(0,4).join('-');
+ const title=normalizeText(i.title).split(' ').filter(x=>x.length>2).slice(0,8).join('-');
+ const deadline=String(i.deadline||'').replace(/\D/g,'');
+ return `${provider}|${title}|${deadline}`
+}
+function tokenSimilarity(a,b){
+ const A=new Set(normalizeText(a).split(' ').filter(x=>x.length>2));
+ const B=new Set(normalizeText(b).split(' ').filter(x=>x.length>2));
+ if(!A.size||!B.size)return 0;
+ let hit=0;A.forEach(x=>{if(B.has(x))hit++});
+ return hit/Math.max(A.size,B.size)
+}
+function areSimilarContests(a,b){
+ if(normalizeText(a.provider)!==normalizeText(b.provider))return false;
+ if(a.deadline&&b.deadline&&a.deadline!==b.deadline)return false;
+ return tokenSimilarity(`${a.title} ${a.prize}`,`${b.title} ${b.prize}`)>=.68
+}
+function contestWarnings(i){
+ const warnings=[];
+ if(!/^https?:\/\//i.test(i.url||''))warnings.push('Direktlink fehlt');
+ if(!parseGermanDate(i.deadline))warnings.push('Datum unklar');
+ if(!Number(i.winners))warnings.push('Gewinnerzahl fehlt');
+ if(!i.verified)warnings.push('Prüfdatum fehlt');
+ if((Number(i.providerTrust)||0)<=2)warnings.push('Anbieterqualität niedrig');
+ if(!i.id||i.id.startsWith('import-'))warnings.push('ID instabil');
+ return warnings
+}
 function normalizeContest(raw){
  const i={...raw};
  i.id=String(i.id||makeContestId(i)).trim();i.title=String(i.title||'').trim();i.provider=String(i.provider||'').trim();i.url=String(i.url||'').trim();i.deadline=String(i.deadline||'').trim();
@@ -383,20 +414,30 @@ function normalizeContest(raw){
  return i
 }
 function mergeCatalog(base,extra){
- const out=[];const byId=new Map(),byUrl=new Map();let added=0,updated=0,duplicates=0,invalid=0;
+ const out=[];const byId=new Map(),byUrl=new Map(),byFingerprint=new Map();
+ let added=0,updated=0,duplicates=0,invalid=0,idConflicts=0,similar=0;
+ const similarPairs=[];
  const put=(raw,isImport=false)=>{
    const i=normalizeContest(raw);
    if(!validContest(i)||!/^https?:\/\//i.test(i.url)){if(isImport)invalid++;return}
-   const urlKey=normalizeUrl(i.url);const pos=byId.get(i.id)??byUrl.get(urlKey);
+   const urlKey=normalizeUrl(i.url),fp=contestFingerprint(i);
+   let pos=byId.get(i.id);
+   if(pos!==undefined&&normalizeUrl(out[pos].url)!==urlKey){idConflicts++;pos=undefined}
+   if(pos===undefined)pos=byUrl.get(urlKey);
+   if(pos===undefined)pos=byFingerprint.get(fp);
    if(pos!==undefined){
-     if(isImport){out[pos]={...out[pos],...i,id:out[pos].id||i.id};updated++;duplicates++}
-     else out[pos]={...out[pos],...i};
-     byId.set(out[pos].id,pos);byUrl.set(normalizeUrl(out[pos].url),pos);return
+     if(isImport){
+       const stableId=out[pos].id;
+       out[pos]={...out[pos],...i,id:stableId};updated++;duplicates++;
+     } else out[pos]={...out[pos],...i,id:out[pos].id||i.id};
+     byId.set(out[pos].id,pos);byUrl.set(normalizeUrl(out[pos].url),pos);byFingerprint.set(contestFingerprint(out[pos]),pos);return
    }
-   const n=out.length;out.push(i);byId.set(i.id,n);byUrl.set(urlKey,n);if(isImport)added++
+   const near=out.findIndex(x=>areSimilarContests(x,i));
+   if(near>=0){similar++;if(similarPairs.length<20)similarPairs.push({a:out[near].title,b:i.title,provider:i.provider})}
+   const n=out.length;out.push(i);byId.set(i.id,n);byUrl.set(urlKey,n);byFingerprint.set(fp,n);if(isImport)added++
  };
  base.forEach(x=>put(x,false));extra.forEach(x=>put(x,true));
- return {contests:out,report:{added,updated,duplicates,invalid,total:out.length}}
+ return {contests:out,report:{added,updated,duplicates,invalid,idConflicts,similar,similarPairs,total:out.length}}
 }
 function applyCustomData(report=null){
  const merged=mergeCatalog(baseContests,customContests);contests=merged.contests;migrateContestStates();renderAll();renderDataCenter(report||merged.report);updateDiagnostics(dataVersionGlobal);return merged
@@ -419,7 +460,7 @@ function downloadJSON(filename,payload){
 function renderDataCenter(report=null){
  const el=$('#importSummary'),local=$('#localDataText');if(!el||!local)return;
  const activeCount=allActive().length;
- el.innerHTML=`<div class="data-stat"><strong>${contests.length}</strong><span>gesamt</span></div><div class="data-stat"><strong>${activeCount}</strong><span>aktiv</span></div><div class="data-stat"><strong>${customContests.length}</strong><span>lokal ergänzt</span></div>${report?`<div class="import-report"><strong>Letzter Import:</strong> ${report.added} neu, ${report.updated} aktualisiert, ${report.invalid} ungültig.</div>`:''}`;
+ el.innerHTML=`<div class="data-stat"><strong>${contests.length}</strong><span>gesamt</span></div><div class="data-stat"><strong>${activeCount}</strong><span>aktiv</span></div><div class="data-stat"><strong>${customContests.length}</strong><span>lokal ergänzt</span></div>${report?`<div class="import-report"><strong>Letzter Import:</strong> ${report.added} neu, ${report.updated} aktualisiert, ${report.invalid} ungültig, ${report.duplicates||0} Dubletten, ${report.idConflicts||0} ID-Konflikte.</div>`:''}`;
  local.textContent=customContests.length?`${customContests.length} lokal importierte Datensätze sind auf diesem Gerät gespeichert.`:'Noch keine lokalen Ergänzungen gespeichert.'
  renderSourceOverview();
  renderQualityOverview();
@@ -438,11 +479,27 @@ function renderQualityOverview(){
  const checks=[
   ['Direktlink vorhanden',contests.filter(i=>/^https?:\/\//i.test(i.url||'')).length],
   ['Gewinnerzahl bekannt',contests.filter(i=>Number(i.winners)>0).length],
-  ['Vertrauen bewertet',contests.filter(i=>Number(i.trust)>0).length],
+  ['Anbieter bewertet',contests.filter(i=>Number(i.providerTrust)>0).length],
   ['Aufwand bewertet',contests.filter(i=>Number(i.effort)>0).length],
-  ['Aktuell verifiziert',contests.filter(i=>i.verified).length]
+  ['Aktuell verifiziert',contests.filter(i=>i.verified).length],
+  ['Stabile ID',contests.filter(i=>i.id&&!i.id.startsWith('import-')).length]
  ];
  box.innerHTML=checks.map(([name,count])=>{const pct=Math.round(count/total*100);return `<div class="quality-row"><span><strong>${esc(name)}</strong><em>${count} von ${contests.length}</em></span><i><u style="width:${pct}%"></u></i><b>${pct}%</b></div>`}).join('');
+ renderQualityWarnings();renderProviderQuality();
+}
+function renderQualityWarnings(){
+ const box=$('#qualityWarnings');if(!box)return;
+ const rows=contests.map(i=>({i,w:contestWarnings(i)})).filter(x=>x.w.length).sort((a,b)=>b.w.length-a.w.length);
+ const similar=[];for(let a=0;a<contests.length;a++)for(let b=a+1;b<contests.length;b++)if(areSimilarContests(contests[a],contests[b]))similar.push([contests[a],contests[b]]);
+ box.innerHTML=`<div class="warning-summary"><div><strong>${rows.length}</strong><span>Einträge mit Hinweisen</span></div><div><strong>${similar.length}</strong><span>ähnliche Paare</span></div></div>`+
+ (rows.length?rows.slice(0,12).map(({i,w})=>`<div class="quality-warning"><div><strong>${esc(i.title)}</strong><span>${esc(i.provider)}</span></div><p>${w.map(esc).join(' · ')}</p></div>`).join(''):empty('Keine auffälligen Datensätze gefunden.'))+
+ (similar.length?`<details class="similar-details"><summary>${similar.length} ähnliche Gewinnspiel-Paare prüfen</summary>${similar.slice(0,12).map(([a,b])=>`<p><strong>${esc(a.provider)}</strong><br>${esc(a.title)} ↔ ${esc(b.title)}</p>`).join('')}</details>`:'');
+}
+function renderProviderQuality(){
+ const box=$('#providerQuality');if(!box)return;
+ const map=new Map();contests.forEach(i=>{const k=i.provider||'Unbekannt',r=map.get(k)||{n:0,trust:0,warn:0};r.n++;r.trust+=Number(i.providerTrust)||3;r.warn+=contestWarnings(i).length;map.set(k,r)});
+ const rows=[...map].map(([name,r])=>({name,...r,avg:Math.round(r.trust/r.n*10)/10})).sort((a,b)=>b.avg-a.avg||b.n-a.n);
+ box.innerHTML=rows.map(r=>`<div class="provider-quality-row"><div><strong>${esc(r.name)}</strong><span>${r.n} Einträge · ${r.warn} Hinweise</span></div><b>${r.avg}/5</b></div>`).join('')||empty('Keine Anbieter vorhanden.');
 }
 function setupDataCenter(){
  const input=$('#importFile');if(!input)return;
