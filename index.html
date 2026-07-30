@@ -13,8 +13,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=3.7">
-  <title>Win Win 3.7</title>
+  <link rel="stylesheet" href="./styles.css?v=3.8">
+  <title>Win Win 3.8</title>
 </head>
 <body>
   <div class="app-shell">
@@ -40,7 +40,7 @@
         <section class="update-status" id="updateStatus">
           <span class="status-dot"></span>
           <span id="updateText">Gewinnspiele werden geprüft …</span>
-          <small id="dataDiagnostics" class="data-diagnostics">App 3.7 · Daten werden geladen</small>
+          <small id="dataDiagnostics" class="data-diagnostics">App 3.8 · Daten werden geladen</small>
         </section>
         <section class="metric-grid" id="metrics"></section>
 
@@ -158,10 +158,24 @@
       <section id="dataView" class="view">
         <div class="view-title"><p class="section-kicker">DATENZENTRALE</p><h2>Import & Quellen</h2></div>
         <section class="data-hero">
-          <div><p class="section-kicker">WIN WIN 3.7</p><h3>Quellenkatalog 3.7</h3><p>183 Quellen und jetzt 28 laufende, geprüfte Gewinnspiele. Neue Katalogpakete werden direkt mit den Originalquellen verknüpft; persönliche Status bleiben unberührt.</p></div>
+          <div><p class="section-kicker">WIN WIN 3.8</p><h3>Quellenkatalog 3.8</h3><p>183 Quellen, 28 geprüfte Gewinnspiele und eine neue Prüf-Warteschlange für den laufenden Katalogausbau. Persönliche Status bleiben unberührt.</p></div>
         </section>
         <section id="importSummary" class="import-summary"></section>
         <section id="importPreview" class="data-panel import-preview" hidden></section>
+        <section class="data-panel source-queue-panel">
+          <div class="section-head compact"><div><p class="section-kicker">PRÜF-WARTESCHLANGE</p><h3>Quellen systematisch prüfen</h3></div><span id="sourceQueueBadge" class="source-count"></span></div>
+          <p>Die App stellt fällige und erfolgversprechende Quellen automatisch nach Priorität zusammen. Öffne eine Quelle, prüfe aktuelle Aktionen und erfasse anschließend das Ergebnis.</p>
+          <div id="sourceQueueStats" class="source-queue-stats"></div>
+          <div id="sourceQueueCurrent" class="source-queue-current"></div>
+          <div class="source-queue-actions">
+            <button id="openQueueSourceBtn" class="data-primary">Website öffnen ↗</button>
+            <button id="queueFoundBtn">＋ Treffer gefunden</button>
+            <button id="queueEmptyBtn">0 Keine Treffer</button>
+            <button id="queueSkipBtn">Überspringen</button>
+            <button id="rebuildSourceQueueBtn">Warteschlange neu erstellen</button>
+          </div>
+          <p id="sourceQueueNote" class="data-safety-note">Die Warteschlange wird nur auf diesem Gerät gespeichert.</p>
+        </section>
         <section class="data-panel source-manager-panel">
           <div class="section-head compact"><div><p class="section-kicker">QUELLEN-DATENBANK</p><h3>Quellen verwalten</h3></div><span id="sourceCountBadge" class="source-count"></span></div>
           <div id="sourceStats" class="source-stats"></div>
@@ -309,6 +323,6 @@
       </form>
     </dialog>
 
-  <script src="./app.js?v=3.7"></script>
+  <script src="./app.js?v=3.8"></script>
 </body>
 </html>

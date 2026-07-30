@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Win Win",
   "short_name": "Win Win",
-  "description": "Win Win 3.7 – persönlicher Gewinnspiel-Assistent mit großem Quellenkatalog",
+  "description": "Win Win 3.8 – persönlicher Gewinnspiel-Assistent mit Quellen-Prüfwarteschlange",
   "lang": "de-DE",
   "start_url": "./",
   "scope": "./",

@@ -42,3 +42,7 @@ Das Quellen-Cockpit zeigt fällige Prüfungen und erlaubt das lokale Hinzufügen
 
 ## Version 3.7
 Der Katalog enthält 28 Gewinnspiele und 183 Quellen. Neue Einträge wurden am 30.07.2026 anhand offizieller Veranstalterseiten geprüft.
+
+
+## Version 3.8
+Die Datenzentrale enthält eine lokale Prüf-Warteschlange. Fällige Quellen werden nach Priorität sortiert, direkt geöffnet und als Treffer oder leere Prüfung dokumentiert.

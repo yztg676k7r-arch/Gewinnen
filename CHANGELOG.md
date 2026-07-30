@@ -1,3 +1,11 @@
+# Win Win – Changelog
+
+## 3.8 – 30.07.2026
+- Prüf-Warteschlange für fällige Quellen
+- Priorisierung nach Quellenqualität, Prüffälligkeit und bisherigen Treffern
+- Direkter Webseitenaufruf sowie Treffer-/Leer-Erfassung
+- Lokaler Tagesfortschritt ohne Veränderung persönlicher Gewinnspielstatus
+
 # Changelog
 
 ## 3.6.4

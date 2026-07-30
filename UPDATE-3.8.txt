@@ -1,0 +1,12 @@
+WIN WIN 3.8 – PRÜF- UND IMPORT-WARTESCHLANGE
+
+Neu:
+- Automatische Warteschlange aus fälligen und priorisierten Quellen
+- Nächste Quelle direkt öffnen
+- Treffer oder leere Prüfung mit einem Fingertipp erfassen
+- Überspringen und Warteschlange neu erstellen
+- Tagesfortschritt wird lokal gespeichert
+- Keine Änderung an persönlichen Gewinnspielstatus
+
+Installation:
+Alle Dateien in das bestehende GitHub-Pages-Repository hochladen und vorhandene Dateien ersetzen.

@@ -47,6 +47,10 @@ Ein kostenloser, persönlicher Gewinnspiel-Assistent, der lokal arbeitet und tä
 - erster geprüfter Ausbau der aktiven Gewinnspiel-Datenbank
 - direkte Originalquellen und dokumentierter Datenstand
 
-## Nächster Schritt – Version 3.8
+## Version 3.8 – umgesetzt
+- Prüf-Warteschlange für regelmäßig kontrollierte Quellen
+- Tagesfortschritt und direkte Treffer-/Leer-Erfassung
+
+## Nächster Schritt – Version 3.9
 - weitere Katalogpakete mit Fokus auf viele Gewinner und regionale Chancen
-- einfache Import-Warteschlange für regelmäßig geprüfte Quellen
+- vereinfachte Übernahme gefundener Gewinnspiele in den lokalen Katalog
