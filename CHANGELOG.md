@@ -1,3 +1,12 @@
+# Version 4.6
+
+- 50 neue aktuelle Gewinnspiel-Chancen
+- Katalog von 32 auf 82 Einträge erweitert
+- 20 tägliche Sommer-Chancen separat im Tagesworkflow
+- 11 neue dm/glückskind-Aktionen
+- neue Film-, Reise-, Lifestyle- und Familiengewinne
+- Katalogpfade und Cache auf Version 4.6 synchronisiert
+
 # Version 4.5.2
 
 - „Alle“ setzt jetzt Hauptfilter, Zusatzfilter und Suche vollständig zurück.

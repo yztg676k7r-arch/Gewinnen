@@ -1,3 +1,9 @@
+## 4.6 – Großer Katalogausbau (abgeschlossen)
+
+- 50 neue Gewinnspiel-Chancen
+- 82 Katalogeinträge insgesamt
+- tägliche Sommerchancen und neue offizielle Anbieter
+
 ## 4.5 – Deployment-Sicherheit (abgeschlossen)
 - Versionsdiagnose
 - reproduzierbarer GitHub-Pages-Workflow

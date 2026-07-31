@@ -1,0 +1,10 @@
+WIN WIN 4.6 – GROSSER KATALOGAUSBAU
+
+- 50 neue Gewinnspiel-Chancen ergänzt
+- Katalog wächst von 32 auf 82 Einträge
+- neue dm-, glückskind-, Moviebreak-, freundin-, GALA- und AUTO-BILD-Aktionen
+- tägliche Sommer-Chancen bis 09.08.2026 einzeln sichtbar
+- Katalogdateien an beiden Ladepfaden synchronisiert
+- Cache-Version auf 4.6 erhöht
+
+Persönliche Statusdaten im Browser bleiben erhalten.
