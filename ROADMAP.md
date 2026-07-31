@@ -1,3 +1,11 @@
+
+## 4.8 – Tagesmodus
+
+- Priorisierte tägliche Arbeitsliste mit Tagesziel.
+- Fortschritt für offen, erledigt, geöffnet und nur heute übersprungen.
+- Kompakte Aktionskarten für Teilnahme, Status und Ausblenden.
+- Tagesbezogene Überspringen-Funktion ohne dauerhaftes Ausblenden.
+
 ## Version 4.7 – 100 angereicherte Gewinnspiele
 
 Katalog mit 100 vollständig angereicherten Einträgen. 18 neue Gewinnspiele und einheitliche Qualitäts-, Chancen- und Prioritätsfelder.

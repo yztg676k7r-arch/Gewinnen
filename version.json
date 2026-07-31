@@ -1,12 +1,12 @@
 {
   "app": "Win Win",
-  "version": "4.7",
+  "version": "4.8",
   "catalogVersion": "4.7",
   "catalogCount": 100,
-  "builtAt": "2026-07-31T09:15:00+02:00",
-  "release": "Ein-Katalog-Bugfix",
-  "note": "Nur contests.json wird geladen; Basiskatalog-Einträge mit gemeinsamer URL bleiben getrennt.",
+  "builtAt": "2026-07-31T10:15:00+02:00",
+  "release": "Tagesmodus",
+  "note": "Priorisierte Tagesliste mit Tagesziel, Statusaktionen und nur heute überspringen.",
   "updated": "2026-07-31",
-  "contestCount": 82,
-  "appVersion": "4.7"
+  "contestCount": 100,
+  "appVersion": "4.8"
 }

@@ -1,0 +1,9 @@
+WIN WIN 4.8 – TAGESMODUS
+
+- priorisierte tägliche Arbeitsliste
+- Tagesziel und Fortschritt
+- offen, erledigt, übersprungen und geöffnet
+- kompakte Aktionskarten
+- nur für heute überspringen
+- Tagesdaten werden lokal gespeichert und in der Komplettsicherung berücksichtigt
+- bestehende persönliche Status bleiben erhalten
