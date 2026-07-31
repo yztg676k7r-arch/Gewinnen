@@ -1,4 +1,4 @@
-# Win Win 4.5.1
+# Win Win 4.5.2
 
 Persönliche, kostenlose PWA zur Verwaltung und Priorisierung von Gewinnspielen.
 

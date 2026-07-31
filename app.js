@@ -1,5 +1,5 @@
 
-const APP_VERSION='4.5.1';
+const APP_VERSION='4.5.2';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;
@@ -1209,7 +1209,17 @@ async function loadData(silent=false){
  if(!silent&&usingFallback)toast('Notfalldaten geladen');
 }
 $$('.nav-item').forEach(b=>b.addEventListener('click',()=>openView(b.dataset.view)));
-$$('.chip').forEach(b=>b.addEventListener('click',()=>{currentFilter=b.dataset.filter;$$('.chip').forEach(c=>c.classList.toggle('active',c===b));renderDiscover()}));
+$$('.chip').forEach(b=>b.addEventListener('click',()=>{
+ currentFilter=b.dataset.filter;
+ if(currentFilter==='all'){
+  advancedFilters={entryType:'',effort:'',winners:'',deadline:'',daily:false,noApp:false,noSocial:false,knownWinners:false,onlyOpen:false};
+  const search=$('#searchInput');if(search)search.value='';
+  saveAdvancedFilters();
+  syncFilterUI();
+ }
+ $$('.chip').forEach(c=>c.classList.toggle('active',c===b));
+ renderDiscover();
+}));
 $$('[data-show]').forEach(b=>b.addEventListener('click',()=>openDiscover(b.dataset.show)));
 $('#searchInput')?.addEventListener('input',renderDiscover);$('#sortSelect')?.addEventListener('change',renderDiscover);
 $('#filterToggle')?.addEventListener('click',()=>{const panel=$('#advancedFilters');if(!panel)return;panel.hidden=!panel.hidden;$('#filterToggle')?.classList.toggle('active',!panel.hidden)});
