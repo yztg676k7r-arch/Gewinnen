@@ -1,3 +1,7 @@
+## Version 4.7 – 100 angereicherte Gewinnspiele
+
+Katalog mit 100 vollständig angereicherten Einträgen. 18 neue Gewinnspiele und einheitliche Qualitäts-, Chancen- und Prioritätsfelder.
+
 ## 4.6.2 – Großer Katalogausbau (abgeschlossen)
 
 - 50 neue Gewinnspiel-Chancen

@@ -1,5 +1,5 @@
 
-const APP_VERSION='4.6.2';
+const APP_VERSION='4.7';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;

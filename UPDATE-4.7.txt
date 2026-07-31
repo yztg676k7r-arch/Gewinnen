@@ -1,0 +1,8 @@
+WIN WIN 4.7 – 100 ANGEREICHERTE GEWINNSPIELE
+
+- Katalog auf genau 100 Einträge erweitert
+- Alle 100 Einträge vollständig angereichert
+- Neue Felder: Gewinnwert-Schätzung, Chancenwert, Priorität, Qualitätswert, Teilnahmefrequenz, Deutschland-Eignung, Kurzbeschreibung, Datenvollständigkeit und Prüfdatum
+- 18 neue Chancen aus offiziellen Quellen ergänzt
+- Ein-Katalog-Prinzip aus 4.6.2 bleibt erhalten
+- Persönliche lokale Statusdaten werden nicht überschrieben

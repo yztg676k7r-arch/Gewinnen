@@ -1,5 +1,5 @@
 {
-  "version": "4.6.2",
+  "version": "4.7",
   "updated": "2026-07-31",
   "contests": [
     {
@@ -31,7 +31,16 @@
         "schnell"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 120,
+      "chanceScore": 100,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "100 × limitiertes o.b. Starterset. Teilnahme: Kostenloses Mein-dm-Konto.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-adventskalender-2026",
@@ -62,7 +71,16 @@
         "schnell"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 120,
+      "chanceScore": 88,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "70 Adventskalender verschiedener Marken. Teilnahme: Kostenloses Mein-dm-Konto.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-seeberger-2026",
@@ -92,7 +110,16 @@
         "schnell"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 58,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "5 × VAUDE-Rucksack mit Seeberger-Snacks. Teilnahme: Kostenloses Mein-dm-Konto.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-borotalco-2026",
@@ -122,7 +149,16 @@
         "schnell"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 120,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 98,
+      "shortDescription": "Borotalco-Produktpakete. Teilnahme: Kostenloses Mein-dm-Konto.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "rossmann-neonail-2026",
@@ -153,7 +189,16 @@
         "viele Gewinner"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "rossmann"
+      "sourceId": "rossmann",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 120,
+      "chanceScore": 97,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "100 × NEONAIL-Sommerpaket mit Kosmetiktasche. Teilnahme: Kostenlose ROSSMANN-App und Registrierung.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "rossmann-centaur-juli-2026",
@@ -182,7 +227,16 @@
         "Reisen"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "rossmann"
+      "sourceId": "rossmann",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 1500,
+      "chanceScore": 48,
+      "priority": "hoch",
+      "qualityScore": 98,
+      "shortDescription": "Reise-, Wellness- und Freizeitgewinne. Teilnahme: ROSSMANN-App erforderlich.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "qvc-insider-2026",
@@ -212,7 +266,16 @@
         "international"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "qvc"
+      "sourceId": "qvc",
+      "deEligibility": "prüfen",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 400,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "10 × Jahresabo des QVC-Kundenmagazins INSIDER. Teilnahme: Teilnahmebedingungen auf der QVC-Seite beachten.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "schoener-wohnen-2026",
@@ -242,7 +305,16 @@
         "Wohnen"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "schoener-wohnen"
+      "sourceId": "schoener-wohnen",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 43,
+      "priority": "hoch",
+      "qualityScore": 91,
+      "shortDescription": "Design-, Wohn-, Technik- und Reisegewinne. Teilnahme: Kostenlose Teilnahme über Bilderpuzzle und Formular.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-produkttests-2026",
@@ -272,7 +344,16 @@
         "Produkttests"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 98,
+      "shortDescription": "Produkte kostenlos testen und bewerten. Teilnahme: Kostenloses Mein-dm-Konto.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-alverde-kreuzwortraetsel-juli-2026",
@@ -304,7 +385,16 @@
         "Wellness"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 1500,
+      "chanceScore": 52,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Wellness-Gewinn im Hotel Vier Jahreszeiten. Teilnahme: Gewinnspielfrage beantworten und Formular absenden.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-alverde-sudoku-juli-2026",
@@ -336,7 +426,16 @@
         "Rätsel"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 120,
+      "chanceScore": 53,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "12 × trend !t up Beauty-Gewinn. Teilnahme: Sudoku lösen und Formular absenden.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-instagram-cool-blue-box-2026",
@@ -368,7 +467,16 @@
         "Instagram"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 120,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "10 × Cool Blue Box. Teilnahme: Teilnahme über den Instagram-Account dm_deutschland.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "zoo-hannover-nacht-der-erlebnisse-2026",
@@ -402,7 +510,16 @@
         "Tickets"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "erlebnis-zoo-hannover"
+      "sourceId": "erlebnis-zoo-hannover",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 250,
+      "chanceScore": 57,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "2 × 2 Eintrittskarten für die Nacht der Erlebnisse. Teilnahme: Kostenloses Teilnahmeformular.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "hammerite-feuerkorb-2026",
@@ -435,7 +552,16 @@
         "Feuerkorb"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "hammerite"
+      "sourceId": "hammerite",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 47,
+      "priority": "hoch",
+      "qualityScore": 96,
+      "shortDescription": "Feuerkorb Moon von Höfats plus Metall-Schutzlack im Wert von über 500 €. Teilnahme: Kostenlose einmalige Teilnahme.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "swr1-perfekter-tag-ulm-2026",
@@ -469,7 +595,16 @@
         "Ulm"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "swr1"
+      "sourceId": "swr1",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 48,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Ein besonderer Erlebnistag in Ulm. Teilnahme: Online-Bewerbungsformular.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "swr1-perfekter-tag-konstanz-2026",
@@ -503,7 +638,16 @@
         "Konstanz"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "swr1"
+      "sourceId": "swr1",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 48,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Schifffahrt, Mainau, Sea Life und Riesenrad. Teilnahme: Online-Bewerbungsformular.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "swr1-perfekter-tag-baden-baden-2026",
@@ -537,7 +681,16 @@
         "Baden-Baden"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "swr1"
+      "sourceId": "swr1",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 48,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Erlebnistag mit Festspielhaus, Badruinen und Merkur-Bergbahn. Teilnahme: Online-Bewerbungsformular.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "ndr-marteria-rostock-2026",
@@ -571,7 +724,16 @@
         "Rostock"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "ndr-mv"
+      "sourceId": "ndr-mv",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "2 Tickets für den Tourauftakt von Marteria im IGA Park. Teilnahme: Teilnahme über die kostenlose NDR MV App.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "ndr-63-hektar-ipad-2026",
@@ -604,7 +766,16 @@
         "Podcast"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "ndr-1-niedersachsen"
+      "sourceId": "ndr-1-niedersachsen",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 48,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "1 iPad. Teilnahme: Podcast hören und Teilnahmefrage beantworten.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "ndr-hitsekunde-sommerdom-2026",
@@ -638,7 +809,16 @@
         "Radio"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "ndr-90-3"
+      "sourceId": "ndr-90-3",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 250,
+      "chanceScore": 44,
+      "priority": "normal",
+      "qualityScore": 98,
+      "shortDescription": "Gutscheinpakete für den Hamburger Sommerdom. Teilnahme: Radioaktion jeweils kurz nach 7 Uhr; Teilnahmezeiten beachten.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "swr-kultur-la-traviata-2026",
@@ -671,7 +851,16 @@
         "Bregenzer Festspiele"
       ],
       "addedAt": "29.07.2026",
-      "sourceId": "swr-kultur"
+      "sourceId": "swr-kultur",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 46,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "5 × Opernpaket für zwei Personen bei den Bregenzer Festspielen. Teilnahme: Opernfrage im SWR-Kultur-Programm beantworten.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "brigitte-sommergewinnspiel-2026",
@@ -703,7 +892,16 @@
         "kostenlos"
       ],
       "addedAt": "30.07.2026",
-      "sourceId": "brigitte"
+      "sourceId": "brigitte",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 2000,
+      "chanceScore": 52,
+      "priority": "hoch",
+      "qualityScore": 98,
+      "shortDescription": "Tagespreise plus 7 Nächte für 2 Personen im Hotel Jardín Tecina auf La Gomera (ca. 2.000 €). Teilnahme: Puzzle lösen und Formular ausfüllen; tägliche Teilnahme möglich.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "brigitte-hummerfrauen-2026",
@@ -734,7 +932,16 @@
         "kostenlos"
       ],
       "addedAt": "30.07.2026",
-      "sourceId": "brigitte"
+      "sourceId": "brigitte",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 250,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 98,
+      "shortDescription": "„Die Hummerfrauen“, „Die Hummerjahre“ und eine Jochen-Schweizer Wellness-&-Urlaub-Box. Teilnahme: Puzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "rossmann-bon-chance-2026",
@@ -766,7 +973,16 @@
         "Shopping"
       ],
       "addedAt": "30.07.2026",
-      "sourceId": "rossmann"
+      "sourceId": "rossmann",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "mehrfach möglich",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 78,
+      "priority": "hoch",
+      "qualityScore": 98,
+      "shortDescription": "u. a. E-Scooter, SUPs, Mixer, Apple Watch, Reisegutscheine und Einkaufsgutscheine. Teilnahme: ROSSMANN-App; pro 5 € Einkaufswert ein Glückspunkt.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "rossmann-reisegroessen-dyson-2026",
@@ -797,7 +1013,16 @@
         "Kauf erforderlich"
       ],
       "addedAt": "30.07.2026",
-      "sourceId": "rossmann"
+      "sourceId": "rossmann",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 45,
+      "priority": "hoch",
+      "qualityScore": 98,
+      "shortDescription": "1 Dyson-Föhn in Reisegröße mit Produktpaket oder 25 Produktpakete von Wild Stripes, Tangle Teezer und NEQI. Teilnahme: ROSSMANN-App und Kauf eines teilnehmenden Reisegrößenprodukts.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "rossmann-mustang-reise-2026",
@@ -829,7 +1054,16 @@
         "hoher Wert"
       ],
       "addedAt": "30.07.2026",
-      "sourceId": "rossmann"
+      "sourceId": "rossmann",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 5000,
+      "chanceScore": 45,
+      "priority": "hoch",
+      "qualityScore": 98,
+      "shortDescription": "1 TUI-Reisegutschein über 5.000 € oder 25 MUSTANG Wild Horizon & Wild Blossom Produktpakete. Teilnahme: ROSSMANN-App und Kauf eines MUSTANG-Dufts.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "henkel-150-kinderwuensche-2026",
@@ -860,7 +1094,16 @@
         "kostenlos"
       ],
       "addedAt": "30.07.2026",
-      "sourceId": "henkel"
+      "sourceId": "henkel",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 400,
+      "chanceScore": 92,
+      "priority": "hoch",
+      "qualityScore": 96,
+      "shortDescription": "150 Kinderwünsche mit einem Erstattungswert von jeweils bis zu 75 €. Teilnahme: Teilnahmeformular ausfüllen und Kinderwunsch angeben.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-nordhorn-wiedereroeffnung-2026",
@@ -892,7 +1135,16 @@
         "vor Ort"
       ],
       "addedAt": "30.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 49,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Apple iPad (ca. 500 €), dm-Geschenkkarte 200 € und dm-Geschenkkarte 100 €. Teilnahme: Teilnahmekarte im dm-Markt Stadtring 60 in Nordhorn ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "essen-trinken-sommergewinnspiel-2026",
@@ -924,7 +1176,16 @@
         "Hauptgewinn"
       ],
       "addedAt": "30.07.2026",
-      "sourceId": "essen-und-trinken"
+      "sourceId": "essen-und-trinken",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 1500,
+      "chanceScore": 59,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Tägliche Sachpreise plus 7 Nächte auf La Gomera für 2 Personen. Teilnahme: Bilderpuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "autobild-goldener-klassiker-2026",
@@ -956,7 +1217,16 @@
         "schnell"
       ],
       "addedAt": "30.07.2026",
-      "sourceId": "autobild"
+      "sourceId": "autobild",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 20000,
+      "chanceScore": 97,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Blaupunkt Hamburg, 10 Sonax-Pflegesets und 100 Lose. Teilnahme: In fünf Kategorien abstimmen und Gewinnspielformular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "autobild-goldenes-lenkrad-kia-2026",
@@ -988,7 +1258,16 @@
         "hoher Wert"
       ],
       "addedAt": "30.07.2026",
-      "sourceId": "autobild"
+      "sourceId": "autobild",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 43100,
+      "chanceScore": 48,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Kia Sportage Plug-in Hybrid im Wert von rund 43.100 €. Teilnahme: In allen zehn Kategorien abstimmen und Gewinnspielformular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "autobild-gebrauchtwagen-abos-2026",
@@ -1019,7 +1298,16 @@
         "schnell"
       ],
       "addedAt": "30.07.2026",
-      "sourceId": "autobild"
+      "sourceId": "autobild",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 57,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "3 × AUTO BILD Jahres-Abonnement. Teilnahme: Für einen Gebrauchtwagen-Favoriten abstimmen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-glueckskind-woom-disney-2026",
@@ -1049,7 +1337,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 56,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "woom Laufrad und babylove Pants mit Disney-Motiven. Teilnahme: Mit glückskind-Konto teilnehmen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-glueckskind-penaten-biene-maja-2026",
@@ -1079,7 +1376,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Penaten-Paket rund um Die Biene Maja. Teilnahme: Mit glückskind-Konto teilnehmen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-glueckskind-stuffbag-2026",
@@ -1109,7 +1415,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Stuff-Bag Puffy groß und klein. Teilnahme: Mit glückskind-Konto teilnehmen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-glueckskind-comic-2026",
@@ -1139,7 +1454,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Aufklärungscomic-Pakete. Teilnahme: Mit glückskind-Konto teilnehmen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-glueckskind-coocazoo-2026",
@@ -1169,7 +1493,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 56,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Sporttasche und Kinder-Snackpaket. Teilnahme: Mit glückskind-Konto teilnehmen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-glueckskind-alverde-2026",
@@ -1199,7 +1532,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 120,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Naturkosmetik-Produktpaket. Teilnahme: Mit glückskind-Konto teilnehmen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-glueckskind-gruenspecht-2026",
@@ -1229,7 +1571,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Naturprodukte-Paket für Familien. Teilnahme: Mit glückskind-Konto teilnehmen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-glueckskind-hipp-stokke-2026",
@@ -1259,7 +1610,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 56,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Baby- und Kleinkindpakete plus Hochstuhl. Teilnahme: Mit glückskind-Konto teilnehmen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-glueckskind-fruchtbar-2026",
@@ -1289,7 +1649,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Kinder-Sweatshirt und FruchtBar Paket. Teilnahme: Mit glückskind-Konto teilnehmen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-glueckskind-kinderhotel-2026",
@@ -1319,7 +1688,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 1500,
+      "chanceScore": 56,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Familienurlaub in einem Original Kinderhotel Europa. Teilnahme: Mit glückskind-Konto teilnehmen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "dm-glueckskind-familienbox-2026",
@@ -1349,7 +1727,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "dm"
+      "sourceId": "dm",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "mehrfach möglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Familienbox mit Geschenken für Groß und Klein. Teilnahme: Monatliche Teilnahme mit glückskind-Konto.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "brigitte-sommer-tag-2026-07-31",
@@ -1380,7 +1767,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "brigitte"
+      "sourceId": "brigitte",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "brigitte-sommer-tag-2026-08-01",
@@ -1411,7 +1807,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "brigitte"
+      "sourceId": "brigitte",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "brigitte-sommer-tag-2026-08-02",
@@ -1442,7 +1847,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "brigitte"
+      "sourceId": "brigitte",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "brigitte-sommer-tag-2026-08-03",
@@ -1473,7 +1887,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "brigitte"
+      "sourceId": "brigitte",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "brigitte-sommer-tag-2026-08-04",
@@ -1504,7 +1927,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "brigitte"
+      "sourceId": "brigitte",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "brigitte-sommer-tag-2026-08-05",
@@ -1535,7 +1967,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "brigitte"
+      "sourceId": "brigitte",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "brigitte-sommer-tag-2026-08-06",
@@ -1566,7 +2007,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "brigitte"
+      "sourceId": "brigitte",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "brigitte-sommer-tag-2026-08-07",
@@ -1597,7 +2047,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "brigitte"
+      "sourceId": "brigitte",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "brigitte-sommer-tag-2026-08-08",
@@ -1628,7 +2087,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "brigitte"
+      "sourceId": "brigitte",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "brigitte-sommer-tag-2026-08-09",
@@ -1659,7 +2127,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "brigitte"
+      "sourceId": "brigitte",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "eut-sommer-tag-2026-07-31",
@@ -1690,7 +2167,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "essen-trinken"
+      "sourceId": "essen-trinken",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "eut-sommer-tag-2026-08-01",
@@ -1721,7 +2207,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "essen-trinken"
+      "sourceId": "essen-trinken",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "eut-sommer-tag-2026-08-02",
@@ -1752,7 +2247,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "essen-trinken"
+      "sourceId": "essen-trinken",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "eut-sommer-tag-2026-08-03",
@@ -1783,7 +2287,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "essen-trinken"
+      "sourceId": "essen-trinken",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "eut-sommer-tag-2026-08-04",
@@ -1814,7 +2327,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "essen-trinken"
+      "sourceId": "essen-trinken",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "eut-sommer-tag-2026-08-05",
@@ -1845,7 +2367,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "essen-trinken"
+      "sourceId": "essen-trinken",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "eut-sommer-tag-2026-08-06",
@@ -1876,7 +2407,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "essen-trinken"
+      "sourceId": "essen-trinken",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "eut-sommer-tag-2026-08-07",
@@ -1907,7 +2447,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "essen-trinken"
+      "sourceId": "essen-trinken",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "eut-sommer-tag-2026-08-08",
@@ -1938,7 +2487,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "essen-trinken"
+      "sourceId": "essen-trinken",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "eut-sommer-tag-2026-08-09",
@@ -1969,7 +2527,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "essen-trinken"
+      "sourceId": "essen-trinken",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Tagespreis. Teilnahme: Tagespuzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "moviebreak-toy-story-5-2026",
@@ -1999,7 +2566,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "moviebreak"
+      "sourceId": "moviebreak",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Fan-Paket mit Flasche, Stickern und Figuren. Teilnahme: Kommentar oder E-Mail zur Gewinnfrage.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "moviebreak-jackie-brown-2026",
@@ -2029,7 +2605,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "moviebreak"
+      "sourceId": "moviebreak",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 53,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "2 Blu-ray-Exemplare. Teilnahme: Kommentar oder E-Mail zur Gewinnfrage.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "moviebreak-how-to-make-a-killing-2026",
@@ -2059,7 +2644,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "moviebreak"
+      "sourceId": "moviebreak",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 53,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "2 Exemplare auf 4K Ultra HD. Teilnahme: Kommentar oder E-Mail zur Gewinnfrage.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "moviebreak-paw-patrol-dino-2026",
@@ -2089,7 +2683,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "moviebreak"
+      "sourceId": "moviebreak",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 53,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "2 Fan-Pakete mit Kinokarten und Rucksack. Teilnahme: Kommentar oder E-Mail zur Gewinnfrage.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "moviebreak-sweet-lowdown-2026",
@@ -2119,7 +2722,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "moviebreak"
+      "sourceId": "moviebreak",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "DVD des Woody-Allen-Films. Teilnahme: Kommentar oder E-Mail zur Gewinnfrage.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "freundin-hohenwart-2026",
@@ -2149,7 +2761,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "freundin"
+      "sourceId": "freundin",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 1500,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Übernachtungen für 2 Personen. Teilnahme: Gewinnspielformular mit passendem Stichwort ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "freundin-columbia-wanderschuhe-2026",
@@ -2179,7 +2800,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "freundin"
+      "sourceId": "freundin",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 150,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wanderschuhe von Columbia. Teilnahme: Gewinnspielformular mit passendem Stichwort ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "freundin-uvex-reithelm-2026",
@@ -2209,7 +2839,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "freundin"
+      "sourceId": "freundin",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Reithelm von Uvex. Teilnahme: Gewinnspielformular mit passendem Stichwort ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "freundin-microplane-bartool-2026",
@@ -2239,7 +2878,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "freundin"
+      "sourceId": "freundin",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 350,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Bartool-Set von Microplane. Teilnahme: Gewinnspielformular mit passendem Stichwort ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "freundin-kreuzwortraetsel-18-2026",
@@ -2269,7 +2917,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "freundin"
+      "sourceId": "freundin",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 56,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "500 € Bargeld. Teilnahme: Lösungswort aus Heft 18/2026 eintragen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "gala-apache-extra-2026",
@@ -2299,7 +2956,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "gala"
+      "sourceId": "gala",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 58,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "4 × 2 Tickets plus EXTRA PLUS Box. Teilnahme: Gewinnspielformular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "gala-klagenfurt-2026",
@@ -2329,7 +2995,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "gala"
+      "sourceId": "gala",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 1500,
+      "chanceScore": 52,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "3 Übernachtungen mit Frühstück für 2. Teilnahme: Puzzle lösen und Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "autobild-cockpit-nuerburgring-2026",
@@ -2359,7 +3034,16 @@
         "neu"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "autobild"
+      "sourceId": "autobild",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 20000,
+      "chanceScore": 56,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Exklusiver Platz im Cockpit. Teilnahme: AUTO BILD CLUB Formular ausfüllen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "gala-sommer-tag-2026-08-01",
@@ -2390,7 +3074,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "gala"
+      "sourceId": "gala",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Sommer-Tagespreis. Teilnahme: Tagesgewinnspiel öffnen und teilnehmen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "gala-sommer-tag-2026-08-02",
@@ -2421,7 +3114,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "gala"
+      "sourceId": "gala",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Sommer-Tagespreis. Teilnahme: Tagesgewinnspiel öffnen und teilnehmen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "gala-sommer-tag-2026-08-03",
@@ -2452,7 +3154,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "gala"
+      "sourceId": "gala",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Sommer-Tagespreis. Teilnahme: Tagesgewinnspiel öffnen und teilnehmen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "gala-sommer-tag-2026-08-04",
@@ -2483,7 +3194,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "gala"
+      "sourceId": "gala",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Sommer-Tagespreis. Teilnahme: Tagesgewinnspiel öffnen und teilnehmen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "gala-sommer-tag-2026-08-05",
@@ -2514,7 +3234,16 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "gala"
+      "sourceId": "gala",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Sommer-Tagespreis. Teilnahme: Tagesgewinnspiel öffnen und teilnehmen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     },
     {
       "id": "gala-sommer-tag-2026-08-06",
@@ -2545,15 +3274,748 @@
         "Tagespreis"
       ],
       "addedAt": "31.07.2026",
-      "sourceId": "gala"
+      "sourceId": "gala",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 56,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Wechselnder Sommer-Tagespreis. Teilnahme: Tagesgewinnspiel öffnen und teilnehmen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
+    },
+    {
+      "id": "freundin-samantha-hayes-2026",
+      "title": "Thrillerpaket & 300-€-Erlebnisgutschein",
+      "provider": "freundin / dtv",
+      "prize": "Bücher „Eine von uns“ und „Eine zu viel“ plus 300-€-Jochen-Schweizer-Gutschein",
+      "url": "https://www.freundin.de/lifestyle/gewinnspiele/manche-geheimnisse-sterben-nicht-toeten",
+      "category": "Bücher",
+      "country": "Deutschland",
+      "deadline": "13.08.2026",
+      "winners": 1,
+      "new": true,
+      "daily": false,
+      "international": false,
+      "requirements": "Onlineformular; Mindestalter 18 Jahre",
+      "purchaseRequired": false,
+      "receiptRequired": false,
+      "winnerKnown": true,
+      "verified": "31.07.2026",
+      "providerTrust": 5,
+      "effort": 2,
+      "entryType": "form",
+      "multipleEntry": false,
+      "highValuePrize": true,
+      "tags": [
+        "Bücher",
+        "Gutschein",
+        "hochwertig"
+      ],
+      "addedAt": "31.07.2026",
+      "sourceId": "freundin",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 52,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Bücher „Eine von uns“ und „Eine zu viel“ plus 300-€-Jochen-Schweizer-Gutschein. Teilnahme: Onlineformular; Mindestalter 18 Jahre.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
+    },
+    {
+      "id": "freundin-tracys-dog-og3-2026",
+      "title": "5 OG-3 Wellnessgeräte gewinnen",
+      "provider": "freundin / Tracy’s Dog",
+      "prize": "5 × OG-3 3-in-1-Wellnessgerät",
+      "url": "https://www.freundin.de/lifestyle/gewinnspiele/mehr-wohlbefinden-fuer-persoenliche-auszeit",
+      "category": "Beauty",
+      "country": "Deutschland",
+      "deadline": "01.08.2026",
+      "winners": 5,
+      "new": true,
+      "daily": false,
+      "international": false,
+      "requirements": "Onlineformular; Mindestalter 18 Jahre",
+      "purchaseRequired": false,
+      "receiptRequired": false,
+      "winnerKnown": true,
+      "verified": "31.07.2026",
+      "providerTrust": 5,
+      "effort": 2,
+      "entryType": "form",
+      "multipleEntry": false,
+      "highValuePrize": false,
+      "tags": [
+        "Beauty",
+        "Wellness",
+        "5 Gewinner"
+      ],
+      "addedAt": "31.07.2026",
+      "sourceId": "freundin",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 120,
+      "chanceScore": 54,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "5 × OG-3 3-in-1-Wellnessgerät. Teilnahme: Onlineformular; Mindestalter 18 Jahre.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
+    },
+    {
+      "id": "freundin-budersand-2026",
+      "title": "Luxus-Auszeit auf Sylt",
+      "provider": "freundin",
+      "prize": "Aufenthalt im Budersand Hotel – Golf & Spa – Sylt",
+      "url": "https://www.freundin.de/lifestyle/gewinnspiele/gewinnspiele-heft-16172026-freundinde",
+      "category": "Reisen",
+      "country": "Deutschland",
+      "deadline": "31.07.2026",
+      "winners": 1,
+      "new": true,
+      "daily": false,
+      "international": false,
+      "requirements": "Onlineformular oder Postkarte; Wohnsitz DE/AT/CH; ab 18",
+      "purchaseRequired": false,
+      "receiptRequired": false,
+      "winnerKnown": true,
+      "verified": "31.07.2026",
+      "providerTrust": 5,
+      "effort": 2,
+      "entryType": "form",
+      "multipleEntry": false,
+      "highValuePrize": true,
+      "tags": [
+        "Reisen",
+        "Heftgewinnspiel",
+        "DE/AT/CH"
+      ],
+      "addedAt": "31.07.2026",
+      "sourceId": "freundin",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 1500,
+      "chanceScore": 52,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Aufenthalt im Budersand Hotel – Golf & Spa – Sylt. Teilnahme: Onlineformular oder Postkarte; Wohnsitz DE/AT/CH; ab 18.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
+    },
+    {
+      "id": "freundin-eufy-maehroboter-2026",
+      "title": "eufy Mähroboter gewinnen",
+      "provider": "freundin",
+      "prize": "Premium-Mähroboter von eufy",
+      "url": "https://www.freundin.de/lifestyle/gewinnspiele/gewinnspiele-heft-16172026-freundinde",
+      "category": "Garten",
+      "country": "Deutschland",
+      "deadline": "31.07.2026",
+      "winners": 1,
+      "new": true,
+      "daily": false,
+      "international": false,
+      "requirements": "Onlineformular oder Postkarte; Wohnsitz DE/AT/CH; ab 18",
+      "purchaseRequired": false,
+      "receiptRequired": false,
+      "winnerKnown": true,
+      "verified": "31.07.2026",
+      "providerTrust": 5,
+      "effort": 2,
+      "entryType": "form",
+      "multipleEntry": false,
+      "highValuePrize": true,
+      "tags": [
+        "Garten",
+        "Heftgewinnspiel",
+        "DE/AT/CH"
+      ],
+      "addedAt": "31.07.2026",
+      "sourceId": "freundin",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 52,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Premium-Mähroboter von eufy. Teilnahme: Onlineformular oder Postkarte; Wohnsitz DE/AT/CH; ab 18.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
+    },
+    {
+      "id": "freundin-hurom-entsafter-2026",
+      "title": "Hurom Premium-Entsafter",
+      "provider": "freundin",
+      "prize": "Premium-Entsafter von Hurom",
+      "url": "https://www.freundin.de/lifestyle/gewinnspiele/gewinnspiele-heft-16172026-freundinde",
+      "category": "Haushalt",
+      "country": "Deutschland",
+      "deadline": "31.07.2026",
+      "winners": 1,
+      "new": true,
+      "daily": false,
+      "international": false,
+      "requirements": "Onlineformular oder Postkarte; Wohnsitz DE/AT/CH; ab 18",
+      "purchaseRequired": false,
+      "receiptRequired": false,
+      "winnerKnown": true,
+      "verified": "31.07.2026",
+      "providerTrust": 5,
+      "effort": 2,
+      "entryType": "form",
+      "multipleEntry": false,
+      "highValuePrize": true,
+      "tags": [
+        "Haushalt",
+        "Heftgewinnspiel",
+        "DE/AT/CH"
+      ],
+      "addedAt": "31.07.2026",
+      "sourceId": "freundin",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 52,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Premium-Entsafter von Hurom. Teilnahme: Onlineformular oder Postkarte; Wohnsitz DE/AT/CH; ab 18.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
+    },
+    {
+      "id": "freundin-vanessa-mai-tickets-2026",
+      "title": "Vanessa-Mai-Konzerttickets",
+      "provider": "freundin",
+      "prize": "Konzerttickets für Vanessa Mai",
+      "url": "https://www.freundin.de/lifestyle/gewinnspiele/gewinnspiele-heft-16172026-freundinde",
+      "category": "Events",
+      "country": "Deutschland",
+      "deadline": "31.07.2026",
+      "winners": 1,
+      "new": true,
+      "daily": false,
+      "international": false,
+      "requirements": "Onlineformular oder Postkarte; Wohnsitz DE/AT/CH; ab 18",
+      "purchaseRequired": false,
+      "receiptRequired": false,
+      "winnerKnown": true,
+      "verified": "31.07.2026",
+      "providerTrust": 5,
+      "effort": 2,
+      "entryType": "form",
+      "multipleEntry": false,
+      "highValuePrize": false,
+      "tags": [
+        "Events",
+        "Heftgewinnspiel",
+        "DE/AT/CH"
+      ],
+      "addedAt": "31.07.2026",
+      "sourceId": "freundin",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 180,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Konzerttickets für Vanessa Mai. Teilnahme: Onlineformular oder Postkarte; Wohnsitz DE/AT/CH; ab 18.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
+    },
+    {
+      "id": "freundin-skechers-gutscheine-2026",
+      "title": "Skechers Shopping-Gutscheine",
+      "provider": "freundin",
+      "prize": "Shopping-Gutscheine von Skechers",
+      "url": "https://www.freundin.de/lifestyle/gewinnspiele/gewinnspiele-heft-16172026-freundinde",
+      "category": "Mode",
+      "country": "Deutschland",
+      "deadline": "31.07.2026",
+      "winners": null,
+      "new": true,
+      "daily": false,
+      "international": false,
+      "requirements": "Onlineformular oder Postkarte; Wohnsitz DE/AT/CH; ab 18",
+      "purchaseRequired": false,
+      "receiptRequired": false,
+      "winnerKnown": false,
+      "verified": "31.07.2026",
+      "providerTrust": 5,
+      "effort": 2,
+      "entryType": "form",
+      "multipleEntry": false,
+      "highValuePrize": false,
+      "tags": [
+        "Mode",
+        "Heftgewinnspiel",
+        "DE/AT/CH"
+      ],
+      "addedAt": "31.07.2026",
+      "sourceId": "freundin",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 150,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 98,
+      "shortDescription": "Shopping-Gutscheine von Skechers. Teilnahme: Onlineformular oder Postkarte; Wohnsitz DE/AT/CH; ab 18.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
+    },
+    {
+      "id": "freundin-merach-indoorbike-2026",
+      "title": "Merach Premium-Indoorbike",
+      "provider": "freundin",
+      "prize": "Premium-Indoorbike von Merach",
+      "url": "https://www.freundin.de/lifestyle/gewinnspiele/gewinnspiele-heft-16172026-freundinde",
+      "category": "Fitness",
+      "country": "Deutschland",
+      "deadline": "31.07.2026",
+      "winners": 1,
+      "new": true,
+      "daily": false,
+      "international": false,
+      "requirements": "Onlineformular oder Postkarte; Wohnsitz DE/AT/CH; ab 18",
+      "purchaseRequired": false,
+      "receiptRequired": false,
+      "winnerKnown": true,
+      "verified": "31.07.2026",
+      "providerTrust": 5,
+      "effort": 2,
+      "entryType": "form",
+      "multipleEntry": false,
+      "highValuePrize": true,
+      "tags": [
+        "Fitness",
+        "Heftgewinnspiel",
+        "DE/AT/CH"
+      ],
+      "addedAt": "31.07.2026",
+      "sourceId": "freundin",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 52,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Premium-Indoorbike von Merach. Teilnahme: Onlineformular oder Postkarte; Wohnsitz DE/AT/CH; ab 18.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
+    },
+    {
+      "id": "freundin-tonzhaus-2026",
+      "title": "Traumtage im Hotel Tonzhaus",
+      "provider": "freundin",
+      "prize": "Aufenthalt im Hotel Tonzhaus in Südtirol",
+      "url": "https://www.freundin.de/lifestyle/gewinnspiele/gewinnspiele-heft-16172026-freundinde",
+      "category": "Reisen",
+      "country": "Deutschland",
+      "deadline": "31.07.2026",
+      "winners": 1,
+      "new": true,
+      "daily": false,
+      "international": false,
+      "requirements": "Onlineformular oder Postkarte; Wohnsitz DE/AT/CH; ab 18",
+      "purchaseRequired": false,
+      "receiptRequired": false,
+      "winnerKnown": true,
+      "verified": "31.07.2026",
+      "providerTrust": 5,
+      "effort": 2,
+      "entryType": "form",
+      "multipleEntry": false,
+      "highValuePrize": true,
+      "tags": [
+        "Reisen",
+        "Heftgewinnspiel",
+        "DE/AT/CH"
+      ],
+      "addedAt": "31.07.2026",
+      "sourceId": "freundin",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 1500,
+      "chanceScore": 52,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Aufenthalt im Hotel Tonzhaus in Südtirol. Teilnahme: Onlineformular oder Postkarte; Wohnsitz DE/AT/CH; ab 18.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
+    },
+    {
+      "id": "gala-sommer-tag-2026-08-07",
+      "title": "GALA Sommergewinnspiel – Tageschance 07.08.2026",
+      "provider": "GALA",
+      "prize": "Tagespreis des GALA Sommergewinnspiels",
+      "url": "https://www.gala.de/lifestyle/gewinnspiele/sommergewinnspiel-2026-bei-gala-24638956.html",
+      "category": "Lifestyle",
+      "country": "Deutschland",
+      "deadline": "07.08.2026",
+      "winners": 1,
+      "new": true,
+      "daily": true,
+      "international": false,
+      "requirements": "Interaktives Online-Gewinnspiel",
+      "purchaseRequired": false,
+      "receiptRequired": false,
+      "winnerKnown": true,
+      "verified": "31.07.2026",
+      "providerTrust": 5,
+      "effort": 2,
+      "entryType": "game",
+      "multipleEntry": true,
+      "highValuePrize": false,
+      "tags": [
+        "Tageschance",
+        "Sommer",
+        "GALA"
+      ],
+      "addedAt": "31.07.2026",
+      "sourceId": "gala",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Tagespreis des GALA Sommergewinnspiels. Teilnahme: Interaktives Online-Gewinnspiel.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
+    },
+    {
+      "id": "gala-sommer-tag-2026-08-08",
+      "title": "GALA Sommergewinnspiel – Tageschance 08.08.2026",
+      "provider": "GALA",
+      "prize": "Tagespreis des GALA Sommergewinnspiels",
+      "url": "https://www.gala.de/lifestyle/gewinnspiele/sommergewinnspiel-2026-bei-gala-24638956.html",
+      "category": "Lifestyle",
+      "country": "Deutschland",
+      "deadline": "08.08.2026",
+      "winners": 1,
+      "new": true,
+      "daily": true,
+      "international": false,
+      "requirements": "Interaktives Online-Gewinnspiel",
+      "purchaseRequired": false,
+      "receiptRequired": false,
+      "winnerKnown": true,
+      "verified": "31.07.2026",
+      "providerTrust": 5,
+      "effort": 2,
+      "entryType": "game",
+      "multipleEntry": true,
+      "highValuePrize": false,
+      "tags": [
+        "Tageschance",
+        "Sommer",
+        "GALA"
+      ],
+      "addedAt": "31.07.2026",
+      "sourceId": "gala",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Tagespreis des GALA Sommergewinnspiels. Teilnahme: Interaktives Online-Gewinnspiel.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
+    },
+    {
+      "id": "gala-sommer-tag-2026-08-09",
+      "title": "GALA Sommergewinnspiel – Tageschance 09.08.2026",
+      "provider": "GALA",
+      "prize": "Tagespreis des GALA Sommergewinnspiels",
+      "url": "https://www.gala.de/lifestyle/gewinnspiele/sommergewinnspiel-2026-bei-gala-24638956.html",
+      "category": "Lifestyle",
+      "country": "Deutschland",
+      "deadline": "09.08.2026",
+      "winners": 1,
+      "new": true,
+      "daily": true,
+      "international": false,
+      "requirements": "Interaktives Online-Gewinnspiel",
+      "purchaseRequired": false,
+      "receiptRequired": false,
+      "winnerKnown": true,
+      "verified": "31.07.2026",
+      "providerTrust": 5,
+      "effort": 2,
+      "entryType": "game",
+      "multipleEntry": true,
+      "highValuePrize": false,
+      "tags": [
+        "Tageschance",
+        "Sommer",
+        "GALA"
+      ],
+      "addedAt": "31.07.2026",
+      "sourceId": "gala",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "täglich",
+      "estimatedPrizeValue": 200,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "Tagespreis des GALA Sommergewinnspiels. Teilnahme: Interaktives Online-Gewinnspiel.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
+    },
+    {
+      "id": "rossmann-reisegroessen-sammel-2026",
+      "title": "Dyson-Reiseföhn oder 25 Beauty-Pakete",
+      "provider": "ROSSMANN / New Flag",
+      "prize": "1 Dyson-Föhn in Reisegröße plus Paket oder 25 Produktpakete",
+      "url": "https://www.rossmann.de/de/service-und-hilfe/app-gewinnspiel",
+      "category": "Beauty",
+      "country": "Deutschland",
+      "deadline": "09.08.2026",
+      "winners": 26,
+      "new": true,
+      "daily": false,
+      "international": false,
+      "requirements": "ROSSMANN-App, Registrierung und Kauf eines teilnehmenden Reisegrößenprodukts",
+      "purchaseRequired": true,
+      "receiptRequired": true,
+      "winnerKnown": true,
+      "verified": "31.07.2026",
+      "providerTrust": 5,
+      "effort": 3,
+      "entryType": "app",
+      "multipleEntry": false,
+      "highValuePrize": true,
+      "tags": [
+        "Beauty",
+        "26 Gewinner",
+        "App",
+        "Kauf erforderlich"
+      ],
+      "addedAt": "31.07.2026",
+      "sourceId": "rossmann",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 45,
+      "priority": "hoch",
+      "qualityScore": 98,
+      "shortDescription": "1 Dyson-Föhn in Reisegröße plus Paket oder 25 Produktpakete. Teilnahme: ROSSMANN-App, Registrierung und Kauf eines teilnehmenden Reisegrößenprodukts.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
+    },
+    {
+      "id": "swr1-perfekter-tag-weinheim-2026",
+      "title": "Der perfekte Tag in Weinheim",
+      "provider": "SWR1 Baden-Württemberg",
+      "prize": "Erlebnistag in Weinheim",
+      "url": "https://www.swr.de/swr1/bw/der-perfekte-tag-2026-in-weinheim-100.html",
+      "category": "Erlebnisse",
+      "country": "Deutschland",
+      "deadline": "24.08.2026",
+      "winners": 1,
+      "new": true,
+      "daily": false,
+      "international": false,
+      "requirements": "Bewerbung über das Onlineformular",
+      "purchaseRequired": false,
+      "receiptRequired": false,
+      "winnerKnown": true,
+      "verified": "31.07.2026",
+      "providerTrust": 5,
+      "effort": 2,
+      "entryType": "form",
+      "multipleEntry": false,
+      "highValuePrize": true,
+      "tags": [
+        "Regional",
+        "Erlebnistag",
+        "Baden-Württemberg"
+      ],
+      "addedAt": "31.07.2026",
+      "sourceId": "swr1",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 52,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Erlebnistag in Weinheim. Teilnahme: Bewerbung über das Onlineformular.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
+    },
+    {
+      "id": "swr4-johnny-logan-2026",
+      "title": "10 × 2 Tickets für Johnny Logan",
+      "provider": "SWR4",
+      "prize": "10 × 2 Tickets für Johnny Logan am 4. September in Wörth",
+      "url": "https://www.swr.de/swr4/programm/gewinnspiel-teilnahmebedingungen-kershaw-logan-whatsapp-100.pdf",
+      "category": "Events",
+      "country": "Deutschland",
+      "deadline": "07.08.2026",
+      "winners": 10,
+      "new": true,
+      "daily": false,
+      "international": false,
+      "requirements": "Link nur über den SWR4-WhatsApp-Kanal; ab 18",
+      "purchaseRequired": false,
+      "receiptRequired": false,
+      "winnerKnown": true,
+      "verified": "31.07.2026",
+      "providerTrust": 5,
+      "effort": 3,
+      "entryType": "messenger",
+      "multipleEntry": false,
+      "highValuePrize": false,
+      "tags": [
+        "Konzert",
+        "10 Gewinner",
+        "WhatsApp"
+      ],
+      "addedAt": "31.07.2026",
+      "sourceId": "swr4",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 180,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "10 × 2 Tickets für Johnny Logan am 4. September in Wörth. Teilnahme: Link nur über den SWR4-WhatsApp-Kanal; ab 18.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
+    },
+    {
+      "id": "swr4-nik-kershaw-2026",
+      "title": "10 × 2 Tickets für Nik Kershaw",
+      "provider": "SWR4",
+      "prize": "10 × 2 Tickets für Nik Kershaw am 6. September in Wörth",
+      "url": "https://www.swr.de/swr4/programm/gewinnspiel-teilnahmebedingungen-kershaw-logan-whatsapp-100.pdf",
+      "category": "Events",
+      "country": "Deutschland",
+      "deadline": "07.08.2026",
+      "winners": 10,
+      "new": true,
+      "daily": false,
+      "international": false,
+      "requirements": "Link nur über den SWR4-WhatsApp-Kanal; ab 18",
+      "purchaseRequired": false,
+      "receiptRequired": false,
+      "winnerKnown": true,
+      "verified": "31.07.2026",
+      "providerTrust": 5,
+      "effort": 3,
+      "entryType": "messenger",
+      "multipleEntry": false,
+      "highValuePrize": false,
+      "tags": [
+        "Konzert",
+        "10 Gewinner",
+        "WhatsApp"
+      ],
+      "addedAt": "31.07.2026",
+      "sourceId": "swr4",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 180,
+      "chanceScore": 52,
+      "priority": "mittel",
+      "qualityScore": 100,
+      "shortDescription": "10 × 2 Tickets für Nik Kershaw am 6. September in Wörth. Teilnahme: Link nur über den SWR4-WhatsApp-Kanal; ab 18.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
+    },
+    {
+      "id": "payback-pay-punktechance-2026",
+      "title": "PAYBACK PAY Punktechance",
+      "provider": "PAYBACK",
+      "prize": "Sofortpunkte und möglicher Hauptgewinn in Punkten",
+      "url": "https://www.payback.de/aktion/pay-punktechance",
+      "category": "Shopping",
+      "country": "Deutschland",
+      "deadline": "30.08.2026",
+      "winners": null,
+      "new": true,
+      "daily": false,
+      "international": false,
+      "requirements": "Mit PAYBACK PAY bei teilnehmenden Partnern zahlen und digitales Los öffnen",
+      "purchaseRequired": true,
+      "receiptRequired": false,
+      "winnerKnown": false,
+      "verified": "31.07.2026",
+      "providerTrust": 5,
+      "effort": 2,
+      "entryType": "app",
+      "multipleEntry": true,
+      "highValuePrize": true,
+      "tags": [
+        "PAYBACK",
+        "Sofortgewinn",
+        "mehrfach",
+        "Kauf erforderlich"
+      ],
+      "addedAt": "31.07.2026",
+      "sourceId": "payback",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "mehrfach möglich",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 37,
+      "priority": "hoch",
+      "qualityScore": 93,
+      "shortDescription": "Sofortpunkte und möglicher Hauptgewinn in Punkten. Teilnahme: Mit PAYBACK PAY bei teilnehmenden Partnern zahlen und digitales Los öffnen.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
+    },
+    {
+      "id": "rossmann-naturkinder-projekte-2026",
+      "title": "23 Naturkinder-Projekte gewinnen",
+      "provider": "ROSSMANN / Henkel",
+      "prize": "Förderung für 23 ausgewählte Naturkinder-Projekte",
+      "url": "https://naturkinder.henkel.com/",
+      "category": "Familie",
+      "country": "Deutschland",
+      "deadline": "30.09.2026",
+      "winners": 23,
+      "new": true,
+      "daily": false,
+      "international": false,
+      "requirements": "Projekt über das Teilnahmeformular einreichen; ab 18",
+      "purchaseRequired": false,
+      "receiptRequired": false,
+      "winnerKnown": true,
+      "verified": "31.07.2026",
+      "providerTrust": 5,
+      "effort": 4,
+      "entryType": "form",
+      "multipleEntry": false,
+      "highValuePrize": true,
+      "tags": [
+        "Familie",
+        "Projekt",
+        "23 Gewinner",
+        "Kreativ"
+      ],
+      "addedAt": "31.07.2026",
+      "sourceId": "rossmann",
+      "deEligibility": "bestätigt",
+      "participationFrequency": "einmalig",
+      "estimatedPrizeValue": 750,
+      "chanceScore": 54,
+      "priority": "hoch",
+      "qualityScore": 100,
+      "shortDescription": "Förderung für 23 ausgewählte Naturkinder-Projekte. Teilnahme: Projekt über das Teilnahmeformular einreichen; ab 18.",
+      "dataCompleteness": 100,
+      "lastVerified": "31.07.2026"
     }
   ],
   "appName": "Win Win",
   "quality": {
-    "total": 82,
-    "newInRelease": 50,
+    "total": 100,
+    "newInRelease": 18,
+    "enrichedInRelease": 100,
     "verifiedOn": "31.07.2026",
-    "focus": "aktuelle Gewinnspiele und tägliche Chancen"
+    "focus": "100 vollständig angereicherte Gewinnspiele"
   },
   "lastChecked": "2026-07-31"
 }

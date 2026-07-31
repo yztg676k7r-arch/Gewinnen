@@ -1,3 +1,7 @@
+## Version 4.7 – 100 angereicherte Gewinnspiele
+
+Katalog mit 100 vollständig angereicherten Einträgen. 18 neue Gewinnspiele und einheitliche Qualitäts-, Chancen- und Prioritätsfelder.
+
 # Win Win 4.6.2
 
 Persönliche, kostenlose PWA zur Verwaltung und Priorisierung von Gewinnspielen.
