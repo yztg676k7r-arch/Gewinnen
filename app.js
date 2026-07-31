@@ -1,5 +1,5 @@
 
-const APP_VERSION='5.2';
+const APP_VERSION='5.3';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=3;
@@ -24,6 +24,10 @@ let sources=[];
 let sourceDataVersion='–';
 let sourceFilters={search:'',country:'',type:'',automation:'',review:'',sort:'priority'};
 let sourceRenderLimit=30;
+const DISCOVER_PAGE_SIZE=30;
+let discoverRenderLimit=DISCOVER_PAGE_SIZE;
+let discoverSearchTimer=null;
+const searchTextCache=new Map();
 let pendingSourceImport=null;
 let sourceQueue=null;
 let hitInbox=[];
@@ -437,14 +441,14 @@ function renderDailyDriverStatus(){
  const h=catalogHealth(),age=backupAgeDays(),session=currentDailySession(),today=dayKey();
  const done=contests.filter(i=>participatedOn(i.id,today)).length;
  const issues=h.invalid+h.stale;
- box.innerHTML=`<div class="daily-driver-head"><div><p class="section-kicker">DAILY DRIVER 5.2</p><h3>${done?`${done} heute erledigt`:'Bereit für deine Tagesrunde'}</h3><p>${h.active} aktive Gewinnspiele · ${h.ending} enden in 7 Tagen · ${contests.filter(isRepeatable).length} wiederholbar</p></div><button type="button" onclick="openView('todayView')">Tagesmodus öffnen</button></div><div class="daily-driver-checks"><span class="${usingFallback?'warn':'ok'}">${usingFallback?'⚠ Notfalldaten':'✓ Katalog geladen'}</span><span class="${issues?'warn':'ok'}">${issues?`⚠ ${issues} Prüfpunkte`:'✓ Datencheck sauber'}</span><span class="${age>14?'warn':'ok'}">${age>14?'⚠ Sicherung empfohlen':`✓ Sicherung ${age===0?'heute':`vor ${age} Tagen`}`}</span></div>`;
+ box.innerHTML=`<div class="daily-driver-head"><div><p class="section-kicker">DAILY DRIVER 5.3</p><h3>${done?`${done} heute erledigt`:'Bereit für deine Tagesrunde'}</h3><p>${h.active} aktive Gewinnspiele · ${h.ending} enden in 7 Tagen · ${contests.filter(isRepeatable).length} wiederholbar</p></div><button type="button" onclick="openView('todayView')">Tagesmodus öffnen</button></div><div class="daily-driver-checks"><span class="${usingFallback?'warn':'ok'}">${usingFallback?'⚠ Notfalldaten':'✓ Katalog geladen'}</span><span class="${issues?'warn':'ok'}">${issues?`⚠ ${issues} Prüfpunkte`:'✓ Datencheck sauber'}</span><span class="${age>14?'warn':'ok'}">${age>14?'⚠ Sicherung empfohlen':`✓ Sicherung ${age===0?'heute':`vor ${age} Tagen`}`}</span></div>`;
 }
 function renderSystemCheck50(){
  const box=$('#systemCheck50');if(!box)return;
  const h=catalogHealth(),age=backupAgeDays();
  const state=h.invalid?'error':h.stale?'warn':'good';
  box.className=`system-check-50 ${state}`;
- box.innerHTML=`<div><p class="section-kicker">SYSTEMCHECK 5.2</p><h3>${h.invalid?'Handlungsbedarf':h.stale?'Katalogpflege empfohlen':'Daily Driver bereit'}</h3><p>${h.total} Einträge geprüft. Persönliche Statusdaten liegen getrennt vom Katalog und bleiben bei Updates erhalten.</p></div><div class="system-check-grid"><div><strong>${h.active}</strong><span>aktiv</span></div><div><strong>${h.ending}</strong><span>endet bald</span></div><div><strong>${h.expired}</strong><span>abgelaufen</span></div><div><strong>${h.stale}</strong><span>älter als 21 Tage</span></div><div><strong>${h.invalid}</strong><span>fehlerhaft</span></div><div><strong>${age>365?'–':age}</strong><span>Tage seit Sicherung</span></div></div>`;
+ box.innerHTML=`<div><p class="section-kicker">SYSTEMCHECK 5.3</p><h3>${h.invalid?'Handlungsbedarf':h.stale?'Katalogpflege empfohlen':'Daily Driver bereit'}</h3><p>${h.total} Einträge geprüft. Persönliche Statusdaten liegen getrennt vom Katalog und bleiben bei Updates erhalten.</p></div><div class="system-check-grid"><div><strong>${h.active}</strong><span>aktiv</span></div><div><strong>${h.ending}</strong><span>endet bald</span></div><div><strong>${h.expired}</strong><span>abgelaufen</span></div><div><strong>${h.stale}</strong><span>älter als 21 Tage</span></div><div><strong>${h.invalid}</strong><span>fehlerhaft</span></div><div><strong>${age>365?'–':age}</strong><span>Tage seit Sicherung</span></div></div>`;
 }
 window.openView=openView;
 function renderMetrics(){
@@ -464,7 +468,12 @@ function renderHome(){
  $('#endingCarousel').innerHTML=a.filter(i=>daysLeft(i)<=7).sort((x,y)=>daysLeft(x)-daysLeft(y)).slice(0,6).map(mini).join('')||empty('In den nächsten sieben Tagen endet nichts.');
  $('#heroTitle').textContent=picks.length?`${picks.length} Gewinnspiele lohnen sich heute.`:'Die besten Chancen auf einen Blick.';
 }
-function normalizedSearchText(i){return [i.title,i.provider,i.prize,i.category,i.country,i.region,i.requirements,i.note,...(i.tags||[])].filter(Boolean).join(' ').toLocaleLowerCase('de-DE')}
+function normalizedSearchText(i){
+ const key=String(i.id||i.url||i.title||'');
+ const cached=searchTextCache.get(key);if(cached)return cached;
+ const value=[i.title,i.provider,i.prize,i.category,i.country,i.region,i.requirements,i.note,...(i.tags||[])].filter(Boolean).join(' ').toLocaleLowerCase('de-DE');
+ searchTextCache.set(key,value);return value;
+}
 function passesAdvancedFilters(i){
  const f=advancedFilters||{};
  if(f.entryType&&String(i.entryType||'').toLowerCase()!==f.entryType)return false;
@@ -492,8 +501,20 @@ function syncFilterUI(){
  const labels=activeFilterLabels(),count=labels.length;const badge=$('#activeFilterCount');if(badge){badge.textContent=String(count);badge.dataset.zero=String(count===0)}
  const summary=$('#activeFilterSummary');if(summary)summary.textContent=count?`Aktiv: ${labels.join(' · ')}`:'Keine Zusatzfilter aktiv.';
 }
-function saveAdvancedFilters(){localStorage.setItem(FILTER_STORAGE_KEY,JSON.stringify(advancedFilters));syncFilterUI();renderDiscover()}
-function renderDiscover(){const l=discoverItems();const extra=activeFilterLabels().length;$('#resultCount').textContent=`${l.length} Ergebnis${l.length===1?'':'se'}${extra?` · ${extra} Filter`:''}`;$('#contestList').innerHTML=l.map(full).join('')||empty('Keine passenden aktiven Gewinnspiele gefunden. Passe Suche oder Filter an.')}
+function saveAdvancedFilters(){discoverRenderLimit=DISCOVER_PAGE_SIZE;localStorage.setItem(FILTER_STORAGE_KEY,JSON.stringify(advancedFilters));syncFilterUI();renderDiscover()}
+function renderCategoryQuickFilters(){
+ const box=$('#categoryQuickFilters');if(!box)return;
+ const counts={};scored().filter(isOpenContest).forEach(i=>{const c=i.category||'Sonstiges';counts[c]=(counts[c]||0)+1});
+ const top=Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,8);
+ box.innerHTML=top.map(([name,count])=>`<button type="button" data-category-quick="${esc(name)}"><strong>${count}</strong><span>${esc(name)}</span></button>`).join('');
+}
+function renderDiscover(){
+ const l=discoverItems(),extra=activeFilterLabels().length,shown=Math.min(discoverRenderLimit,l.length);
+ $('#resultCount').textContent=l.length?`${shown} von ${l.length} Ergebnis${l.length===1?'':'sen'}${extra?` · ${extra} Filter`:''}`:`0 Ergebnisse${extra?` · ${extra} Filter`:''}`;
+ $('#contestList').innerHTML=l.length?l.slice(0,discoverRenderLimit).map(full).join(''):empty('Keine passenden aktiven Gewinnspiele gefunden. Passe Suche oder Filter an.');
+ const more=$('#loadMoreContests');if(more){more.hidden=shown>=l.length;more.textContent=`Weitere anzeigen (${l.length-shown})`;}
+ renderCategoryQuickFilters();
+}
 function dayKey(value){
  const d=value?new Date(value):new Date();
  if(Number.isNaN(d.getTime()))return '';
@@ -1335,6 +1356,7 @@ function updateDiagnostics(dataVersion='–'){
  el.classList.toggle('fallback',usingFallback);
 }
 async function loadData(silent=false){
+ searchTextCache.clear();
  usingFallback=true;
  const status=$('#updateStatus'),text=$('#updateText');
  if(!silent){
@@ -1376,6 +1398,7 @@ async function loadData(silent=false){
 $$('.nav-item').forEach(b=>b.addEventListener('click',()=>openView(b.dataset.view)));
 $$('.chip').forEach(b=>b.addEventListener('click',()=>{
  currentFilter=b.dataset.filter;
+ discoverRenderLimit=DISCOVER_PAGE_SIZE;
  if(currentFilter==='all'){
   advancedFilters={entryType:'',effort:'',winners:'',deadline:'',daily:false,noApp:false,noSocial:false,knownWinners:false,onlyOpen:false};
   const search=$('#searchInput');if(search)search.value='';
@@ -1386,7 +1409,9 @@ $$('.chip').forEach(b=>b.addEventListener('click',()=>{
  renderDiscover();
 }));
 $$('[data-show]').forEach(b=>b.addEventListener('click',()=>openDiscover(b.dataset.show)));
-$('#searchInput')?.addEventListener('input',renderDiscover);$('#sortSelect')?.addEventListener('change',renderDiscover);
+$('#searchInput')?.addEventListener('input',()=>{clearTimeout(discoverSearchTimer);discoverRenderLimit=DISCOVER_PAGE_SIZE;discoverSearchTimer=setTimeout(renderDiscover,180)});$('#sortSelect')?.addEventListener('change',()=>{discoverRenderLimit=DISCOVER_PAGE_SIZE;renderDiscover()});
+$('#loadMoreContests')?.addEventListener('click',()=>{discoverRenderLimit+=DISCOVER_PAGE_SIZE;renderDiscover()});
+$('#categoryQuickFilters')?.addEventListener('click',e=>{const b=e.target.closest('[data-category-quick]');if(!b)return;currentFilter=b.dataset.categoryQuick;discoverRenderLimit=DISCOVER_PAGE_SIZE;$$('.chip').forEach(c=>c.classList.toggle('active',c.dataset.filter===currentFilter));renderDiscover()});
 $('#filterToggle')?.addEventListener('click',()=>{const panel=$('#advancedFilters');if(!panel)return;panel.hidden=!panel.hidden;$('#filterToggle')?.classList.toggle('active',!panel.hidden)});
 const filterBindings={filterEntryType:'entryType',filterEffort:'effort',filterWinners:'winners',filterDeadline:'deadline',filterDaily:'daily',filterNoApp:'noApp',filterNoSocial:'noSocial',filterKnownWinners:'knownWinners',filterOnlyOpen:'onlyOpen'};
 Object.entries(filterBindings).forEach(([id,key])=>$('#'+id)?.addEventListener('change',e=>{advancedFilters[key]=e.target.type==='checkbox'?e.target.checked:e.target.value;saveAdvancedFilters()}));

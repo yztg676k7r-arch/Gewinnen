@@ -1,0 +1,7 @@
+WIN WIN 5.3 – PERFORMANCE & ALLTAG
+
+- Suche reagiert mit kurzer Verzögerung statt bei jedem Tastendruck komplett neu zu rendern.
+- Entdecken lädt zunächst 30 Karten und weitere Einträge auf Knopfdruck.
+- Kategorie-Schnellzugriff zeigt die wichtigsten offenen Kategorien.
+- Suchtexte werden zwischengespeichert.
+- Statusdaten und Katalog bleiben unverändert erhalten.

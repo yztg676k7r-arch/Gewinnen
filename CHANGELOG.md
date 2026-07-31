@@ -1,3 +1,9 @@
+## 5.3 – Performance & Alltag
+- Gestaffeltes Laden in Entdecken
+- Verzögerte Suche
+- Kategorie-Schnellzugriff
+- Optimierte Darstellung großer Listen
+
 ## 5.2 – Smart Discovery
 - Smart-Discovery-Cockpit
 - angereicherte Karten mit Wert, Gewinnerzahl, Restzeit und Quellenqualität

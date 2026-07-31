@@ -110,3 +110,7 @@ Tagesansicht für neue, bald endende und noch nicht bearbeitete Gewinnspiele wei
 - Wiederholbare Gewinnspiele pro Tag dokumentieren
 - tägliche Wiederaufnahme in die offene Liste
 - Teilnahmehistorie und korrekte Tagesstatistiken
+
+
+## 5.3 erledigt
+- Performance und Alltagstauglichkeit für größere Kataloge.
