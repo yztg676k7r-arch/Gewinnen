@@ -1,5 +1,5 @@
 
-const APP_VERSION='4.6.1';
+const APP_VERSION='4.6.2';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;
@@ -568,8 +568,11 @@ function mergeCatalog(base,extra){
    const urlKey=normalizeUrl(i.url),fp=contestFingerprint(i);
    let pos=byId.get(i.id);
    if(pos!==undefined&&normalizeUrl(out[pos].url)!==urlKey){idConflicts++;pos=undefined}
-   if(pos===undefined)pos=byUrl.get(urlKey);
-   if(pos===undefined)pos=byFingerprint.get(fp);
+   // Der veröffentlichte Basiskatalog darf mehrere eigenständige Gewinne mit
+   // derselben Aktionsseite enthalten. Nur lokale/importierte Datensätze werden
+   // zusätzlich anhand URL und Fingerabdruck auf Dubletten geprüft.
+   if(isImport&&pos===undefined)pos=byUrl.get(urlKey);
+   if(isImport&&pos===undefined)pos=byFingerprint.get(fp);
    if(pos!==undefined){
      if(isImport){
        const stableId=out[pos].id;
@@ -883,28 +886,15 @@ async function fetchJsonFromPaths(paths, validator){
 }
 
 async function fetchBestContestCatalog(){
- const paths=['./data/catalog-4.6.1.json','./catalog-4.6.1.json','./data/contests.json','./contests.json'];
- const candidates=[];
- const errors=[];
- await Promise.all(paths.map(async path=>{
-  try{
-   const separator=path.includes('?')?'&':'?';
-   const r=await fetch(`${path}${separator}ww=${Date.now()}`,{cache:'no-store',headers:{'Accept':'application/json'}});
-   if(!r.ok)throw new Error(`HTTP ${r.status}`);
-   const raw=await r.text();
-   if(raw.trim().startsWith('<'))throw new Error('HTML statt JSON');
-   const payload=JSON.parse(raw);
-   if(!payload||!Array.isArray(payload.contests))throw new Error('Ungültiges Datenformat');
-   const valid=payload.contests.filter(validContest);
-   if(!valid.length)throw new Error('Keine gültigen Einträge');
-   candidates.push({path,payload,validCount:valid.length,totalCount:payload.contests.length});
-  }catch(error){errors.push(`${path}: ${error.message}`)}
- }));
- if(!candidates.length)throw new Error(errors.join(' · '));
- candidates.sort((a,b)=>b.validCount-a.validCount||b.totalCount-a.totalCount||String(b.payload.version||'').localeCompare(String(a.payload.version||''),undefined,{numeric:true}));
- const best=candidates[0];
- if(candidates.some(x=>x.totalCount!==best.totalCount))console.warn('Win Win: Unterschiedliche Kataloggrößen erkannt',candidates.map(x=>({path:x.path,count:x.totalCount,valid:x.validCount})));
- return best;
+ const path='./contests.json';
+ const r=await fetch(`${path}?ww=${Date.now()}`,{cache:'no-store',headers:{'Accept':'application/json'}});
+ if(!r.ok)throw new Error(`HTTP ${r.status}`);
+ const raw=await r.text();
+ if(raw.trim().startsWith('<'))throw new Error('HTML statt JSON');
+ const payload=JSON.parse(raw);
+ if(!payload||!Array.isArray(payload.contests))throw new Error('Ungültiges Datenformat');
+ if(!payload.contests.length)throw new Error('Katalog ist leer');
+ return {path,payload,totalCount:payload.contests.length};
 }
 
 async function loadSources(){
@@ -1151,15 +1141,14 @@ async function renderDeploymentStatus(){
  if(!box||!text)return;
  const info=await readDeploymentVersion();
  const version=String(info?.version||'unbekannt');
- const catalog=Number(info?.catalogCount||0);
- const expectedCount=Number(info?.contestCount||info?.catalogCount||0);
- const countMatches=!expectedCount||contests.length>=expectedCount;
- const matches=version===APP_VERSION&&countMatches;
+ const matches=version===APP_VERSION&&!usingFallback;
+ const activeCount=allActive().length;
+ const expiredCount=Math.max(0,contests.length-activeCount);
  box.classList.toggle('error',!matches);
  box.classList.toggle('success',matches);
  text.textContent=matches
-  ? `Veröffentlichung aktuell: App ${APP_VERSION} · ${contests.length} von ${expectedCount||catalog||contests.length} Katalogeinträgen geladen`
-  : `Katalogkonflikt: App ${APP_VERSION}, veröffentlicht ${version}, geladen ${contests.length} von ${expectedCount||catalog||'?'} Einträgen. Bitte „Update erzwingen“ verwenden.`;
+  ? `Veröffentlichung aktuell: App ${APP_VERSION} · ${contests.length} geladen · ${activeCount} aktiv · ${expiredCount} abgelaufen`
+  : `Versionskonflikt: App ${APP_VERSION}, veröffentlicht ${version}. Bitte „Update erzwingen“ verwenden.`;
 }
 async function forceAppUpdate(){
  const button=$('#forceUpdateBtn');
@@ -1207,7 +1196,7 @@ async function loadData(silent=false){
    // JSON-Anfragen mit Cache-Buster fälschlich als HTML beantworten.
    const result=await fetchBestContestCatalog();
    const p=result.payload;
-   const clean=p.contests.filter(validContest);
+   const clean=p.contests.map(normalizeContest).filter(validContest);
    if(!clean.length)throw new Error('Keine gültigen Gewinnspiele gefunden');
    baseContests=clean;
    const merged=mergeCatalog(baseContests,customContests);

@@ -1,3 +1,10 @@
+# Version 4.6.2
+
+- Ein verbindlicher Katalog: `contests.json`.
+- Falsche URL-Dublettenbereinigung im Basiskatalog behoben.
+- Alle 82 Einträge bleiben erhalten.
+- Diagnose basiert auf tatsächlich geladenen Daten.
+
 ## 4.6.1 – Katalog-Lade-Bugfix
 
 - Katalogauswahl lädt nicht länger blind die erste erreichbare Datei.

@@ -1,0 +1,8 @@
+WIN WIN 4.6.2 – EIN-KATALOG-BUGFIX
+
+- Die App lädt nur noch /contests.json.
+- Konkurrierende Katalogpfade wurden aus der Lade- und Cachelogik entfernt.
+- Mehrere eigenständige Gewinne auf derselben Aktionsseite bleiben getrennte Einträge.
+- Dadurch werden alle 82 Katalogeinträge geladen statt nur 53 zusammengeführter Einträge.
+- Die Diagnose zeigt geladen, aktiv und abgelaufen aus dem tatsächlich verwendeten Katalog.
+- Persönliche Statusdaten im Local Storage bleiben unverändert.

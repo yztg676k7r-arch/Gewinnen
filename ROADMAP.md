@@ -1,4 +1,4 @@
-## 4.6.1 – Großer Katalogausbau (abgeschlossen)
+## 4.6.2 – Großer Katalogausbau (abgeschlossen)
 
 - 50 neue Gewinnspiel-Chancen
 - 82 Katalogeinträge insgesamt
