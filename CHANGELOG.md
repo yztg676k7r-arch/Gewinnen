@@ -1,4 +1,10 @@
-# Win Win 5.1 – Synchronisierte Statusverwaltung
+## 5.2 – Smart Discovery
+- Smart-Discovery-Cockpit
+- angereicherte Karten mit Wert, Gewinnerzahl, Restzeit und Quellenqualität
+- korrigierte Nutzung von estimatedPrizeValue
+- Status-Synchronisierung bleibt erhalten
+
+# Win Win 5.2 – Synchronisierte Statusverwaltung
 
 - Zentrale Statusänderungen aktualisieren alle Ansichten sofort.
 - Teilgenommen und Nicht interessant werden aus offenen Listen entfernt.
@@ -6,7 +12,7 @@
 - iPhone-Touchverhalten des Buttons „Nicht interessant“ stabilisiert.
 - Bestehende lokale Status und Teilnahmehistorien bleiben erhalten.
 
-# 5.1 – Daily Driver
+# 5.2 – Daily Driver
 
 - Daily-Driver-Status auf der Startseite
 - integrierter Systemcheck
@@ -215,7 +221,7 @@ Katalog mit 100 vollständig angereicherten Einträgen. 18 neue Gewinnspiele und
 - neue Einträge zunächst als ehrliche Prüfkandidaten gekennzeichnet
 
 
-## 2.5.1
+## 2.5.2
 - Doppelte Filteroption „Endet bald“ entfernt.
 - Filter „Als neu markiert“ entfernt.
 - Bezeichnung „Neu seit letztem Besuch“ präzisiert.

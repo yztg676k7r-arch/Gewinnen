@@ -1,0 +1,11 @@
+WIN WIN 5.2 – SMART DISCOVERY
+
+Geändert:
+- Smart-Discovery-Cockpit auf der Startseite
+- transparente Fakten auf Gewinnspielkarten
+- Gewinnwert, Gewinnerzahl, Restlaufzeit und Quellenqualität sichtbar
+- Prioritätsberechnung nutzt estimatedPrizeValue korrekt
+- synchronisierte Statusverwaltung aus 5.1 bleibt erhalten
+- Katalog: 100 angereicherte Gewinnspiele
+
+Wichtig: Persönliche Status werden nicht überschrieben.

@@ -1,6 +1,6 @@
 {
-  "version": "4.7",
-  "updated": "2026-07-31",
+  "version": "5.2",
+  "updated": "2026-07-31T18:30:00+02:00",
   "contests": [
     {
       "id": "dm-ob-starterset-2026",
@@ -4010,12 +4010,6 @@
     }
   ],
   "appName": "Win Win",
-  "quality": {
-    "total": 100,
-    "newInRelease": 18,
-    "enrichedInRelease": 100,
-    "verifiedOn": "31.07.2026",
-    "focus": "100 vollständig angereicherte Gewinnspiele"
-  },
+  "quality": "Smart Discovery enriched catalog",
   "lastChecked": "2026-07-31"
 }
