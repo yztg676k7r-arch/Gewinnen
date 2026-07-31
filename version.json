@@ -1,11 +1,11 @@
 {
   "app": "Win Win",
-  "version": "4.6",
-  "catalogVersion": "4.6.0",
-  "catalogCount": 32,
-  "builtAt": "2026-07-30T22:30:00+02:00",
-  "release": "Deployment- und Datenfix",
-  "note": "Bugfix: stabile Dateinamen app.js, styles.css und sw.js",
+  "version": "4.6.1",
+  "catalogVersion": "4.6.1",
+  "catalogCount": 82,
+  "builtAt": "2026-07-31T08:15:00+02:00",
+  "release": "Katalog-Lade-Bugfix",
+  "note": "Lädt alle Katalogkopien und verwendet automatisch die vollständigste Datei.",
   "updated": "2026-07-31",
   "contestCount": 82
 }

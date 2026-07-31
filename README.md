@@ -1,4 +1,4 @@
-# Win Win 4.6
+# Win Win 4.6.1
 
 Persönliche, kostenlose PWA zur Verwaltung und Priorisierung von Gewinnspielen.
 
@@ -67,5 +67,5 @@ Version 4.5 erweitert den aktiven Katalog um neu geprüfte Gewinnspiele offiziel
 Nach dem Upload zeigt `DEPLOYMENT-CHECK.html`, welche Version GitHub Pages tatsächlich ausliefert.
 
 
-## Version 4.6
+## Version 4.6.1
 Der aktive Katalog enthält jetzt 82 Einträge. 50 neue Gewinnspiel-Chancen wurden am 31.07.2026 ergänzt.

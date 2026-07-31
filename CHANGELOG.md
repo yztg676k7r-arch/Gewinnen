@@ -1,11 +1,19 @@
-# Version 4.6
+## 4.6.1 – Katalog-Lade-Bugfix
+
+- Katalogauswahl lädt nicht länger blind die erste erreichbare Datei.
+- Vier Katalogkopien mit identischen 82 Einträgen.
+- Eindeutige Dateien `catalog-4.6.1.json` verhindern alte Teil-Uploads.
+- Diagnose meldet Abweichungen zwischen erwartetem und geladenem Katalog.
+- Vier fehlerhaft formatierte Gewinnspiele repariert.
+
+# Version 4.6.1
 
 - 50 neue aktuelle Gewinnspiel-Chancen
 - Katalog von 32 auf 82 Einträge erweitert
 - 20 tägliche Sommer-Chancen separat im Tagesworkflow
 - 11 neue dm/glückskind-Aktionen
 - neue Film-, Reise-, Lifestyle- und Familiengewinne
-- Katalogpfade und Cache auf Version 4.6 synchronisiert
+- Katalogpfade und Cache auf Version 4.6.1 synchronisiert
 
 # Version 4.5.2
 

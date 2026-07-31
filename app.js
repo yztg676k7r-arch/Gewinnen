@@ -1,5 +1,5 @@
 
-const APP_VERSION='4.6';
+const APP_VERSION='4.6.1';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=2;
@@ -881,6 +881,32 @@ async function fetchJsonFromPaths(paths, validator){
  }
  throw new Error(errors.join(' · '));
 }
+
+async function fetchBestContestCatalog(){
+ const paths=['./data/catalog-4.6.1.json','./catalog-4.6.1.json','./data/contests.json','./contests.json'];
+ const candidates=[];
+ const errors=[];
+ await Promise.all(paths.map(async path=>{
+  try{
+   const separator=path.includes('?')?'&':'?';
+   const r=await fetch(`${path}${separator}ww=${Date.now()}`,{cache:'no-store',headers:{'Accept':'application/json'}});
+   if(!r.ok)throw new Error(`HTTP ${r.status}`);
+   const raw=await r.text();
+   if(raw.trim().startsWith('<'))throw new Error('HTML statt JSON');
+   const payload=JSON.parse(raw);
+   if(!payload||!Array.isArray(payload.contests))throw new Error('Ungültiges Datenformat');
+   const valid=payload.contests.filter(validContest);
+   if(!valid.length)throw new Error('Keine gültigen Einträge');
+   candidates.push({path,payload,validCount:valid.length,totalCount:payload.contests.length});
+  }catch(error){errors.push(`${path}: ${error.message}`)}
+ }));
+ if(!candidates.length)throw new Error(errors.join(' · '));
+ candidates.sort((a,b)=>b.validCount-a.validCount||b.totalCount-a.totalCount||String(b.payload.version||'').localeCompare(String(a.payload.version||''),undefined,{numeric:true}));
+ const best=candidates[0];
+ if(candidates.some(x=>x.totalCount!==best.totalCount))console.warn('Win Win: Unterschiedliche Kataloggrößen erkannt',candidates.map(x=>({path:x.path,count:x.totalCount,valid:x.validCount})));
+ return best;
+}
+
 async function loadSources(){
  const badge=$('#sourceCountBadge'),note=$('#sourceDataNote'),box=$('#sourceOverview');
  if(badge)badge.textContent='Quellen werden geladen …';
@@ -1126,12 +1152,14 @@ async function renderDeploymentStatus(){
  const info=await readDeploymentVersion();
  const version=String(info?.version||'unbekannt');
  const catalog=Number(info?.catalogCount||0);
- const matches=version===APP_VERSION;
+ const expectedCount=Number(info?.contestCount||info?.catalogCount||0);
+ const countMatches=!expectedCount||contests.length>=expectedCount;
+ const matches=version===APP_VERSION&&countMatches;
  box.classList.toggle('error',!matches);
  box.classList.toggle('success',matches);
  text.textContent=matches
-  ? `Veröffentlichung aktuell: App ${APP_VERSION} · Katalog ${catalog||contests.length} Einträge`
-  : `Versionskonflikt: Browser-App ${APP_VERSION}, veröffentlichte Dateien ${version}. Bitte „Update erzwingen“ verwenden.`;
+  ? `Veröffentlichung aktuell: App ${APP_VERSION} · ${contests.length} von ${expectedCount||catalog||contests.length} Katalogeinträgen geladen`
+  : `Katalogkonflikt: App ${APP_VERSION}, veröffentlicht ${version}, geladen ${contests.length} von ${expectedCount||catalog||'?'} Einträgen. Bitte „Update erzwingen“ verwenden.`;
 }
 async function forceAppUpdate(){
  const button=$('#forceUpdateBtn');
@@ -1177,10 +1205,7 @@ async function loadData(silent=false){
  try{
    // Keine wechselnde Query-Zeichenfolge: ältere Service Worker konnten
    // JSON-Anfragen mit Cache-Buster fälschlich als HTML beantworten.
-   const result=await fetchJsonFromPaths(
-     ['./data/contests.json','./contests.json'],
-     p=>p&&Array.isArray(p.contests)
-   );
+   const result=await fetchBestContestCatalog();
    const p=result.payload;
    const clean=p.contests.filter(validContest);
    if(!clean.length)throw new Error('Keine gültigen Gewinnspiele gefunden');

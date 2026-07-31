@@ -1,0 +1,8 @@
+WIN WIN 4.6.1 – KATALOG-LADE-BUGFIX
+
+- 82 Gewinnspiele in vier synchronen Katalogkopien
+- eindeutige versionsgebundene Katalogdateien
+- App lädt alle Katalogkandidaten und verwendet automatisch den vollständigsten
+- Diagnose vergleicht geladene und erwartete Eintragszahl
+- vier fehlerhaft angeordnete Datensätze korrigiert
+- persönliche Statusdaten bleiben unverändert
