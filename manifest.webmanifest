@@ -2,9 +2,9 @@
   "id": "./",
   "name": "Win Win",
   "short_name": "Win Win",
-  "description": "Win Win 4.8 – persönlicher Gewinnspiel-Assistent mit priorisiertem Tagesmodus",
+  "description": "Win Win 4.9 – persönlicher Gewinnspiel-Assistent mit täglicher Teilnahmehistorie",
   "lang": "de-DE",
-  "start_url": "./?source=pwa-4.8",
+  "start_url": "./?source=pwa-4.9",
   "scope": "./",
   "display": "standalone",
   "display_override": [

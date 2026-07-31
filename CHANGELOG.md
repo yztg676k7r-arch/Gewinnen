@@ -1,3 +1,11 @@
+# Version 4.9 – Wiederholbare Gewinnspiele
+
+- tägliche Teilnahmehistorie pro Gewinnspiel
+- tägliche Aktionen erscheinen am nächsten Tag automatisch wieder
+- „heute erledigt“-Status in Tagesmodus, Entdecken und Dashboard
+- vorhandene ältere Teilnahmen werden verlustfrei migriert
+- Tages- und Wochenstatistiken zählen einzelne Teilnahmen korrekt
+
 
 ## 4.8 – Tagesmodus
 

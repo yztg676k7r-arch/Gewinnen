@@ -1,0 +1,12 @@
+WIN WIN 4.9 – WIEDERHOLBARE GEWINNSPIELE
+
+Neu:
+- Tägliche und mehrfach teilnehmbare Gewinnspiele werden pro Kalendertag dokumentiert.
+- Nach einer heutigen Teilnahme verschwinden sie für den aktuellen Tag aus der offenen Liste.
+- Am nächsten Kalendertag erscheinen sie automatisch wieder.
+- Die komplette Teilnahmehistorie bleibt lokal erhalten.
+- Karten zeigen Anzahl dokumentierter Teilnahmen und den Status „heute erledigt“.
+- Dashboard und Tagesmodus zählen tägliche Teilnahmen korrekt.
+- Bestehende Teilnahmestatus aus älteren Versionen werden automatisch übernommen.
+
+Persönliche Daten bleiben lokal gespeichert und werden nicht überschrieben.

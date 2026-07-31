@@ -1,5 +1,5 @@
-const CACHE='win-win-4.8';
-const CORE=['./','./index.html','./styles.css?v=4.8','./app.js?v=4.8','./manifest.webmanifest','./version.json','./apple-touch-icon.png','./icons/icon-180.png','./icons/icon-192.png','./icons/icon-512.png'];
+const CACHE='win-win-4.9';
+const CORE=['./','./index.html','./styles.css?v=4.9','./app.js?v=4.9','./manifest.webmanifest','./version.json','./apple-touch-icon.png','./icons/icon-180.png','./icons/icon-192.png','./icons/icon-512.png'];
 const DATA_PATHS=['./contests.json','./data/sources.json','./sources.json'];
 self.addEventListener('install',event=>{event.waitUntil((async()=>{const cache=await caches.open(CACHE);await cache.addAll(CORE);await Promise.allSettled(DATA_PATHS.map(path=>fetch(path,{cache:'no-store'}).then(r=>r.ok?cache.put(path,r):null)))})());self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)));await self.clients.claim()})())});
