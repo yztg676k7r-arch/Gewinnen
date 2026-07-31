@@ -1,0 +1,14 @@
+# Win Win 5.0 – Daily Driver
+
+## Neu
+
+- Startseiten-Status für die tägliche Nutzung
+- Systemcheck für aktive, ablaufende, veraltete und fehlerhafte Datensätze
+- Erinnerung an persönliche Datensicherungen
+- stabile Trennung von Katalogdaten und persönlichen Statusdaten
+- Tagesmodus und wiederholbare Teilnahmen aus 4.8/4.9 vollständig integriert
+- App-, Cache- und Deployment-Version auf 5.0 vereinheitlicht
+
+## Wichtig
+
+Der Katalog bleibt bewusst bei den 100 vorhandenen Einträgen. Es wurden keine ungeprüften oder erfundenen Gewinnspiele ergänzt. Die nächste Katalogerweiterung kann über den bestehenden Import- und Qualitätsprozess erfolgen.

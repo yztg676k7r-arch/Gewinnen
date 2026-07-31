@@ -1,5 +1,5 @@
 
-## 4.9 – Tagesmodus
+## 5.0 – Tagesmodus
 
 - Priorisierte tägliche Arbeitsliste mit Tagesziel.
 - Fortschritt für offen, erledigt, geöffnet und nur heute übersprungen.
@@ -83,5 +83,5 @@ Nach dem Upload zeigt `DEPLOYMENT-CHECK.html`, welche Version GitHub Pages tats�
 Der aktive Katalog enthält jetzt 82 Einträge. 50 neue Gewinnspiel-Chancen wurden am 31.07.2026 ergänzt.
 
 
-## Neu in 4.9
+## Neu in 5.0
 Tägliche und mehrfach teilnehmbare Gewinnspiele werden pro Kalendertag dokumentiert. Sie erscheinen am Folgetag automatisch wieder, während die Historie lokal erhalten bleibt.

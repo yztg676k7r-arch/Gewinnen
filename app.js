@@ -1,5 +1,5 @@
 
-const APP_VERSION='4.9';
+const APP_VERSION='5.0';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=3;
@@ -12,6 +12,7 @@ const DASHBOARD_SHOW_ALL_KEY='winwin-dashboard-show-all-v1';
 const FULL_BACKUP_ROLLBACK_KEY='winwin-full-backup-rollback-v1';
 const DAILY_PLAN_KEY='winwin-daily-plan-v1';
 const DAILY_SESSION_KEY='winwin-daily-session-v1';
+const BACKUP_META_KEY='winwin-backup-meta-v1';
 const FULL_BACKUP_FORMAT='winwin-personal-backup';
 const FULL_BACKUP_VERSION=1;
 const SOURCE_DATA_KEY='winwin-custom-sources-v1';
@@ -369,6 +370,31 @@ function renderToday(){
  const modeEl=$('#dailyMode');if(modeEl)modeEl.value=dailyPlan.mode;
 }
 window.saveDailyPlan=saveDailyPlan;window.toggleTodaySkip=toggleTodaySkip;window.resetTodaySkips=resetTodaySkips;window.markTodayOpened=markTodayOpened;
+
+function catalogHealth(){
+ const now=new Date(),activeRows=contests.filter(active),expired=contests.filter(i=>daysLeft(i)<0);
+ const ending=activeRows.filter(i=>daysLeft(i)<=7);
+ const stale=activeRows.filter(i=>{const d=parseFlexibleDate(i.lastVerified||i.verified||i.addedAt);return !d||Math.floor((now-d)/86400000)>21});
+ const invalid=contests.filter(i=>!validContest(i)||!/^https?:\/\//i.test(i.url||''));
+ return {active:activeRows.length,expired:expired.length,ending:ending.length,stale:stale.length,invalid:invalid.length,total:contests.length};
+}
+function backupMeta(){return safeJSON(localStorage.getItem(BACKUP_META_KEY),{})||{}}
+function backupAgeDays(){const d=parseFlexibleDate(backupMeta().lastExport);return d?Math.floor((new Date()-d)/86400000):9999}
+function renderDailyDriverStatus(){
+ const box=$('#dailyDriverStatus');if(!box)return;
+ const h=catalogHealth(),age=backupAgeDays(),session=currentDailySession(),today=dayKey();
+ const done=contests.filter(i=>participatedOn(i.id,today)).length;
+ const issues=h.invalid+h.stale;
+ box.innerHTML=`<div class="daily-driver-head"><div><p class="section-kicker">DAILY DRIVER 5.0</p><h3>${done?`${done} heute erledigt`:'Bereit für deine Tagesrunde'}</h3><p>${h.active} aktive Gewinnspiele · ${h.ending} enden in 7 Tagen · ${contests.filter(isRepeatable).length} wiederholbar</p></div><button type="button" onclick="openView('todayView')">Tagesmodus öffnen</button></div><div class="daily-driver-checks"><span class="${usingFallback?'warn':'ok'}">${usingFallback?'⚠ Notfalldaten':'✓ Katalog geladen'}</span><span class="${issues?'warn':'ok'}">${issues?`⚠ ${issues} Prüfpunkte`:'✓ Datencheck sauber'}</span><span class="${age>14?'warn':'ok'}">${age>14?'⚠ Sicherung empfohlen':`✓ Sicherung ${age===0?'heute':`vor ${age} Tagen`}`}</span></div>`;
+}
+function renderSystemCheck50(){
+ const box=$('#systemCheck50');if(!box)return;
+ const h=catalogHealth(),age=backupAgeDays();
+ const state=h.invalid?'error':h.stale?'warn':'good';
+ box.className=`system-check-50 ${state}`;
+ box.innerHTML=`<div><p class="section-kicker">SYSTEMCHECK 5.0</p><h3>${h.invalid?'Handlungsbedarf':h.stale?'Katalogpflege empfohlen':'Daily Driver bereit'}</h3><p>${h.total} Einträge geprüft. Persönliche Statusdaten liegen getrennt vom Katalog und bleiben bei Updates erhalten.</p></div><div class="system-check-grid"><div><strong>${h.active}</strong><span>aktiv</span></div><div><strong>${h.ending}</strong><span>endet bald</span></div><div><strong>${h.expired}</strong><span>abgelaufen</span></div><div><strong>${h.stale}</strong><span>älter als 21 Tage</span></div><div><strong>${h.invalid}</strong><span>fehlerhaft</span></div><div><strong>${age>365?'–':age}</strong><span>Tage seit Sicherung</span></div></div>`;
+}
+window.openView=openView;
 function renderMetrics(){
  const a=scored(),done=a.filter(i=>stateFor(i.id).done).length;
  const m=[['🆕',a.filter(isNewSinceVisit).length,'neu seit Besuch','newVisit'],['🎯',a.filter(recommended).length,'heute lohnenswert','recommended'],['⭐',a.filter(i=>i.score>=80).length,'Top-Chancen','top'],['✓',done,'teilgenommen','statsView']];
@@ -543,6 +569,7 @@ function renderAll(){
  safeRender('Start-Kennzahlen',renderMetrics);
  safeRender('Startseite',renderHome);
  safeRender('Heute',renderToday);
+ safeRender('Daily Driver',renderDailyDriverStatus);
  safeRender('Entdecken',renderDiscover);
  safeRender('Dashboard',renderPersonal);
  safeRender('Vorlieben',renderPreferencePanel);
@@ -745,6 +772,8 @@ function validateFullBackup(payload){
 function exportFullBackup(){
  const backup=buildFullBackup();
  downloadJSON(`win-win-persoenliche-sicherung-${new Date().toISOString().slice(0,10)}.json`,backup);
+ localStorage.setItem(BACKUP_META_KEY,JSON.stringify({lastExport:new Date().toISOString(),version:APP_VERSION}));
+ renderDailyDriverStatus();renderSystemCheck50();
  toast('Persönliche Sicherung erstellt')
 }
 function applyFullBackup(payload){
@@ -856,7 +885,7 @@ function renderDataCenter(report=null){
  }
  if(localText)localText.textContent=customContests.length?`${customContests.length} lokale Ergänzung${customContests.length===1?'':'en'} gespeichert.`:'Noch keine lokalen Ergänzungen gespeichert.';
  if(backupBtn)backupBtn.disabled=!localStorage.getItem(IMPORT_BACKUP_KEY);
- renderImportPreview();renderImportHistory();renderBackupSummary();
+ renderImportPreview();renderImportHistory();renderBackupSummary();renderSystemCheck50();
 }
 function setupDataCenter(){
  const importFile=$('#importFile');

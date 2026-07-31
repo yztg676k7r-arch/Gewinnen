@@ -1,3 +1,10 @@
+# 5.0 – Daily Driver
+
+- Daily-Driver-Status auf der Startseite
+- integrierter Systemcheck
+- Sicherungsalter und Kataloggesundheit sichtbar
+- stabile Versions- und Cache-Aktualisierung
+
 # Version 4.9 – Wiederholbare Gewinnspiele
 
 - tägliche Teilnahmehistorie pro Gewinnspiel

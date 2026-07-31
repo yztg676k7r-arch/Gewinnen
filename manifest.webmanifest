@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "Win Win",
+  "name": "Win Win 5.0",
   "short_name": "Win Win",
-  "description": "Win Win 4.9 – persönlicher Gewinnspiel-Assistent mit täglicher Teilnahmehistorie",
+  "description": "Daily Driver für Gewinnspiele",
   "lang": "de-DE",
   "start_url": "./?source=pwa-4.9",
   "scope": "./",
