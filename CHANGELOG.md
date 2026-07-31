@@ -1,3 +1,12 @@
+# Changelog
+
+## 5.3.1 – Kartenlayout & iPhone-Optimierung
+- Aktionsleisten auf Gewinnspielkarten als stabiles Zwei-Spalten-Grid aufgebaut.
+- „Teilnehmen“ und „Nicht interessant“ nutzen jeweils die volle Kartenbreite.
+- „Teilgenommen“, Favorit und „Gewonnen“ werden ohne Abschneiden dargestellt.
+- Größere Touch-Flächen und saubere Textumbrüche für schmale iPhones.
+- Bestehende Status- und Katalogdaten bleiben unverändert.
+
 ## 5.3 – Performance & Alltag
 - Gestaffeltes Laden in Entdecken
 - Verzögerte Suche

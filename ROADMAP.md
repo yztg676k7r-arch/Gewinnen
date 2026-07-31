@@ -112,5 +112,5 @@ Tagesansicht für neue, bald endende und noch nicht bearbeitete Gewinnspiele wei
 - Teilnahmehistorie und korrekte Tagesstatistiken
 
 
-## 5.3 erledigt
+## 5.3.1 erledigt
 - Performance und Alltagstauglichkeit für größere Kataloge.

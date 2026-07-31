@@ -1,0 +1,4 @@
+Win Win 5.3.1
+
+Bugfix: Kartenaktionen und Buttonleiste für iPhone optimiert.
+Alle persönlichen Status bleiben erhalten.
