@@ -1,5 +1,5 @@
 
-const APP_VERSION='5.0';
+const APP_VERSION='5.1';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=3;
@@ -243,26 +243,42 @@ function matches(i,f){
  if(f==='daily')return i.daily||i.multipleEntry;
  if(f==='international')return i.international;if(f==='regional')return Boolean(i.regional);return i.category===f
 }
-function toggleFavorite(id){const s=stateFor(id);s.favorite=!s.favorite;adjustPreferenceForContest(id,s.favorite?2:-2);saveUser();renderAll();toast(s.favorite?'Zu Favoriten hinzugefügt':'Aus Favoriten entfernt')}
+function isOpenContest(i){
+ if(!i||!active(i))return false;
+ const s=stateFor(i.id);
+ return !s.ignored&&!completedForToday(i);
+}
+function refreshAllViews(reason='status'){
+ renderAll();
+ document.dispatchEvent(new CustomEvent('winwin:statuschange',{detail:{reason}}));
+}
+function commitStatusChange(id,mutator,message){
+ const i=contests.find(x=>x.id===id);if(!i)return;
+ const s=stateFor(id);mutator(s,i);
+ saveUser();refreshAllViews('contest-status');
+ if(message)toast(typeof message==='function'?message(s,i):message);
+}
+function toggleFavorite(id){
+ commitStatusChange(id,(s)=>{s.favorite=!s.favorite;adjustPreferenceForContest(id,s.favorite?2:-2)},s=>s.favorite?'Zu Favoriten hinzugefügt':'Aus Favoriten entfernt');
+}
 function toggleDone(id){
- const i=contests.find(x=>x.id===id),s=stateFor(id),today=dayKey();
- if(isRepeatable(i)){
-  const idx=s.participationDates.indexOf(today),adding=idx<0;
-  if(adding){s.participationDates.push(today);s.participationDates.sort();s.done=true;s.doneAt=new Date().toISOString();adjustPreferenceForContest(id,3);sessionStorage.setItem('winwin-done-session',String(Number(sessionStorage.getItem('winwin-done-session')||0)+1))}
-  else{s.participationDates.splice(idx,1);s.done=s.participationDates.length>0;s.doneAt=s.done?latestParticipationAt(id):null;adjustPreferenceForContest(id,-3)}
-  saveUser();renderAll();toast(adding?'Heute als teilgenommen markiert':'Heutige Teilnahme entfernt');return;
- }
- s.done=!s.done;adjustPreferenceForContest(id,s.done?3:-3);
- if(s.done){s.doneAt=new Date().toISOString();if(!s.participationDates.includes(today))s.participationDates.push(today);sessionStorage.setItem('winwin-done-session',String(Number(sessionStorage.getItem('winwin-done-session')||0)+1))}
- else{s.doneAt=null;s.participationDates=[]}
- saveUser();renderAll();toast(s.done?'Als teilgenommen markiert':'Markierung entfernt')
+ const i=contests.find(x=>x.id===id);if(!i)return;
+ const today=dayKey();let adding=false;
+ commitStatusChange(id,(s,item)=>{
+  if(isRepeatable(item)){
+   const idx=s.participationDates.indexOf(today);adding=idx<0;
+   if(adding){s.participationDates.push(today);s.participationDates.sort();s.done=true;s.doneAt=new Date().toISOString();adjustPreferenceForContest(id,3);sessionStorage.setItem('winwin-done-session',String(Number(sessionStorage.getItem('winwin-done-session')||0)+1))}
+   else{s.participationDates.splice(idx,1);s.done=s.participationDates.length>0;s.doneAt=s.done?latestParticipationAt(id):null;adjustPreferenceForContest(id,-3)}
+  }else{
+   s.done=!s.done;adding=s.done;adjustPreferenceForContest(id,s.done?3:-3);
+   if(s.done){s.doneAt=new Date().toISOString();if(!s.participationDates.includes(today))s.participationDates.push(today);sessionStorage.setItem('winwin-done-session',String(Number(sessionStorage.getItem('winwin-done-session')||0)+1))}
+   else{s.doneAt=null;s.participationDates=[]}
+  }
+ },()=>isRepeatable(i)?(adding?'Heute als teilgenommen markiert':'Heutige Teilnahme entfernt'):(adding?'Als teilgenommen markiert':'Markierung entfernt'));
 }
 function toggleIgnored(id){
- const s=stateFor(id);s.ignored=!s.ignored;
- if(s.ignored)s.favorite=false;
- adjustPreferenceForContest(id,s.ignored?-4:4);
- saveUser();renderAll();
- toast(s.ignored?'Als nicht interessant ausgeblendet':'Gewinnspiel wieder eingeblendet')
+ let ignored=false;
+ commitStatusChange(id,(s)=>{s.ignored=!s.ignored;ignored=s.ignored;if(s.ignored)s.favorite=false;adjustPreferenceForContest(id,s.ignored?-4:4)},()=>ignored?'Als nicht interessant ausgeblendet':'Gewinnspiel wieder eingeblendet');
 }
 function registerClick(id){user.clicks[id]=(user.clicks[id]||0)+1;adjustPreferenceForContest(id,0.35);saveUser()}
 let winDialogContestId=null;
@@ -293,7 +309,10 @@ window.toggleFavorite=toggleFavorite;window.toggleDone=toggleDone;window.toggleI
 function label(score){return score>=88?'Unbedingt mitmachen':score>=75?'Sehr empfehlenswert':score>=62?'Gute Chance':'Solide Aktion'}
 function badges(i){const left=daysLeft(i);return `<div class="badges">${isNewSinceVisit(i)?'<span class="new-ribbon">NEU</span>':''}<span class="badge">${esc(i.category)}</span><span class="badge score">${i.score}/100</span>${i.score>=80?'<span class="badge score">Top-Chance</span>':''}${secret(i)?'<span class="badge secret">Geheimtipp</span>':''}${left<=3?`<span class="badge hot">Noch ${left} Tag${left===1?'':'e'}</span>`:''}${i.international?'<span class="badge intl">International</span>':''}${i.regional?`<span class="badge regional">📍 ${esc(i.region||'Regional')}</span>`:''}${endingSoon(i)?`<span class="badge ending">⏰ Endet bald</span>`:''}</div>`}
 function reasonBox(i){return `<div class="reason-box priority-explain"><strong>Warum diese Priorität?</strong><div class="score-components"><span><b>${i.chanceScore}</b>Chance</span><span><b>${i.timeScore}</b>Zeitnutzen</span><span><b>${i.attractivenessScore}</b>Attraktivität</span><span><b>${i.personalBoost>0?'+':''}${i.personalBoost}</b>Persönlich</span></div><p>${i.reasons.length?i.reasons.map(x=>'✓ '+esc(x)).join(' · '):'Kostenlose, geprüfte Teilnahme'}</p><small>Priorität ${i.score}/100 · Datensicherheit: ${esc(i.scoreConfidence||'begrenzt')}</small></div>`}
-function mini(i){const s=stateFor(i.id);return `<article class="mini-card"><div class="provider">${esc(i.provider)}</div><h3>${esc(i.title)}</h3>${badges(i)}<div class="prize">🎁 ${esc(i.prize)}</div>${reasonBox(i)}<div class="mini-actions"><a class="primary" href="${esc(i.url)}" target="_blank" rel="noopener" onclick="registerClick('${esc(i.id)}')">Teilnehmen</a><button class="secondary" onclick="toggleFavorite('${esc(i.id)}')">${s.favorite?'♥':'♡'}</button><button class="secondary ignore-mini" aria-label="Nicht interessant" onclick="toggleIgnored('${esc(i.id)}')">Nicht interessant</button></div></article>`}
+function mini(i){
+ const s=stateFor(i.id),doneNow=completedForToday(i),repeat=isRepeatable(i);
+ return `<article class="mini-card ${doneNow?'has-status':''}" data-contest-id="${esc(i.id)}">${doneNow?`<span class="dashboard-status">${repeat?'Heute teilgenommen':'Teilgenommen'}</span>`:''}<div class="provider">${esc(i.provider)}</div><h3>${esc(i.title)}</h3>${badges(i)}<div class="prize">🎁 ${esc(i.prize)}</div>${reasonBox(i)}<div class="mini-actions"><a class="primary" href="${esc(i.url)}" target="_blank" rel="noopener" onclick="registerClick('${esc(i.id)}')">Teilnehmen</a><button type="button" class="secondary ${doneNow?'done':''}" onclick="toggleDone('${esc(i.id)}')">${doneNow?'✓ Erledigt':repeat?'Heute teilgenommen':'Teilgenommen'}</button><button type="button" class="secondary" onclick="toggleFavorite('${esc(i.id)}')" aria-label="Favorit">${s.favorite?'♥':'♡'}</button><button type="button" class="secondary ignore-mini" aria-label="Nicht interessant" onclick="toggleIgnored('${esc(i.id)}')">Nicht interessant</button></div></article>`;
+}
 function full(i){const s=stateFor(i.id),left=daysLeft(i),wins=i.winners?`${i.winners} bekannte Gewinne`:'Gewinnerzahl nicht angegeben',doneNow=completedForToday(i),repeat=isRepeatable(i),count=participationCount(i.id);return `<article class="contest-card ${s.ignored?'ignored-card':''}"><div class="card-top"><div><div class="provider">${esc(i.provider)}</div><h3>${esc(i.title)}</h3></div><button class="heart ${s.favorite?'active':''}" onclick="toggleFavorite('${esc(i.id)}')">${s.favorite?'♥':'♡'}</button></div>${badges(i)}${repeat?`<div class="repeat-note">↻ Täglich möglich${count?` · ${count} Teilnahme${count===1?'':'n'} dokumentiert`:''}${doneNow?' · heute erledigt':''}</div>`:''}${s.ignored?'<div class="ignored-note">Nicht interessant – nur in dieser Ansicht sichtbar.</div>':''}<div class="prize">🎁 ${esc(i.prize)}</div><div class="scoreline"><strong>${label(i.score)}</strong><div class="scorebar"><i style="width:${i.score}%"></i></div><strong>${i.score}</strong></div>${reasonBox(i)}<div class="details">Teilnahmeschluss: ${esc(i.deadline)} · ${left===0?'endet heute':`${left} Tag${left===1?'':'e'} übrig`}<br>${esc(wins)} · Aufwand: ${'●'.repeat(Math.min(5,i.effort||3))}${'○'.repeat(Math.max(0,5-(i.effort||3)))}<br>${esc(i.country)}${i.region?` · ${esc(i.region)}`:''} · geprüft: ${esc(i.verified||'–')}</div><div class="card-actions"><a href="${esc(i.url)}" target="_blank" rel="noopener" onclick="registerClick('${esc(i.id)}')">Teilnehmen ↗</a><button class="${doneNow?'done':''}" onclick="toggleDone('${esc(i.id)}')">${doneNow?'✓ Heute erledigt':repeat?'Heute teilgenommen':'Teilgenommen'}</button><button class="win-button ${s.won?'active':''}" onclick="openWinDialog('${esc(i.id)}')">${s.won?'🏆 Gewonnen':'Gewonnen'}</button><button class="ignore-button ${s.ignored?'active':''}" onclick="toggleIgnored('${esc(i.id)}')">${s.ignored?'Wieder anzeigen':'Nicht interessant'}</button></div></article>`}
 function empty(t){return `<div class="empty">${esc(t)}</div>`}
 
@@ -385,23 +404,23 @@ function renderDailyDriverStatus(){
  const h=catalogHealth(),age=backupAgeDays(),session=currentDailySession(),today=dayKey();
  const done=contests.filter(i=>participatedOn(i.id,today)).length;
  const issues=h.invalid+h.stale;
- box.innerHTML=`<div class="daily-driver-head"><div><p class="section-kicker">DAILY DRIVER 5.0</p><h3>${done?`${done} heute erledigt`:'Bereit für deine Tagesrunde'}</h3><p>${h.active} aktive Gewinnspiele · ${h.ending} enden in 7 Tagen · ${contests.filter(isRepeatable).length} wiederholbar</p></div><button type="button" onclick="openView('todayView')">Tagesmodus öffnen</button></div><div class="daily-driver-checks"><span class="${usingFallback?'warn':'ok'}">${usingFallback?'⚠ Notfalldaten':'✓ Katalog geladen'}</span><span class="${issues?'warn':'ok'}">${issues?`⚠ ${issues} Prüfpunkte`:'✓ Datencheck sauber'}</span><span class="${age>14?'warn':'ok'}">${age>14?'⚠ Sicherung empfohlen':`✓ Sicherung ${age===0?'heute':`vor ${age} Tagen`}`}</span></div>`;
+ box.innerHTML=`<div class="daily-driver-head"><div><p class="section-kicker">DAILY DRIVER 5.1</p><h3>${done?`${done} heute erledigt`:'Bereit für deine Tagesrunde'}</h3><p>${h.active} aktive Gewinnspiele · ${h.ending} enden in 7 Tagen · ${contests.filter(isRepeatable).length} wiederholbar</p></div><button type="button" onclick="openView('todayView')">Tagesmodus öffnen</button></div><div class="daily-driver-checks"><span class="${usingFallback?'warn':'ok'}">${usingFallback?'⚠ Notfalldaten':'✓ Katalog geladen'}</span><span class="${issues?'warn':'ok'}">${issues?`⚠ ${issues} Prüfpunkte`:'✓ Datencheck sauber'}</span><span class="${age>14?'warn':'ok'}">${age>14?'⚠ Sicherung empfohlen':`✓ Sicherung ${age===0?'heute':`vor ${age} Tagen`}`}</span></div>`;
 }
 function renderSystemCheck50(){
  const box=$('#systemCheck50');if(!box)return;
  const h=catalogHealth(),age=backupAgeDays();
  const state=h.invalid?'error':h.stale?'warn':'good';
  box.className=`system-check-50 ${state}`;
- box.innerHTML=`<div><p class="section-kicker">SYSTEMCHECK 5.0</p><h3>${h.invalid?'Handlungsbedarf':h.stale?'Katalogpflege empfohlen':'Daily Driver bereit'}</h3><p>${h.total} Einträge geprüft. Persönliche Statusdaten liegen getrennt vom Katalog und bleiben bei Updates erhalten.</p></div><div class="system-check-grid"><div><strong>${h.active}</strong><span>aktiv</span></div><div><strong>${h.ending}</strong><span>endet bald</span></div><div><strong>${h.expired}</strong><span>abgelaufen</span></div><div><strong>${h.stale}</strong><span>älter als 21 Tage</span></div><div><strong>${h.invalid}</strong><span>fehlerhaft</span></div><div><strong>${age>365?'–':age}</strong><span>Tage seit Sicherung</span></div></div>`;
+ box.innerHTML=`<div><p class="section-kicker">SYSTEMCHECK 5.1</p><h3>${h.invalid?'Handlungsbedarf':h.stale?'Katalogpflege empfohlen':'Daily Driver bereit'}</h3><p>${h.total} Einträge geprüft. Persönliche Statusdaten liegen getrennt vom Katalog und bleiben bei Updates erhalten.</p></div><div class="system-check-grid"><div><strong>${h.active}</strong><span>aktiv</span></div><div><strong>${h.ending}</strong><span>endet bald</span></div><div><strong>${h.expired}</strong><span>abgelaufen</span></div><div><strong>${h.stale}</strong><span>älter als 21 Tage</span></div><div><strong>${h.invalid}</strong><span>fehlerhaft</span></div><div><strong>${age>365?'–':age}</strong><span>Tage seit Sicherung</span></div></div>`;
 }
 window.openView=openView;
 function renderMetrics(){
- const a=scored(),done=a.filter(i=>stateFor(i.id).done).length;
+ const a=scored(),done=scored(true).filter(i=>stateFor(i.id).done).length;
  const m=[['🆕',a.filter(isNewSinceVisit).length,'neu seit Besuch','newVisit'],['🎯',a.filter(recommended).length,'heute lohnenswert','recommended'],['⭐',a.filter(i=>i.score>=80).length,'Top-Chancen','top'],['✓',done,'teilgenommen','statsView']];
  $('#metrics').innerHTML=m.map(([ic,n,l,t])=>`<button class="metric" data-metric="${t}"><b>${ic}</b><strong>${n}</strong><span>${l}</span></button>`).join('');
 }
 function renderHome(){
- const a=scored().sort((x,y)=>y.score-x.score);
+ const a=scored().filter(isOpenContest).sort((x,y)=>y.score-x.score);
  const fresh=a.filter(isNewSinceVisit).sort((x,y)=>y.score-x.score);
  const picks=a.filter(recommended).slice(0,6);
  $('#newCarousel').innerHTML=fresh.slice(0,6).map(mini).join('')||empty('Seit deinem letzten Besuch sind noch keine neuen Gewinnspiele hinzugekommen.');
@@ -458,8 +477,8 @@ function dashboardPool(){
  return all.filter(i=>{const s=stateFor(i.id);return !completedForToday(i)&&!s.ignored});
 }
 function dashboardMini(i){
- const s=stateFor(i.id),status=s.ignored?'Nicht interessant':completedForToday(i)?(isRepeatable(i)?'Heute teilgenommen':'Teilgenommen'):'';
- return `<article class="dashboard-mini ${status?'has-status':''}">${status?`<span class="dashboard-status">${esc(status)}</span>`:''}<div class="provider">${esc(i.provider)}</div><h3>${esc(i.title)}</h3>${badges(i)}<div class="prize">🎁 ${esc(i.prize)}</div><div class="dashboard-mini-meta"><span>${i.winners?`${i.winners} Gewinner`:'Gewinnerzahl offen'}</span><span>${daysLeft(i)===0?'endet heute':`${daysLeft(i)} Tage`}</span><span>Aufwand ${i.effort||3}/5</span></div><div class="mini-actions"><a class="primary" href="${esc(i.url)}" target="_blank" rel="noopener" onclick="registerClick('${esc(i.id)}')">Teilnehmen</a><button class="secondary" onclick="toggleFavorite('${esc(i.id)}')">${s.favorite?'♥':'♡'}</button><button class="secondary ignore-mini" onclick="toggleIgnored('${esc(i.id)}')">Nicht interessant</button></div></article>`;
+ const s=stateFor(i.id),doneNow=completedForToday(i),status=s.ignored?'Nicht interessant':doneNow?(isRepeatable(i)?'Heute teilgenommen':'Teilgenommen'):'';
+ return `<article class="dashboard-mini ${status?'has-status':''}" data-contest-id="${esc(i.id)}">${status?`<span class="dashboard-status">${esc(status)}</span>`:''}<div class="provider">${esc(i.provider)}</div><h3>${esc(i.title)}</h3>${badges(i)}<div class="prize">🎁 ${esc(i.prize)}</div><div class="dashboard-mini-meta"><span>${i.winners?`${i.winners} Gewinner`:'Gewinnerzahl offen'}</span><span>${daysLeft(i)===0?'endet heute':`${daysLeft(i)} Tage`}</span><span>Aufwand ${i.effort||3}/5</span></div><div class="mini-actions"><a class="primary" href="${esc(i.url)}" target="_blank" rel="noopener" onclick="registerClick('${esc(i.id)}')">Teilnehmen</a><button type="button" class="secondary ${doneNow?'done':''}" onclick="toggleDone('${esc(i.id)}')">${doneNow?'✓ Erledigt':isRepeatable(i)?'Heute teilgenommen':'Teilgenommen'}</button><button type="button" class="secondary" onclick="toggleFavorite('${esc(i.id)}')">${s.favorite?'♥':'♡'}</button><button type="button" class="secondary ignore-mini ${s.ignored?'active':''}" onclick="toggleIgnored('${esc(i.id)}')">${s.ignored?'Wieder anzeigen':'Nicht interessant'}</button></div></article>`;
 }
 function dashboardGroup(title,kicker,items,filter,emptyText){
  return `<section class="dashboard-priority-section"><div class="section-head"><div><p class="section-kicker">${esc(kicker)}</p><h2>${esc(title)}</h2></div>${filter?`<button class="text-button" onclick="openDiscover('${esc(filter)}')">Alle</button>`:''}</div><div class="card-row">${items.length?items.slice(0,6).map(dashboardMini).join(''):empty(emptyText)}</div></section>`;

@@ -1,4 +1,12 @@
-# 5.0 – Daily Driver
+# Win Win 5.1 – Synchronisierte Statusverwaltung
+
+- Zentrale Statusänderungen aktualisieren alle Ansichten sofort.
+- Teilgenommen und Nicht interessant werden aus offenen Listen entfernt.
+- Startseiten- und Dashboardkarten besitzen wieder beide Statusaktionen.
+- iPhone-Touchverhalten des Buttons „Nicht interessant“ stabilisiert.
+- Bestehende lokale Status und Teilnahmehistorien bleiben erhalten.
+
+# 5.1 – Daily Driver
 
 - Daily-Driver-Status auf der Startseite
 - integrierter Systemcheck

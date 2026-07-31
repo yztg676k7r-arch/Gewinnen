@@ -1,5 +1,5 @@
 
-## 5.0 – Tagesmodus
+## 5.1 – Tagesmodus
 
 - Priorisierte tägliche Arbeitsliste mit Tagesziel.
 - Fortschritt für offen, erledigt, geöffnet und nur heute übersprungen.
@@ -106,7 +106,7 @@ Nächster Schwerpunkt: Version 4.4 erweitert den Gewinnspielkatalog.
 Tagesansicht für neue, bald endende und noch nicht bearbeitete Gewinnspiele weiter ausbauen.
 
 
-## 5.0 – umgesetzt
+## 5.1 – umgesetzt
 - Wiederholbare Gewinnspiele pro Tag dokumentieren
 - tägliche Wiederaufnahme in die offene Liste
 - Teilnahmehistorie und korrekte Tagesstatistiken

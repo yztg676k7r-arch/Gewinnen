@@ -1,0 +1,8 @@
+WIN WIN 5.1 – SYNCHRONISIERTE STATUSVERWALTUNG
+
+- Eine zentrale Statusänderung aktualisiert Startseite, Heute, Entdecken, Dashboard und Statistiken gleichzeitig.
+- Teilgenommen und Nicht interessant verschwinden sofort aus allen offenen Arbeitslisten.
+- Wiederholbare Gewinnspiele bleiben nur für den aktuellen Tag erledigt und erscheinen am Folgetag wieder.
+- Auf Start- und Dashboardkarten gibt es wieder sichtbare Buttons für Teilgenommen und Nicht interessant.
+- Touch-Verhalten der Statusbuttons auf dem iPhone wurde abgesichert.
+- Bestehende lokale Statusdaten bleiben vollständig erhalten.
