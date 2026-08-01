@@ -1,0 +1,4 @@
+Win Win 5.6
+
+Neu: Katalogpflege, Ablaufkontrolle, aktiver Katalogexport, Prüflistenexport und lokales Archiv.
+Persönliche Status bleiben unverändert.

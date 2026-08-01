@@ -1,4 +1,14 @@
 
+## 5.6 – umgesetzt
+- Katalogpflege und Ablaufkontrolle
+- Aktiver-Katalog-Export und Prüflisten-Export
+- Lokales Archiv abgelaufener Einträge ohne Statusverlust
+
+## Nächster Schwerpunkt – 5.7
+- Katalogdaten in größeren geprüften Paketen aktualisieren
+- Prüfliste als Grundlage für neue Gewinnspiel-Recherche nutzen
+
+
 ## 5.2 – Tagesmodus
 
 - Priorisierte tägliche Arbeitsliste mit Tagesziel.

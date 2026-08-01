@@ -418,3 +418,16 @@ main{padding:0 16px}.view{display:none;animation:fade .18s ease}.view.active{dis
 .catalog-update-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:13px}.catalog-update-actions button{min-height:46px}
 .catalog-url-field{display:grid;gap:6px;margin:12px 0}.catalog-url-field span{font-size:11px;font-weight:850;color:var(--muted)}.catalog-url-field input{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:14px;padding:12px;background:var(--surface);font:inherit;color:var(--ink)}
 @media(max-width:520px){.catalog-update-actions{grid-template-columns:1fr}}
+
+
+/* Win Win 5.6 – Katalogpflege */
+.maintenance-panel{border-color:color-mix(in srgb,var(--green) 28%,var(--line));background:linear-gradient(150deg,var(--surface),color-mix(in srgb,var(--green) 5%,var(--surface)))}
+.maintenance-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:14px 0}
+.maintenance-stats>div{display:grid;gap:3px;padding:11px;border:1px solid var(--line);border-radius:14px;background:var(--surface-2);text-align:center}
+.maintenance-stats strong{font-size:20px}.maintenance-stats span{font-size:10px;color:var(--muted);font-weight:800}
+.maintenance-issues{display:grid;gap:8px;margin:12px 0}
+.maintenance-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 12px;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.maintenance-row>div{min-width:0;display:grid;gap:3px}.maintenance-row strong{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.maintenance-row span{font-size:10px;line-height:1.35;color:var(--muted)}
+.maintenance-row button{flex:0 0 auto;padding:8px 10px}
+.maintenance-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.maintenance-actions button{min-height:46px}
+@media(max-width:520px){.maintenance-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.maintenance-actions{grid-template-columns:1fr}.maintenance-row{align-items:flex-start}.maintenance-row button{min-height:40px}}

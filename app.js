@@ -1,5 +1,5 @@
 
-const APP_VERSION='5.5';
+const APP_VERSION='5.6';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=3;
@@ -19,6 +19,7 @@ const SOURCE_DATA_KEY='winwin-custom-sources-v1';
 const SOURCE_BACKUP_KEY='winwin-sources-backup-v1';
 const SOURCE_QUEUE_KEY='winwin-source-queue-v1';
 const HIT_INBOX_KEY='winwin-hit-inbox-v1';
+const CATALOG_MAINTENANCE_KEY='winwin-catalog-maintenance-v1';
 let baseSources=[];
 let sources=[];
 let sourceDataVersion='–';
@@ -31,6 +32,9 @@ const searchTextCache=new Map();
 let pendingSourceImport=null;
 let sourceQueue=null;
 let hitInbox=[];
+let catalogMaintenance=safeJSON(localStorage.getItem(CATALOG_MAINTENANCE_KEY),{archivedExpired:[],lastCleanup:null});
+if(!catalogMaintenance||typeof catalogMaintenance!=='object')catalogMaintenance={archivedExpired:[],lastCleanup:null};
+if(!Array.isArray(catalogMaintenance.archivedExpired))catalogMaintenance.archivedExpired=[];
 
 const FALLBACK=[{"id": "dm-ob-starterset-2026", "title": "100 limitierte o.b. Startersets", "provider": "dm", "prize": "100 × limitiertes o.b. Starterset", "url": "https://www.dm.de/neu/gewinnspiele/ob-3493126", "category": "Beauty", "country": "Deutschland", "deadline": "13.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-adventskalender-2026", "title": "70 Adventskalender gewinnen", "provider": "dm", "prize": "70 Adventskalender verschiedener Marken", "url": "https://www.dm.de/neu/gewinnspiele/adventskalender-gewinnspiel-2948470", "category": "Beauty", "country": "Deutschland", "deadline": "16.08.2026", "winners": 70, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner", "schnell"]}, {"id": "dm-seeberger-2026", "title": "VAUDE-Rucksack mit Snacks", "provider": "dm / Seeberger", "prize": "5 × VAUDE-Rucksack mit Seeberger-Snacks", "url": "https://www.dm.de/neu/gewinnspiele/seeberger-3487062", "category": "Freizeit", "country": "Deutschland", "deadline": "04.08.2026", "winners": 5, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Freizeit", "schnell"]}, {"id": "dm-borotalco-2026", "title": "Borotalco-Produktpakete", "provider": "dm / Borotalco", "prize": "Borotalco-Produktpakete", "url": "https://www.dm.de/neu/gewinnspiele/borotalco-3487104", "category": "Beauty", "country": "Deutschland", "deadline": "05.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 1, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "schnell"]}, {"id": "rossmann-neonail-2026", "title": "100 NEONAIL-Sommerpakete", "provider": "ROSSMANN", "prize": "100 × NEONAIL-Sommerpaket mit Kosmetiktasche", "url": "https://www.rossmann.de/de/service-und-hilfe/rossmann-app", "category": "Beauty", "country": "Deutschland", "deadline": "02.08.2026", "winners": 100, "new": true, "daily": false, "international": false, "requirements": "Kostenlose ROSSMANN-App und Registrierung", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Teilnahme im Aktionsbereich der ROSSMANN-App.", "providerTrust": 5, "effort": 2, "entryType": "app", "multipleEntry": false, "highValuePrize": false, "tags": ["Beauty", "viele Gewinner"]}, {"id": "rossmann-centaur-juli-2026", "title": "Centaur-Rätsel Juli", "provider": "ROSSMANN", "prize": "Reise-, Wellness- und Freizeitgewinne", "url": "https://www.rossmann.de/cms/gewinnspiele/centaur-raetsel-202607.html", "category": "Reisen", "country": "Deutschland", "deadline": "09.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "ROSSMANN-App erforderlich", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 3, "entryType": "app", "multipleEntry": false, "highValuePrize": true, "tags": ["Reisen"]}, {"id": "qvc-insider-2026", "title": "10 QVC-INSIDER-Jahresabos", "provider": "QVC", "prize": "10 × Jahresabo des QVC-Kundenmagazins INSIDER", "url": "https://www.qvc.de/content/nichts-verpassen/gewinnspiel/teilnahmebedingungen.html", "category": "Wohnen", "country": "Deutschland & Österreich", "deadline": "10.08.2026", "winners": 10, "new": true, "daily": false, "international": true, "requirements": "Teilnahmebedingungen auf der QVC-Seite beachten", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Wohnen", "international"]}, {"id": "schoener-wohnen-2026", "title": "Aktuelle Monatsgewinnspiele", "provider": "SCHÖNER WOHNEN", "prize": "Design-, Wohn-, Technik- und Reisegewinne", "url": "https://www.schoener-wohnen.de/gewinnspiele/", "category": "Wohnen", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenlose Teilnahme über Bilderpuzzle und Formular", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite; die genaue Frist steht beim jeweiligen Gewinnspiel.", "providerTrust": 4, "effort": 3, "entryType": "form", "multipleEntry": false, "highValuePrize": true, "tags": ["Wohnen"]}, {"id": "dm-produkttests-2026", "title": "Aktuelle dm-Produkttests", "provider": "dm Produkttester", "prize": "Produkte kostenlos testen und bewerten", "url": "https://www.dm.de/neu/produkttest", "category": "Produkttests", "country": "Deutschland", "deadline": "31.08.2026", "winners": null, "new": true, "daily": false, "international": false, "requirements": "Kostenloses Mein-dm-Konto", "purchaseRequired": false, "receiptRequired": false, "winnerKnown": false, "verified": "29.07.2026", "note": "Sammelseite mit wechselnden Produkttests.", "providerTrust": 5, "effort": 2, "entryType": "form", "multipleEntry": false, "highValuePrize": false, "tags": ["Produkttests"]}];
 const $=(s,r=document)=>r.querySelector(s);
@@ -487,14 +491,14 @@ function renderDailyDriverStatus(){
  const h=catalogHealth(),age=backupAgeDays(),session=currentDailySession(),today=dayKey();
  const done=contests.filter(i=>participatedOn(i.id,today)).length;
  const issues=h.invalid+h.stale;
- box.innerHTML=`<div class="daily-driver-head"><div><p class="section-kicker">DAILY DRIVER 5.5</p><h3>${done?`${done} heute erledigt`:'Bereit für deine Tagesrunde'}</h3><p>${h.active} aktive Gewinnspiele · ${h.ending} enden in 7 Tagen · ${contests.filter(isRepeatable).length} wiederholbar</p></div><button type="button" onclick="openView('todayView')">Tagesmodus öffnen</button></div><div class="daily-driver-checks"><span class="${usingFallback?'warn':'ok'}">${usingFallback?'⚠ Notfalldaten':'✓ Katalog geladen'}</span><span class="${issues?'warn':'ok'}">${issues?`⚠ ${issues} Prüfpunkte`:'✓ Datencheck sauber'}</span><span class="${age>14?'warn':'ok'}">${age>14?'⚠ Sicherung empfohlen':`✓ Sicherung ${age===0?'heute':`vor ${age} Tagen`}`}</span></div>`;
+ box.innerHTML=`<div class="daily-driver-head"><div><p class="section-kicker">DAILY DRIVER 5.6</p><h3>${done?`${done} heute erledigt`:'Bereit für deine Tagesrunde'}</h3><p>${h.active} aktive Gewinnspiele · ${h.ending} enden in 7 Tagen · ${contests.filter(isRepeatable).length} wiederholbar</p></div><button type="button" onclick="openView('todayView')">Tagesmodus öffnen</button></div><div class="daily-driver-checks"><span class="${usingFallback?'warn':'ok'}">${usingFallback?'⚠ Notfalldaten':'✓ Katalog geladen'}</span><span class="${issues?'warn':'ok'}">${issues?`⚠ ${issues} Prüfpunkte`:'✓ Datencheck sauber'}</span><span class="${age>14?'warn':'ok'}">${age>14?'⚠ Sicherung empfohlen':`✓ Sicherung ${age===0?'heute':`vor ${age} Tagen`}`}</span></div>`;
 }
 function renderSystemCheck50(){
  const box=$('#systemCheck50');if(!box)return;
  const h=catalogHealth(),age=backupAgeDays();
  const state=h.invalid?'error':h.stale?'warn':'good';
  box.className=`system-check-50 ${state}`;
- box.innerHTML=`<div><p class="section-kicker">SYSTEMCHECK 5.5</p><h3>${h.invalid?'Handlungsbedarf':h.stale?'Katalogpflege empfohlen':'Daily Driver bereit'}</h3><p>${h.total} Einträge geprüft. Persönliche Statusdaten liegen getrennt vom Katalog und bleiben bei Updates erhalten.</p></div><div class="system-check-grid"><div><strong>${h.active}</strong><span>aktiv</span></div><div><strong>${h.ending}</strong><span>endet bald</span></div><div><strong>${h.expired}</strong><span>abgelaufen</span></div><div><strong>${h.stale}</strong><span>älter als 21 Tage</span></div><div><strong>${h.invalid}</strong><span>fehlerhaft</span></div><div><strong>${age>365?'–':age}</strong><span>Tage seit Sicherung</span></div></div>`;
+ box.innerHTML=`<div><p class="section-kicker">SYSTEMCHECK 5.6</p><h3>${h.invalid?'Handlungsbedarf':h.stale?'Katalogpflege empfohlen':'Daily Driver bereit'}</h3><p>${h.total} Einträge geprüft. Persönliche Statusdaten liegen getrennt vom Katalog und bleiben bei Updates erhalten.</p></div><div class="system-check-grid"><div><strong>${h.active}</strong><span>aktiv</span></div><div><strong>${h.ending}</strong><span>endet bald</span></div><div><strong>${h.expired}</strong><span>abgelaufen</span></div><div><strong>${h.stale}</strong><span>älter als 21 Tage</span></div><div><strong>${h.invalid}</strong><span>fehlerhaft</span></div><div><strong>${age>365?'–':age}</strong><span>Tage seit Sicherung</span></div></div>`;
 }
 window.openView=openView;
 function renderMetrics(){
@@ -825,6 +829,7 @@ function applyPendingImport(){
  const entry={date:new Date().toISOString(),source:pendingImport.source,...pendingImport.report};
  importHistory=[entry,...importHistory].slice(0,20);
  localStorage.setItem(IMPORT_HISTORY_KEY,JSON.stringify(importHistory));
+ localStorage.setItem(CATALOG_MAINTENANCE_KEY,JSON.stringify(catalogMaintenance));
  const report=pendingImport.report;pendingImport=null;
  applyCustomData(report);renderImportPreview();renderImportHistory();
  toast(`${report.added} neu · ${report.updated} aktualisiert`)
@@ -868,7 +873,8 @@ function buildFullBackup(){
      customContests:JSON.parse(JSON.stringify(customContests)),
      hitInbox:JSON.parse(JSON.stringify(hitInbox)),
      catalogBackup:safeJSON(localStorage.getItem(IMPORT_BACKUP_KEY),null),
-     importHistory:JSON.parse(JSON.stringify(importHistory))
+     importHistory:JSON.parse(JSON.stringify(importHistory)),
+     catalogMaintenance:JSON.parse(JSON.stringify(catalogMaintenance))
    },
    summary:{
      statuses:Object.keys(user.items||{}).length,
@@ -912,6 +918,8 @@ function applyFullBackup(payload){
  customContests=Array.isArray(d.customContests)?JSON.parse(JSON.stringify(d.customContests)):[];
  hitInbox=Array.isArray(d.hitInbox)?JSON.parse(JSON.stringify(d.hitInbox)):[];
  importHistory=Array.isArray(d.importHistory)?JSON.parse(JSON.stringify(d.importHistory)):[];
+ catalogMaintenance=d.catalogMaintenance&&typeof d.catalogMaintenance==='object'?JSON.parse(JSON.stringify(d.catalogMaintenance)):{archivedExpired:[],lastCleanup:null};
+ if(!Array.isArray(catalogMaintenance.archivedExpired))catalogMaintenance.archivedExpired=[];
  localStorage.setItem(STORAGE_KEY,JSON.stringify(user));
  localStorage.setItem(STORAGE_BACKUP_KEY,JSON.stringify(user));
  localStorage.setItem(PREFERENCE_KEY,JSON.stringify(preferences));
@@ -945,11 +953,14 @@ function applyFullBackupWithoutPrompt(payload){
  customContests=Array.isArray(d.customContests)?JSON.parse(JSON.stringify(d.customContests)):[];
  hitInbox=Array.isArray(d.hitInbox)?JSON.parse(JSON.stringify(d.hitInbox)):[];
  importHistory=Array.isArray(d.importHistory)?JSON.parse(JSON.stringify(d.importHistory)):[];
+ catalogMaintenance=d.catalogMaintenance&&typeof d.catalogMaintenance==='object'?JSON.parse(JSON.stringify(d.catalogMaintenance)):{archivedExpired:[],lastCleanup:null};
+ if(!Array.isArray(catalogMaintenance.archivedExpired))catalogMaintenance.archivedExpired=[];
  localStorage.setItem(STORAGE_KEY,JSON.stringify(user));localStorage.setItem(STORAGE_BACKUP_KEY,JSON.stringify(user));localStorage.setItem(PREFERENCE_KEY,JSON.stringify(preferences));localStorage.setItem(FILTER_STORAGE_KEY,JSON.stringify(advancedFilters));localStorage.setItem(DASHBOARD_SHOW_ALL_KEY,String(dashboardShowAll));localStorage.setItem(DAILY_PLAN_KEY,JSON.stringify(dailyPlan));localStorage.setItem(DAILY_SESSION_KEY,JSON.stringify(dailySession));
  if(customContests.length)localStorage.setItem(CUSTOM_DATA_KEY,JSON.stringify(customContests));else localStorage.removeItem(CUSTOM_DATA_KEY);
  if(hitInbox.length)localStorage.setItem(HIT_INBOX_KEY,JSON.stringify(hitInbox));else localStorage.removeItem(HIT_INBOX_KEY);
  if(d.catalogBackup)localStorage.setItem(IMPORT_BACKUP_KEY,JSON.stringify(d.catalogBackup));else localStorage.removeItem(IMPORT_BACKUP_KEY);
  localStorage.setItem(IMPORT_HISTORY_KEY,JSON.stringify(importHistory));
+ localStorage.setItem(CATALOG_MAINTENANCE_KEY,JSON.stringify(catalogMaintenance));
  const toggle=$('#dashboardShowAll');if(toggle)toggle.checked=dashboardShowAll;syncFilterUI();applyCustomData();renderImportHistory();renderBackupSummary()
 }
 function renderBackupSummary(){
@@ -968,6 +979,85 @@ function setupPersonalBackup(){
  renderBackupSummary()
 }
 
+
+
+function maintenanceIssueRows(){
+ const archived=new Set(catalogMaintenance.archivedExpired||[]);
+ return contests.map(i=>{
+   const warnings=contestWarnings(i);
+   const left=daysLeft(i);
+   const verified=parseFlexibleDate(i.lastVerified||i.verified||i.addedAt);
+   const age=verified?Math.floor((new Date()-verified)/86400000):9999;
+   const issues=[];
+   if(left<0)issues.push('abgelaufen');
+   if(!validContest(i)||!/^https?:\/\//i.test(i.url||''))issues.push('fehlerhaft');
+   if(age>21)issues.push('Prüfung älter als 21 Tage');
+   if(!Number(i.winners)>0)issues.push('Gewinnerzahl unbekannt');
+   warnings.forEach(w=>{if(!issues.includes(w))issues.push(w)});
+   return {contest:i,issues,left,age,archived:archived.has(i.id)};
+ }).filter(x=>x.issues.length);
+}
+function catalogMaintenanceStats(){
+ const rows=maintenanceIssueRows();
+ return {
+  total:contests.length,
+  active:contests.filter(active).length,
+  expired:rows.filter(x=>x.left<0).length,
+  stale:rows.filter(x=>x.age>21).length,
+  invalid:rows.filter(x=>x.issues.includes('fehlerhaft')).length,
+  archived:(catalogMaintenance.archivedExpired||[]).length,
+  review:rows.filter(x=>x.left>=0&&!x.archived).length
+ };
+}
+function saveCatalogMaintenance(){
+ catalogMaintenance.lastCleanup=new Date().toISOString();
+ localStorage.setItem(CATALOG_MAINTENANCE_KEY,JSON.stringify(catalogMaintenance));
+ renderCatalogMaintenance();
+}
+function renderCatalogMaintenance(){
+ const statsBox=$('#maintenanceStats'),list=$('#maintenanceIssues'),meta=$('#maintenanceMeta');
+ if(!statsBox||!list)return;
+ const s=catalogMaintenanceStats();
+ statsBox.innerHTML=`<div><strong>${s.active}</strong><span>aktiv</span></div><div><strong>${s.expired}</strong><span>abgelaufen</span></div><div><strong>${s.stale}</strong><span>Prüfung alt</span></div><div><strong>${s.invalid}</strong><span>fehlerhaft</span></div><div><strong>${s.review}</strong><span>zu prüfen</span></div><div><strong>${s.archived}</strong><span>lokal archiviert</span></div>`;
+ const archived=new Set(catalogMaintenance.archivedExpired||[]);
+ const rows=maintenanceIssueRows().filter(x=>!archived.has(x.contest.id)&&x.left>=0).sort((a,b)=>b.issues.length-a.issues.length||a.left-b.left).slice(0,12);
+ list.innerHTML=rows.length?rows.map(x=>`<div class="maintenance-row"><div><strong>${esc(x.contest.title)}</strong><span>${esc(x.contest.provider||'Unbekannt')} · ${esc(x.issues.join(' · '))}</span></div><button type="button" onclick="openMaintenanceContest('${esc(x.contest.id)}')">Öffnen</button></div>`).join(''):empty('Keine aktiven Prüfpunkte vorhanden.');
+ if(meta){const d=parseFlexibleDate(catalogMaintenance.lastCleanup);meta.textContent=d?`Letzte lokale Pflege: ${new Intl.DateTimeFormat('de-DE',{dateStyle:'medium',timeStyle:'short'}).format(d)}`:'Noch keine lokale Katalogpflege durchgeführt.'}
+}
+function exportActiveCatalog56(){
+ const rows=contests.filter(i=>active(i)&&validContest(i));
+ downloadJSON(`win-win-aktiver-katalog-${new Date().toISOString().slice(0,10)}.json`,{version:APP_VERSION,updated:new Date().toISOString(),count:rows.length,contests:rows});
+ toast(`${rows.length} aktive Gewinnspiele exportiert`);
+}
+function exportReviewQueue56(){
+ const archived=new Set(catalogMaintenance.archivedExpired||[]);
+ const rows=maintenanceIssueRows().filter(x=>x.left>=0&&!archived.has(x.contest.id)).map(x=>({id:x.contest.id,title:x.contest.title,provider:x.contest.provider,url:x.contest.url,deadline:x.contest.deadline,issues:x.issues}));
+ downloadJSON(`win-win-pruefliste-${new Date().toISOString().slice(0,10)}.json`,{version:APP_VERSION,created:new Date().toISOString(),count:rows.length,items:rows});
+ toast(`${rows.length} Prüfpunkte exportiert`);
+}
+function archiveExpired56(){
+ const expired=contests.filter(i=>daysLeft(i)<0).map(i=>i.id);
+ const merged=[...new Set([...(catalogMaintenance.archivedExpired||[]),...expired])];
+ catalogMaintenance.archivedExpired=merged;saveCatalogMaintenance();
+ toast(`${expired.length} abgelaufene Einträge lokal archiviert`);
+}
+function restoreArchived56(){
+ if(!(catalogMaintenance.archivedExpired||[]).length)return toast('Kein lokales Archiv vorhanden');
+ if(!confirm('Lokales Ablaufarchiv zurücksetzen? Persönliche Status bleiben erhalten.'))return;
+ catalogMaintenance.archivedExpired=[];saveCatalogMaintenance();toast('Lokales Archiv zurückgesetzt');
+}
+function openMaintenanceContest(id){
+ const i=contests.find(x=>x.id===id);if(!i)return;
+ openView('discoverView');currentFilter='all';const q=$('#searchInput');if(q)q.value=i.title;discoverRenderLimit=DISCOVER_PAGE_SIZE;renderDiscover();
+}
+function setupCatalogMaintenance(){
+ $('#exportActiveCatalogBtn')?.addEventListener('click',exportActiveCatalog56);
+ $('#exportReviewQueueBtn')?.addEventListener('click',exportReviewQueue56);
+ $('#archiveExpiredBtn')?.addEventListener('click',archiveExpired56);
+ $('#restoreArchivedBtn')?.addEventListener('click',restoreArchived56);
+ renderCatalogMaintenance();
+}
+window.openMaintenanceContest=openMaintenanceContest;
 
 function renderDataCenter(report=null){
  const summary=$('#importSummary');
@@ -1005,7 +1095,7 @@ function renderDataCenter(report=null){
  }
  if(localText)localText.textContent=customContests.length?`${customContests.length} lokale Ergänzung${customContests.length===1?'':'en'} gespeichert.`:'Noch keine lokalen Ergänzungen gespeichert.';
  if(backupBtn)backupBtn.disabled=!localStorage.getItem(IMPORT_BACKUP_KEY);
- renderImportPreview();renderImportHistory();renderBackupSummary();renderSystemCheck50();renderCatalogUpdateStatus();
+ renderImportPreview();renderImportHistory();renderBackupSummary();renderSystemCheck50();renderCatalogUpdateStatus();renderCatalogMaintenance();
 }
 function catalogPayloadRows(payload){
  if(Array.isArray(payload))return payload;
@@ -1081,7 +1171,7 @@ function setupDataCenter(){
  $('#exportLocalBtn')?.addEventListener('click',()=>downloadJSON(`win-win-lokale-ergaenzungen-${new Date().toISOString().slice(0,10)}.json`,{version:APP_VERSION,updated:new Date().toISOString(),contests:customContests}));
  $('#clearLocalBtn')?.addEventListener('click',()=>{if(!customContests.length)return toast('Keine lokalen Ergänzungen vorhanden');if(!confirm('Lokale Ergänzungen löschen? Persönliche Status bleiben erhalten.'))return;localStorage.setItem(IMPORT_BACKUP_KEY,JSON.stringify({savedAt:new Date().toISOString(),contests:customContests}));customContests=[];localStorage.removeItem(CUSTOM_DATA_KEY);applyCustomData();toast('Lokale Ergänzungen gelöscht')});
  $('#restoreCatalogBtn')?.addEventListener('click',restoreCatalogBackup);
- setupPersonalBackup();setupCatalogUpdater();renderDataCenter();
+ setupPersonalBackup();setupCatalogUpdater();setupCatalogMaintenance();renderDataCenter();
 }
 
 function normalizeSource(raw,index=0){

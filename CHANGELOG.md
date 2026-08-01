@@ -1,4 +1,11 @@
-# Version 5.5 – Katalog-Update-Assistent
+
+## 5.6 – Katalogpflege & Ablaufkontrolle
+- Zentrale Katalogpflege mit Kennzahlen für aktive, abgelaufene, veraltete und fehlerhafte Einträge.
+- Export eines bereinigten aktiven Katalogs.
+- Export einer strukturierten Prüfliste für die nächste Datenrunde.
+- Lokales Ablaufarchiv ohne Änderung persönlicher Status.
+- Katalogpflege wird in der persönlichen Komplettsicherung berücksichtigt.
+# Version 5.6 – Katalog-Update-Assistent
 
 - Veröffentlichten Online-Katalog mit einem Fingertipp neu prüfen.
 - Externe Katalog-JSON über eine Webadresse laden und vor der Übernahme analysieren.
