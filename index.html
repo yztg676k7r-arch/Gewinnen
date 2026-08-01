@@ -13,8 +13,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="stylesheet" href="./styles.css?v=5.6.1">
-  <title>Win Win 5.6.1</title>
+  <link rel="stylesheet" href="./styles.css">
+  <title>Win Win 5.6.2</title>
 </head>
 <body>
   <div class="app-shell">
@@ -40,9 +40,9 @@
         <section class="update-status" id="updateStatus">
           <span class="status-dot"></span>
           <span id="updateText">Gewinnspiele werden geprüft …</span>
-          <small id="dataDiagnostics" class="data-diagnostics">Version 5.6.1 · Katalog wird geladen</small>
+          <small id="dataDiagnostics" class="data-diagnostics">Win Win 5.6.2 · Katalog wird geladen</small>
         </section>
-        <section class="deployment-status" id="deploymentStatus" aria-live="polite" hidden>
+        <section class="deployment-status" id="deploymentStatus" aria-live="polite" hidden inert>
           <div class="deployment-status-copy">
             <strong>Veröffentlichung wird geprüft</strong>
             <small id="deploymentStatusText">Veröffentlichte Version wird geprüft …</small>
@@ -179,14 +179,14 @@
         <section class="data-panel version-center-panel" aria-live="polite">
           <div class="section-head">
             <div><p class="section-kicker">SYSTEM</p><h3>Version & Katalog</h3></div>
-            <span class="version-pill" id="systemVersionBadge">5.6.1</span>
+            <span class="version-pill" id="systemVersionBadge">5.6.2</span>
           </div>
           <p id="systemVersionText" class="muted-copy">Version wird geprüft …</p>
           <p id="systemCatalogText" class="muted-copy">Katalog wird geladen …</p>
           <button type="button" id="forceUpdateDataBtn" class="secondary-button">Update prüfen</button>
         </section>
         <section class="data-hero">
-          <div><p class="section-kicker">WIN WIN 5.6.1</p><h3>Katalogpflege & stabile Versionierung</h3><p>Eine gemeinsame Versionsquelle, sichere Statusdaten und kompakte technische Informationen in der Datenzentrale.</p></div>
+          <div><p class="section-kicker">WIN WIN 5.6.2</p><h3>Katalogpflege & stabile Versionierung</h3><p>Eine gemeinsame Versionsquelle, sichere Statusdaten und kompakte technische Informationen in der Datenzentrale.</p></div>
         </section>
         <section id="systemCheck50" class="system-check-50"></section>
         <section id="importSummary" class="import-summary"></section>
@@ -420,6 +420,27 @@
       </form>
     </dialog>
 
-  <script src="./app.js?v=5.6.1"></script>
+  
+<script>
+(() => {
+  const activateView = (viewId) => {
+    document.querySelectorAll('.view').forEach(view => {
+      view.classList.toggle('active', view.id === viewId);
+    });
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.classList.toggle('active', item.dataset.view === viewId);
+    });
+    window.scrollTo({top: 0, behavior: 'auto'});
+  };
+  document.addEventListener('click', event => {
+    const item = event.target.closest('.nav-item[data-view]');
+    if (!item) return;
+    activateView(item.dataset.view);
+  });
+  window.__winWinBasicNavigation = activateView;
+})();
+</script>
+
+  <script src="./app.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 
-const APP_VERSION='5.6.1';
+const APP_VERSION='5.6.2';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=3;
@@ -1548,8 +1548,8 @@ async function renderDeploymentStatus(){
     : `Versionskonflikt: App ${APP_VERSION}, veröffentlicht ${publishedVersion}. Bitte „Update erzwingen“ verwenden.`;
 }
 async function forceAppUpdate(){
- const button=$('#forceUpdateBtn');
- if(button){button.disabled=true;button.textContent='Update läuft …'}
+ const buttons=[$('#forceUpdateBtn'),$('#forceUpdateDataBtn')].filter(Boolean);
+ buttons.forEach(button=>{button.disabled=true;button.textContent='Update läuft …'});
  try{
   if('serviceWorker' in navigator){
    const registrations=await navigator.serviceWorker.getRegistrations();
@@ -1565,7 +1565,10 @@ async function forceAppUpdate(){
  }catch(error){
   console.error('Win Win: Update konnte nicht erzwungen werden',error);
   toast('Update konnte nicht vollständig ausgeführt werden');
-  if(button){button.disabled=false;button.textContent='Update erzwingen'}
+  buttons.forEach(button=>{
+   button.disabled=false;
+   button.textContent=button.id==='forceUpdateDataBtn'?'Update prüfen':'Update erzwingen';
+  });
  }
 }
 function validContest(i){
@@ -1626,7 +1629,10 @@ async function loadData(silent=false){
  updateDiagnostics(dataVersion);
  if(!silent&&usingFallback)toast('Notfalldaten geladen');
 }
-$$('.nav-item').forEach(b=>b.addEventListener('click',()=>openView(b.dataset.view)));
+$$('.nav-item').forEach(b=>b.addEventListener('click',event=>{
+ event.stopPropagation();
+ openView(b.dataset.view);
+}));
 $$('.chip').forEach(b=>b.addEventListener('click',()=>{
  currentFilter=b.dataset.filter;
  discoverRenderLimit=DISCOVER_PAGE_SIZE;
@@ -1663,8 +1669,22 @@ setupContestManager();
 setupHitInbox();
 setupSourceQueue();
 if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js').catch(()=>{});
-Promise.allSettled([loadSources(),loadData()]).finally(async()=>{
+Promise.allSettled([loadSources(),loadData()]).then(async results=>{
+ const failed=results.filter(result=>result.status==='rejected');
+ if(failed.length){
+  console.error('Win Win: Start teilweise fehlgeschlagen',failed);
+  const status=$('#updateStatus');
+  const text=$('#updateText');
+  status?.classList.add('error');
+  if(text)text.textContent='Ein Teil der Daten konnte nicht geladen werden';
+ }
  await renderDeploymentStatus();
- setTimeout(()=>{user.lastVisit=new Date().toISOString();saveUser()},1200)
+ setTimeout(()=>{user.lastVisit=new Date().toISOString();saveUser()},1200);
+}).catch(error=>{
+ console.error('Win Win: Startfehler',error);
+ const status=$('#updateStatus');
+ const text=$('#updateText');
+ status?.classList.add('error');
+ if(text)text.textContent='Startfehler – Navigation bleibt verfügbar';
 });
 setInterval(()=>loadData(true),30*60*1000);

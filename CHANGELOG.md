@@ -1,5 +1,14 @@
 ## 5.6.1 – Einheitliche Versionierung
 
+## 5.6.2 – Start- und Cache-Bugfix
+
+- Feste Asset-Dateinamen ohne Query-Versionierung.
+- Kein HTML-Fallback mehr für JavaScript- und CSS-Anfragen.
+- Unabhängige Fallback-Navigation.
+- Verständlichere Versionsanzeige.
+- Persönliche Statusspeicher bleiben unverändert.
+
+
 - Eine gemeinsame Versionsquelle über `version.json`.
 - Technische Details von der Startseite in die Datenzentrale verschoben.
 - Warnung nur noch bei echtem Versionskonflikt oder aktivem Notfallkatalog.

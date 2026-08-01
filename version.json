@@ -1,8 +1,8 @@
 {
-  "version": "5.6.1",
+  "version": "5.6.2",
   "buildDate": "2026-08-01",
-  "builtAt": "2026-08-01T15:30:00+02:00",
+  "builtAt": "2026-08-01T15:45:00+02:00",
   "catalogEntries": 100,
-  "release": "Einheitliche Versionierung",
-  "note": "Eine gemeinsame Versionsquelle; technische Details kompakt in der Datenzentrale."
+  "release": "Start- und Cache-Bugfix",
+  "note": "Stabile Asset-Auslieferung, unabhängige Navigation und verständliche Versionsanzeige."
 }

@@ -1,0 +1,8 @@
+WIN WIN 5.6.2 – START- UND CACHE-BUGFIX
+
+- app.js und styles.css werden wieder über feste Dateinamen geladen.
+- Der Service Worker liefert niemals HTML als Ersatz für JavaScript oder CSS.
+- Die untere Navigation besitzt eine unabhängige Fallback-Steuerung.
+- Echte Startfehler werden sichtbar gemeldet, ohne die Navigation zu blockieren.
+- Die Versionsanzeige verwendet nur noch die zentrale Version 5.6.2.
+- Persönliche Status und Katalogdaten bleiben unverändert.

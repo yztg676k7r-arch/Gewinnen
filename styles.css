@@ -445,3 +445,12 @@ main{padding:0 16px}.view{display:none;animation:fade .18s ease}.view.active{dis
 }
 .muted-copy{margin:6px 0;color:var(--muted);line-height:1.45}
 .version-center-panel .secondary-button{width:100%;margin-top:10px}
+
+
+/* Win Win 5.6.2 – startup resilience */
+[hidden]{display:none!important}
+.deployment-status[hidden]{display:none!important}
+.nav-item{position:relative;z-index:3;pointer-events:auto!important}
+.bottom-nav{z-index:1000}
+.update-status{min-height:52px}
+.data-diagnostics{white-space:normal}
