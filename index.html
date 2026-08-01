@@ -248,6 +248,18 @@
           <div class="section-head compact"><div><p class="section-kicker">ANBIETERQUALITÄT</p><h3>Vertrauen nach Quelle</h3></div></div>
           <div id="providerQuality" class="provider-quality"></div>
         </section>
+        <section class="data-panel catalog-update-panel">
+          <div class="section-head compact"><div><p class="section-kicker">KATALOG-UPDATE</p><h3>Neue Daten sicher übernehmen</h3></div><span id="catalogUpdateBadge" class="source-count"></span></div>
+          <p>Prüfe den aktuell veröffentlichten Online-Katalog oder lade eine Katalog-JSON direkt über ihre Webadresse. Vor der Übernahme erscheint immer eine Vorschau; deine persönlichen Status bleiben getrennt erhalten.</p>
+          <div id="catalogUpdateStatus" class="catalog-update-status"></div>
+          <div class="catalog-update-actions">
+            <button id="refreshPublishedCatalogBtn" class="data-primary">Online-Katalog neu prüfen</button>
+            <button id="openDeploymentCheckBtn">Versionsprüfung öffnen</button>
+          </div>
+          <label class="catalog-url-field"><span>Katalog-URL</span><input id="catalogUrlInput" type="url" inputmode="url" autocapitalize="none" spellcheck="false" placeholder="https://…/contests.json"></label>
+          <div class="data-actions"><button id="loadCatalogUrlBtn">URL laden & prüfen</button><button id="useDefaultCatalogUrlBtn">Eigene App-URL einsetzen</button></div>
+          <p class="data-safety-note">Ein Katalog-Update ersetzt niemals Teilgenommen, Nicht interessant, Favoriten, Gewinne oder Teilnahmehistorien.</p>
+        </section>
         <section class="data-panel">
           <h3>JSON-Datei importieren</h3>
           <p>Unterstützt eine vollständige <code>contests.json</code>, ein Objekt mit <code>contests</code> oder eine reine Liste von Gewinnspielen.</p>

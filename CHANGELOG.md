@@ -1,3 +1,11 @@
+# Version 5.5 – Katalog-Update-Assistent
+
+- Veröffentlichten Online-Katalog mit einem Fingertipp neu prüfen.
+- Externe Katalog-JSON über eine Webadresse laden und vor der Übernahme analysieren.
+- Importvorschau zeigt neue, aktualisierte, doppelte und ungültige Einträge.
+- Persönliche Status bleiben vollständig vom Katalog getrennt.
+- Direkter Zugriff auf die Deployment-Prüfung.
+
 # Changelog
 
 ## 5.3.1 – Kartenlayout & iPhone-Optimierung

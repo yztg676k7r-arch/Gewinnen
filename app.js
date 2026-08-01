@@ -1,5 +1,5 @@
 
-const APP_VERSION='5.4.1';
+const APP_VERSION='5.5';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=3;
@@ -487,14 +487,14 @@ function renderDailyDriverStatus(){
  const h=catalogHealth(),age=backupAgeDays(),session=currentDailySession(),today=dayKey();
  const done=contests.filter(i=>participatedOn(i.id,today)).length;
  const issues=h.invalid+h.stale;
- box.innerHTML=`<div class="daily-driver-head"><div><p class="section-kicker">DAILY DRIVER 5.4.1</p><h3>${done?`${done} heute erledigt`:'Bereit für deine Tagesrunde'}</h3><p>${h.active} aktive Gewinnspiele · ${h.ending} enden in 7 Tagen · ${contests.filter(isRepeatable).length} wiederholbar</p></div><button type="button" onclick="openView('todayView')">Tagesmodus öffnen</button></div><div class="daily-driver-checks"><span class="${usingFallback?'warn':'ok'}">${usingFallback?'⚠ Notfalldaten':'✓ Katalog geladen'}</span><span class="${issues?'warn':'ok'}">${issues?`⚠ ${issues} Prüfpunkte`:'✓ Datencheck sauber'}</span><span class="${age>14?'warn':'ok'}">${age>14?'⚠ Sicherung empfohlen':`✓ Sicherung ${age===0?'heute':`vor ${age} Tagen`}`}</span></div>`;
+ box.innerHTML=`<div class="daily-driver-head"><div><p class="section-kicker">DAILY DRIVER 5.5</p><h3>${done?`${done} heute erledigt`:'Bereit für deine Tagesrunde'}</h3><p>${h.active} aktive Gewinnspiele · ${h.ending} enden in 7 Tagen · ${contests.filter(isRepeatable).length} wiederholbar</p></div><button type="button" onclick="openView('todayView')">Tagesmodus öffnen</button></div><div class="daily-driver-checks"><span class="${usingFallback?'warn':'ok'}">${usingFallback?'⚠ Notfalldaten':'✓ Katalog geladen'}</span><span class="${issues?'warn':'ok'}">${issues?`⚠ ${issues} Prüfpunkte`:'✓ Datencheck sauber'}</span><span class="${age>14?'warn':'ok'}">${age>14?'⚠ Sicherung empfohlen':`✓ Sicherung ${age===0?'heute':`vor ${age} Tagen`}`}</span></div>`;
 }
 function renderSystemCheck50(){
  const box=$('#systemCheck50');if(!box)return;
  const h=catalogHealth(),age=backupAgeDays();
  const state=h.invalid?'error':h.stale?'warn':'good';
  box.className=`system-check-50 ${state}`;
- box.innerHTML=`<div><p class="section-kicker">SYSTEMCHECK 5.4.1</p><h3>${h.invalid?'Handlungsbedarf':h.stale?'Katalogpflege empfohlen':'Daily Driver bereit'}</h3><p>${h.total} Einträge geprüft. Persönliche Statusdaten liegen getrennt vom Katalog und bleiben bei Updates erhalten.</p></div><div class="system-check-grid"><div><strong>${h.active}</strong><span>aktiv</span></div><div><strong>${h.ending}</strong><span>endet bald</span></div><div><strong>${h.expired}</strong><span>abgelaufen</span></div><div><strong>${h.stale}</strong><span>älter als 21 Tage</span></div><div><strong>${h.invalid}</strong><span>fehlerhaft</span></div><div><strong>${age>365?'–':age}</strong><span>Tage seit Sicherung</span></div></div>`;
+ box.innerHTML=`<div><p class="section-kicker">SYSTEMCHECK 5.5</p><h3>${h.invalid?'Handlungsbedarf':h.stale?'Katalogpflege empfohlen':'Daily Driver bereit'}</h3><p>${h.total} Einträge geprüft. Persönliche Statusdaten liegen getrennt vom Katalog und bleiben bei Updates erhalten.</p></div><div class="system-check-grid"><div><strong>${h.active}</strong><span>aktiv</span></div><div><strong>${h.ending}</strong><span>endet bald</span></div><div><strong>${h.expired}</strong><span>abgelaufen</span></div><div><strong>${h.stale}</strong><span>älter als 21 Tage</span></div><div><strong>${h.invalid}</strong><span>fehlerhaft</span></div><div><strong>${age>365?'–':age}</strong><span>Tage seit Sicherung</span></div></div>`;
 }
 window.openView=openView;
 function renderMetrics(){
@@ -1005,7 +1005,68 @@ function renderDataCenter(report=null){
  }
  if(localText)localText.textContent=customContests.length?`${customContests.length} lokale Ergänzung${customContests.length===1?'':'en'} gespeichert.`:'Noch keine lokalen Ergänzungen gespeichert.';
  if(backupBtn)backupBtn.disabled=!localStorage.getItem(IMPORT_BACKUP_KEY);
- renderImportPreview();renderImportHistory();renderBackupSummary();renderSystemCheck50();
+ renderImportPreview();renderImportHistory();renderBackupSummary();renderSystemCheck50();renderCatalogUpdateStatus();
+}
+function catalogPayloadRows(payload){
+ if(Array.isArray(payload))return payload;
+ if(payload&&Array.isArray(payload.contests))return payload.contests;
+ throw new Error('Keine Gewinnspiel-Liste gefunden');
+}
+function absoluteCatalogUrl(value){
+ const raw=String(value||'').trim();
+ if(!raw)return new URL('./contests.json',location.href).href;
+ const url=new URL(raw,location.href);
+ if(!['http:','https:'].includes(url.protocol))throw new Error('Nur HTTP- oder HTTPS-Adressen sind erlaubt');
+ return url.href;
+}
+function renderCatalogUpdateStatus(state={type:'idle'}){
+ const box=$('#catalogUpdateStatus');const badge=$('#catalogUpdateBadge');if(!box)return;
+ const total=Array.isArray(contests)?contests.length:0;
+ if(badge)badge.textContent=`${total} geladen`;
+ if(state.type==='loading'){
+   box.className='catalog-update-status loading';
+   box.innerHTML='<strong>Katalog wird geladen …</strong><span>Die bestehende App bleibt währenddessen unverändert.</span>';
+   return;
+ }
+ if(state.type==='error'){
+   box.className='catalog-update-status error';
+   box.innerHTML=`<strong>Update konnte nicht geprüft werden</strong><span>${esc(state.message||'Unbekannter Fehler')}</span>`;
+   return;
+ }
+ if(state.type==='ready'){
+   box.className='catalog-update-status ready';
+   box.innerHTML=`<strong>${state.remoteCount} Einträge geprüft</strong><span>${state.added} neu · ${state.updated} aktualisiert · ${state.duplicates} unverändert/doppelt · ${state.invalid} ungültig</span>`;
+   return;
+ }
+ box.className='catalog-update-status';
+ box.innerHTML=`<strong>${total} Gewinnspiele aktuell geladen</strong><span>Online-Katalog oder externe JSON prüfen, ohne persönliche Status zu verändern.</span>`;
+}
+async function fetchCatalogUpdate(url,sourceLabel='Online-Katalog'){
+ const target=absoluteCatalogUrl(url);
+ renderCatalogUpdateStatus({type:'loading'});
+ try{
+   const separator=target.includes('?')?'&':'?';
+   const response=await fetch(`${target}${separator}winwinUpdate=${Date.now()}`,{cache:'no-store',headers:{Accept:'application/json'}});
+   if(!response.ok)throw new Error(`HTTP ${response.status} – ${response.statusText||'Datei nicht erreichbar'}`);
+   const payload=await response.json();
+   const rows=catalogPayloadRows(payload);
+   const report=prepareImport(payload,sourceLabel);
+   renderCatalogUpdateStatus({type:'ready',remoteCount:rows.length,added:report.added.length,updated:report.updated.length,duplicates:report.duplicates.length,invalid:report.invalid.length});
+   renderImportPreview();
+   $('#importPreview')?.scrollIntoView({behavior:'smooth',block:'center'});
+   toast('Katalog geprüft – Vorschau beachten');
+ }catch(error){
+   renderCatalogUpdateStatus({type:'error',message:error?.message||String(error)});
+   toast('Katalogprüfung fehlgeschlagen');
+ }
+}
+function setupCatalogUpdater(){
+ const urlInput=$('#catalogUrlInput');
+ $('#refreshPublishedCatalogBtn')?.addEventListener('click',()=>fetchCatalogUpdate('./contests.json','Veröffentlichter Win-Win-Katalog'));
+ $('#loadCatalogUrlBtn')?.addEventListener('click',()=>fetchCatalogUpdate(urlInput?.value,'Katalog-URL'));
+ $('#useDefaultCatalogUrlBtn')?.addEventListener('click',()=>{if(urlInput)urlInput.value=new URL('./contests.json',location.href).href});
+ $('#openDeploymentCheckBtn')?.addEventListener('click',()=>window.open(new URL('./DEPLOYMENT-CHECK.html',location.href).href,'_blank','noopener'));
+ renderCatalogUpdateStatus();
 }
 function setupDataCenter(){
  const importFile=$('#importFile');
@@ -1020,7 +1081,7 @@ function setupDataCenter(){
  $('#exportLocalBtn')?.addEventListener('click',()=>downloadJSON(`win-win-lokale-ergaenzungen-${new Date().toISOString().slice(0,10)}.json`,{version:APP_VERSION,updated:new Date().toISOString(),contests:customContests}));
  $('#clearLocalBtn')?.addEventListener('click',()=>{if(!customContests.length)return toast('Keine lokalen Ergänzungen vorhanden');if(!confirm('Lokale Ergänzungen löschen? Persönliche Status bleiben erhalten.'))return;localStorage.setItem(IMPORT_BACKUP_KEY,JSON.stringify({savedAt:new Date().toISOString(),contests:customContests}));customContests=[];localStorage.removeItem(CUSTOM_DATA_KEY);applyCustomData();toast('Lokale Ergänzungen gelöscht')});
  $('#restoreCatalogBtn')?.addEventListener('click',restoreCatalogBackup);
- setupPersonalBackup();renderDataCenter();
+ setupPersonalBackup();setupCatalogUpdater();renderDataCenter();
 }
 
 function normalizeSource(raw,index=0){

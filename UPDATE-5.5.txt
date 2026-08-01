@@ -1,0 +1,7 @@
+Win Win 5.5 – Katalog-Update-Assistent
+
+Neu:
+- Online-Katalog ohne Browser-Cache prüfen
+- Externe JSON-URL laden
+- Sichere Vorschau vor jeder Übernahme
+- Statusdaten bleiben unverändert
