@@ -431,3 +431,17 @@ main{padding:0 16px}.view{display:none;animation:fade .18s ease}.view.active{dis
 .maintenance-row button{flex:0 0 auto;padding:8px 10px}
 .maintenance-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.maintenance-actions button{min-height:46px}
 @media(max-width:520px){.maintenance-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.maintenance-actions{grid-template-columns:1fr}.maintenance-row{align-items:flex-start}.maintenance-row button{min-height:40px}}
+
+
+/* Win Win 5.6.1 – unified version display */
+.deployment-status[hidden]{display:none!important}
+.version-center-panel{margin-bottom:16px}
+.version-center-panel .section-head{align-items:center;margin-bottom:8px}
+.version-pill{
+ display:inline-flex;align-items:center;justify-content:center;
+ min-width:62px;padding:7px 11px;border-radius:999px;
+ background:var(--surface-2);color:var(--green-dark);
+ font-weight:850;font-size:13px
+}
+.muted-copy{margin:6px 0;color:var(--muted);line-height:1.45}
+.version-center-panel .secondary-button{width:100%;margin-top:10px}

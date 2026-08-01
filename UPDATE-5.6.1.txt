@@ -1,0 +1,7 @@
+WIN WIN 5.6.1 – EINHEITLICHE VERSIONIERUNG
+
+- version.json ist die einzige veröffentlichte Versionsquelle.
+- Keine getrennten App-/Daten-/Deployment-Versionsanzeigen mehr.
+- Die rote Warnbox erscheint nur bei einem echten Konflikt oder Notfallkatalog.
+- Technische Versions- und Katalogdetails stehen kompakt in der Datenzentrale.
+- Persönliche Status und lokale Katalogdaten bleiben unverändert.

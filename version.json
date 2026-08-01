@@ -1,12 +1,8 @@
 {
-  "app": "Win Win",
-  "version": "5.6",
-  "catalogVersion": "4.7",
-  "catalogCount": 100,
-  "builtAt": "2026-08-01T15:00:00+02:00",
-  "release": "Katalogpflege & Ablaufkontrolle",
-  "note": "Aktiver-Katalog-Export, Prüflisten-Export, lokales Ablaufarchiv und Katalogpflege ohne Statusverlust.",
-  "updated": "2026-08-01",
-  "contestCount": 100,
-  "appVersion": "5.6"
+  "version": "5.6.1",
+  "buildDate": "2026-08-01",
+  "builtAt": "2026-08-01T15:30:00+02:00",
+  "catalogEntries": 100,
+  "release": "Einheitliche Versionierung",
+  "note": "Eine gemeinsame Versionsquelle; technische Details kompakt in der Datenzentrale."
 }

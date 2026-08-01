@@ -1,5 +1,5 @@
 
-const APP_VERSION='5.6';
+const APP_VERSION='5.6.1';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=3;
@@ -1517,17 +1517,35 @@ async function readDeploymentVersion(){
 async function renderDeploymentStatus(){
  const box=$('#deploymentStatus');
  const text=$('#deploymentStatusText');
- if(!box||!text)return;
+ const versionText=$('#systemVersionText');
+ const catalogText=$('#systemCatalogText');
+ const versionBadge=$('#systemVersionBadge');
  const info=await readDeploymentVersion();
- const version=String(info?.version||'unbekannt');
- const matches=version===APP_VERSION&&!usingFallback;
+ const publishedVersion=String(info?.version||'unbekannt');
+ const versionMatches=publishedVersion===APP_VERSION;
  const activeCount=allActive().length;
  const expiredCount=Math.max(0,contests.length-activeCount);
- box.classList.toggle('error',!matches);
- box.classList.toggle('success',matches);
- text.textContent=matches
-  ? `Veröffentlichung aktuell: App ${APP_VERSION} · ${contests.length} geladen · ${activeCount} aktiv · ${expiredCount} abgelaufen`
-  : `Versionskonflikt: App ${APP_VERSION}, veröffentlicht ${version}. Bitte „Update erzwingen“ verwenden.`;
+ const healthy=versionMatches&&!usingFallback;
+
+ if(versionBadge)versionBadge.textContent=APP_VERSION;
+ if(versionText){
+  versionText.textContent=versionMatches
+   ? `App und Veröffentlichung sind auf Version ${APP_VERSION}.`
+   : `App ${APP_VERSION} · veröffentlicht ${publishedVersion}.`;
+ }
+ if(catalogText){
+  catalogText.textContent=`${contests.length} Gewinnspiele geladen · ${activeCount} aktiv · ${expiredCount} abgelaufen${usingFallback?' · Notfallkatalog aktiv':''}.`;
+ }
+
+ if(!box||!text)return;
+ box.hidden=healthy;
+ box.classList.toggle('error',!healthy);
+ box.classList.toggle('success',healthy);
+ text.textContent=healthy
+  ? `Version ${APP_VERSION} ist aktuell.`
+  : versionMatches
+    ? `Der Notfallkatalog ist aktiv. Bitte „Update erzwingen“ verwenden.`
+    : `Versionskonflikt: App ${APP_VERSION}, veröffentlicht ${publishedVersion}. Bitte „Update erzwingen“ verwenden.`;
 }
 async function forceAppUpdate(){
  const button=$('#forceUpdateBtn');
@@ -1555,12 +1573,18 @@ function validContest(i){
         typeof i.provider==='string' && typeof i.url==='string' &&
         typeof i.deadline==='string';
 }
-function updateDiagnostics(dataVersion='–'){
+function updateDiagnostics(){
  const el=$('#dataDiagnostics');
- if(!el)return;
  const activeCount=allActive().length;
- el.textContent=`App ${APP_VERSION} · Daten ${dataVersion} · ${contests.length} geladen · ${activeCount} aktiv`;
- el.classList.toggle('fallback',usingFallback);
+ const expiredCount=Math.max(0,contests.length-activeCount);
+ if(el){
+  el.textContent=`Version ${APP_VERSION} · ${contests.length} geladen · ${activeCount} aktiv`;
+  el.classList.toggle('fallback',usingFallback);
+ }
+ const catalogText=$('#systemCatalogText');
+ if(catalogText){
+  catalogText.textContent=`${contests.length} Gewinnspiele geladen · ${activeCount} aktiv · ${expiredCount} abgelaufen${usingFallback?' · Notfallkatalog aktiv':''}.`;
+ }
 }
 async function loadData(silent=false){
  searchTextCache.clear();
@@ -1630,6 +1654,7 @@ $('#dailyTarget')?.addEventListener('change',e=>{dailyPlan.target=Number(e.targe
 $('#dailyMode')?.addEventListener('change',e=>{dailyPlan.mode=e.target.value||'balanced';saveDailyPlan()});
 $('#refreshBtn')?.addEventListener('click',async()=>{await Promise.allSettled([loadData(),loadSources()]);await renderDeploymentStatus();toast('Daten neu geladen')});
 $('#forceUpdateBtn')?.addEventListener('click',forceAppUpdate);
+ $('#forceUpdateDataBtn')?.addEventListener('click',forceAppUpdate);
 document.addEventListener('click',e=>{const m=e.target.closest('[data-metric]');if(!m)return;m.dataset.metric==='statsView'?openView('statsView'):openDiscover(m.dataset.metric)});
 if($('#saveWinBtn'))$('#saveWinBtn').onclick=saveWin;if($('#removeWinBtn'))$('#removeWinBtn').onclick=removeWin;if($('#cancelWinBtn'))$('#cancelWinBtn').onclick=()=>$('#winDialog')?.close();
 setupDataCenter();

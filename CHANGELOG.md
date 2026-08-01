@@ -1,3 +1,11 @@
+## 5.6.1 – Einheitliche Versionierung
+
+- Eine gemeinsame Versionsquelle über `version.json`.
+- Technische Details von der Startseite in die Datenzentrale verschoben.
+- Warnung nur noch bei echtem Versionskonflikt oder aktivem Notfallkatalog.
+- Versionsangaben in HTML, Manifest, App und Service Worker vereinheitlicht.
+- Persönliche Statusspeicher bleiben unverändert.
+
 
 ## 5.6 – Katalogpflege & Ablaufkontrolle
 - Zentrale Katalogpflege mit Kennzahlen für aktive, abgelaufene, veraltete und fehlerhafte Einträge.
