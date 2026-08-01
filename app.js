@@ -1,5 +1,5 @@
 
-const APP_VERSION='5.4';
+const APP_VERSION='5.4.1';
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const USER_SCHEMA_VERSION=3;
@@ -107,22 +107,56 @@ function saveUser(){
  localStorage.setItem(STORAGE_KEY,serialized);
  localStorage.setItem(STORAGE_BACKUP_KEY,serialized);
 }
+function contestIdentity(i){
+ if(!i)return null;
+ return {
+  id:String(i.id||''),
+  title:String(i.title||'').trim().toLowerCase(),
+  provider:String(i.provider||'').trim().toLowerCase(),
+  deadline:String(i.deadline||''),
+  url:normalizeUrl(i.url||'')
+ };
+}
+function identityFingerprint(identity){
+ if(!identity)return '';
+ return [identity.title,identity.provider,identity.deadline].join('|');
+}
 function migrateContestStates(){
  let changed=false;
+ const byUrl=new Map();
+ contests.forEach(i=>{const key=normalizeUrl(i.url||'');if(key){if(!byUrl.has(key))byUrl.set(key,[]);byUrl.get(key).push(i)}});
+ // Mehrfach verwendete Aktionsseiten sind keine eindeutige Identität. Alte URL-Zuordnungen
+ // dürfen dort niemals einen Status auf ein anderes Gewinnspiel verschieben.
+ Object.keys(user.urlIndex||{}).forEach(key=>{
+  if((byUrl.get(key)||[]).length!==1){delete user.urlIndex[key];changed=true}
+ });
+ const orphanEntries=Object.entries(user.items||{}).filter(([id])=>!contests.some(i=>i.id===id));
  contests.forEach(i=>{
-   const key=normalizeUrl(i.url||'');
-   if(!key)return;
-   const oldId=user.urlIndex[key];
-   if(!user.items[i.id]&&oldId&&user.items[oldId]){
-     user.items[i.id]=JSON.parse(JSON.stringify(user.items[oldId]));
-     changed=true;
+   const identity=contestIdentity(i),key=identity.url;
+   let state=user.items[i.id];
+   if(!state){
+    // 1) Starke Migration über die zuletzt gespeicherte Identität.
+    const fp=identityFingerprint(identity);
+    const matches=orphanEntries.filter(([,candidate])=>identityFingerprint(candidate&&candidate._identity)===fp);
+    if(matches.length===1){state=JSON.parse(JSON.stringify(matches[0][1]));user.items[i.id]=state;changed=true}
+    // 2) URL-Migration nur dann, wenn die URL im gesamten Katalog eindeutig ist.
+    if(!state&&key&&(byUrl.get(key)||[]).length===1){
+     const oldId=user.urlIndex[key];
+     if(oldId&&user.items[oldId]){state=JSON.parse(JSON.stringify(user.items[oldId]));user.items[i.id]=state;changed=true}
+    }
    }
-   if(user.urlIndex[key]!==i.id){user.urlIndex[key]=i.id;changed=true}
+   if(state){
+    const nextIdentity=identity;
+    if(JSON.stringify(state._identity||null)!==JSON.stringify(nextIdentity)){state._identity=nextIdentity;changed=true}
+   }
+   if(key&&(byUrl.get(key)||[]).length===1&&user.urlIndex[key]!==i.id){user.urlIndex[key]=i.id;changed=true}
  });
  if(changed)saveUser();
 }
 function stateFor(id){
  const s=user.items[id]??={favorite:false,done:false,won:false,ignored:false};
+ const contest=contests.find(i=>i.id===id);
+ if(contest)s._identity=contestIdentity(contest);
  if(typeof s.ignored!=='boolean')s.ignored=false;
  if(typeof s.won!=='boolean')s.won=false;
  if(!s.winDetails||typeof s.winDetails!=='object')s.winDetails={};
@@ -453,14 +487,14 @@ function renderDailyDriverStatus(){
  const h=catalogHealth(),age=backupAgeDays(),session=currentDailySession(),today=dayKey();
  const done=contests.filter(i=>participatedOn(i.id,today)).length;
  const issues=h.invalid+h.stale;
- box.innerHTML=`<div class="daily-driver-head"><div><p class="section-kicker">DAILY DRIVER 5.4</p><h3>${done?`${done} heute erledigt`:'Bereit für deine Tagesrunde'}</h3><p>${h.active} aktive Gewinnspiele · ${h.ending} enden in 7 Tagen · ${contests.filter(isRepeatable).length} wiederholbar</p></div><button type="button" onclick="openView('todayView')">Tagesmodus öffnen</button></div><div class="daily-driver-checks"><span class="${usingFallback?'warn':'ok'}">${usingFallback?'⚠ Notfalldaten':'✓ Katalog geladen'}</span><span class="${issues?'warn':'ok'}">${issues?`⚠ ${issues} Prüfpunkte`:'✓ Datencheck sauber'}</span><span class="${age>14?'warn':'ok'}">${age>14?'⚠ Sicherung empfohlen':`✓ Sicherung ${age===0?'heute':`vor ${age} Tagen`}`}</span></div>`;
+ box.innerHTML=`<div class="daily-driver-head"><div><p class="section-kicker">DAILY DRIVER 5.4.1</p><h3>${done?`${done} heute erledigt`:'Bereit für deine Tagesrunde'}</h3><p>${h.active} aktive Gewinnspiele · ${h.ending} enden in 7 Tagen · ${contests.filter(isRepeatable).length} wiederholbar</p></div><button type="button" onclick="openView('todayView')">Tagesmodus öffnen</button></div><div class="daily-driver-checks"><span class="${usingFallback?'warn':'ok'}">${usingFallback?'⚠ Notfalldaten':'✓ Katalog geladen'}</span><span class="${issues?'warn':'ok'}">${issues?`⚠ ${issues} Prüfpunkte`:'✓ Datencheck sauber'}</span><span class="${age>14?'warn':'ok'}">${age>14?'⚠ Sicherung empfohlen':`✓ Sicherung ${age===0?'heute':`vor ${age} Tagen`}`}</span></div>`;
 }
 function renderSystemCheck50(){
  const box=$('#systemCheck50');if(!box)return;
  const h=catalogHealth(),age=backupAgeDays();
  const state=h.invalid?'error':h.stale?'warn':'good';
  box.className=`system-check-50 ${state}`;
- box.innerHTML=`<div><p class="section-kicker">SYSTEMCHECK 5.4</p><h3>${h.invalid?'Handlungsbedarf':h.stale?'Katalogpflege empfohlen':'Daily Driver bereit'}</h3><p>${h.total} Einträge geprüft. Persönliche Statusdaten liegen getrennt vom Katalog und bleiben bei Updates erhalten.</p></div><div class="system-check-grid"><div><strong>${h.active}</strong><span>aktiv</span></div><div><strong>${h.ending}</strong><span>endet bald</span></div><div><strong>${h.expired}</strong><span>abgelaufen</span></div><div><strong>${h.stale}</strong><span>älter als 21 Tage</span></div><div><strong>${h.invalid}</strong><span>fehlerhaft</span></div><div><strong>${age>365?'–':age}</strong><span>Tage seit Sicherung</span></div></div>`;
+ box.innerHTML=`<div><p class="section-kicker">SYSTEMCHECK 5.4.1</p><h3>${h.invalid?'Handlungsbedarf':h.stale?'Katalogpflege empfohlen':'Daily Driver bereit'}</h3><p>${h.total} Einträge geprüft. Persönliche Statusdaten liegen getrennt vom Katalog und bleiben bei Updates erhalten.</p></div><div class="system-check-grid"><div><strong>${h.active}</strong><span>aktiv</span></div><div><strong>${h.ending}</strong><span>endet bald</span></div><div><strong>${h.expired}</strong><span>abgelaufen</span></div><div><strong>${h.stale}</strong><span>älter als 21 Tage</span></div><div><strong>${h.invalid}</strong><span>fehlerhaft</span></div><div><strong>${age>365?'–':age}</strong><span>Tage seit Sicherung</span></div></div>`;
 }
 window.openView=openView;
 function renderMetrics(){

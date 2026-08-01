@@ -1,0 +1,8 @@
+Win Win 5.4.1 – dauerhafte Statuszuordnung
+
+- Nicht interessant bleibt dauerhaft an der eindeutigen Gewinnspiel-ID gespeichert.
+- URL-Migration wird nur noch bei im Katalog eindeutig vorkommenden URLs verwendet.
+- Mehrere Gewinnspiele auf derselben Aktionsseite können keine Status mehr untereinander verschieben.
+- Status erhalten zusätzlich eine stabile Identität aus Titel, Anbieter und Frist.
+- Einmalige Teilnahmen bleiben dauerhaft erledigt; nur echte tägliche/mehrfache Aktionen erscheinen am Folgetag erneut.
+- Vorhandene lokale Status werden nicht überschrieben.

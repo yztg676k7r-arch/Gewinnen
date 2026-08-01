@@ -1,13 +1,6 @@
-# 5.4 – Katalog & Quellen 2.0
-- Tages-Schnellfilter ergänzt.
-- Dashboard-Kennzahlen erweitert.
-- Quellenpriorität verbessert.
-- Mobile Frist- und Kartenanzeige optimiert.
-- Statusspeicher unverändert.
-
 # Changelog
 
-## 5.4 – Kartenlayout & iPhone-Optimierung
+## 5.3.1 – Kartenlayout & iPhone-Optimierung
 - Aktionsleisten auf Gewinnspielkarten als stabiles Zwei-Spalten-Grid aufgebaut.
 - „Teilnehmen“ und „Nicht interessant“ nutzen jeweils die volle Kartenbreite.
 - „Teilgenommen“, Favorit und „Gewonnen“ werden ohne Abschneiden dargestellt.

@@ -334,7 +334,7 @@ main{padding:0 16px}.view{display:none;animation:fade .18s ease}.view.active{dis
 /* Win Win 5.3 – Performance & Alltag */
 .category-quick-filters{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:10px 0 14px;padding-bottom:2px}.category-quick-filters::-webkit-scrollbar{display:none}.category-quick-filters button{min-width:92px;border:1px solid var(--line);border-radius:16px;padding:10px 9px;background:var(--surface);color:var(--ink);font:inherit;text-align:left;box-shadow:0 2px 8px rgba(18,43,69,.05)}.category-quick-filters strong{display:block;font-size:17px}.category-quick-filters span{display:block;margin-top:2px;font-size:10px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.load-more-contests{width:100%;margin:14px 0 8px;border:1px solid var(--line);border-radius:15px;padding:13px;background:var(--surface);color:var(--blue-dark);font:inherit;font-weight:850}.load-more-contests[hidden]{display:none}.contest-list{content-visibility:auto;contain-intrinsic-size:700px}.contest-card{contain:layout style paint}
 
-/* Win Win 5.4 – Kartenaktionen & iPhone-Optimierung */
+/* Win Win 5.4.1 – Kartenaktionen & iPhone-Optimierung */
 .mini-actions,
 .card-actions{
   display:grid;
@@ -406,5 +406,5 @@ main{padding:0 16px}.view{display:none;animation:fade .18s ease}.view.active{dis
   }
 }
 
-/* 5.4 – Katalog & Quellen 2.0 */
+/* 5.4.1 – Katalog & Quellen 2.0 */
 .today-quick-filters{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 0 14px;padding:2px 1px 4px}.today-quick-filters::-webkit-scrollbar{display:none}.today-quick-filters button{border:1px solid var(--line);border-radius:999px;padding:9px 12px;background:var(--surface);color:var(--muted);font:inherit;font-size:11px;font-weight:850;white-space:nowrap;box-shadow:0 2px 7px rgba(18,43,69,.04)}.today-quick-filters button.active{background:var(--blue-dark);border-color:var(--blue-dark);color:#fff}.contest-card.deadline-soon{border-color:#f2b55c}.contest-card.deadline-today{border-color:#e66a6a;box-shadow:0 8px 22px rgba(197,54,54,.12)}.contest-card.deadline-today .details{color:#a52a2a;font-weight:750}.dashboard-health{grid-template-columns:repeat(3,1fr)}@media(max-width:520px){.dashboard-health{grid-template-columns:repeat(2,1fr)}.badges{gap:5px}.badge{padding:5px 8px;font-size:9px}.contest-card{padding:15px}.card-top h3{font-size:18px;line-height:1.2}}
