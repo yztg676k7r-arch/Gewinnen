@@ -1,5 +1,13 @@
 ## 5.6.1 – Einheitliche Versionierung
 
+## 5.6.3 – Grundprüfung und Datenfix
+
+- Kritischen Initialisierungsfehler (`safeJSON` vor Definition) behoben.
+- Vollständigen Browser-Start mit 100 Gewinnspielen geprüft.
+- Navigation und zentrale Ansichten geprüft.
+- Persönliche Statusspeicher unverändert.
+
+
 ## 5.6.2 – Start- und Cache-Bugfix
 
 - Feste Asset-Dateinamen ohne Query-Versionierung.

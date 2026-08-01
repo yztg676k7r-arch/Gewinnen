@@ -1,0 +1,7 @@
+WIN WIN 5.6.3 – GRUNDPRÜFUNG UND DATENFIX
+
+- safeJSON wird jetzt vor der ersten Verwendung definiert.
+- Der JavaScript-Start bricht nicht mehr vor dem Laden des Katalogs ab.
+- Startseite, Entdecken, Heute, Dashboard und Navigation wurden im Browserlauf geprüft.
+- 100 Katalogeinträge bleiben enthalten.
+- Persönliche Statusschlüssel bleiben unverändert.
