@@ -1,8 +1,8 @@
 {
-  "version": "5.6.3",
+  "version": "5.7",
   "buildDate": "2026-08-01",
-  "builtAt": "2026-08-01T15:40:00+02:00",
-  "catalogEntries": 100,
-  "release": "Grundprüfung und Datenfix",
-  "note": "Initialisierungsfehler behoben; kompletter Browserlauf geprüft."
+  "builtAt": "2026-08-01T21:45:00+02:00",
+  "catalogEntries": 117,
+  "release": "Inhaltsrelease",
+  "note": "17 neue offiziell verlinkte Gewinnspiele; technische Basis aus 5.6.3 unverändert."
 }

@@ -1,0 +1,7 @@
+WIN WIN 5.7 – INHALTSRELEASE
+
+- Katalog von 100 auf 117 Gewinnspiele erweitert.
+- 17 neue, offiziell verlinkte und am 01.08.2026 geprüfte Aktionen.
+- Schwerpunkte: Technik, Auto, Film, Radio, Reisen und regionale Chancen.
+- Zwei zusätzliche offizielle Quellen: Moviebreak und NDR Kultur.
+- Statusspeicher, Navigation und Tageslogik aus 5.6.3 bleiben unverändert.

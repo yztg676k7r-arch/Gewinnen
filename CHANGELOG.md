@@ -1,5 +1,14 @@
 ## 5.6.1 – Einheitliche Versionierung
 
+## 5.7 – Inhaltsrelease
+
+- Katalog auf 117 Einträge erweitert.
+- 17 neue offiziell verlinkte Gewinnspiele ergänzt.
+- Neue Inhalte aus AUTO BILD, Moviebreak, NDR, MDR, SWR und ROSSMANN.
+- Quellenkatalog um Moviebreak und NDR Kultur ergänzt.
+- Technische Basis und persönliche Statusspeicher unverändert.
+
+
 ## 5.6.3 – Grundprüfung und Datenfix
 
 - Kritischen Initialisierungsfehler (`safeJSON` vor Definition) behoben.
