@@ -1,0 +1,10 @@
+Win Win 5.4 – Katalog & Quellen 2.0
+
+Neu:
+- Tages-Schnellfilter: Alle offen, Heute neu, Endet heute, Diese Woche, Mehrfach möglich
+- Dashboard-Kennzahlen: gesamt, aktiv, offen, heute erledigt, endet in 24 h, prüfen
+- Fristen auf Karten farblich hervorgehoben
+- Quellen-Potenzialwert für bessere Priorisierung
+- Mobile Badges und Kartenabstände optimiert
+
+Wichtig: Persönliche Status werden nicht überschrieben.

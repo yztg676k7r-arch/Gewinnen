@@ -87,5 +87,9 @@ Der aktive Katalog enthält jetzt 82 Einträge. 50 neue Gewinnspiel-Chancen wurd
 Tägliche und mehrfach teilnehmbare Gewinnspiele werden pro Kalendertag dokumentiert. Sie erscheinen am Folgetag automatisch wieder, während die Historie lokal erhalten bleibt.
 
 
-### 5.3.1
+### 5.4
 Performance-Optimierung für größere Gewinnspielkataloge.
+
+
+## 5.4
+Tages-Schnellfilter, Quellen-Potenzial und verbesserte Katalogübersicht.

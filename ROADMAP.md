@@ -112,5 +112,9 @@ Tagesansicht für neue, bald endende und noch nicht bearbeitete Gewinnspiele wei
 - Teilnahmehistorie und korrekte Tagesstatistiken
 
 
-## 5.3.1 erledigt
+## 5.4 erledigt
 - Performance und Alltagstauglichkeit für größere Kataloge.
+
+
+## Stand 5.4
+Katalog- und Quellenpriorisierung ist alltagstauglicher. Nächster Schwerpunkt: regelmäßige geprüfte Datenupdates.
