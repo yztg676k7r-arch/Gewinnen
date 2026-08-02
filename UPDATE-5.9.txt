@@ -1,0 +1,8 @@
+WIN WIN 5.9 – KATALOGAUSBAU, PHASE 1
+
+- Katalog von 117 auf 150 Einträge erweitert.
+- 33 neue offizielle oder regelmäßig wiederkehrende Gewinnspiel-Chancen.
+- Neue Inhalte unter anderem von ELLE, freundin, MDR, NDR, N-JOY, SWR1,
+  Moviebreak, AUTO BILD, dm und ROSSMANN.
+- App-Logik, Statusspeicher, Navigation und Layout aus 5.8 unverändert.
+- Der nächste Datenblock führt den Katalog weiter in Richtung 250 Einträge.

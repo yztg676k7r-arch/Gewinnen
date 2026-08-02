@@ -1,8 +1,8 @@
 {
-  "version": "5.8",
+  "version": "5.9",
   "buildDate": "2026-08-02",
-  "builtAt": "2026-08-02T13:55:00+02:00",
-  "catalogEntries": 117,
-  "release": "Katalog-Update & Neu-Logik",
-  "note": "Neue Einträge bleiben bis zur Bearbeitung sichtbar; Katalog lässt sich netzwerkfrisch laden."
+  "builtAt": "2026-08-02T15:15:00+02:00",
+  "catalogEntries": 150,
+  "release": "Katalogausbau – Phase 1",
+  "note": "33 neue offizielle oder wiederkehrende Gewinnspiel-Chancen; Technik aus 5.8 unverändert."
 }

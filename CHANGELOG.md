@@ -1,5 +1,13 @@
 ## 5.6.1 – Einheitliche Versionierung
 
+## 5.9 – Katalogausbau, Phase 1
+
+- Katalog von 117 auf 150 Gewinnspiele erweitert.
+- 33 neue offizielle oder regelmäßig wiederkehrende Chancen ergänzt.
+- Neue Inhalte aus Wohnen, Beauty, Film, Radio, Reisen, Familie und Events.
+- App-Logik und persönliche Statusspeicher unverändert.
+
+
 ## 5.8 – Katalog-Update & Neu-Logik
 
 - Netzwerkfrischer Katalogabruf in der Datenzentrale.
