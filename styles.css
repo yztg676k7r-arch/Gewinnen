@@ -466,3 +466,9 @@ main{padding:0 16px}.view{display:none;animation:fade .18s ease}.view.active{dis
   #todayView .today-summary{margin-bottom:14px}
   .section{margin-top:28px}
 }
+
+/* Win Win 5.8 – Katalogaktualisierung */
+.catalog-update-panel{margin-bottom:16px}
+.catalog-update-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.catalog-update-actions button{min-height:44px}
+@media(max-width:480px){.catalog-update-actions{grid-template-columns:1fr}}

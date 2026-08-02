@@ -1,12 +1,38 @@
 
-const APP_VERSION='5.7.1';
+const APP_VERSION='5.8';
 const $=(s,r=document)=>r.querySelector(s);
 const $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const safeJSON=(v,f)=>{try{return v?JSON.parse(v):f}catch{return f}};
+function catalogueSeenSet(){return new Set(safeJSON(localStorage.getItem(CATALOG_SEEN_KEY),[]).map(String))}
+function saveCatalogueSeen(set){localStorage.setItem(CATALOG_SEEN_KEY,JSON.stringify([...set]))}
+function initializeCatalogueSeen(){
+ if(localStorage.getItem(CATALOG_SEEN_KEY)!==null)return;
+ saveCatalogueSeen(new Set(contests.map(i=>String(i.id))));
+}
+function markContestSeen(id){const seen=catalogueSeenSet();seen.add(String(id));saveCatalogueSeen(seen)}
+function markAllCatalogueSeen(){saveCatalogueSeen(new Set(contests.map(i=>String(i.id))));renderAll();renderCatalogUpdateSummary();toast('Neue Einträge als gesehen markiert')}
+function renderCatalogUpdateSummary(){
+ const el=$('#catalogUpdateSummary'),badge=$('#catalogVersionBadge');
+ if(badge)badge.textContent=APP_VERSION;
+ if(!el)return;
+ const seen=catalogueSeenSet();
+ const activeCount=allActive().length;
+ const newCount=contests.filter(i=>!seen.has(String(i.id))).length;
+ el.textContent=`${contests.length} geladen · ${activeCount} aktiv · ${Math.max(0,contests.length-activeCount)} abgelaufen · ${newCount} neu`;
+}
+async function refreshCatalogueFromNetwork(){
+ const button=$('#refreshCatalogBtn');
+ if(button){button.disabled=true;button.textContent='Katalog wird geladen …'}
+ try{await loadData(true);renderCatalogUpdateSummary();if(button)button.textContent='Katalog aktualisiert';toast('Katalog neu geladen')}
+ catch(error){console.error(error);if(button)button.textContent='Erneut versuchen';toast('Katalog konnte nicht geladen werden')}
+ finally{setTimeout(()=>{if(button){button.disabled=false;button.textContent='Katalog neu laden'}},1400)}
+}
+
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const STATUS_ARCHIVE_KEY='winwin-status-archive-v1';
 const STATUS_RECOVERY_META_KEY='winwin-status-recovery-meta-v1';
+const CATALOG_SEEN_KEY='winwin-catalog-seen-v1';
 const USER_SCHEMA_VERSION=4;
 const CUSTOM_DATA_KEY='winwin-custom-contests-v1';
 const IMPORT_BACKUP_KEY='winwin-catalog-backup-v1';
@@ -296,13 +322,7 @@ function parseFlexibleDate(v){
  if(/^\d{2}\.\d{2}\.\d{4}$/.test(v))return parseDate(v);
  const d=new Date(v);return Number.isNaN(d.getTime())?null:d
 }
-function isNewSinceVisit(i){
- if(!previousVisit)return Boolean(i.new);
- const d=parseFlexibleDate(i.addedAt||i.verified);
- if(!d)return Boolean(i.new);
- d.setHours(23,59,59,999);
- return d>previousVisit
-}
+function isNewSinceVisit(i){return !catalogueSeenSet().has(String(i.id))}
 function formatUpdate(v){
  const d=parseFlexibleDate(v);
  if(!d)return 'Aktualisierungsdatum unbekannt';
@@ -402,6 +422,7 @@ function refreshAllViews(reason='status'){
 }
 function commitStatusChange(id,mutator,message){
  const i=contests.find(x=>x.id===id);if(!i)return;
+ markContestSeen(id);
  const s=stateFor(id);mutator(s,i);
  saveUser();refreshAllViews('contest-status');
  if(message)toast(typeof message==='function'?message(s,i):message);
@@ -428,7 +449,7 @@ function toggleIgnored(id){
  let ignored=false;
  commitStatusChange(id,(s)=>{s.ignored=!s.ignored;ignored=s.ignored;if(s.ignored)s.favorite=false;adjustPreferenceForContest(id,s.ignored?-4:4)},()=>ignored?'Als nicht interessant ausgeblendet':'Gewinnspiel wieder eingeblendet');
 }
-function registerClick(id){user.clicks[id]=(user.clicks[id]||0)+1;adjustPreferenceForContest(id,0.35);saveUser()}
+function registerClick(id){markContestSeen(id);user.clicks[id]=(user.clicks[id]||0)+1;adjustPreferenceForContest(id,0.35);saveUser();renderCatalogUpdateSummary()}
 let winDialogContestId=null;
 function openWinDialog(id){
  const i=contests.find(x=>x.id===id);if(!i)return;
@@ -1721,8 +1742,10 @@ async function loadData(silent=false){
    dataVersionGlobal=dataVersion;
  }
  try{migrateContestStates()}catch(e){console.warn('Win Win: Statusmigration fehlgeschlagen',e)}
+ initializeCatalogueSeen();
  initializePreferences();
  renderAll();
+ renderCatalogUpdateSummary();
  renderDataCenter();
  status.classList.toggle('error',usingFallback);
  text.textContent=usingFallback
@@ -1764,6 +1787,8 @@ $('#dailyMode')?.addEventListener('change',e=>{dailyPlan.mode=e.target.value||'b
 $('#refreshBtn')?.addEventListener('click',async()=>{await Promise.allSettled([loadData(),loadSources()]);await renderDeploymentStatus();toast('Daten neu geladen')});
 $('#forceUpdateBtn')?.addEventListener('click',forceAppUpdate);
  $('#forceUpdateDataBtn')?.addEventListener('click',forceAppUpdate);
+ $('#refreshCatalogBtn')?.addEventListener('click',refreshCatalogueFromNetwork);
+ $('#markNewSeenBtn')?.addEventListener('click',markAllCatalogueSeen);
 document.addEventListener('click',e=>{const m=e.target.closest('[data-metric]');if(!m)return;m.dataset.metric==='statsView'?openView('statsView'):openDiscover(m.dataset.metric)});
 if($('#saveWinBtn'))$('#saveWinBtn').onclick=saveWin;if($('#removeWinBtn'))$('#removeWinBtn').onclick=removeWin;if($('#cancelWinBtn'))$('#cancelWinBtn').onclick=()=>$('#winDialog')?.close();
 setupDataCenter();

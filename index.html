@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="stylesheet" href="./styles.css">
-  <title>Win Win 5.7.1.1</title>
+  <title>Win Win 5.8</title>
 </head>
 <body>
   <div class="app-shell">
@@ -40,7 +40,7 @@
         <section class="update-status" id="updateStatus">
           <span class="status-dot"></span>
           <span id="updateText">Gewinnspiele werden geprüft …</span>
-          <small id="dataDiagnostics" class="data-diagnostics">Win Win 5.7.1 · Katalog wird geladen</small>
+          <small id="dataDiagnostics" class="data-diagnostics">Win Win 5.8 · Katalog wird geladen</small>
         </section>
         <section class="deployment-status" id="deploymentStatus" aria-live="polite" hidden inert>
           <div class="deployment-status-copy">
@@ -166,17 +166,28 @@
 
       <section id="dataView" class="view">
         <div class="view-title"><p class="section-kicker">DATENZENTRALE</p><h2>Import & Quellen</h2></div>
+        <section class="data-panel catalog-update-panel" aria-live="polite">
+          <div class="section-head">
+            <div><p class="section-kicker">KATALOG</p><h3>Aktualisierung</h3></div>
+            <span class="version-pill" id="catalogVersionBadge">5.8</span>
+          </div>
+          <p id="catalogUpdateSummary" class="muted-copy">Katalogstatus wird geprüft …</p>
+          <div class="catalog-update-actions">
+            <button type="button" id="refreshCatalogBtn" class="data-primary">Katalog neu laden</button>
+            <button type="button" id="markNewSeenBtn">Neue als gesehen markieren</button>
+          </div>
+        </section>
         <section class="data-panel version-center-panel" aria-live="polite">
           <div class="section-head">
             <div><p class="section-kicker">SYSTEM</p><h3>Version & Katalog</h3></div>
-            <span class="version-pill" id="systemVersionBadge">5.6.3</span>
+            <span class="version-pill" id="systemVersionBadge">5.8</span>
           </div>
           <p id="systemVersionText" class="muted-copy">Version wird geprüft …</p>
           <p id="systemCatalogText" class="muted-copy">Katalog wird geladen …</p>
           <button type="button" id="forceUpdateDataBtn" class="secondary-button">Update prüfen</button>
         </section>
         <section class="data-hero">
-          <div><p class="section-kicker">WIN WIN 5.7.1</p><h3>Katalogpflege & stabile Versionierung</h3><p>Eine gemeinsame Versionsquelle, sichere Statusdaten und kompakte technische Informationen in der Datenzentrale.</p></div>
+          <div><p class="section-kicker">WIN WIN 5.8</p><h3>Katalogpflege & stabile Versionierung</h3><p>Eine gemeinsame Versionsquelle, sichere Statusdaten und kompakte technische Informationen in der Datenzentrale.</p></div>
         </section>
         <section id="systemCheck50" class="system-check-50"></section>
         <section id="importSummary" class="import-summary"></section>

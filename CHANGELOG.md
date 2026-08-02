@@ -1,5 +1,14 @@
 ## 5.6.1 – Einheitliche Versionierung
 
+## 5.8 – Katalog-Update & Neu-Logik
+
+- Netzwerkfrischer Katalogabruf in der Datenzentrale.
+- Persistente Neu-Kennzeichnung bis zum Öffnen oder Bearbeiten.
+- Katalogstatus mit geladenen, aktiven, abgelaufenen und neuen Einträgen.
+- Quellenverwaltung unverändert.
+- Persönliche Statusspeicher bleiben kompatibel.
+
+
 ## 5.7.1 – UI Cleanup & Statusschutz
 
 - „Als Nächstes“ aus der Heute-Seite entfernt.

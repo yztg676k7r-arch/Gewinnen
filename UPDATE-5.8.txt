@@ -1,0 +1,7 @@
+WIN WIN 5.8 – KATALOG-UPDATE & NEU-LOGIK
+
+- Katalog kann ohne Browser-Cache neu geladen werden.
+- Neue Einträge bleiben neu, bis sie geöffnet oder bearbeitet wurden.
+- Bestehende 117 Einträge werden beim ersten Start nicht fälschlich als neu markiert.
+- Abgelaufene Einträge bleiben aus offenen Listen ausgeschlossen.
+- Quellenkatalog und Statusarchiv bleiben unverändert.

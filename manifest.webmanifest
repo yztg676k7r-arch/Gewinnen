@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "Win Win 5.7.1",
+  "name": "Win Win 5.8",
   "short_name": "Win Win",
-  "description": "Gewinnspiel-Daily-Driver mit fokussierter Heute-Seite und geschütztem Status",
+  "description": "Gewinnspiel-Daily-Driver mit zuverlässiger Katalog-Aktualisierung",
   "lang": "de-DE",
   "start_url": "./",
   "scope": "./",

@@ -1,8 +1,8 @@
 {
-  "version": "5.7.1",
+  "version": "5.8",
   "buildDate": "2026-08-02",
-  "builtAt": "2026-08-02T10:50:00+02:00",
+  "builtAt": "2026-08-02T13:55:00+02:00",
   "catalogEntries": 117,
-  "release": "UI Cleanup & Statusschutz",
-  "note": "Heute-Seite verschlankt; geschütztes Statusarchiv und Wiederherstellung aus vorhandenen Sicherungen."
+  "release": "Katalog-Update & Neu-Logik",
+  "note": "Neue Einträge bleiben bis zur Bearbeitung sichtbar; Katalog lässt sich netzwerkfrisch laden."
 }
