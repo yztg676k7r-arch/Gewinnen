@@ -1,8 +1,8 @@
 {
-  "version": "5.7",
-  "buildDate": "2026-08-01",
-  "builtAt": "2026-08-01T21:45:00+02:00",
+  "version": "5.7.1",
+  "buildDate": "2026-08-02",
+  "builtAt": "2026-08-02T10:50:00+02:00",
   "catalogEntries": 117,
-  "release": "Inhaltsrelease",
-  "note": "17 neue offiziell verlinkte Gewinnspiele; technische Basis aus 5.6.3 unverändert."
+  "release": "UI Cleanup & Statusschutz",
+  "note": "Heute-Seite verschlankt; geschütztes Statusarchiv und Wiederherstellung aus vorhandenen Sicherungen."
 }

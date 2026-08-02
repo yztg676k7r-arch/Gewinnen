@@ -1,0 +1,11 @@
+WIN WIN 5.7.1 – UI CLEANUP & STATUSSCHUTZ
+
+- „Als Nächstes“ vollständig aus der Heute-Seite entfernt.
+- Die Gewinnspielliste beginnt direkt nach dem Tagesfortschritt.
+- Redundanter Daily-Driver-Block und doppelter Empfehlungsbereich von der Startseite entfernt.
+- Technische Ladeinformationen verschwinden nach erfolgreichem Start von der Startseite.
+- Neues geschütztes Statusarchiv.
+- Automatische Wiederherstellung aus einer reichhaltigeren vorhandenen Sicherung.
+- Leere Updates können eine reichhaltigere Statussicherung nicht mehr überschreiben.
+- Quellenkatalog und Quellenverwaltung wurden nicht verändert.
+- Katalog bleibt bei 117 Gewinnspielen.

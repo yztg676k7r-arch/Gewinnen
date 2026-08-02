@@ -454,3 +454,15 @@ main{padding:0 16px}.view{display:none;animation:fade .18s ease}.view.active{dis
 .bottom-nav{z-index:1000}
 .update-status{min-height:52px}
 .data-diagnostics{white-space:normal}
+
+
+/* Win Win 5.7.1 – UI Cleanup */
+.update-status[hidden]{display:none!important}
+#todayView .today-summary{margin-bottom:18px}
+#todayView .today-stage-list{margin-top:0}
+@media (max-width:600px){
+  #todayView .view-title{margin-bottom:14px}
+  #todayView .daily-routine-controls{gap:10px;margin-bottom:14px}
+  #todayView .today-summary{margin-bottom:14px}
+  .section{margin-top:28px}
+}

@@ -1,11 +1,13 @@
 
-const APP_VERSION='5.7';
+const APP_VERSION='5.7.1';
 const $=(s,r=document)=>r.querySelector(s);
 const $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const safeJSON=(v,f)=>{try{return v?JSON.parse(v):f}catch{return f}};
 const STORAGE_KEY='gewinnen-user-v1';
 const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
-const USER_SCHEMA_VERSION=3;
+const STATUS_ARCHIVE_KEY='winwin-status-archive-v1';
+const STATUS_RECOVERY_META_KEY='winwin-status-recovery-meta-v1';
+const USER_SCHEMA_VERSION=4;
 const CUSTOM_DATA_KEY='winwin-custom-contests-v1';
 const IMPORT_BACKUP_KEY='winwin-catalog-backup-v1';
 const IMPORT_HISTORY_KEY='winwin-import-history-v1';
@@ -56,9 +58,107 @@ function normalizeUser(raw){
  u.lastVisit=u.lastVisit||null;
  return u;
 }
+function statusRecordStrength(record){
+ if(!record||typeof record!=='object')return 0;
+ let score=0;
+ if(record.done)score+=6;
+ if(record.ignored)score+=6;
+ if(record.favorite)score+=2;
+ if(record.won)score+=8;
+ if(record.note)score+=1;
+ if(record.doneAt)score+=1;
+ if(Array.isArray(record.participationDates))score+=record.participationDates.length;
+ if(record.winDetails&&typeof record.winDetails==='object')score+=Object.values(record.winDetails).filter(Boolean).length;
+ return score;
+}
+function userStatusStrength(snapshot){
+ if(!snapshot||typeof snapshot!=='object'||!snapshot.items||typeof snapshot.items!=='object')return 0;
+ return Object.values(snapshot.items).reduce((sum,item)=>sum+statusRecordStrength(item),0);
+}
+function mergeStatusRecord(primary,backup){
+ const a=primary&&typeof primary==='object'?JSON.parse(JSON.stringify(primary)):{};
+ const b=backup&&typeof backup==='object'?backup:{};
+ a.favorite=Boolean(a.favorite||b.favorite);
+ a.done=Boolean(a.done||b.done);
+ a.won=Boolean(a.won||b.won);
+ a.ignored=Boolean(a.ignored||b.ignored);
+ if(!a.doneAt&&b.doneAt)a.doneAt=b.doneAt;
+ if(!a.note&&b.note)a.note=b.note;
+ if(!a._identity&&b._identity)a._identity=JSON.parse(JSON.stringify(b._identity));
+ const dates=[
+  ...(Array.isArray(a.participationDates)?a.participationDates:[]),
+  ...(Array.isArray(b.participationDates)?b.participationDates:[])
+ ].filter(Boolean);
+ a.participationDates=[...new Set(dates)].sort();
+ const aWin=a.winDetails&&typeof a.winDetails==='object'?a.winDetails:{};
+ const bWin=b.winDetails&&typeof b.winDetails==='object'?b.winDetails:{};
+ a.winDetails={...bWin,...aWin};
+ return a;
+}
+function mergeUserSnapshots(primary,backup){
+ const merged=normalizeUser(JSON.parse(JSON.stringify(primary||{})));
+ const source=normalizeUser(JSON.parse(JSON.stringify(backup||{})));
+ Object.entries(source.items||{}).forEach(([id,state])=>{
+  merged.items[id]=mergeStatusRecord(merged.items[id],state);
+ });
+ Object.entries(source.clicks||{}).forEach(([id,value])=>{
+  merged.clicks[id]=Math.max(Number(merged.clicks[id])||0,Number(value)||0);
+ });
+ Object.entries(source.urlIndex||{}).forEach(([url,id])=>{
+  if(!merged.urlIndex[url])merged.urlIndex[url]=id;
+ });
+ if(!merged.lastVisit&&source.lastVisit)merged.lastVisit=source.lastVisit;
+ merged.schemaVersion=USER_SCHEMA_VERSION;
+ return merged;
+}
+function extractUserSnapshot(raw){
+ const parsed=typeof raw==='string'?safeJSON(raw,null):raw;
+ if(!parsed||typeof parsed!=='object')return null;
+ if(parsed.items&&typeof parsed.items==='object')return normalizeUser(parsed);
+ if(parsed.deviceData?.user?.items)return normalizeUser(parsed.deviceData.user);
+ return null;
+}
+function preserveStatusArchive(snapshot){
+ const current=normalizeUser(JSON.parse(JSON.stringify(snapshot||{})));
+ const archived=extractUserSnapshot(localStorage.getItem(STATUS_ARCHIVE_KEY));
+ if(!archived||userStatusStrength(current)>userStatusStrength(archived)){
+  localStorage.setItem(STATUS_ARCHIVE_KEY,JSON.stringify(current));
+ }
+}
+function recoverBestUserSnapshot(current){
+ const candidates=[
+  {source:'Aktueller Status',value:current},
+  {source:'Statusarchiv',value:extractUserSnapshot(localStorage.getItem(STATUS_ARCHIVE_KEY))},
+  {source:'Automatische Sicherung',value:extractUserSnapshot(localStorage.getItem(STORAGE_BACKUP_KEY))},
+  {source:'Rücksprung-Sicherung',value:extractUserSnapshot(localStorage.getItem(FULL_BACKUP_ROLLBACK_KEY))}
+ ].filter(entry=>entry.value);
+ const currentStrength=userStatusStrength(current);
+ const richest=candidates.sort((a,b)=>userStatusStrength(b.value)-userStatusStrength(a.value))[0];
+ if(!richest)return normalizeUser(current);
+ const richestStrength=userStatusStrength(richest.value);
+ const recoveryNeeded=currentStrength===0
+  ? richestStrength>0
+  : richestStrength>currentStrength+Math.max(3,Math.ceil(currentStrength*.35));
+ if(!recoveryNeeded){
+  preserveStatusArchive(current);
+  return normalizeUser(current);
+ }
+ const recovered=mergeUserSnapshots(current,richest.value);
+ localStorage.setItem(STATUS_RECOVERY_META_KEY,JSON.stringify({
+  recoveredAt:new Date().toISOString(),
+  source:richest.source,
+  before:currentStrength,
+  after:userStatusStrength(recovered),
+  appVersion:APP_VERSION
+ }));
+ preserveStatusArchive(recovered);
+ return recovered;
+}
 const storedUserRaw=localStorage.getItem(STORAGE_KEY);
 if(storedUserRaw&&!localStorage.getItem(STORAGE_BACKUP_KEY))localStorage.setItem(STORAGE_BACKUP_KEY,storedUserRaw);
-let user=normalizeUser(safeJSON(storedUserRaw,{items:{},lastVisit:null,clicks:{},urlIndex:{}}));
+let user=recoverBestUserSnapshot(normalizeUser(safeJSON(storedUserRaw,{items:{},lastVisit:null,clicks:{},urlIndex:{}})));
+localStorage.setItem(STORAGE_KEY,JSON.stringify(user));
+preserveStatusArchive(user);
 let currentFilter='all';
 let todayQuickFilter='all';
 let advancedFilters=safeJSON(localStorage.getItem(FILTER_STORAGE_KEY),{entryType:'',effort:'',winners:'',deadline:'',daily:false,noApp:false,noSocial:false,knownWinners:false,onlyOpen:true});
@@ -107,9 +207,13 @@ window.resetPreferences=resetPreferences;
 
 function saveUser(){
  user.schemaVersion=USER_SCHEMA_VERSION;
+ preserveStatusArchive(user);
  const serialized=JSON.stringify(user);
  localStorage.setItem(STORAGE_KEY,serialized);
- localStorage.setItem(STORAGE_BACKUP_KEY,serialized);
+ const previousBackup=extractUserSnapshot(localStorage.getItem(STORAGE_BACKUP_KEY));
+ if(!previousBackup||userStatusStrength(user)>=userStatusStrength(previousBackup)){
+  localStorage.setItem(STORAGE_BACKUP_KEY,serialized);
+ }
 }
 function contestIdentity(i){
  if(!i)return null;
@@ -463,10 +567,8 @@ function renderToday(){
  const repeatableDue=queue.filter(isRepeatable).length;
  const target=Number(dailyPlan.target||10),remaining=Math.max(0,target-doneToday);
  const progress=target?Math.min(100,Math.round(doneToday/target*100)):0;
- const visible=queue.slice(0,Math.max(target,10)),next=visible[0];
+ const visible=queue.slice(0,Math.max(target,10));
  $('#todaySummary').innerHTML=`<div><span>Dein Tagesziel</span><strong>${Math.min(doneToday,target)} / ${target}</strong></div><div class="today-progress"><i style="width:${progress}%"></i></div><div class="today-status-grid"><div><strong>${queue.length}</strong><span>offen</span></div><div><strong>${doneToday}</strong><span>erledigt</span></div><div><strong>${skippedToday}</strong><span>übersprungen</span></div><div><strong>${openedToday}</strong><span>geöffnet</span></div><div><strong>${repeatableDue}</strong><span>täglich offen</span></div></div><p>${remaining?`Noch ${remaining} Teilnahme${remaining===1?'':'n'} bis zu deinem Tagesziel.`:'Tagesziel erreicht – stark!'}</p>`;
- const nextBox=$('#todayNext');
- if(nextBox)nextBox.innerHTML=next?`<div><p class="section-kicker">ALS NÄCHSTES</p><h3>${esc(next.title)}</h3><p>${esc(next.provider)} · ${todayStage(next).label} · Priorität ${Math.round(todayRank(next))}</p></div><div class="today-next-actions"><a href="${esc(next.url)}" target="_blank" rel="noopener" onclick="markTodayOpened('${esc(next.id)}')">Jetzt teilnehmen ↗</a><button onclick="toggleTodaySkip('${esc(next.id)}')">Später</button></div>`:`<div><p class="section-kicker">FERTIG FÜR HEUTE</p><h3>Keine offenen Empfehlungen mehr</h3><p>${skippedToday?'Du hast noch Einträge nur für heute übersprungen.':'Deine aktuelle Tagesliste ist vollständig erledigt.'}</p></div>`;
  const groups=[['urgent','⏳ Dringend','Endet spätestens in zwei Tagen'],['quick','⚡ Schnell erledigt','Wenig Aufwand für zwischendurch'],['best','🎯 Beste Chancen','Nach deinem persönlichen Nutzen sortiert']];
  const used=new Set();let html='';
  groups.forEach(([key,title,copy])=>{const items=visible.filter(i=>todayStage(i).key===key&&!used.has(i.id));items.forEach(i=>used.add(i.id));if(items.length)html+=`<section class="today-stage"><div class="today-stage-head"><div><h3>${title}</h3><p>${copy}</p></div><span>${items.length}</span></div>${items.map(todayCard).join('')}</section>`});
@@ -1626,6 +1728,7 @@ async function loadData(silent=false){
  text.textContent=usingFallback
    ?'Notfalldaten aktiv – bitte erneut laden'
    :`Datenstand: ${formatDataDate(latestDataUpdate)} · ${contests.length} Einträge geladen`;
+ status.hidden=!usingFallback;
  updateDiagnostics(dataVersion);
  if(!silent&&usingFallback)toast('Notfalldaten geladen');
 }

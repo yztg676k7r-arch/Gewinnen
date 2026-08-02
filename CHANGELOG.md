@@ -1,5 +1,15 @@
 ## 5.6.1 – Einheitliche Versionierung
 
+## 5.7.1 – UI Cleanup & Statusschutz
+
+- „Als Nächstes“ aus der Heute-Seite entfernt.
+- Gewinnspielliste direkt unter den Tagesfortschritt verschoben.
+- Redundante Bereiche der Startseite entfernt.
+- Geschütztes Statusarchiv und automatische Wiederherstellung ergänzt.
+- Quellenkatalog und Quellenverwaltung unverändert.
+- Persönliche Statusschlüssel bleiben kompatibel.
+
+
 ## 5.7 – Inhaltsrelease
 
 - Katalog auf 117 Einträge erweitert.
