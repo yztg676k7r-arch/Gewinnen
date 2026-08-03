@@ -1,5 +1,13 @@
 ## 5.6.1 – Einheitliche Versionierung
 
+## 6.2 – Katalogausbau, Phase 2
+
+- Katalog auf 162 Einträge erweitert.
+- 9 neue verifizierte Gewinnspiele ergänzt.
+- Inhalte aus Reisen, Beauty, Musik, Familie und Gutscheinen.
+- Statuslogik und persönliche Speicherbereiche unverändert.
+
+
 ## 6.1 – Katalogausbau, Phase 1
 
 - Drei neue verifizierte offizielle Gewinnspiele ergänzt.
