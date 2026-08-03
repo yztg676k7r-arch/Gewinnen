@@ -472,3 +472,8 @@ main{padding:0 16px}.view{display:none;animation:fade .18s ease}.view.active{dis
 .catalog-update-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
 .catalog-update-actions button{min-height:44px}
 @media(max-width:480px){.catalog-update-actions{grid-template-columns:1fr}}
+
+/* Win Win 6.0 – tägliche Katalogpflege */
+.daily-catalog-panel{margin-bottom:16px}
+.daily-catalog-panel .catalog-maintenance-stats{margin-top:12px}
+.daily-catalog-panel .catalog-update-actions{margin-top:12px}

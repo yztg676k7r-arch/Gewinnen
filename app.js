@@ -1,5 +1,5 @@
 
-const APP_VERSION='5.9';
+const APP_VERSION='6.0';
 const $=(s,r=document)=>r.querySelector(s);
 const $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const safeJSON=(v,f)=>{try{return v?JSON.parse(v):f}catch{return f}};
@@ -33,6 +33,7 @@ const STORAGE_BACKUP_KEY='gewinnen-user-backup-v1';
 const STATUS_ARCHIVE_KEY='winwin-status-archive-v1';
 const STATUS_RECOVERY_META_KEY='winwin-status-recovery-meta-v1';
 const CATALOG_SEEN_KEY='winwin-catalog-seen-v1';
+const DAILY_CATALOG_CHECK_KEY='winwin-daily-catalog-check-v1';
 const USER_SCHEMA_VERSION=4;
 const CUSTOM_DATA_KEY='winwin-custom-contests-v1';
 const IMPORT_BACKUP_KEY='winwin-catalog-backup-v1';
@@ -857,6 +858,18 @@ function makeContestId(i){
  const raw=`${i.provider||'anbieter'}-${i.title||'gewinnspiel'}`.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
  return raw.slice(0,80)||`import-${Date.now()}`
 }
+function dailyCatalogState(){const raw=safeJSON(localStorage.getItem(DAILY_CATALOG_CHECK_KEY),{});return raw&&typeof raw==='object'?raw:{}}
+function saveDailyCatalogState(state){localStorage.setItem(DAILY_CATALOG_CHECK_KEY,JSON.stringify(state||{}))}
+function catalogueQualityReport(rows=contests){
+ const ids=new Set(),duplicateIds=[];const invalid=[];const stale=[];const urlGroups=new Map();
+ rows.forEach(item=>{const id=String(item?.id||'');if(ids.has(id))duplicateIds.push(id);else ids.add(id);const issues=contestWarnings(item);if(issues.length)invalid.push({id,title:item?.title||id,issues});const checked=parseGermanDate(item?.lastVerified||item?.verified);if(!checked||Math.floor((Date.now()-checked.getTime())/86400000)>30)stale.push(id);const url=normalizeUrl(item?.url||'');if(url){if(!urlGroups.has(url))urlGroups.set(url,[]);urlGroups.get(url).push(item)}});
+ let possibleDuplicates=0;urlGroups.forEach(group=>{if(group.length<2)return;for(let a=0;a<group.length;a++)for(let b=a+1;b<group.length;b++)if(areSimilarContests(group[a],group[b]))possibleDuplicates++});
+ return {total:rows.length,active:rows.filter(active).length,expired:rows.filter(i=>daysLeft(i)<0).length,invalid:invalid.length,stale:stale.length,duplicateIds:duplicateIds.length,possibleDuplicates,invalidRows:invalid.slice(0,50),checkedAt:new Date().toISOString()};
+}
+function renderDailyCatalogCheck(report=null){const state=dailyCatalogState();const data=report||state.report||catalogueQualityReport();const badge=$('#dailyCatalogBadge'),text=$('#dailyCatalogText'),stats=$('#dailyCatalogStats');if(badge)badge.textContent=data.invalid||data.duplicateIds?'prüfen':'bereit';if(text){const last=state.checkedAt?new Intl.DateTimeFormat('de-DE',{dateStyle:'short',timeStyle:'short'}).format(new Date(state.checkedAt)):'noch nie';text.textContent=`Letzte vollständige Prüfung: ${last}. Beim Öffnen wird höchstens einmal täglich automatisch geprüft.`}if(stats)stats.innerHTML=`<div><strong>${data.total}</strong><span>geladen</span></div><div><strong>${data.active}</strong><span>aktiv</span></div><div><strong>${data.expired}</strong><span>abgelaufen</span></div><div><strong>${data.stale}</strong><span>Prüfung alt</span></div><div><strong>${data.invalid}</strong><span>Hinweise</span></div><div><strong>${data.possibleDuplicates+data.duplicateIds}</strong><span>Dubletten prüfen</span></div>`}
+async function runDailyCatalogCheck(manual=false){const button=$('#runDailyCatalogBtn');if(button){button.disabled=true;button.textContent='Katalog wird geprüft …'}try{const response=await fetch(`./contests.json?daily=${Date.now()}`,{cache:'no-store',headers:{Accept:'application/json'}});if(!response.ok)throw new Error(`HTTP ${response.status}`);const payload=await response.json();const rows=extractContestArray(payload).map(normalizeContest).filter(validContest);if(!rows.length)throw new Error('Leerer Katalog');const report=catalogueQualityReport(rows);const state={checkedAt:new Date().toISOString(),catalogVersion:payload?.version||APP_VERSION,report};saveDailyCatalogState(state);renderDailyCatalogCheck(report);if(manual){baseContests=rows;latestDataUpdate=payload?.updated||state.checkedAt;dataVersionGlobal=payload?.version||APP_VERSION;applyCustomData();renderCatalogUpdateSummary();updateDiagnostics();toast('Katalog vollständig geprüft')}}catch(error){console.error('Tägliche Katalogprüfung fehlgeschlagen',error);if(manual)toast('Katalogprüfung fehlgeschlagen')}finally{if(button){button.disabled=false;button.textContent='Jetzt vollständig prüfen'}}}
+function maybeRunDailyCatalogCheck(){const state=dailyCatalogState();const last=state.checkedAt?new Date(state.checkedAt).getTime():0;renderDailyCatalogCheck();if(!last||Date.now()-last>20*60*60*1000)runDailyCatalogCheck(false)}
+function exportDailyCatalogReport(){const report=dailyCatalogState().report||catalogueQualityReport();downloadJSON(`win-win-katalog-pruefbericht-${new Date().toISOString().slice(0,10)}.json`,{appVersion:APP_VERSION,exportedAt:new Date().toISOString(),report});toast('Prüfbericht exportiert')}
 function normalizeText(value=''){
  return String(value).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,' ').trim()
 }
@@ -1294,7 +1307,10 @@ function setupDataCenter(){
  $('#exportLocalBtn')?.addEventListener('click',()=>downloadJSON(`win-win-lokale-ergaenzungen-${new Date().toISOString().slice(0,10)}.json`,{version:APP_VERSION,updated:new Date().toISOString(),contests:customContests}));
  $('#clearLocalBtn')?.addEventListener('click',()=>{if(!customContests.length)return toast('Keine lokalen Ergänzungen vorhanden');if(!confirm('Lokale Ergänzungen löschen? Persönliche Status bleiben erhalten.'))return;localStorage.setItem(IMPORT_BACKUP_KEY,JSON.stringify({savedAt:new Date().toISOString(),contests:customContests}));customContests=[];localStorage.removeItem(CUSTOM_DATA_KEY);applyCustomData();toast('Lokale Ergänzungen gelöscht')});
  $('#restoreCatalogBtn')?.addEventListener('click',restoreCatalogBackup);
- setupPersonalBackup();setupCatalogUpdater();setupCatalogMaintenance();renderDataCenter();
+ setupPersonalBackup();setupCatalogUpdater();setupCatalogMaintenance();
+ $('#runDailyCatalogBtn')?.addEventListener('click',()=>runDailyCatalogCheck(true));
+ $('#exportCatalogReportBtn')?.addEventListener('click',exportDailyCatalogReport);
+ renderDataCenter();renderDailyCatalogCheck();
 }
 
 function normalizeSource(raw,index=0){
@@ -1753,6 +1769,8 @@ async function loadData(silent=false){
    :`Datenstand: ${formatDataDate(latestDataUpdate)} · ${contests.length} Einträge geladen`;
  status.hidden=!usingFallback;
  updateDiagnostics(dataVersion);
+ renderDailyCatalogCheck(catalogueQualityReport());
+ if(!silent)maybeRunDailyCatalogCheck();
  if(!silent&&usingFallback)toast('Notfalldaten geladen');
 }
 $$('.nav-item').forEach(b=>b.addEventListener('click',event=>{

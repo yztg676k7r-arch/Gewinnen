@@ -1,5 +1,13 @@
 ## 5.6.1 – Einheitliche Versionierung
 
+## 6.0 – Tägliche Katalogpflege
+
+- Automatische tägliche Katalogprüfung ergänzt.
+- Manueller Vollcheck und exportierbarer Prüfbericht.
+- Ablauf-, Qualitäts- und Dublettenkontrolle.
+- Statusspeicher und Quellenverwaltung unverändert.
+
+
 ## 5.9 – Katalogausbau, Phase 1
 
 - Katalog von 117 auf 150 Gewinnspiele erweitert.

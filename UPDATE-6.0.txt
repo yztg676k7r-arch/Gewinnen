@@ -1,0 +1,9 @@
+WIN WIN 6.0 – TÄGLICHE KATALOGPFLEGE
+
+- Automatische Katalogprüfung höchstens einmal täglich beim Öffnen.
+- Manueller Vollcheck in der Datenzentrale.
+- Bericht zu aktiven, abgelaufenen, veralteten, unvollständigen und möglichen doppelten Einträgen.
+- Prüfbericht als JSON exportierbar.
+- Netzfrischer Abruf von contests.json.
+- Persönliche Status, Statusarchiv und Quellenverwaltung bleiben unverändert.
+- Katalog bleibt bei 150 Einträgen.

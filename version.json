@@ -1,8 +1,8 @@
 {
-  "version": "5.9",
-  "buildDate": "2026-08-02",
-  "builtAt": "2026-08-02T15:15:00+02:00",
+  "version": "6.0",
+  "buildDate": "2026-08-03",
+  "builtAt": "2026-08-03T20:50:00+02:00",
   "catalogEntries": 150,
-  "release": "Katalogausbau – Phase 1",
-  "note": "33 neue offizielle oder wiederkehrende Gewinnspiel-Chancen; Technik aus 5.8 unverändert."
+  "release": "Tägliche Katalogpflege",
+  "note": "Automatische tägliche Prüfung, Ablaufkontrolle, Qualitäts- und Dublettenbericht; persönliche Status unverändert."
 }
