@@ -1,5 +1,12 @@
 ## 5.6.1 – Einheitliche Versionierung
 
+## 6.1 – Katalogausbau, Phase 1
+
+- Drei neue verifizierte offizielle Gewinnspiele ergänzt.
+- Katalog umfasst 153 Einträge.
+- Status- und UI-Logik unverändert.
+
+
 ## 6.0 – Tägliche Katalogpflege
 
 - Automatische tägliche Katalogprüfung ergänzt.

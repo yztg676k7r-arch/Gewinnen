@@ -1,8 +1,8 @@
 {
-  "version": "6.0",
+  "version": "6.1",
   "buildDate": "2026-08-03",
-  "builtAt": "2026-08-03T20:50:00+02:00",
-  "catalogEntries": 150,
-  "release": "Tägliche Katalogpflege",
-  "note": "Automatische tägliche Prüfung, Ablaufkontrolle, Qualitäts- und Dublettenbericht; persönliche Status unverändert."
+  "builtAt": "2026-08-03T20:55:00+02:00",
+  "catalogEntries": 153,
+  "release": "Katalogausbau Phase 1",
+  "note": "Drei neue verifizierte offizielle Gewinnspiele; Statuslogik unverändert."
 }

@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "Win Win 6.0",
+  "name": "Win Win 6.1",
   "short_name": "Win Win",
-  "description": "Gewinnspiel-Daily-Driver mit täglicher Katalogprüfung",
+  "description": "Gewinnspiel-Daily-Driver – Katalogausbau Phase 1",
   "lang": "de-DE",
   "start_url": "./",
   "scope": "./",

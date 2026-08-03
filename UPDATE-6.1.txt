@@ -1,0 +1,6 @@
+WIN WIN 6.1 – KATALOGAUSBAU, PHASE 1
+
+- Katalog auf 153 Einträge erweitert.
+- Drei neue, am 03.08.2026 verifizierte offizielle Gewinnspiele.
+- Statuslogik, LocalStorage-Schlüssel, Navigation, Layout und Quellenverwaltung unverändert.
+- Weitere große Inhaltsblöcke folgen in 6.1.x/6.2.
