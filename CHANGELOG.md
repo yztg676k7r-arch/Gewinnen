@@ -1,5 +1,13 @@
 ## 5.6.1 – Einheitliche Versionierung
 
+## 6.3 – Großer Katalogausbau
+
+- Katalog auf 202 Einträge erweitert.
+- 40 neue offizielle oder klar datierte Gewinnspiel-Chancen ergänzt.
+- Schwerpunkt auf Radio, regionalen Aktionen, dm, PAYBACK, Auto, Freizeit und Büchern.
+- Statuslogik und persönliche Speicherbereiche unverändert.
+
+
 ## 6.2 – Katalogausbau, Phase 2
 
 - Katalog auf 162 Einträge erweitert.

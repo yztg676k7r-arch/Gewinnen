@@ -1,0 +1,8 @@
+WIN WIN 6.3 – GROSSER KATALOGAUSBAU
+
+- Katalog von 162 auf 202 Einträge erweitert.
+- 40 neue offizielle oder klar datierte Gewinnspiel-Chancen.
+- Neue Inhalte unter anderem von NDR, MDR, SWR, dm, PAYBACK, AUTO BILD und GALA.
+- Mehr regionale Gewinnspiele und einzelne Tages-/Wochenchancen.
+- App-Logik, LocalStorage-Schlüssel, Statusarchiv, Layout und Navigation unverändert.
+- Bestehende Markierungen werden nicht überschrieben.

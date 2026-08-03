@@ -1,8 +1,8 @@
 {
-  "version": "6.2",
+  "version": "6.3",
   "buildDate": "2026-08-03",
-  "builtAt": "2026-08-03T21:15:00+02:00",
-  "catalogEntries": 162,
-  "release": "Katalogausbau Phase 2",
-  "note": "9 neue verifizierte Gewinnspiele; Statuslogik und Storage unverändert."
+  "builtAt": "2026-08-03T21:30:00+02:00",
+  "catalogEntries": 202,
+  "release": "Großer Katalogausbau",
+  "note": "40 neue offizielle oder klar datierte Gewinnspiel-Chancen; Statuslogik unverändert."
 }
