@@ -1,5 +1,13 @@
 ## 5.6.1 – Einheitliche Versionierung
 
+## 6.4 – Katalogausbau, Phase 4
+
+- Katalog auf 226 Einträge erweitert.
+- 24 neue verifizierte Gewinnspiel-Chancen ergänzt.
+- Schwerpunkt: hochwertige Sachpreise, Auto, Outdoor, Tickets und regionale Radioaktionen.
+- Bestehende IDs, Statuslogik und persönliche Speicherbereiche unverändert.
+
+
 ## 6.3 – Großer Katalogausbau
 
 - Katalog auf 202 Einträge erweitert.

@@ -1,0 +1,8 @@
+WIN WIN 6.4 – KATALOGAUSBAU, PHASE 4
+
+- Katalog von 202 auf 226 Einträge erweitert.
+- 24 neue, am 08.08.2026 geprüfte oder offiziell angekündigte Teilnahmechancen.
+- Neue Inhalte von auto motor und sport, AUTO BILD, Radio Hamburg, FFH, MDR und NDR.
+- Keine bestehenden Gewinnspiel-IDs verändert.
+- Statuslogik, LocalStorage-Schlüssel, Statusarchiv, Layout und Navigation unverändert.
+- Bereits bearbeitete Gewinnspiele behalten ihren Status.
