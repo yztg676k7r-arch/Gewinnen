@@ -1,0 +1,7 @@
+WIN WIN 6.5 – KATALOGAUSBAU PHASE 5
+- 226 → 257 Katalogeinträge
+- 31 neue, am 08.08.2026 geprüfte aktive Gewinnspiel-Chancen
+- Schwerpunkt: Aktionen mit vielen Gewinnern und hohen Trefferchancen
+- REWE/Ferrero, Deutsche Bahn, Zespri, Lindt, Hela, Prophete, Lidl, Wüstenrot, Hoofgold, AUREDNIK u.a.
+- Alle 226 bestehenden Datensätze unverändert
+- Status-/LocalStorage-Logik unverändert
